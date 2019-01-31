@@ -1,0 +1,14 @@
+plugins {
+    id 'org.jetbrains.intellij' version '0.4.2'
+}
+
+group 'com.markskelton'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+intellij {
+    version '2018.3.3'
+}

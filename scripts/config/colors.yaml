@@ -1,0 +1,14 @@
+%YAML 1.2
+---
+- chalky: '#e5c07'
+- coral: '#e06c7'
+- dark: '#5c637'
+- error: '#f4474'
+- fountainBlue: '#56b6c'
+- green: '#98c37'
+- invalid: '#fffff'
+- lightDark: '#5c637'
+- lightWhite: '#bbbbb'
+- malibu: '#61afe'
+- purple: '#c678d'
+- whiskey: '#d19a6'
