@@ -23,7 +23,8 @@
 hs_err_pid*
 
 # Editors
-.idea/
+.idea/*
+!.idea/runConfigurations/
 
 # Generated files and folders
 build/
