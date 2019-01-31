@@ -26,5 +26,8 @@ hs_err_pid*
 .idea/
 
 # Generated files and folders
-.gradle/
 build/
+
+# Gradle
+.gradle/
+gradle.properties
