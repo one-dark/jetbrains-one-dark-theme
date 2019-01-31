@@ -17,6 +17,6 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-        <bundledColorScheme path="colorSchemes/OneDarkItalic.xml" />
+        <bundledColorScheme path="colorSchemes/OneDarkItalic" />
     </extensions>
 </idea-plugin>
