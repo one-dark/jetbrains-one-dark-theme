@@ -1,18 +1,19 @@
 <idea-plugin>
-    <id>com.markskelton.one-dark-italic</id>
-    <name>One dark italic</name>
+    <id>com.markskelton.one-dark-theme</id>
+    <name>One dark theme</name>
     <category>Editor Color Schemes"</category>
     <vendor email="mdskelton99@gmail.com"
-            url="https://github.com/markypython/jetbrains-one-dark-italic">Mark Skelton</vendor>
+            url="https://github.com/markypython/jetbrains-one-dark-theme">Mark Skelton</vendor>
 
     <description><![CDATA[
-        One Dark italic color theme for JetBrains IDEs.<br>
-        <em>Includes italic support for comments and keywords</em>
+        One Dark color theme for JetBrains IDEs.<br>
+        <em>Includes normal and italic theme</em>
     ]]></description>
 
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <bundledColorScheme path="colorSchemes/OneDark" />
         <bundledColorScheme path="colorSchemes/OneDarkItalic" />
     </extensions>
 </idea-plugin>
