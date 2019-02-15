@@ -1,0 +1,1023 @@
+%YAML 1.2
+---
+name: One dark
+version: '1'
+parent-scheme: Darcula
+colors:
+  ADDED_LINES_COLOR: 98c379
+  CARET_COLOR: 528bff
+  CARET_ROW_COLOR: 2c323b
+  CONSOLE_BACKGROUND_KEY: 282c34
+  DELETED_LINES_COLOR: e06c75
+  GUTTER_BACKGROUND: 282c34
+  INDENT_GUIDE: '747369'
+  LINE_NUMBERS_COLOR: 5c6370
+  MODIFIED_LINES_COLOR: d19a66
+  RIGHT_MARGIN_COLOR: 5c6370
+  SELECTED_INDENT_GUIDE: '747369'
+  SELECTION_BACKGROUND: abb2bf
+  SELECTION_FOREGROUND: 282c34
+  WHITESPACES: 5c6370
+inheriting-attributes:
+  ANNOTATION_NAME_ATTRIBUTES: DEFAULT_METADATA
+  CUSTOM_STRING_ATTRIBUTES: DEFAULT_STRING
+  DEFAULT_STATIC_METHOD: DEFAULT_FUNCTION_DECLARATION
+  JAVA_KEYWORD: DEFAULT_KEYWORD
+  KOTLIN_ANNOTATION: ANNOTATION_NAME_ATTRIBUTES
+  XML_ATTRIBUTE_NAME: DEFAULT_ATTRIBUTE
+attributes:
+  ANGLE_BRACKETS_RAINBOW_COLOR0:
+    foreground: ffd700
+  ANGLE_BRACKETS_RAINBOW_COLOR1:
+    foreground: da70d6
+  ANGLE_BRACKETS_RAINBOW_COLOR2:
+    foreground: 87cefa
+  ANGLE_BRACKETS_RAINBOW_COLOR3:
+    foreground: ffd700
+  ANGLE_BRACKETS_RAINBOW_COLOR4:
+    foreground: da70d6
+  APACHE_CONFIG.ARG_LEXEM:
+    foreground: 98c379
+  APACHE_CONFIG.COMMENT:
+    foreground: 59626f
+    italic: theme
+  APACHE_CONFIG.IDENTIFIER:
+    foreground: c679dd
+  BAD_CHARACTER:
+    background: 6e3b3b
+  BREAKPOINT_ATTRIBUTES:
+    background: 743d3d
+  BUILDOUT.KEY:
+    foreground: c679dd
+  BUILDOUT.KEY_VALUE_SEPARATOR:
+    foreground: a6b2c0
+  BUILDOUT.LINE_COMMENT:
+    foreground: 59626f
+    italic: theme
+  BUILDOUT.SECTION_NAME:
+    foreground: d2945d
+  BUILDOUT.VALUE:
+    foreground: 98c379
+  CLASS_REFERENCE:
+    foreground: e5c17c
+  Clojure Atom:
+    foreground: c679dd
+  Clojure Character:
+    foreground: 98c379
+  Clojure Keyword:
+    foreground: df6a73
+  Clojure Line comment:
+    foreground: 59626f
+    italic: theme
+  Clojure Literal:
+    foreground: fda5ff
+    bold: always
+  Clojure Numbers:
+    foreground: d2945d
+  Clojure Strings:
+    foreground: 98c379
+  COFFEESCRIPT.BAD_CHARACTER:
+    background: 6e3b3b
+  COFFEESCRIPT.BLOCK_COMMENT:
+    foreground: 59626f
+    italic: theme
+  COFFEESCRIPT.BOOLEAN:
+    foreground: d2945d
+  COFFEESCRIPT.CLASS_NAME:
+    foreground: e5c17c
+  COFFEESCRIPT.COLON:
+    foreground: ffffff
+  COFFEESCRIPT.ESCAPE_SEQUENCE:
+    foreground: 57b6c2
+  COFFEESCRIPT.EXISTENTIAL:
+    foreground: a6b2c0
+  COFFEESCRIPT.EXPRESSIONS_SUBSTITUTION_MARK:
+    foreground: be4f44
+  COFFEESCRIPT.FUNCTION:
+    foreground: c679dd
+  COFFEESCRIPT.FUNCTION_BINDING:
+    foreground: c679dd
+  COFFEESCRIPT.FUNCTION_NAME:
+    foreground: 61afef
+  COFFEESCRIPT.GLOBAL_VARIABLE:
+    foreground: e06c75
+  COFFEESCRIPT.HEREDOC_CONTENT:
+    foreground: 98c379
+  COFFEESCRIPT.HEREDOC_ID:
+    foreground: 98c379
+  COFFEESCRIPT.HEREGEX_CONTENT:
+    foreground: d19a66
+  COFFEESCRIPT.HEREGEX_ID:
+    foreground: 57b6c2
+  COFFEESCRIPT.JAVASCRIPT_CONTENT:
+    foreground: c678dd
+  COFFEESCRIPT.JAVASCRIPT_ID:
+    foreground: 98c379
+  COFFEESCRIPT.KEYWORD:
+    foreground: c679dd
+  COFFEESCRIPT.LINE_COMMENT:
+    foreground: 59626f
+    italic: theme
+  COFFEESCRIPT.NUMBER:
+    foreground: d2945d
+  COFFEESCRIPT.OBJECT_KEY:
+    foreground: df6a73
+  COFFEESCRIPT.OPERATIONS:
+    foreground: a6b2c0
+  COFFEESCRIPT.PROTOTYPE:
+    foreground: 61afef
+  COFFEESCRIPT.REGULAR_EXPRESSION_CONTENT:
+    foreground: 57b6c2
+  COFFEESCRIPT.REGULAR_EXPRESSION_FLAG:
+    foreground: 57b6c2
+  COFFEESCRIPT.REGULAR_EXPRESSION_ID:
+    foreground: 57b6c2
+  COFFEESCRIPT.STRING:
+    foreground: 98c379
+  COFFEESCRIPT.STRING_LITERAL:
+    foreground: 98c379
+  COFFEESCRIPT.THIS:
+    foreground: df6a73
+  CONDITIONALLY_NOT_COMPILED:
+    foreground: 59626f
+    italic: theme
+  CONSOLE_BLUE_BRIGHT_OUTPUT:
+    foreground: 61afef
+    bold: always
+  CONSOLE_BLUE_OUTPUT:
+    foreground: 61afef
+  CONSOLE_CYAN_BRIGHT_OUTPUT:
+    foreground: 56b6c2
+    bold: always
+  CONSOLE_CYAN_OUTPUT:
+    foreground: 56b6c2
+  CONSOLE_ERROR_OUTPUT:
+    foreground: be5046
+  CONSOLE_GRAY_OUTPUT:
+    foreground: '828997'
+  CONSOLE_GREEN_BRIGHT_OUTPUT:
+    foreground: 98c379
+    bold: always
+  CONSOLE_GREEN_OUTPUT:
+    foreground: 98c379
+  CONSOLE_MAGENTA_BRIGHT_OUTPUT:
+    foreground: c678dd
+    bold: always
+  CONSOLE_MAGENTA_OUTPUT:
+    foreground: c678dd
+  CONSOLE_NORMAL_OUTPUT:
+    foreground: abb2bf
+  CONSOLE_RED_BRIGHT_OUTPUT:
+    foreground: e06c75
+    bold: always
+  CONSOLE_RED_OUTPUT:
+    foreground: e06c75
+  CONSOLE_SYSTEM_OUTPUT:
+    foreground: e4e4ff
+  CONSOLE_USER_INPUT:
+    foreground: 6ae96a
+    italic: theme
+  CONSOLE_WHITE_OUTPUT:
+    foreground: abb2bf
+  CONSOLE_YELLOW_BRIGHT_OUTPUT:
+    foreground: d19a66
+    bold: always
+  CONSOLE_YELLOW_OUTPUT:
+    foreground: d19a66
+  CSS.COLON:
+    foreground: '828997'
+  CSS.COLOR:
+    foreground: 50b6c3
+  CSS.COMMENT:
+    foreground: 59626f
+    italic: theme
+  CSS.FUNCTION:
+    foreground: 57b6c2
+  CSS.HASH:
+    foreground: 50b6c3
+  CSS.IDENT:
+    foreground: d39a63
+  CSS.IMPORTANT:
+    foreground: c676df
+  CSS.KEYWORD:
+    foreground: c678dd
+  CSS.NUMBER:
+    foreground: d2945d
+  CSS.OPERATORS:
+    foreground: c676df
+  CSS.PROPERTY_NAME:
+    foreground: abb2bf
+  CSS.PROPERTY_VALUE:
+    foreground: d39a63
+  CSS.PSEUDO:
+    foreground: d39a63
+  CSS.STRING:
+    foreground: 98c379
+  CSS.TAG_NAME:
+    foreground: df6a73
+  CSS.UNICODE.RANGE:
+    foreground: d39a63
+  CSS.URL:
+    foreground: abb2bf
+  CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES:
+    foreground: 68e868
+    background: '481515'
+  CUSTOM_KEYWORD1_ATTRIBUTES:
+    foreground: e3e3ff
+  CUSTOM_KEYWORD2_ATTRIBUTES:
+    foreground: fda5ff
+  CUSTOM_KEYWORD3_ATTRIBUTES:
+    foreground: 71d7d7
+  CUSTOM_KEYWORD4_ATTRIBUTES:
+    foreground: ffc2c2
+  CUSTOM_LINE_COMMENT_ATTRIBUTES:
+    foreground: 59626f
+    italic: theme
+  CUSTOM_NUMBER_ATTRIBUTES:
+    foreground: d2945d
+  CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES:
+    foreground: 57b6c2
+  DEFAULT_ATTRIBUTE:
+    foreground: d19a66
+  DEFAULT_BLOCK_COMMENT:
+    foreground: 5c6370
+    italic: theme
+  DEFAULT_CLASS_NAME:
+    foreground: ffc66d
+  DEFAULT_DOC_COMMENT:
+    foreground: 5c6370
+    italic: theme
+  DEFAULT_DOC_COMMENT_TAG:
+    foreground: c678dd
+    bold: always
+    italic: theme
+    effect_type: underscored
+  DEFAULT_DOC_COMMENT_TAG_VALUE:
+    foreground: d19a66
+  DEFAULT_ENTITY:
+    foreground: e06c75
+  DEFAULT_FUNCTION_DECLARATION:
+    foreground: 61afef
+  DEFAULT_INSTANCE_FIELD:
+    foreground: e06c75
+  DEFAULT_INTERFACE_NAME:
+    foreground: ffc66d
+  DEFAULT_INVALID_STRING_ESCAPE:
+    foreground: 56b6c2
+    effect_color: ff0000
+    effect_type: underwaved
+  DEFAULT_KEYWORD:
+    foreground: c678dd
+    italic: theme
+  DEFAULT_LINE_COMMENT:
+    foreground: 5c6370
+    italic: theme
+  DEFAULT_METADATA:
+    foreground: e5c07b
+    italic: theme
+  DEFAULT_PARAMETER:
+    foreground: d19a66
+  DEFAULT_STATIC_FIELD:
+    foreground: e06c75
+    italic: theme
+  DEFAULT_STRING:
+    foreground: 98c379
+  DEFAULT_VALID_STRING_ESCAPE:
+    foreground: 56b6c2
+  DEPRECATED_ATTRIBUTES:
+    effect_color: c0c0c0
+    effect_type: strikeout
+  DIFF_CONFLICT:
+    background: 763f34
+    error_stripe_color: ff6647
+  DIFF_DELETED:
+    background: 5b5b5b
+    error_stripe_color: '747474'
+  DIFF_INSERTED:
+    background: 2f632f
+    error_stripe_color: 99ff99
+  DIFF_MODIFIED:
+    background: '465983'
+    error_stripe_color: 99ccff
+  DJANGO_COMMENT:
+    foreground: 59626f
+    italic: theme
+  DJANGO_FILTER:
+    foreground: 57b6c2
+  DJANGO_ID:
+    foreground: d2945d
+  DJANGO_KEYWORD:
+    foreground: c679dd
+  DJANGO_NUMBER:
+    foreground: d2945d
+  DJANGO_STRING_LITERAL:
+    foreground: 98c379
+  DJANGO_TAG_NAME:
+    foreground: c676df
+  DUPLICATE_FROM_SERVER:
+    background: 30322b
+  ENUM_CONST:
+    foreground: 98c379
+  ERRORS_ATTRIBUTES:
+    effect_color: ff6767
+    error_stripe_color: cf5b56
+    effect_type: underwaved
+  EXECUTIONPOINT_ATTRIBUTES:
+    foreground: '101'
+    background: c7c7ff
+  FIRST SYMBOL IN LIST:
+    foreground: df6a73
+    bold: always
+  FOLDED_TEXT_ATTRIBUTES:
+    foreground: 8c8c8c
+    background: 3a3a3a
+    effect_type: underwaved
+  FOLLOWED_HYPERLINK_ATTRIBUTES:
+    foreground: c678dd
+    effect_color: c678dd
+    effect_type: underscored
+  GENERIC_SERVER_ERROR_OR_WARNING:
+    effect_color: aa4e00
+    error_stripe_color: f49810
+    effect_type: underwaved
+  GHERKIN_COMMENT:
+    foreground: 59626f
+    italic: theme
+  GHERKIN_KEYWORD:
+    foreground: c679dd
+  GHERKIN_OUTLINE_PARAMETER_SUBSTITUTION:
+    foreground: df6a73
+  GHERKIN_PYSTRING:
+    foreground: 98c379
+  GHERKIN_REGEXP_PARAMETER:
+    foreground: 98c379
+  GHERKIN_TABLE_HEADER_CELL:
+    foreground: df6a73
+  GHERKIN_TABLE_PIPE:
+    foreground: c679dd
+  GHERKIN_TAG:
+    foreground: c679dd
+  GO_BRACES:
+    foreground: aeb6c0
+  GO_BRACKET:
+    foreground: aeb6c0
+  GO_BUILTIN_CONSTANT:
+    foreground: d2945d
+    italic: theme
+  GO_BUILTIN_FUNCTION:
+    foreground: 57b6c2
+  GO_BUILTIN_FUNCTION_CALL:
+    foreground: 57b6c2
+  GO_BUILTIN_TYPE:
+    foreground: c679dd
+  GO_BUILTIN_TYPE_REFERENCE:
+    foreground: c679dd
+  GO_BUILTIN_VARIABLE:
+    foreground: d2945d
+  GO_COMMA:
+    foreground: aeb6c0
+  GO_EXPORTED_FUNCTION:
+    foreground: 61afef
+    italic: theme
+  GO_EXPORTED_FUNCTION_CALL:
+    foreground: 57b6c2
+  GO_KEYWORD:
+    foreground: c679dd
+  GO_LOCAL_CONSTANT:
+    foreground: e06c75
+    italic: theme
+  GO_LOCAL_FUNCTION:
+    foreground: 61afef
+  GO_LOCAL_FUNCTION_CALL:
+    foreground: 57b6c2
+  GO_LOCAL_VARIABLE_CALL:
+    foreground: 57b6c2
+  GO_METHOD_RECEIVER:
+    foreground: aeb6c0
+  GO_NUMBER:
+    foreground: d2945d
+  GO_OPERATOR:
+    foreground: c679dd
+  GO_PACKAGE_EXPORTED_CONSTANT:
+    foreground: e06c75
+    italic: theme
+  GO_PACKAGE_EXPORTED_VARIABLE_CALL:
+    foreground: 57b6c2
+  GO_PACKAGE_LOCAL_CONSTANT:
+    foreground: e06c75
+    italic: theme
+  GO_PACKAGE_LOCAL_VARIABLE_CALL:
+    foreground: 57b6c2
+  GO_SCOPE_VARIABLE:
+    foreground: aeb6c0
+  GO_SEMICOLON:
+    foreground: aeb6c0
+  GO_STRING:
+    foreground: 98c379
+  GO_STRUCT_EXPORTED_MEMBER_CALL:
+    foreground: 57b6c2
+  GO_STRUCT_LOCAL_MEMBER_CALL:
+    foreground: 57b6c2
+  GO_TYPE_REFERENCE:
+    foreground: aeb6c0
+  GQL_ID:
+    foreground: d2945d
+  GQL_INT_LITERAL:
+    foreground: d2945d
+  GQL_KEYWORD:
+    foreground: c679dd
+  GQL_STRING_LITERAL:
+    foreground: 98c379
+  HAML_CLASS:
+    foreground: df6a73
+  HAML_COMMENT:
+    foreground: 59626f
+    italic: theme
+  HAML_ID:
+    foreground: df6a73
+  HAML_STRING:
+    foreground: 98c379
+  HAML_STRING_INTERPOLATED:
+    foreground: 98c379
+  HAML_TAG_NAME:
+    foreground: df6a73
+  HTML_ATTRIBUTE_NAME:
+    foreground: d2945d
+  HTML_ATTRIBUTE_VALUE:
+    foreground: 98c379
+  HTML_COMMENT:
+    foreground: 59626f
+    italic: theme
+  HTML_ENTITY_REFERENCE:
+    foreground: d2945d
+  HTML_TAG_NAME:
+    foreground: e26b73
+  HYPERLINK_ATTRIBUTES:
+    foreground: c678dd
+    effect_color: c678dd
+    effect_type: underscored
+  IDENTIFIER_UNDER_CARET_ATTRIBUTES:
+    background: 3c3c57
+    error_stripe_color: ccccff
+  IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES:
+    foreground: fda5ff
+  INFO_ATTRIBUTES:
+    effect_color: '333434'
+    error_stripe_color: ffffcc
+    effect_type: underwaved
+  INJECTED_LANGUAGE_FRAGMENT:
+    background: '273627'
+  IVAR:
+    foreground: df6a73
+  JAVA_BLOCK_COMMENT:
+    foreground: 59626f
+    italic: theme
+  JAVA_DOC_COMMENT:
+    foreground: 59626f
+    italic: theme
+  JAVA_DOC_MARKUP:
+    background: 223f22
+  JAVA_DOC_TAG:
+    bold: always
+    effect_color: 80807f
+    effect_type: underscored
+  JAVA_LINE_COMMENT:
+    foreground: 59626f
+    italic: theme
+  JAVA_NUMBER:
+    foreground: d2945d
+  JAVA_OPERATION_SIGN:
+    foreground: a6b2c0
+  JAVA_STRING:
+    foreground: 98c379
+  JAVA_VALID_STRING_ESCAPE:
+    foreground: 57b6c2
+  JS.ATTRIBUTE:
+    background: '423535'
+  JS.BADCHARACTER:
+    background: 6e3b3b
+  JS.BLOCK_COMEMNT:
+    foreground: 59626f
+    italic: theme
+  JS.BLOCK_COMMENT:
+    foreground: 5b6370
+  JS.DOC_COMMENT:
+    foreground: 59626f
+    italic: theme
+  JS.DOC_MARKUP:
+    background: 223f22
+  JS.DOC_TAG:
+    foreground: c676df
+    bold: always
+  JS.GLOBAL_FUNCTION:
+    foreground: 5aaef1
+  JS.GLOBAL_VARIABLE:
+    foreground: abb2bf
+  JS.INSTANCE_MEMBER_FUNCTION:
+    foreground: '979748'
+  JS.INSTANCE_MEMBER_VARIABLE:
+    foreground: abb2bf
+  JS.INVALID_STRING_ESCAPE:
+    foreground: 68e868
+    background: '481515'
+  JS.KEYWORD:
+    foreground: e26b73
+  JS.LINE_COMMENT:
+    foreground: 59626f
+    italic: theme
+  JS.LOCAL_VARIABLE:
+    foreground: abb2bf
+  JS.NUMBER:
+    foreground: d2945d
+  JS.OPERATION_SIGN:
+    foreground: a6b2c0
+  JS.PARAMETER:
+    foreground: df6a73
+  JS.REGEXP:
+    foreground: 57b6c2
+  JS.STATIC_MEMBER_FUNCTION:
+    italic: theme
+  JS.STATIC_MEMBER_VARIABLE:
+    foreground: fda5ff
+    bold: always
+    italic: theme
+  JS.STRING:
+    foreground: 98c379
+  JS.VALID_STRING_ESCAPE:
+    foreground: 57b6c2
+  JSON.KEYWORD:
+    foreground: 5aaef1
+  JSON.PROPERTY_KEY:
+    foreground: e06c75
+  JSON.STRING:
+    foreground: 98c476
+  LABEL:
+    foreground: c679dd
+  LESS_ID_SELECTOR:
+    foreground: 61afef
+  LESS_OPERATORS:
+    foreground: abb2bf
+  LESS_TAG_NAME:
+    foreground: c678dd
+  LESS_VARIABLE:
+    foreground: df6a73
+  LOCALE.LINE_COMMENT:
+    foreground: 59626f
+    italic: theme
+  LOCALE.MSGCTXT_KEYWORD:
+    foreground: c679dd
+  LOCALE.MSGID_KEYWORD:
+    foreground: c679dd
+  LOCALE.MSGID_PLURAL_KEYWORD:
+    foreground: c679dd
+  LOCALE.MSGSTR_KEYWORD:
+    foreground: c679dd
+  LOCALE.MSGSTR_PLURAL_KEYWORD:
+    foreground: c679dd
+  LOCALE.STRING_LITERAL:
+    foreground: 98c379
+  LOG_WARNING_OUTPUT:
+    foreground: e5c07b
+  MACRONAME:
+    foreground: 61afef
+  MATCHED_BRACE_ATTRIBUTES:
+    background: 3b514d
+    bold: always
+  MESSAGE_ARGUMENT:
+    foreground: 61afef
+  NOT_USED_ELEMENT_ATTRIBUTES:
+    foreground: 80807f
+  OC_FORMAT_TOKEN:
+    foreground: 98c379
+  OC.BLOCK_COMMENT:
+    foreground: 59626f
+    italic: theme
+  OC.CPP_KEYWORD:
+    foreground: c679dd
+  OC.DIRECTIVE:
+    foreground: c679dd
+  OC.EXTERN_VARIABLE:
+    foreground: df6a73
+  OC.FUNCTION:
+    foreground: 61afef
+  OC.GLOBAL_VARIABLE:
+    foreground: df6a73
+  OC.KEYWORD:
+    foreground: c679dd
+  OC.LINE_COMMENT:
+    foreground: 59626f
+    italic: theme
+  OC.LOCAL_VARIABLE:
+    foreground: df6a73
+  OC.NUMBER:
+    foreground: d2945d
+  OC.PARAMETER:
+    foreground: a6b2c0
+  OC.PROPERTY:
+    foreground: df6a73
+  OC.SELFSUPERTHIS:
+    foreground: df6a73
+  OC.STRING:
+    foreground: 98c379
+  OC.STRUCT_FIELD:
+    foreground: 98c379
+  PHP_BAD_CHARACTER:
+    background: 6e3b3b
+  PHP_COMMENT:
+    foreground: 59626f
+    italic: theme
+  PHP_CONSTANT:
+    foreground: d2945d
+  PHP_DOC_COMMENT_ID:
+    foreground: 59626f
+    italic: theme
+  PHP_DOC_TAG:
+    bold: always
+  PHP_ESCAPE_SEQUENCE:
+    foreground: 57b6c2
+  PHP_EXEC_COMMAND_ID:
+    foreground: 98c379
+  PHP_HEREDOC_CONTENT:
+    foreground: 98c379
+  PHP_HEREDOC_ID:
+    bold: always
+  PHP_KEYWORD:
+    foreground: c679dd
+  PHP_MARKUP_ID:
+    background: 223f22
+  PHP_NUMBER:
+    foreground: d2945d
+  PHP_OPERATION_SIGN:
+    foreground: a6b2c0
+  PHP_SCRIPTING_BACKGROUND:
+    background: 2a2d32
+  PHP_STRING:
+    foreground: 98c379
+  PHP_TAG:
+    foreground: c679dd
+  PHP_VAR:
+    foreground: c679dd
+  PROTOCOL_REFERENCE:
+    foreground: e5c17c
+  PUPPET_BAD_CHARACTER:
+    background: 6e3b3b
+  PUPPET_BLOCK_COMMENT:
+    foreground: 59626f
+    italic: theme
+  PUPPET_CLASS:
+    foreground: e5c17c
+  PUPPET_ESCAPE_SEQUENCE:
+    foreground: 57b6c2
+  PUPPET_KEYWORD:
+    foreground: c679dd
+  PUPPET_NUMBER:
+    foreground: d2945d
+  PUPPET_OPERATION_SIGN:
+    foreground: a6b2c0
+  PUPPET_REGEX:
+    foreground: 57b6c2
+  PUPPET_SQ_STRING:
+    foreground: 98c379
+  PUPPET_STRING:
+    foreground: 98c379
+  PUPPET_VARIABLE_INTERPOLATION:
+    foreground: 98c379
+  PY.BUILTIN_NAME:
+    foreground: 57b6c2
+  PY.CLASS_DEFINITION:
+    foreground: e5c17c
+  PY.DECORATOR:
+    foreground: 61afef
+  PY.DOC_COMMENT:
+    foreground: 98c476
+  PY.FUNC_DEFINITION:
+    foreground: 61afef
+  PY.INVALID_STRING_ESCAPE:
+    foreground: 68e868
+    background: '481515'
+  PY.KEYWORD:
+    foreground: c679dd
+  PY.LINE_COMMENT:
+    foreground: 59626f
+    italic: theme
+  PY.NUMBER:
+    foreground: d2945d
+  PY.PARAMETER:
+    foreground: d19a66
+  PY.PREDEFINED_USAGE:
+    foreground: e06c75
+  PY.SELF_PARAMETER:
+    foreground: e06c75
+  PY.STRING:
+    foreground: 98c379
+  PY.VALID_STRING_ESCAPE:
+    foreground: 57b6c2
+  REGEXP.BAD_CHARACTER:
+    background: 6e3b3b
+  REGEXP.CHAR_CLASS:
+    foreground: 57b6c2
+  REGEXP.COMMENT:
+    foreground: 59626f
+    italic: theme
+  REGEXP.ESC_CHARACTER:
+    foreground: 57b6c2
+  REGEXP.INVALID_STRING_ESCAPE:
+    foreground: 68e868
+    background: '481515'
+  REGEXP.META:
+    foreground: c679dd
+  REGEXP.QUOTE_CHARACTER:
+    foreground: 57b6c2
+  REGEXP.REDUNDANT_ESCAPE:
+    foreground: 57b6c2
+  REST.EXPLICIT:
+    foreground: c679dd
+  REST.FIELD:
+    foreground: c679dd
+  REST.FIXED:
+    background: 48485f
+  REST.INLINE:
+    background: '273627'
+  REST.INTERPRETED:
+    background: 4d5d3d
+  REST.LINE_COMMENT:
+    foreground: 59626f
+    italic: theme
+  REST.REF.NAME:
+    foreground: 98c379
+  REST.SECTION.HEADER:
+    foreground: d2945d
+  RHTML_COMMENT_ID:
+    foreground: 59626f
+    italic: theme
+  RHTML_EXPRESSION_END_ID:
+    foreground: be4f44
+  RHTML_EXPRESSION_START_ID:
+    foreground: be4f44
+  RHTML_OMIT_NEW_LINE_ID:
+    foreground: be4f44
+  RHTML_SCRIPTLET_END_ID:
+    foreground: be4f44
+  RHTML_SCRIPTLET_START_ID:
+    foreground: be4f44
+  ROUND_BRACKETS_RAINBOW_COLOR0:
+    foreground: ffd700
+  ROUND_BRACKETS_RAINBOW_COLOR1:
+    foreground: da70d6
+  ROUND_BRACKETS_RAINBOW_COLOR2:
+    foreground: 87cefa
+  ROUND_BRACKETS_RAINBOW_COLOR3:
+    foreground: ffd700
+  ROUND_BRACKETS_RAINBOW_COLOR4:
+    foreground: da70d6
+  RUBY_COMMENT:
+    foreground: 5c6370
+    italic: theme
+  RUBY_CONSTANT:
+    foreground: d2945d
+  RUBY_CONSTANT_DECLARATION:
+    foreground: d19a66
+  RUBY_CVAR:
+    foreground: df6a73
+  RUBY_ESCAPE_SEQUENCE:
+    foreground: 57b6c2
+  RUBY_EXPR_IN_STRING:
+    foreground: be5046
+  RUBY_GVAR:
+    foreground: df6a73
+  RUBY_HASH_ASSOC:
+    foreground: a6b2c0
+  RUBY_HEREDOC_CONTENT:
+    foreground: 98c379
+  RUBY_HEREDOC_ID:
+    foreground: 98c379
+  RUBY_INTERPOLATED_STRING:
+    foreground: 98c379
+  RUBY_INVALID_ESCAPE_SEQUENCE:
+    foreground: 68e868
+    background: '481515'
+  RUBY_IVAR:
+    foreground: df6a73
+  RUBY_KEYWORD:
+    foreground: c678dd
+  RUBY_LINE_CONTINUATION:
+    foreground: a6b2c0
+  RUBY_LOCAL_VAR_ID:
+    foreground: abb2bf
+  RUBY_METHOD_NAME:
+    foreground: 61afef
+  RUBY_NTH_REF:
+    foreground: e06c75
+  RUBY_NUMBER:
+    foreground: d2945d
+  RUBY_OPERATION_SIGN:
+    foreground: a6b2c0
+  RUBY_PARAMDEF_CALL:
+    foreground: abb2bf
+  RUBY_PARAMETER_ID:
+    foreground: abb2bf
+  RUBY_REGEXP:
+    foreground: 57b6c2
+  RUBY_SPECIFIC_CALL:
+    foreground: 61afef
+  RUBY_STRING:
+    foreground: 98c379
+  RUBY_SYMBOL:
+    foreground: 56b6c2
+  RUBY_WORDS:
+    foreground: 98c379
+  SASS_COMMENT:
+    foreground: 59626f
+    italic: theme
+  SASS_DEFAULT:
+    foreground: c679dd
+  SASS_EXTEND:
+    foreground: c679dd
+  SASS_FUNCTION:
+    foreground: 57b6c2
+  SASS_IDENTIFIER:
+    foreground: d2945d
+  SASS_IMPORTANT:
+    foreground: c679dd
+  SASS_KEYWORD:
+    foreground: c679dd
+  SASS_MIXIN:
+    foreground: d2945d
+  SASS_NUMBER:
+    foreground: d2945d
+  SASS_PROPERTY_NAME:
+    foreground: d2945d
+  SASS_PROPERTY_VALUE:
+    foreground: 68e868
+  SASS_STRING:
+    foreground: 98c379
+  SASS_TAG_NAME:
+    foreground: c679dd
+  SASS_URL:
+    foreground: df6a73
+  SASS_VARIABLE:
+    foreground: df6a73
+  SEARCH_RESULT_ATTRIBUTES:
+    background: 4f4f82
+  SLIM_BAD_CHARACTER:
+    foreground: 272b33
+    background: f2777a
+  SLIM_CLASS:
+    foreground: df6a73
+  SLIM_COMMENT:
+    foreground: 59626f
+    italic: theme
+  SLIM_DOCTYPE_KWD:
+    foreground: df6a73
+  SLIM_FILTER:
+    foreground: df6a73
+  SLIM_ID:
+    foreground: df6a73
+  SLIM_INTERPOLATION:
+    foreground: 98c379
+  SLIM_STRING_INTERPOLATED:
+    foreground: 98c379
+  SLIM_TAG:
+    foreground: df6a73
+  SLIM_TAG_ATTR_KEY:
+    foreground: d2945d
+  SMARTY_BACKGROUND:
+    background: 2a2d32
+  SMARTY_BAD_CHARACTER:
+    background: 6e3b3b
+  SMARTY_COMMENT:
+    foreground: 59626f
+    italic: theme
+  SMARTY_KEYWORD:
+    foreground: c679dd
+  SMARTY_NUMBER:
+    foreground: d2945d
+  SMARTY_OPERATION_SIGN:
+    foreground: a6b2c0
+  SMARTY_STRING:
+    foreground: 98c379
+  SQL_BAD_CHARACTER:
+    background: 6e3b3b
+  SQL_COLUMN:
+    foreground: abb2bf
+  SQL_COMMENT:
+    foreground: 59626f
+    italic: theme
+  SQL_KEYWORD:
+    foreground: c679dd
+  SQL_NUMBER:
+    foreground: d2945d
+  SQL_PROCEDURE:
+    foreground: 61afef
+    italic: theme
+  SQL_SCHEMA:
+    foreground: 61afef
+  SQL_STRING:
+    foreground: 98c379
+  SQL_SYNTETIC_ENTITY:
+    foreground: fda5ff
+  SQL_TABLE:
+    foreground: d19a66
+  SQUARE_BRACKETS_RAINBOW_COLOR0:
+    foreground: ffd700
+  SQUARE_BRACKETS_RAINBOW_COLOR1:
+    foreground: da70d6
+  SQUARE_BRACKETS_RAINBOW_COLOR2:
+    foreground: 87cefa
+  SQUIGGLY_BRACKETS_RAINBOW_COLOR0:
+    foreground: ffd700
+  SQUIGGLY_BRACKETS_RAINBOW_COLOR1:
+    foreground: da70d6
+  SQUIGGLY_BRACKETS_RAINBOW_COLOR2:
+    foreground: 87cefa
+  TAG_ATTR_KEY:
+    foreground: d2945d
+  TEXT:
+    foreground: abb2bf
+    background: 282c34
+  TEXT_SEARCH_RESULT_ATTRIBUTES:
+    background: 5f5f00
+    error_stripe_color: ff00
+  TODO_DEFAULT_ATTRIBUTES:
+    foreground: c7c7ff
+    bold: always
+    italic: theme
+    error_stripe_color: ff
+  TS.CLASS:
+    foreground: e5c07b
+  TS.GLOBAL_FUNCTION:
+    foreground: 56b6c2
+  TS.INSTANCE_MEMBER_FUNCTION:
+    foreground: 61afef
+  TS.INSTANCE_MEMBER_VARIABLE:
+    foreground: e06c75
+  TS.INTERFACE:
+    foreground: e5c07b
+  TS.KEYWORD:
+    foreground: c678dd
+  TS.MODULE_NAME:
+    foreground: e5c07b
+  TS.STATIC_MEMBER_FUNCTION:
+    foreground: 61afef
+  TS.STATIC_MEMBER_VARIABLE:
+    foreground: e06c75
+  TWIG_BACKGROUND:
+    background: 2a2d32
+  TWIG_BAD_CHARACTER:
+    background: 6e3b3b
+  TWIG_COMMENT:
+    foreground: 59626f
+    italic: theme
+  TWIG_KEYWORD:
+    foreground: c679dd
+  TWIG_NUMBER:
+    foreground: d2945d
+  TWIG_OPERATION_SIGN:
+    foreground: a6b2c0
+  TWIG_STRING:
+    foreground: 98c379
+  TYPEDEF:
+    foreground: c679dd
+  UNMATCHED_BRACE_ATTRIBUTES:
+    background: '583535'
+  WARNING_ATTRIBUTES:
+    background: 4a3f10
+    effect_color: a6b2c0
+    error_stripe_color: ebc700
+    effect_type: underscored
+  WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES:
+    background: 472c47
+    error_stripe_color: ffcdff
+  WRITE_SEARCH_RESULT_ATTRIBUTES:
+    background: '623062'
+  XML_ATTRIBUTE_VALUE:
+    foreground: 98c379
+  XML_COMMENT:
+    foreground: 59626f
+    italic: theme
+  XML_ENTITY_REFERENCE:
+    foreground: d2945d
+  XML_NS_PREFIX:
+    foreground: d2945d
+  XML_PROLOGUE:
+    italic: theme
+  XML_TAG_NAME:
+    foreground: e06c75
+    bold: always
+  YAML_COMMENT:
+    foreground: 59626f
+    italic: theme
+  YAML_SCALAR_DSTRING:
+    foreground: 98c379
+  YAML_SCALAR_KEY:
+    foreground: df6a73
+  YAML_SCALAR_LIST:
+    foreground: 98c379
+  YAML_SCALAR_STRING:
+    foreground: 98c379
+  YAML_SCALAR_VALUE:
+    foreground: 98c379
+  YAML_SIGN:
+    foreground: 98c476
+  YAML_TEXT:
+    foreground: 98c379

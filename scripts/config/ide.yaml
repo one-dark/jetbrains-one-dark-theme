@@ -1,0 +1,10 @@
+%YAML 1.2
+---
+font-type:
+  bold: '1'
+  italic: '2'
+  bold-italic: '3'
+effect-type:
+  underscored: '1'
+  underwaved: '2'
+  strikeout: '3'
