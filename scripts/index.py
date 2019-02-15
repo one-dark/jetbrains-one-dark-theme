@@ -28,15 +28,6 @@ def should_add_option(condition: str, italic: bool) -> bool:
     )
 
 
-def get_version():
-    gradle_file_path = os.path.join(os.path.dirname(__file__), '..', 'build.gradle')
-    with open(gradle_file_path, 'r') as gradle_file:
-        data = gradle_file.read()
-
-    match = re.search(r"^version '(.*?)'$", data, re.MULTILINE)
-    return match.group(1)
-
-
 def build_yaml(italic: bool) -> dict:
     colors = read_yaml('colors')
     ide = read_yaml('ide')
@@ -73,7 +64,7 @@ def build_xml(theme: dict, italic: bool) -> ElementTree:
     scheme = ET.Element('scheme')
     scheme.attrib['name'] = theme['name']
     scheme.attrib['parent_scheme'] = theme['parent-scheme']
-    scheme.attrib['version'] = get_version()
+    scheme.attrib['version'] = '142'
 
     colors = ET.SubElement(scheme, 'colors')
     for name, value in theme['colors'].items():
