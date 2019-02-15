@@ -1,7 +1,6 @@
 %YAML 1.2
 ---
 name: One dark
-version: '1'
 parent-scheme: Darcula
 colors:
   ADDED_LINES_COLOR: 98c379
