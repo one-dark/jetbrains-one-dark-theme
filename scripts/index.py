@@ -62,7 +62,7 @@ def transform(text: str) -> str:
 
 def build_xml(theme: dict, italic: bool) -> ElementTree:
     scheme = ET.Element('scheme')
-    scheme.attrib['name'] = theme['name']
+    scheme.attrib['name'] = f"{theme['name']} italic" if italic else theme['name']
     scheme.attrib['parent_scheme'] = theme['parent-scheme']
     scheme.attrib['version'] = '142'
 
