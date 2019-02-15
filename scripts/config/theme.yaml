@@ -22,6 +22,9 @@ inheriting-attributes:
   CUSTOM_STRING_ATTRIBUTES: DEFAULT_STRING
   DEFAULT_STATIC_METHOD: DEFAULT_FUNCTION_DECLARATION
   JAVA_KEYWORD: DEFAULT_KEYWORD
+  JS.INSTANCE_MEMBER_FUNCTION: DEFAULT_KEYWORD
+  JS.KEYWORD: DEFAULT_KEYWORD
+  JS.PARAMETER: DEFAULT_PARAMETER
   KOTLIN_ANNOTATION: ANNOTATION_NAME_ATTRIBUTES
   XML_ATTRIBUTE_NAME: DEFAULT_ATTRIBUTE
 attributes:
@@ -250,7 +253,7 @@ attributes:
     foreground: c678dd
     bold: always
     italic: theme
-    effect_type: underscored
+    underscored: always
   DEFAULT_DOC_COMMENT_TAG_VALUE:
     foreground: d19a66
   DEFAULT_ENTITY:
@@ -264,7 +267,7 @@ attributes:
   DEFAULT_INVALID_STRING_ESCAPE:
     foreground: 56b6c2
     effect_color: ff0000
-    effect_type: underwaved
+    underwaved: always
   DEFAULT_KEYWORD:
     foreground: c678dd
     italic: theme
@@ -285,7 +288,7 @@ attributes:
     foreground: 56b6c2
   DEPRECATED_ATTRIBUTES:
     effect_color: c0c0c0
-    effect_type: strikeout
+    strikeout: always
   DIFF_CONFLICT:
     background: 763f34
     error_stripe_color: ff6647
@@ -320,7 +323,7 @@ attributes:
   ERRORS_ATTRIBUTES:
     effect_color: ff6767
     error_stripe_color: cf5b56
-    effect_type: underwaved
+    underwaved: always
   EXECUTIONPOINT_ATTRIBUTES:
     foreground: '101'
     background: c7c7ff
@@ -330,15 +333,15 @@ attributes:
   FOLDED_TEXT_ATTRIBUTES:
     foreground: 8c8c8c
     background: 3a3a3a
-    effect_type: underwaved
+    underwaved: always
   FOLLOWED_HYPERLINK_ATTRIBUTES:
     foreground: c678dd
     effect_color: c678dd
-    effect_type: underscored
+    underscored: always
   GENERIC_SERVER_ERROR_OR_WARNING:
     effect_color: aa4e00
     error_stripe_color: f49810
-    effect_type: underwaved
+    underwaved: always
   GHERKIN_COMMENT:
     foreground: 59626f
     italic: theme
@@ -454,7 +457,7 @@ attributes:
   HYPERLINK_ATTRIBUTES:
     foreground: c678dd
     effect_color: c678dd
-    effect_type: underscored
+    underscored: always
   IDENTIFIER_UNDER_CARET_ATTRIBUTES:
     background: 3c3c57
     error_stripe_color: ccccff
@@ -463,7 +466,7 @@ attributes:
   INFO_ATTRIBUTES:
     effect_color: '333434'
     error_stripe_color: ffffcc
-    effect_type: underwaved
+    underwaved: always
   INJECTED_LANGUAGE_FRAGMENT:
     background: '273627'
   IVAR:
@@ -479,7 +482,7 @@ attributes:
   JAVA_DOC_TAG:
     bold: always
     effect_color: 80807f
-    effect_type: underscored
+    underscored: always
   JAVA_LINE_COMMENT:
     foreground: 59626f
     italic: theme
@@ -512,15 +515,11 @@ attributes:
     foreground: 5aaef1
   JS.GLOBAL_VARIABLE:
     foreground: abb2bf
-  JS.INSTANCE_MEMBER_FUNCTION:
-    foreground: '979748'
   JS.INSTANCE_MEMBER_VARIABLE:
     foreground: abb2bf
   JS.INVALID_STRING_ESCAPE:
     foreground: 68e868
     background: '481515'
-  JS.KEYWORD:
-    foreground: e26b73
   JS.LINE_COMMENT:
     foreground: 59626f
     italic: theme
@@ -530,8 +529,6 @@ attributes:
     foreground: d2945d
   JS.OPERATION_SIGN:
     foreground: a6b2c0
-  JS.PARAMETER:
-    foreground: df6a73
   JS.REGEXP:
     foreground: 57b6c2
   JS.STATIC_MEMBER_FUNCTION:
@@ -983,7 +980,7 @@ attributes:
     background: 4a3f10
     effect_color: a6b2c0
     error_stripe_color: ebc700
-    effect_type: underscored
+    underscored: always
   WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES:
     background: 472c47
     error_stripe_color: ffcdff
