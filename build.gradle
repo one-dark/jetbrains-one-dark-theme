@@ -10,7 +10,7 @@ repositories {
 }
 
 intellij {
-    version '2018.3.3'
+    version 'LATEST-EAP-SNAPSHOT'
 }
 
 publishPlugin {
