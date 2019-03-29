@@ -19,7 +19,7 @@ FILE_NAME = 'OneDark'
 
 def read_yaml(name: str) -> object:
     with open(os.path.join(SOURCE_DIR, f'{name}.yaml'), 'r') as input_file:
-        return yaml.load(input_file)
+        return yaml.load(input_file, Loader=yaml.FullLoader)
 
 
 def should_add_option(condition: str, italic: bool) -> bool:
