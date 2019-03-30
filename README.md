@@ -1,5 +1,9 @@
 # JetBrains One dark theme
 
+![Build status](https://img.shields.io/travis/com/markypython/jetbrains-one-dark-theme.svg)
+![JetBrains plugin version](https://img.shields.io/jetbrains/plugin/v/11938-one-dark-theme.svg)
+![JetBrains IntelliJ plugins](https://img.shields.io/jetbrains/plugin/d/11938-one-dark-theme.svg)
+
 [One dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs
 
 ## Installation
