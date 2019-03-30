@@ -16,7 +16,6 @@ def getVersionName = { ->
 
 group 'com.markskelton'
 version getVersionName()
-println getVersionName()
 
 repositories {
     mavenCentral()
