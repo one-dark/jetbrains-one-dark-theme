@@ -1,0 +1,22 @@
+services:
+  - docker
+script: docker build --build-arg task=build .
+deploy:
+  - provider: releases
+    api_key: $GITHUB_AUTH_TOKEN
+    file_glob: true
+    file: build/libs/*.jar
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: script
+    script: docker build --build-arg task=publishPlugin .
+    skip_cleanup: true
+    on:
+      tags: true
+notifications:
+  email:
+    recipients:
+      - $ADMIN_EMAIL
+    on_success: change
+    on_failure: always

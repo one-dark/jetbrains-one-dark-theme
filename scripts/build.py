@@ -101,7 +101,7 @@ def write_file(tree: ElementTree, name: str) -> None:
 
 def main():
     if not os.path.exists(DEST_DIR):
-        os.mkdir(DEST_DIR)
+        os.makedirs(DEST_DIR)
 
     theme_xml = build_xml(build_yaml(italic=False), italic=False)
     italic_xml = build_xml(build_yaml(italic=True), italic=True)
