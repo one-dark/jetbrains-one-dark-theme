@@ -33,3 +33,4 @@ src/main/resources/colorSchemes/
 # Gradle
 .gradle/
 gradle.properties
+!gradle/wrapper/gradle-wrapper.jar
