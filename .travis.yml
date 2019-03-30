@@ -1,7 +1,12 @@
-language: generic
-services:
-  - docker
-script: docker build --build-arg task=build .
+language: java
+install:
+  - sudo apt-get update
+  - sudo apt-get install python3
+  - sudo apt-get install python3-pip
+  - sudo pip3 install -r requirements.txt
+script:
+  - python3 scripts/build.py
+  - ./gradlew build
 deploy:
   - provider: releases
     api_key: $GITHUB_AUTH_TOKEN
@@ -11,7 +16,7 @@ deploy:
     on:
       tags: true
   - provider: script
-    script: docker build --build-arg task=publishPlugin .
+    script: ./gradlew publishPlugin
     skip_cleanup: true
     on:
       tags: true

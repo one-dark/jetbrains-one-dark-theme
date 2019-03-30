@@ -18,7 +18,7 @@ FILE_NAME = 'OneDark'
 
 
 def read_yaml(name: str) -> object:
-    with open(os.path.join(SOURCE_DIR, f'{name}.yaml'), 'r') as input_file:
+    with open(os.path.join(SOURCE_DIR, '%s.yaml' % name), 'r') as input_file:
         return yaml.load(input_file, Loader=yaml.FullLoader)
 
 
@@ -62,7 +62,7 @@ def transform(text: str) -> str:
 
 def build_xml(theme: dict, italic: bool) -> ElementTree:
     scheme = ET.Element('scheme')
-    scheme.attrib['name'] = f"{theme['name']} italic" if italic else theme['name']
+    scheme.attrib['name'] = '%s italic' % theme['name'] if italic else theme['name']
     scheme.attrib['parent_scheme'] = theme['parent-scheme']
     scheme.attrib['version'] = '142'
 
@@ -106,8 +106,8 @@ def main():
     theme_xml = build_xml(build_yaml(italic=False), italic=False)
     italic_xml = build_xml(build_yaml(italic=True), italic=True)
 
-    write_file(theme_xml, f'{FILE_NAME}.xml')
-    write_file(italic_xml, f'{FILE_NAME}Italic.xml')
+    write_file(theme_xml, '%s.xml' % FILE_NAME)
+    write_file(italic_xml, '%sItalic.xml' % FILE_NAME)
 
 
 if __name__ == '__main__':
