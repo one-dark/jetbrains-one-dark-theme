@@ -53,6 +53,11 @@ class Builder:
         }
 
         for attribute, options in list(theme['attributes'].items()):
+            # String-only options are the foreground color
+            if isinstance(options, str):
+                theme['attributes'][attribute] = {'foreground': options}
+                continue
+
             for option, condition in list(options.items()):
                 if option in ide_map:
                     # Remove the original option
