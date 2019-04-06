@@ -2,30 +2,28 @@ plugins {
     id 'org.jetbrains.intellij' version '0.4.7'
 }
 
-// Gets the version name from the latest Git tag
-def getVersionName = { ->
-    def stdout = new ByteArrayOutputStream()
-
-    exec {
-        commandLine 'git', 'describe', '--tags'
-        standardOutput = stdout
-    }
-
-    stdout.toString().trim().substring(1)
-}
-
 group 'com.markskelton'
-version getVersionName()
+version System.getenv('GIT_TAG')
 
 repositories {
     mavenCentral()
 }
 
 intellij {
-    version 'LATEST-EAP-SNAPSHOT'
+    version '2019.1'
 }
 
-def getSecret = { prop, env ->
+patchPluginXml {
+    sinceBuild '191'
+
+    def changelogPath = "$projectDir/build/CHANGELOG.html"
+
+    if (file(changelogPath).exists()) {
+        changeNotes file(changelogPath).text
+    }
+}
+
+def getSecret = { String prop, String env ->
     project.hasProperty(prop) ? project.findProperty(prop) : System.getenv(env)
 }
 

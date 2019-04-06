@@ -6,6 +6,7 @@ install:
   - sudo pip3 install -r requirements.txt
 script:
   - python3 scripts/build.py
+  - python3 scripts/changelog.py
   - ./gradlew build
 deploy:
   - provider: releases
@@ -20,6 +21,8 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
+env:
+  - GIT_TAG=$TRAVIS_TAG
 notifications:
   email:
     recipients:
