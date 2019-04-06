@@ -20,6 +20,8 @@ deploy:
     skip_cleanup: true
     on:
       tags: true
+env:
+  - GIT_TAG=$TRAVIS_TAG
 notifications:
   email:
     recipients:
