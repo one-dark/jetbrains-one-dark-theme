@@ -5,53 +5,25 @@
 [![JetBrains plugin version][5]][6]
 [![JetBrains plugin downloads][7]][8]
 
-[One dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs
+[One dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs. Includes normal and italic variations.
 
-## Installation
+Check out the [Wiki][9] for more information and instructions or use one of the quick links below.
 
-### Plugin marketplace **(recommended)**
+- [Installation][10]
+- [Configuration][11]
+- [Development][12]
 
-1. Go to `Preferences | Plugins | Marketplace` and search for **One dark theme**
-1. Install the plugin
-1. When prompted, restart your IDE
-1. Go to `Preferences | Editor | Colors & Fonts` and select one of the new color themes
+## Screenshots
 
-### Manual
+See the [Wiki page][13] for more screenshots.
 
-To install the plugin manually, use the following steps.
+### Normal theme
 
-1. Download the JAR file for the [latest release][4] on GitHub
-1. Go to `Preferences | Plugins` in your editor and click the gear icon at the top
-1. Click **Install Plugin from Disk...**
-1. Select the JAR file you downloaded
-1. When prompted, restart your IDE
-1. Go to `Preferences | Editor | Colors & Fonts` and select one of the new color themes
+![Normal theme](docs/screenshots/java.png)
 
-## Contributing
+### Italic theme
 
-### Theme source files
-
-The source files for this theme are stored in the `scripts/config` directory. They are built into the theme files by running `python scripts/build.py`. Python 3 and PyYAML are required.
-
-### Building the plugin
-
-To build the plugin, run `./gradlew build`. If using IntelliJ, sync the Gradle project and run the **Build** task.
-
-### Publishing
-
-- Create a personal access token
-  - Login to [JetBrains Hub](https://hub.jetbrains.com)
-  - Go to your user profile
-  - Click on the **Authentication** tab
-  - Click **New token ...**
-  - Enter any name
-  - Select **Plugin Repository** for the scope
-- Copy `gradle.properties.sample` to `gradle.properties` and enter your JetBrains Hub username and the token from the previous step.
-- Run `./gradlew publishPlugin` (or Publish in IntelliJ)
-
-## Thanks
-
-- [Egor Yurtaev](https://github.com/yurtaev) - Creator of the repository this project was based on
+![Italic theme](docs/screenshots/java-italic.png)
 
 [1]: https://img.shields.io/travis/com/markypython/jetbrains-one-dark-theme.svg
 [2]: https://travis-ci.com/markypython/jetbrains-one-dark-theme "Build status"
@@ -61,3 +33,8 @@ To build the plugin, run `./gradlew build`. If using IntelliJ, sync the Gradle p
 [6]: https://plugins.jetbrains.com/plugin/11938-one-dark-theme "Plugin homepage"
 [7]: https://img.shields.io/jetbrains/plugin/d/11938-one-dark-theme.svg
 [8]: https://plugins.jetbrains.com/dashboard/statistics/downloads?pluginId=11938 "Plugin downloads"
+[9]: https://github.com/markypython/jetbrains-one-dark-theme/wiki "Wiki home"
+[10]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Installation "Installation instructions"
+[11]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Configuration "Configuration instructions"
+[12]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Development "Development instructions"
+[13]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Screenshots "Screenshots"
