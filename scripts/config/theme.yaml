@@ -5,26 +5,40 @@ parent-scheme: Darcula
 colors:
   ADDED_LINES_COLOR: 98c379
   CARET_COLOR: 528bff
-  CARET_ROW_COLOR: 2c323b
+  CARET_ROW_COLOR: 2c313c
   CONSOLE_BACKGROUND_KEY: 282c34
   DELETED_LINES_COLOR: e06c75
+  ERROR_HINT: '781732'
+  FOLDED_TEXT_BORDER_COLOR: ''
   GUTTER_BACKGROUND: 282c34
-  INDENT_GUIDE: '747369'
-  LINE_NUMBERS_COLOR: 5c6370
+  INDENT_GUIDE: 3b4048
+  LINE_NUMBER_ON_CARET_ROW_COLOR: '737984'
+  LINE_NUMBERS_COLOR: '495162'
+  METHOD_SEPARATORS_COLOR: 3b4048
   MODIFIED_LINES_COLOR: d19a66
-  RIGHT_MARGIN_COLOR: 5c6370
-  SELECTED_INDENT_GUIDE: '747369'
-  SELECTION_BACKGROUND: abb2bf
+  QUESTION_HINT: 376c89
+  RIGHT_MARGIN_COLOR: '606368'
+  SELECTED_INDENT_GUIDE: '606368'
+  SELECTED_TEARLINE_COLOR: 6b6e73
+  SELECTION_BACKGROUND: 3e4350
   SELECTION_FOREGROUND: 282c34
-  WHITESPACES: 5c6370
+  SEPARATOR_BELOW_COLOR: ''
+  TEARLINE_COLOR: 4f575f
+  TOOLTIP: ''
+  VISUAL_INDENT_GUIDE: 3b4048
+  WHITESPACES: 4b575f
 inheriting-attributes:
   ANNOTATION_NAME_ATTRIBUTES: DEFAULT_METADATA
+  CUSTOM_KEYWORD1_ATTRIBUTES: DEFAULT_KEYWORD
   CUSTOM_STRING_ATTRIBUTES: DEFAULT_STRING
+  CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES: DEFAULT_VALID_STRING_ESCAPE
+  DEFAULT_IDENTIFIER: TEXT
+  DEFAULT_REASSIGNED_LOCAL_VARIABLE: DEFAULT_LOCAL_VARIABLE
+  DEFAULT_REASSIGNED_PARAMETER: DEFAULT_PARAMETER
   DEFAULT_STATIC_METHOD: DEFAULT_FUNCTION_DECLARATION
+  DEFAULT_TEMPLATE_LANGUAGE_COLOR: TEXT
   JAVA_KEYWORD: DEFAULT_KEYWORD
-  JS.INSTANCE_MEMBER_FUNCTION: DEFAULT_KEYWORD
-  JS.KEYWORD: DEFAULT_KEYWORD
-  JS.PARAMETER: DEFAULT_PARAMETER
+  JAVA_VALID_STRING_ESCAPE: DEFAULT_VALID_STRING_ESCAPE
   KOTLIN_ANNOTATION: ANNOTATION_NAME_ATTRIBUTES
   XML_ATTRIBUTE_NAME: DEFAULT_ATTRIBUTE
 attributes:
@@ -38,6 +52,8 @@ attributes:
     foreground: ffd700
   ANGLE_BRACKETS_RAINBOW_COLOR4:
     foreground: da70d6
+  ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES:
+    foreground: d19a66
   APACHE_CONFIG.ARG_LEXEM:
     foreground: 98c379
   APACHE_CONFIG.COMMENT:
@@ -46,7 +62,18 @@ attributes:
   APACHE_CONFIG.IDENTIFIER:
     foreground: c679dd
   BAD_CHARACTER:
-    background: 6e3b3b
+    background: 9b3636
+  BOOKMARKS_ATTRIBUTES: {}
+  BREADCRUMBS_CURRENT:
+    foreground: abb2bf
+    background: 353a46
+  BREADCRUMBS_DEFAULT:
+    foreground: abb2bf
+  BREADCRUMBS_HOVERED:
+    foreground: abb2bf
+    background: 444b5a
+  BREADCRUMBS_INACTIVE:
+    foreground: abb2bf
   BREAKPOINT_ATTRIBUTES:
     background: 743d3d
   BUILDOUT.KEY:
@@ -186,6 +213,8 @@ attributes:
     bold: always
   CONSOLE_YELLOW_OUTPUT:
     foreground: d19a66
+  CONSTRUCTOR_CALL_ATTRIBUTES:
+    foreground: e5c07b
   CSS.COLON:
     foreground: '828997'
   CSS.COLOR:
@@ -221,43 +250,37 @@ attributes:
     foreground: d39a63
   CSS.URL:
     foreground: abb2bf
-  CUSTOM_INVALID_STRING_ESCAPE_ATTRIBUTES:
-    foreground: 68e868
-    background: '481515'
-  CUSTOM_KEYWORD1_ATTRIBUTES:
-    foreground: e3e3ff
+  CTRL_CLICKABLE:
+    foreground: 61afef
+    effect_color: 61afef
+    underscored: always
   CUSTOM_KEYWORD2_ATTRIBUTES:
     foreground: fda5ff
   CUSTOM_KEYWORD3_ATTRIBUTES:
     foreground: 71d7d7
   CUSTOM_KEYWORD4_ATTRIBUTES:
     foreground: ffc2c2
-  CUSTOM_LINE_COMMENT_ATTRIBUTES:
-    foreground: 59626f
-    italic: theme
-  CUSTOM_NUMBER_ATTRIBUTES:
-    foreground: d2945d
-  CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES:
-    foreground: 57b6c2
   DEFAULT_ATTRIBUTE:
     foreground: d19a66
   DEFAULT_BLOCK_COMMENT:
     foreground: 5c6370
     italic: theme
   DEFAULT_CLASS_NAME:
-    foreground: ffc66d
+    foreground: e5c07b
+  DEFAULT_COMMA: {}
+  DEFAULT_CONSTANT:
+    foreground: 56b6c2
   DEFAULT_DOC_COMMENT:
     foreground: 5c6370
     italic: theme
   DEFAULT_DOC_COMMENT_TAG:
     foreground: c678dd
-    bold: always
-    italic: theme
-    underscored: always
   DEFAULT_DOC_COMMENT_TAG_VALUE:
     foreground: d19a66
   DEFAULT_ENTITY:
     foreground: e06c75
+  DEFAULT_FUNCTION_CALL:
+    foreground: 61afef
   DEFAULT_FUNCTION_DECLARATION:
     foreground: 61afef
   DEFAULT_INSTANCE_FIELD:
@@ -266,7 +289,7 @@ attributes:
     foreground: ffc66d
   DEFAULT_INVALID_STRING_ESCAPE:
     foreground: 56b6c2
-    effect_color: ff0000
+    effect_color: f44747
     underwaved: always
   DEFAULT_KEYWORD:
     foreground: c678dd
@@ -277,17 +300,21 @@ attributes:
   DEFAULT_METADATA:
     foreground: e5c07b
     italic: theme
+  DEFAULT_NUMBER:
+    foreground: d19a66
   DEFAULT_PARAMETER:
     foreground: d19a66
+  DEFAULT_SEMICOLON: {}
   DEFAULT_STATIC_FIELD:
     foreground: e06c75
-    italic: theme
   DEFAULT_STRING:
     foreground: 98c379
   DEFAULT_VALID_STRING_ESCAPE:
     foreground: 56b6c2
+  DELETED_TEXT_ATTRIBUTES:
+    background: '692424'
   DEPRECATED_ATTRIBUTES:
-    effect_color: c0c0c0
+    effect_color: abb2bf
     strikeout: always
   DIFF_CONFLICT:
     background: 763f34
@@ -316,13 +343,12 @@ attributes:
     foreground: 98c379
   DJANGO_TAG_NAME:
     foreground: c676df
-  DUPLICATE_FROM_SERVER:
-    background: 30322b
+  DUPLICATE_FROM_SERVER: {}
   ENUM_CONST:
     foreground: 98c379
   ERRORS_ATTRIBUTES:
-    effect_color: ff6767
-    error_stripe_color: cf5b56
+    effect_color: f44747
+    error_stripe_color: f44747
     underwaved: always
   EXECUTIONPOINT_ATTRIBUTES:
     foreground: '101'
@@ -331,16 +357,16 @@ attributes:
     foreground: df6a73
     bold: always
   FOLDED_TEXT_ATTRIBUTES:
-    foreground: 8c8c8c
-    background: 3a3a3a
+    foreground: 878e9b
+    background: '313741'
     underwaved: always
   FOLLOWED_HYPERLINK_ATTRIBUTES:
     foreground: c678dd
     effect_color: c678dd
     underscored: always
   GENERIC_SERVER_ERROR_OR_WARNING:
-    effect_color: aa4e00
-    error_stripe_color: f49810
+    effect_color: ff8c00
+    error_stripe_color: ff8c00
     underwaved: always
   GHERKIN_COMMENT:
     foreground: 59626f
@@ -459,51 +485,34 @@ attributes:
     effect_color: c678dd
     underscored: always
   IDENTIFIER_UNDER_CARET_ATTRIBUTES:
-    background: 3c3c57
-    error_stripe_color: ccccff
-  IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES:
-    foreground: fda5ff
+    background: 484e5b
+  IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES: {}
+  INACTIVE_HYPERLINK_ATTRIBUTES:
+    effect_color: abb2bf
+    underscored: always
   INFO_ATTRIBUTES:
-    effect_color: '333434'
-    error_stripe_color: ffffcc
+    effect_color: e5c07b
+    error_stripe_color: e5c07b
     underwaved: always
-  INJECTED_LANGUAGE_FRAGMENT:
-    background: '273627'
+  INJECTED_LANGUAGE_FRAGMENT: {}
+  INLINE_PARAMETER_HINT:
+    foreground: abb2bf
+    background: 5c6370
+  INLINE_PARAMETER_HINT_CURRENT:
+    foreground: abb2bf
+    background: 48709b
+  INLINE_PARAMETER_HINT_HIGHLIGHTED:
+    foreground: abb2bf
+    background: '414855'
   IVAR:
     foreground: df6a73
-  JAVA_BLOCK_COMMENT:
-    foreground: 59626f
-    italic: theme
-  JAVA_DOC_COMMENT:
-    foreground: 59626f
-    italic: theme
-  JAVA_DOC_MARKUP:
-    background: 223f22
-  JAVA_DOC_TAG:
-    bold: always
-    effect_color: 80807f
-    underscored: always
-  JAVA_LINE_COMMENT:
-    foreground: 59626f
-    italic: theme
-  JAVA_NUMBER:
-    foreground: d2945d
-  JAVA_OPERATION_SIGN:
-    foreground: a6b2c0
   JAVA_STRING:
     foreground: 98c379
-  JAVA_VALID_STRING_ESCAPE:
-    foreground: 57b6c2
   JS.ATTRIBUTE:
     background: '423535'
   JS.BADCHARACTER:
     background: 6e3b3b
   JS.BLOCK_COMEMNT:
-    foreground: 59626f
-    italic: theme
-  JS.BLOCK_COMMENT:
-    foreground: 5b6370
-  JS.DOC_COMMENT:
     foreground: 59626f
     italic: theme
   JS.DOC_MARKUP:
@@ -520,9 +529,6 @@ attributes:
   JS.INVALID_STRING_ESCAPE:
     foreground: 68e868
     background: '481515'
-  JS.LINE_COMMENT:
-    foreground: 59626f
-    italic: theme
   JS.LOCAL_VARIABLE:
     foreground: abb2bf
   JS.NUMBER:
@@ -557,6 +563,8 @@ attributes:
     foreground: c678dd
   LESS_VARIABLE:
     foreground: df6a73
+  LIVE_TEMPLATE_ATTRIBUTES:
+    effect_color: f44747
   LOCALE.LINE_COMMENT:
     foreground: 59626f
     italic: theme
@@ -576,13 +584,15 @@ attributes:
     foreground: e5c07b
   MACRONAME:
     foreground: 61afef
+  MARKED_FOR_REMOVAL_ATTRIBUTES:
+    effect_color: f44747
+    strikeout: always
   MATCHED_BRACE_ATTRIBUTES:
-    background: 3b514d
-    bold: always
+    background: 515a6b
   MESSAGE_ARGUMENT:
     foreground: 61afef
   NOT_USED_ELEMENT_ATTRIBUTES:
-    foreground: 80807f
+    foreground: 7d8491
   OC_FORMAT_TOKEN:
     foreground: 98c379
   OC.BLOCK_COMMENT:
@@ -822,6 +832,10 @@ attributes:
     foreground: 56b6c2
   RUBY_WORDS:
     foreground: 98c379
+  RUNTIME_ERROR:
+    effect_color: ff8c00
+    error_stripe_color: f44747
+    dotted-line: always
   SASS_COMMENT:
     foreground: 59626f
     italic: theme
@@ -854,7 +868,8 @@ attributes:
   SASS_VARIABLE:
     foreground: df6a73
   SEARCH_RESULT_ATTRIBUTES:
-    background: 4f4f82
+    background: 42557b
+    effect_color: 457dff
   SLIM_BAD_CHARACTER:
     foreground: 272b33
     background: f2777a
@@ -926,19 +941,24 @@ attributes:
     foreground: da70d6
   SQUIGGLY_BRACKETS_RAINBOW_COLOR2:
     foreground: 87cefa
+  STATIC_METHOD_ATTRIBUTES:
+    foreground: e5c07b
+  STATIC_METHOD_IMPORTED_ATTRIBUTES:
+    foreground: 61afef
   TAG_ATTR_KEY:
     foreground: d2945d
+  TEMPLATE_VARIABLE_ATTRIBUTES:
+    foreground: d19a66
   TEXT:
     foreground: abb2bf
     background: 282c34
   TEXT_SEARCH_RESULT_ATTRIBUTES:
-    background: 5f5f00
-    error_stripe_color: ff00
+    background: 42557b
+    effect_color: 457dff
+    error_stripe_color: 457dff
   TODO_DEFAULT_ATTRIBUTES:
-    foreground: c7c7ff
-    bold: always
+    foreground: ff8c00
     italic: theme
-    error_stripe_color: ff
   TS.CLASS:
     foreground: e5c07b
   TS.GLOBAL_FUNCTION:
@@ -974,18 +994,24 @@ attributes:
     foreground: 98c379
   TYPEDEF:
     foreground: c679dd
+  TYPE_PARAMETER_NAME_ATTRIBUTES:
+    foreground: e5c07b
+  TYPO:
+    effect_color: 98c379
+    underwaved: always
   UNMATCHED_BRACE_ATTRIBUTES:
     background: '583535'
   WARNING_ATTRIBUTES:
-    background: 4a3f10
-    effect_color: a6b2c0
-    error_stripe_color: ebc700
-    underscored: always
+    effect_color: ff8c00
+    error_stripe_color: ff8c00
+    underwaved: always
   WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES:
-    background: 472c47
-    error_stripe_color: ffcdff
+    background: 484e5b
   WRITE_SEARCH_RESULT_ATTRIBUTES:
-    background: '623062'
+    background: 42557b
+    effect_color: 457dff
+  WRONG_REFERENCES_ATTRIBUTES:
+    foreground: f44747
   XML_ATTRIBUTE_VALUE:
     foreground: 98c379
   XML_COMMENT:

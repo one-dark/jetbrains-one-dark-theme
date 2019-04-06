@@ -3,7 +3,8 @@ import re
 import shutil
 import yaml
 import xml.etree.cElementTree as ET
-import xml.etree.ElementTree as ElementTree
+from xml.etree import ElementTree
+from xml.etree.ElementTree import Element
 
 SOURCE_DIR = os.path.join(os.path.dirname(__file__), 'config')
 DEST_DIR = os.path.join(
@@ -17,97 +18,107 @@ DEST_DIR = os.path.join(
 FILE_NAME = 'OneDark'
 
 
-def read_yaml(name: str) -> object:
-    with open(os.path.join(SOURCE_DIR, '%s.yaml' % name), 'r') as input_file:
-        return yaml.load(input_file, Loader=yaml.FullLoader)
+class Builder:
+    def __init__(self, italic: bool, filename: str):
+        self.italic = italic
+        self.filename = filename
 
+    def run(self) -> None:
+        self.yaml = self.build_yaml()
+        self.xml = self.build_xml()
+        self.write_file()
 
-def should_add_option(condition: str, italic: bool) -> bool:
-    return condition == 'always' or (
-        condition == 'theme' and italic is True
-    )
+    def read_yaml(self, filename: str) -> object:
+        path = os.path.join(SOURCE_DIR, '%s.yaml' % filename)
 
+        with open(path, 'r') as input_file:
+            return yaml.load(input_file, Loader=yaml.FullLoader)
 
-def build_yaml(italic: bool) -> dict:
-    colors = read_yaml('colors')
-    ide = read_yaml('ide')
-    theme = read_yaml('theme')
-
-    # Get a map of the ide options that points the option name
-    #   to what type of style it is (i.e. font-type)
-    ide_map = {
-        option: style
-        for style, options in ide.items()
-        for option, _ in options.items()
-    }
-
-    for attribute, options in list(theme['attributes'].items()):
-        for option, condition in list(options.items()):
-            if option in ide_map:
-                # Remove the original option
-                del theme['attributes'][attribute][option]
-
-                # Add the actual JetBrains option if it applies to this theme
-                if should_add_option(condition, italic):
-                    key = ide_map[option]
-                    value = ide[key][option]
-
-                    theme['attributes'][attribute][key] = value
-    return theme
-
-
-def transform(text: str) -> str:
-    return text.replace('-', '_').upper()
-
-
-def build_xml(theme: dict, italic: bool) -> ElementTree:
-    scheme = ET.Element('scheme')
-    scheme.attrib['name'] = '%s italic' % theme['name'] if italic else theme['name']
-    scheme.attrib['parent_scheme'] = theme['parent-scheme']
-    scheme.attrib['version'] = '142'
-
-    colors = ET.SubElement(scheme, 'colors')
-    for name, value in theme['colors'].items():
-        ET.SubElement(colors, 'option', name=name, value=value)
-
-    attributes = ET.SubElement(scheme, 'attributes')
-
-    for attribute, base_attribute in theme['inheriting-attributes'].items():
-        ET.SubElement(
-            attributes,
-            'option',
-            name=attribute,
-            baseAttributes=base_attribute
+    def should_add_option(self, condition: str) -> bool:
+        return condition == 'always' or (
+            condition == 'theme' and self.italic is True
         )
 
-    for name, styles in theme['attributes'].items():
-        option = ET.SubElement(attributes, 'option', name=name)
-        value = ET.SubElement(option, 'value')
+    def build_yaml(self) -> dict:
+        colors = self.read_yaml('colors')
+        ide = self.read_yaml('ide')
+        theme = self.read_yaml('theme')
 
-        for style_name, style_value in styles.items():
+        # Get a map of the ide options that points the option name
+        #   to what type of style it is (i.e. font-type)
+        ide_map = {
+            option: style
+            for style, options in ide.items()
+            for option, _ in options.items()
+        }
+
+        for attribute, options in list(theme['attributes'].items()):
+            for option, condition in list(options.items()):
+                if option in ide_map:
+                    # Remove the original option
+                    del theme['attributes'][attribute][option]
+
+                    # Add the actual JetBrains option if it applies to this theme
+                    if self.should_add_option(condition):
+                        key = ide_map[option]
+                        value = ide[key][option]
+
+                        theme['attributes'][attribute][key] = value
+        return theme
+
+    def transform(self, text: str) -> str:
+        return text.replace('-', '_').upper()
+
+    def build_xml(self) -> ElementTree:
+        scheme = ET.Element('scheme')
+
+        scheme.attrib['name'] = '%s italic' % self.yaml['name'] \
+            if self.italic \
+            else self.yaml['name']
+
+        scheme.attrib['parent_scheme'] = self.yaml['parent-scheme']
+        scheme.attrib['version'] = '142'
+
+        colors = ET.SubElement(scheme, 'colors')
+        for name, value in self.yaml['colors'].items():
+            ET.SubElement(colors, 'option', name=name, value=value)
+
+        attributes = ET.SubElement(scheme, 'attributes')
+
+        for attribute, base_attribute in self.yaml['inheriting-attributes'].items():
             ET.SubElement(
-                value,
+                attributes,
                 'option',
-                name=transform(style_name),
-                value=style_value
+                name=attribute,
+                baseAttributes=base_attribute
             )
 
-    return ET.ElementTree(scheme)
+        for name, styles in self.yaml['attributes'].items():
+            option = ET.SubElement(attributes, 'option', name=name)
+            value = ET.SubElement(option, 'value')
 
+            for style_name, style_value in styles.items():
+                ET.SubElement(
+                    value,
+                    'option',
+                    name=self.transform(style_name),
+                    value=style_value
+                )
 
-def write_file(tree: ElementTree, name: str) -> None:
-    tree.write(os.path.join(DEST_DIR, name))
+        attributes[:] = sorted(attributes, key=lambda e: e.get('name'))
+
+        return ET.ElementTree(scheme)
+
+    def write_file(self) -> None:
+        self.xml.write(os.path.join(DEST_DIR, self.filename))
 
 
 def main():
     if not os.path.exists(DEST_DIR):
         os.makedirs(DEST_DIR)
 
-    theme_xml = build_xml(build_yaml(italic=False), italic=False)
-    italic_xml = build_xml(build_yaml(italic=True), italic=True)
-
-    write_file(theme_xml, '%s.xml' % FILE_NAME)
-    write_file(italic_xml, '%sItalic.xml' % FILE_NAME)
+    Builder(False, '%s.xml' % FILE_NAME).run()
+    Builder(True, '%sItalic.xml' % FILE_NAME).run()
 
 
 if __name__ == '__main__':

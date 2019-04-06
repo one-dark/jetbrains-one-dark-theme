@@ -30,6 +30,7 @@ hs_err_pid*
 # Generated files and folders
 build/
 src/main/resources/colorSchemes/
+*.icls
 
 # Gradle
 .gradle/
