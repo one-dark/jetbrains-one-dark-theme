@@ -2,26 +2,25 @@ plugins {
     id 'org.jetbrains.intellij' version '0.4.7'
 }
 
-ext {
-    pluginVersion = '2019.1'
-}
-
 group 'com.markskelton'
 version System.getenv('GIT_TAG')
-println System.getenv('GIT_TAG')
 
 repositories {
     mavenCentral()
 }
 
 intellij {
-    version pluginVersion
+    version '2019.1'
 }
 
 patchPluginXml {
-    sinceBuild pluginVersion
-    // TODO: add change notes
-    // changeNotes
+    sinceBuild '191'
+
+    def changelogPath = "$projectDir/build/CHANGELOG.html"
+
+    if (file(changelogPath).exists()) {
+        changeNotes file(changelogPath).text
+    }
 }
 
 def getSecret = { String prop, String env ->
