@@ -28,7 +28,8 @@ class Builder:
         self.xml = self.build_xml()
         self.write_file()
 
-    def read_yaml(self, filename: str) -> object:
+    @staticmethod
+    def read_yaml(filename: str) -> object:
         path = os.path.join(SOURCE_DIR, '%s.yaml' % filename)
 
         with open(path, 'r') as input_file:
@@ -39,8 +40,15 @@ class Builder:
             condition == 'theme' and self.italic is True
         )
 
+    def get_color(self, color: str) -> str:
+        for name, value in self.colors.items():
+            if name == color:
+                return value
+
+        return color
+
     def build_yaml(self) -> dict:
-        colors = self.read_yaml('colors')
+        self.colors = self.read_yaml('colors')
         ide = self.read_yaml('ide')
         theme = self.read_yaml('theme')
 
@@ -55,7 +63,10 @@ class Builder:
         for attribute, options in list(theme['attributes'].items()):
             # String-only options are the foreground color
             if isinstance(options, str):
-                theme['attributes'][attribute] = {'foreground': options}
+                theme['attributes'][attribute] = {
+                    'foreground': self.get_color(options)
+                }
+
                 continue
 
             for option, condition in list(options.items()):
@@ -69,6 +80,9 @@ class Builder:
                         value = ide[key][option]
 
                         theme['attributes'][attribute][key] = value
+                else:
+                    theme['attributes'][attribute][option] = self.get_color(condition)
+
         return theme
 
     def transform(self, text: str) -> str:
@@ -86,7 +100,7 @@ class Builder:
 
         colors = ET.SubElement(scheme, 'colors')
         for name, value in self.yaml['colors'].items():
-            ET.SubElement(colors, 'option', name=name, value=value)
+            ET.SubElement(colors, 'option', name=name, value=self.get_color(value))
 
         attributes = ET.SubElement(scheme, 'attributes')
 
