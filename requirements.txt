@@ -1,1 +1,2 @@
 PyYAML==5.1
+markdown==3.1
