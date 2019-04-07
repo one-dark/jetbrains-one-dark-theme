@@ -25,7 +25,7 @@ See the [Wiki page][13] for more screenshots.
 
 ![Italic theme](docs/screenshots/java-italic.png)
 
-[1]: https://img.shields.io/travis/com/markypython/jetbrains-one-dark-theme.svg
+[1]: https://img.shields.io/travis/com/markypython/jetbrains-one-dark-theme/master.svg
 [2]: https://travis-ci.com/markypython/jetbrains-one-dark-theme "Build status"
 [3]: https://img.shields.io/github/tag/markypython/jetbrains-one-dark-theme.svg
 [4]: https://github.com/markypython/jetbrains-one-dark-theme/releases/latest "Latest release"
