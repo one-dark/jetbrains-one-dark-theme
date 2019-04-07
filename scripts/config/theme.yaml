@@ -352,13 +352,13 @@ attributes:
   INJECTED_LANGUAGE_FRAGMENT: {}
   INLINE_PARAMETER_HINT:
     foreground: lightWhite
-    background: dark
+    background: '414855'
   INLINE_PARAMETER_HINT_CURRENT:
     foreground: lightWhite
     background: 48709b
   INLINE_PARAMETER_HINT_HIGHLIGHTED:
     foreground: lightWhite
-    background: '414855'
+    background: dark
   IVAR: df6a73
   JAVA_STRING: green
   JS.ATTRIBUTE:
@@ -418,7 +418,7 @@ attributes:
   MATCHED_BRACE_ATTRIBUTES:
     background: 515a6b
   MESSAGE_ARGUMENT: malibu
-  NOT_USED_ELEMENT_ATTRIBUTES: 7d8491
+  NOT_USED_ELEMENT_ATTRIBUTES: 7f8591
   OC_FORMAT_TOKEN: green
   OC.BLOCK_COMMENT:
     foreground: 59626f
