@@ -17,9 +17,6 @@ DEST_DIR = os.path.join(
 )
 FILE_NAME = 'OneDark'
 
-print('GIT_TAG')
-print(os.environ)
-
 
 class Builder:
     def __init__(self, italic: bool, filename: str):
