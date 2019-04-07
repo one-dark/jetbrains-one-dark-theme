@@ -11,12 +11,12 @@ colors:
   ERROR_HINT: '781732'
   FOLDED_TEXT_BORDER_COLOR: ''
   GUTTER_BACKGROUND: 282c34
-  HTML_TAG_TREE_LEVEL0: f44747
-  HTML_TAG_TREE_LEVEL1: e5c07b
-  HTML_TAG_TREE_LEVEL2: 98c379
-  HTML_TAG_TREE_LEVEL3: 56b6c2
-  HTML_TAG_TREE_LEVEL4: 61afef
-  HTML_TAG_TREE_LEVEL5: c678dd
+  HTML_TAG_TREE_LEVEL0: error
+  HTML_TAG_TREE_LEVEL1: chalky
+  HTML_TAG_TREE_LEVEL2: green
+  HTML_TAG_TREE_LEVEL3: fountainBlue
+  HTML_TAG_TREE_LEVEL4: malibu
+  HTML_TAG_TREE_LEVEL5: purple
   INDENT_GUIDE: 3b4048
   LINE_NUMBER_ON_CARET_ROW_COLOR: '737984'
   LINE_NUMBERS_COLOR: '495162'
@@ -258,7 +258,7 @@ attributes:
   DJANGO_STRING_LITERAL: green
   DJANGO_TAG_NAME: c676df
   DUPLICATE_FROM_SERVER: {}
-  EDITORCONFIG_VARIABLE: e06c75
+  EDITORCONFIG_VARIABLE: coral
   ENUM_CONST: green
   ERRORS_ATTRIBUTES:
     effect_color: error
@@ -283,7 +283,7 @@ attributes:
     error_stripe_color: ff8c00
     underwaved: always
   GHERKIN_OUTLINE_PARAMETER_SUBSTITUTION: df6a73
-  GHERKIN_PYSTRING: e06c75
+  GHERKIN_PYSTRING: coral
   GHERKIN_REGEXP_PARAMETER: green
   GHERKIN_TABLE_PIPE: {}
   GHERKIN_TAG: c679dd
@@ -344,7 +344,7 @@ attributes:
     foreground: 59626f
     italic: theme
   HTML_ENTITY_REFERENCE: d2945d
-  HTML_TAG_NAME: e06c75
+  HTML_TAG_NAME: coral
   HYPERLINK_ATTRIBUTES:
     foreground: purple
     effect_color: purple
@@ -400,14 +400,14 @@ attributes:
     bold: always
   JS.STRING: green
   JS.VALID_STRING_ESCAPE: 57b6c2
-  JSON.KEYWORD: d19a66
+  JSON.KEYWORD: whiskey
   JSON.PROPERTY_KEY: coral
   LABEL: c679dd
   LESS_ID_SELECTOR: malibu
   LESS_OPERATORS: lightWhite
   LESS_TAG_NAME: purple
   LESS_VARIABLE: df6a73
-  List/map to object conversion: 61afef
+  List/map to object conversion: malibu
   LIVE_TEMPLATE_ATTRIBUTES:
     effect_color: error
   LOCALE.LINE_COMMENT:
@@ -688,7 +688,7 @@ attributes:
     underwaved: always
   UNMATCHED_BRACE_ATTRIBUTES:
     background: '583535'
-  Unresolved reference access: f44747
+  Unresolved reference access: error
   WARNING_ATTRIBUTES:
     effect_color: ff8c00
     error_stripe_color: ff8c00
@@ -710,8 +710,8 @@ attributes:
   XML_TAG_NAME:
     foreground: coral
     bold: always
-  YAML_ANCHOR: e5c07b
-  YAML_SCALAR_KEY: e06c75
+  YAML_ANCHOR: chalky
+  YAML_SCALAR_KEY: coral
   YAML_SCALAR_LIST: green
   YAML_SCALAR_VALUE: green
   YAML_TEXT:
