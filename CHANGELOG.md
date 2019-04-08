@@ -1,5 +1,15 @@
 # Changelog
 
+#### 1.4.1
+
+- Improves syntax highlighting for the following languages:
+    - Groovy
+    - YAML
+    - EditorConfig
+    - Gerkin
+    - JSON
+    - HTML
+
 #### 1.3.6
 
 - Add changelog
