@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'com.markskelton'
-version System.getenv('GIT_TAG')
+version System.getenv('VERSION')
 
 repositories {
     mavenCentral()

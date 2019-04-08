@@ -22,7 +22,7 @@ deploy:
     on:
       tags: true
 env:
-  - GIT_TAG=${TRAVIS_TAG/v/}
+  - VERSION=${TRAVIS_TAG/v/}
 notifications:
   email:
     recipients:
