@@ -1,5 +1,13 @@
 # Changelog
 
+#### 1.5.0
+
+- Improves syntax highlighting for the following languages:
+    - JavaScript
+    - TypeScript
+    - Kotlin
+    - CSS
+
 #### 1.4.1
 
 - Improves syntax highlighting for the following languages:
