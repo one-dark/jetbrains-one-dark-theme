@@ -34,6 +34,9 @@ colors:
 inheriting-attributes:
   ANNOTATION_NAME_ATTRIBUTES: DEFAULT_METADATA
   Class: CLASS_NAME_ATTRIBUTES
+  CSS.IMPORTANT: DEFAULT_KEYWORD
+  CSS.KEYWORD: DEFAULT_KEYWORD
+  CSS.TAG_NAME: HTML_TAG_NAME
   CUSTOM_KEYWORD1_ATTRIBUTES: DEFAULT_KEYWORD
   CUSTOM_STRING_ATTRIBUTES: DEFAULT_STRING
   CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES: DEFAULT_VALID_STRING_ESCAPE
@@ -50,6 +53,9 @@ inheriting-attributes:
   JAVA_KEYWORD: DEFAULT_KEYWORD
   JAVA_VALID_STRING_ESCAPE: DEFAULT_VALID_STRING_ESCAPE
   KOTLIN_ANNOTATION: ANNOTATION_NAME_ATTRIBUTES
+  KOTLIN_LABEL: DEFAULT_LABEL
+  KOTLIN_PACKAGE_FUNCTION_CALL: DEFAULT_STATIC_METHOD
+  KOTLIN_TYPE_PARAMETER: TYPE_PARAMETER_NAME_ATTRIBUTES
   Static method access: STATIC_METHOD_ATTRIBUTES
   Static property reference ID: STATIC_FINAL_FIELD_ATTRIBUTES
   STATIC_METHOD_ATTRIBUTES: DEFAULT_STATIC_METHOD
@@ -68,7 +74,7 @@ attributes:
   APACHE_CONFIG.IDENTIFIER: c679dd
   BAD_CHARACTER:
     background: 9b3636
-  BOOKMARKS_ATTRIBUTES: {}
+  BOOKMARKS_ATTRIBUTES: null
   BREADCRUMBS_CURRENT:
     foreground: lightWhite
     background: 353a46
@@ -155,6 +161,8 @@ attributes:
     bold: always
   CONSOLE_MAGENTA_OUTPUT: purple
   CONSOLE_NORMAL_OUTPUT: lightWhite
+  CONSOLE_RANGE_TO_EXECUTE:
+    effect_color: 5c6370
   CONSOLE_RED_BRIGHT_OUTPUT:
     foreground: coral
     bold: always
@@ -169,25 +177,18 @@ attributes:
     bold: always
   CONSOLE_YELLOW_OUTPUT: whiskey
   CONSTRUCTOR_CALL_ATTRIBUTES: chalky
-  CSS.COLON: '828997'
-  CSS.COLOR: 50b6c3
-  CSS.COMMENT:
-    foreground: 59626f
-    italic: theme
-  CSS.FUNCTION: 57b6c2
-  CSS.HASH: 50b6c3
+  CSS.COLOR: 56b6c2
+  CSS.FUNCTION: 61afef
+  CSS.HASH: 61afef
   CSS.IDENT: d39a63
-  CSS.IMPORTANT: c676df
-  CSS.KEYWORD: purple
-  CSS.NUMBER: d2945d
-  CSS.OPERATORS: c676df
   CSS.PROPERTY_NAME: lightWhite
-  CSS.PROPERTY_VALUE: d39a63
-  CSS.PSEUDO: d39a63
-  CSS.STRING: green
-  CSS.TAG_NAME: df6a73
-  CSS.UNICODE.RANGE: d39a63
-  CSS.URL: lightWhite
+  CSS.PROPERTY_VALUE: d19a66
+  CSS.PSEUDO: 61afef
+  CSS.URL:
+    foreground: d19a66
+    effect_color: d19a66
+    italic: theme
+    underscored: always
   CTRL_CLICKABLE:
     foreground: malibu
     effect_color: malibu
@@ -200,7 +201,7 @@ attributes:
     foreground: dark
     italic: theme
   DEFAULT_CLASS_NAME: chalky
-  DEFAULT_COMMA: {}
+  DEFAULT_COMMA: null
   DEFAULT_CONSTANT: fountainBlue
   DEFAULT_DOC_COMMENT:
     foreground: dark
@@ -211,7 +212,7 @@ attributes:
   DEFAULT_FUNCTION_CALL: malibu
   DEFAULT_FUNCTION_DECLARATION: malibu
   DEFAULT_INSTANCE_FIELD: coral
-  DEFAULT_INTERFACE_NAME: ffc66d
+  DEFAULT_INTERFACE_NAME: e5c07b
   DEFAULT_INVALID_STRING_ESCAPE:
     foreground: fountainBlue
     effect_color: error
@@ -227,7 +228,7 @@ attributes:
     italic: theme
   DEFAULT_NUMBER: whiskey
   DEFAULT_PARAMETER: whiskey
-  DEFAULT_SEMICOLON: {}
+  DEFAULT_SEMICOLON: null
   DEFAULT_STATIC_FIELD: coral
   DEFAULT_STRING: green
   DEFAULT_VALID_STRING_ESCAPE: fountainBlue
@@ -257,7 +258,7 @@ attributes:
   DJANGO_NUMBER: d2945d
   DJANGO_STRING_LITERAL: green
   DJANGO_TAG_NAME: c676df
-  DUPLICATE_FROM_SERVER: {}
+  DUPLICATE_FROM_SERVER: null
   EDITORCONFIG_VARIABLE: coral
   ENUM_CONST: green
   ERRORS_ATTRIBUTES:
@@ -282,11 +283,9 @@ attributes:
     effect_color: ff8c00
     error_stripe_color: ff8c00
     underwaved: always
-  GHERKIN_OUTLINE_PARAMETER_SUBSTITUTION: df6a73
-  GHERKIN_PYSTRING: coral
+  GHERKIN_OUTLINE_PARAMETER_SUBSTITUTION: e06c75
   GHERKIN_REGEXP_PARAMETER: green
-  GHERKIN_TABLE_PIPE: {}
-  GHERKIN_TAG: c679dd
+  GHERKIN_TABLE_PIPE: null
   GO_BRACES: aeb6c0
   GO_BRACKET: aeb6c0
   GO_BUILTIN_CONSTANT:
@@ -337,13 +336,6 @@ attributes:
   HAML_ID: df6a73
   HAML_STRING: green
   HAML_STRING_INTERPOLATED: green
-  HAML_TAG_NAME: df6a73
-  HTML_ATTRIBUTE_NAME: d2945d
-  HTML_ATTRIBUTE_VALUE: green
-  HTML_COMMENT:
-    foreground: 59626f
-    italic: theme
-  HTML_ENTITY_REFERENCE: d2945d
   HTML_TAG_NAME: coral
   HYPERLINK_ATTRIBUTES:
     foreground: purple
@@ -351,7 +343,7 @@ attributes:
     underscored: always
   IDENTIFIER_UNDER_CARET_ATTRIBUTES:
     background: 484e5b
-  IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES: {}
+  IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES: null
   INACTIVE_HYPERLINK_ATTRIBUTES:
     effect_color: lightWhite
     underscored: always
@@ -359,7 +351,7 @@ attributes:
     effect_color: chalky
     error_stripe_color: chalky
     underwaved: always
-  INJECTED_LANGUAGE_FRAGMENT: {}
+  INJECTED_LANGUAGE_FRAGMENT: null
   INLINE_PARAMETER_HINT:
     foreground: lightWhite
     background: '414855'
@@ -373,35 +365,29 @@ attributes:
   JAVA_STRING: green
   JS.ATTRIBUTE:
     background: '423535'
-  JS.BADCHARACTER:
-    background: 6e3b3b
-  JS.BLOCK_COMEMNT:
-    foreground: 59626f
-    italic: theme
-  JS.DOC_MARKUP:
-    background: 223f22
-  JS.DOC_TAG:
-    foreground: c676df
-    bold: always
-  JS.GLOBAL_FUNCTION: 5aaef1
-  JS.GLOBAL_VARIABLE: lightWhite
-  JS.INSTANCE_MEMBER_VARIABLE: lightWhite
-  JS.INVALID_STRING_ESCAPE:
-    foreground: 68e868
-    background: '481515'
-  JS.LOCAL_VARIABLE: lightWhite
-  JS.NUMBER: d2945d
-  JS.OPERATION_SIGN: a6b2c0
-  JS.REGEXP: 57b6c2
-  JS.STATIC_MEMBER_FUNCTION:
-    italic: theme
+  JS.MODULE_NAME: e5c07b
+  JS.REGEXP: 56b6c2
+  JSON.KEYWORD: d19a66
+  JSON.PROPERTY_KEY: e06c75
   JS.STATIC_MEMBER_VARIABLE:
     foreground: fda5ff
     bold: always
-  JS.STRING: green
-  JS.VALID_STRING_ESCAPE: 57b6c2
-  JSON.KEYWORD: whiskey
-  JSON.PROPERTY_KEY: coral
+  KOTLIN_BACKING_FIELD_VARIABLE: null
+  KOTLIN_CLOSURE_DEFAULT_PARAMETER: null
+  KOTLIN_DYNAMIC_FUNCTION_CALL:
+    foreground: 61afef
+    italic: always
+  KOTLIN_DYNAMIC_PROPERTY_CALL:
+    foreground: e06c75
+    italic: always
+  KOTLIN_MUTABLE_VARIABLE:
+    italic: always
+  KOTLIN_NAMED_ARGUMENT: d19a66
+  KOTLIN_SMART_CAST_RECEIVER: null
+  KOTLIN_SMART_CAST_VALUE: null
+  KOTLIN_SMART_CONSTANT: null
+  KOTLIN_VARIABLE_AS_FUNCTION: 61afef
+  KOTLIN_VARIABLE_AS_FUNCTION_LIKE: 61afef
   LABEL: c679dd
   LESS_ID_SELECTOR: malibu
   LESS_OPERATORS: lightWhite
@@ -647,7 +633,6 @@ attributes:
   SQUIGGLY_BRACKETS_RAINBOW_COLOR0: ffd700
   SQUIGGLY_BRACKETS_RAINBOW_COLOR1: da70d6
   SQUIGGLY_BRACKETS_RAINBOW_COLOR2: 87cefa
-  STATIC_METHOD_ATTRIBUTES: chalky
   STATIC_METHOD_IMPORTED_ATTRIBUTES: malibu
   TAG_ATTR_KEY: d2945d
   TEMPLATE_VARIABLE_ATTRIBUTES: whiskey
@@ -661,15 +646,8 @@ attributes:
   TODO_DEFAULT_ATTRIBUTES:
     foreground: ff8c00
     italic: theme
-  TS.CLASS: chalky
-  TS.GLOBAL_FUNCTION: fountainBlue
-  TS.INSTANCE_MEMBER_FUNCTION: malibu
-  TS.INSTANCE_MEMBER_VARIABLE: coral
-  TS.INTERFACE: chalky
-  TS.KEYWORD: purple
   TS.MODULE_NAME: chalky
-  TS.STATIC_MEMBER_FUNCTION: malibu
-  TS.STATIC_MEMBER_VARIABLE: coral
+  TS.TYPE_PARAMETER: e5c07b
   TWIG_BACKGROUND:
     background: 2a2d32
   TWIG_BAD_CHARACTER:
