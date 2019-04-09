@@ -74,7 +74,7 @@ attributes:
   APACHE_CONFIG.IDENTIFIER: c679dd
   BAD_CHARACTER:
     background: 9b3636
-  BOOKMARKS_ATTRIBUTES: null
+  BOOKMARKS_ATTRIBUTES: {}
   BREADCRUMBS_CURRENT:
     foreground: lightWhite
     background: 353a46
@@ -201,7 +201,7 @@ attributes:
     foreground: dark
     italic: theme
   DEFAULT_CLASS_NAME: chalky
-  DEFAULT_COMMA: null
+  DEFAULT_COMMA: {}
   DEFAULT_CONSTANT: fountainBlue
   DEFAULT_DOC_COMMENT:
     foreground: dark
@@ -228,7 +228,7 @@ attributes:
     italic: theme
   DEFAULT_NUMBER: whiskey
   DEFAULT_PARAMETER: whiskey
-  DEFAULT_SEMICOLON: null
+  DEFAULT_SEMICOLON: {}
   DEFAULT_STATIC_FIELD: coral
   DEFAULT_STRING: green
   DEFAULT_VALID_STRING_ESCAPE: fountainBlue
@@ -258,7 +258,7 @@ attributes:
   DJANGO_NUMBER: d2945d
   DJANGO_STRING_LITERAL: green
   DJANGO_TAG_NAME: c676df
-  DUPLICATE_FROM_SERVER: null
+  DUPLICATE_FROM_SERVER: {}
   EDITORCONFIG_VARIABLE: coral
   ENUM_CONST: green
   ERRORS_ATTRIBUTES:
@@ -285,7 +285,7 @@ attributes:
     underwaved: always
   GHERKIN_OUTLINE_PARAMETER_SUBSTITUTION: e06c75
   GHERKIN_REGEXP_PARAMETER: green
-  GHERKIN_TABLE_PIPE: null
+  GHERKIN_TABLE_PIPE: {}
   GO_BRACES: aeb6c0
   GO_BRACKET: aeb6c0
   GO_BUILTIN_CONSTANT:
@@ -343,7 +343,7 @@ attributes:
     underscored: always
   IDENTIFIER_UNDER_CARET_ATTRIBUTES:
     background: 484e5b
-  IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES: null
+  IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES: {}
   INACTIVE_HYPERLINK_ATTRIBUTES:
     effect_color: lightWhite
     underscored: always
@@ -351,7 +351,7 @@ attributes:
     effect_color: chalky
     error_stripe_color: chalky
     underwaved: always
-  INJECTED_LANGUAGE_FRAGMENT: null
+  INJECTED_LANGUAGE_FRAGMENT: {}
   INLINE_PARAMETER_HINT:
     foreground: lightWhite
     background: '414855'
@@ -372,8 +372,8 @@ attributes:
   JS.STATIC_MEMBER_VARIABLE:
     foreground: fda5ff
     bold: always
-  KOTLIN_BACKING_FIELD_VARIABLE: null
-  KOTLIN_CLOSURE_DEFAULT_PARAMETER: null
+  KOTLIN_BACKING_FIELD_VARIABLE: {}
+  KOTLIN_CLOSURE_DEFAULT_PARAMETER: {}
   KOTLIN_DYNAMIC_FUNCTION_CALL:
     foreground: 61afef
     italic: always
@@ -383,9 +383,9 @@ attributes:
   KOTLIN_MUTABLE_VARIABLE:
     italic: always
   KOTLIN_NAMED_ARGUMENT: d19a66
-  KOTLIN_SMART_CAST_RECEIVER: null
-  KOTLIN_SMART_CAST_VALUE: null
-  KOTLIN_SMART_CONSTANT: null
+  KOTLIN_SMART_CAST_RECEIVER: {}
+  KOTLIN_SMART_CAST_VALUE: {}
+  KOTLIN_SMART_CONSTANT: {}
   KOTLIN_VARIABLE_AS_FUNCTION: 61afef
   KOTLIN_VARIABLE_AS_FUNCTION_LIKE: 61afef
   LABEL: c679dd
