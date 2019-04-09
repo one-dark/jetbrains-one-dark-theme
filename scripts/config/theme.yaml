@@ -161,8 +161,6 @@ attributes:
     bold: always
   CONSOLE_MAGENTA_OUTPUT: purple
   CONSOLE_NORMAL_OUTPUT: lightWhite
-  CONSOLE_RANGE_TO_EXECUTE:
-    effect_color: 5c6370
   CONSOLE_RED_BRIGHT_OUTPUT:
     foreground: coral
     bold: always
@@ -369,9 +367,6 @@ attributes:
   JS.REGEXP: 56b6c2
   JSON.KEYWORD: d19a66
   JSON.PROPERTY_KEY: e06c75
-  JS.STATIC_MEMBER_VARIABLE:
-    foreground: fda5ff
-    bold: always
   KOTLIN_BACKING_FIELD_VARIABLE: {}
   KOTLIN_CLOSURE_DEFAULT_PARAMETER: {}
   KOTLIN_DYNAMIC_FUNCTION_CALL:
