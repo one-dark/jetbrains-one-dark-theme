@@ -175,16 +175,16 @@ attributes:
     bold: always
   CONSOLE_YELLOW_OUTPUT: whiskey
   CONSTRUCTOR_CALL_ATTRIBUTES: chalky
-  CSS.COLOR: 56b6c2
-  CSS.FUNCTION: 61afef
-  CSS.HASH: 61afef
+  CSS.COLOR: fountainBlue
+  CSS.FUNCTION: malibu
+  CSS.HASH: malibu
   CSS.IDENT: d39a63
   CSS.PROPERTY_NAME: lightWhite
-  CSS.PROPERTY_VALUE: d19a66
-  CSS.PSEUDO: 61afef
+  CSS.PROPERTY_VALUE: whiskey
+  CSS.PSEUDO: malibu
   CSS.URL:
-    foreground: d19a66
-    effect_color: d19a66
+    foreground: whiskey
+    effect_color: whiskey
     italic: theme
     underscored: always
   CTRL_CLICKABLE:
@@ -210,7 +210,7 @@ attributes:
   DEFAULT_FUNCTION_CALL: malibu
   DEFAULT_FUNCTION_DECLARATION: malibu
   DEFAULT_INSTANCE_FIELD: coral
-  DEFAULT_INTERFACE_NAME: e5c07b
+  DEFAULT_INTERFACE_NAME: chalky
   DEFAULT_INVALID_STRING_ESCAPE:
     foreground: fountainBlue
     effect_color: error
@@ -281,7 +281,7 @@ attributes:
     effect_color: ff8c00
     error_stripe_color: ff8c00
     underwaved: always
-  GHERKIN_OUTLINE_PARAMETER_SUBSTITUTION: e06c75
+  GHERKIN_OUTLINE_PARAMETER_SUBSTITUTION: coral
   GHERKIN_REGEXP_PARAMETER: green
   GHERKIN_TABLE_PIPE: {}
   GO_BRACES: aeb6c0
@@ -363,26 +363,26 @@ attributes:
   JAVA_STRING: green
   JS.ATTRIBUTE:
     background: '423535'
-  JS.MODULE_NAME: e5c07b
-  JS.REGEXP: 56b6c2
-  JSON.KEYWORD: d19a66
-  JSON.PROPERTY_KEY: e06c75
+  JS.MODULE_NAME: chalky
+  JS.REGEXP: fountainBlue
+  JSON.KEYWORD: whiskey
+  JSON.PROPERTY_KEY: coral
   KOTLIN_BACKING_FIELD_VARIABLE: {}
   KOTLIN_CLOSURE_DEFAULT_PARAMETER: {}
   KOTLIN_DYNAMIC_FUNCTION_CALL:
-    foreground: 61afef
+    foreground: malibu
     italic: always
   KOTLIN_DYNAMIC_PROPERTY_CALL:
-    foreground: e06c75
+    foreground: coral
     italic: always
   KOTLIN_MUTABLE_VARIABLE:
     italic: always
-  KOTLIN_NAMED_ARGUMENT: d19a66
+  KOTLIN_NAMED_ARGUMENT: whiskey
   KOTLIN_SMART_CAST_RECEIVER: {}
   KOTLIN_SMART_CAST_VALUE: {}
   KOTLIN_SMART_CONSTANT: {}
-  KOTLIN_VARIABLE_AS_FUNCTION: 61afef
-  KOTLIN_VARIABLE_AS_FUNCTION_LIKE: 61afef
+  KOTLIN_VARIABLE_AS_FUNCTION: malibu
+  KOTLIN_VARIABLE_AS_FUNCTION_LIKE: malibu
   LABEL: c679dd
   LESS_ID_SELECTOR: malibu
   LESS_OPERATORS: lightWhite
@@ -642,7 +642,7 @@ attributes:
     foreground: ff8c00
     italic: theme
   TS.MODULE_NAME: chalky
-  TS.TYPE_PARAMETER: e5c07b
+  TS.TYPE_PARAMETER: chalky
   TWIG_BACKGROUND:
     background: 2a2d32
   TWIG_BAD_CHARACTER:
