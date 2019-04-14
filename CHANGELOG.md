@@ -1,5 +1,15 @@
 # Changelog
 
+#### 1.6.0
+
+- Improves syntax highlighting for the following languages:
+    - Markdown
+    - Properties
+    - Angular
+    - XML
+    - Database
+    - Regex
+
 #### 1.5.0
 
 - Improves syntax highlighting for the following languages:
