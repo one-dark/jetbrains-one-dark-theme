@@ -1,5 +1,14 @@
 # Changelog
 
+#### 1.7.1
+
+- Improves syntax highlighting for the following languages:
+    - JSP
+    - Sass
+    - OSGi Manifest
+    - XPath
+    - Less
+
 #### 1.6.0
 
 - Improves syntax highlighting for the following languages:
