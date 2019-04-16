@@ -3,7 +3,7 @@
 [![Build status][1]][2]
 [![GitHub tag][3]][4]
 [![JetBrains plugin version][5]][6]
-[![JetBrains plugin downloads][7]][8]
+![JetBrains plugin downloads][7]
 
 [One dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs. Includes normal and italic variations.
 
@@ -32,7 +32,6 @@ See the [Wiki page][13] for more screenshots.
 [5]: https://img.shields.io/jetbrains/plugin/v/11938-one-dark-theme.svg
 [6]: https://plugins.jetbrains.com/plugin/11938-one-dark-theme "Plugin homepage"
 [7]: https://img.shields.io/jetbrains/plugin/d/11938-one-dark-theme.svg
-[8]: https://plugins.jetbrains.com/dashboard/statistics/downloads?pluginId=11938 "Plugin downloads"
 [9]: https://github.com/markypython/jetbrains-one-dark-theme/wiki "Wiki home"
 [10]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Installation "Installation instructions"
 [11]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Configuration "Configuration instructions"
