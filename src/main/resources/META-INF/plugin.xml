@@ -13,7 +13,7 @@
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <bundledColorScheme path="colorSchemes/OneDark" />
-        <bundledColorScheme path="colorSchemes/OneDarkItalic" />
+        <themeProvider id="f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" path="/themes/one_dark.theme.json"/>
+        <themeProvider id="1a92aa6f-c2f1-4994-ae01-6a78e43eeb24" path="/themes/one_dark_italic.theme.json"/>
     </extensions>
 </idea-plugin>

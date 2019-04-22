@@ -1,3 +1,4 @@
+import json
 import os
 import re
 import shutil
@@ -13,9 +14,9 @@ DEST_DIR = os.path.join(
     'src',
     'main',
     'resources',
-    'colorSchemes'
+    'themes'
 )
-FILE_NAME = 'OneDark'
+FILE_NAME = 'one_dark'
 
 
 class Builder:
@@ -132,12 +133,28 @@ class Builder:
         self.xml.write(os.path.join(DEST_DIR, self.filename))
 
 
+def build_json():
+    input_path = os.path.join(DEST_DIR, 'one_dark.theme.json')
+    output_path = os.path.join(DEST_DIR, 'one_dark_italic.theme.json')
+
+    with open(input_path, 'r') as input_file:
+        data = json.load(input_file)
+
+    data['name'] = 'One dark italic'
+    data['editorScheme'] = '/themes/one_dark_italic.xml'
+
+    with open(output_path, 'w') as output_file:
+        json.dump(data, output_file, indent=2)
+
+
 def main():
     if not os.path.exists(DEST_DIR):
         os.makedirs(DEST_DIR)
 
     Builder(False, '%s.xml' % FILE_NAME).run()
-    Builder(True, '%sItalic.xml' % FILE_NAME).run()
+    Builder(True, '%s_italic.xml' % FILE_NAME).run()
+
+    build_json()
 
 
 if __name__ == '__main__':
