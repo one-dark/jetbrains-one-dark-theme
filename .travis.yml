@@ -7,7 +7,6 @@ install:
 script:
   - python3 scripts/build.py
   - python3 scripts/changelog.py
-  - cat ./src/main/resources/themes/one_dark_italic.theme.json
   - ./gradlew build
 deploy:
   - provider: releases
