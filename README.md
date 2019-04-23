@@ -3,7 +3,7 @@
 [![Build status][1]][2]
 [![GitHub tag][3]][4]
 [![JetBrains plugin version][5]][6]
-![JetBrains plugin downloads][7]
+[![JetBrains plugin downloads][7]][6]
 
 [One dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs. Includes normal and italic variations.
 
