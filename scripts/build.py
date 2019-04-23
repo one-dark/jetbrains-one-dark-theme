@@ -139,7 +139,7 @@ def build_json():
     output_path = os.path.join(DEST_DIR, 'one_dark_italic.theme.json')
 
     with open(input_path, 'r') as input_file:
-        data = json.load(input_file, object_pairs_hook=OrderedDict)
+        data = json.load(input_file)
 
     data['name'] = 'One dark italic'
     data['editorScheme'] = '/themes/one_dark_italic.xml'
