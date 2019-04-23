@@ -1,5 +1,9 @@
 # Changelog
 
+#### 2.0.1
+
+- Fixes an issue where the italic theme was not inheriting colors properly due to the CI server changing the order of the JSON theme definition file.
+
 #### 2.0.0
 
 - Added UI theme to make the editor and UI complement each other for the full One dark experience!
