@@ -1,5 +1,14 @@
 # Changelog
 
+#### 2.1.0
+
+- Update border colors
+- Remove Rainbow Bracket colors. These should be defined by each user if they use this plugin.
+- Update ignored file color
+- Update popup colors
+- Change unused symbol to use the default foreground and red underwaved.
+- Update screenshots
+
 #### 2.0.1
 
 - Fixes an issue where the italic theme was not inheriting colors properly due to the CI server changing the order of the JSON theme definition file.
