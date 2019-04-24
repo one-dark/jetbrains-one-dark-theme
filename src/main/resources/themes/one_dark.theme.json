@@ -24,7 +24,7 @@
 
       "errorForeground": "#cd3359",
 
-      "borderColor": "#464646",
+      "borderColor": "#46494f",
       "disabledBorderColor": "#2d3137",
       "focusColor": "#21252b",
       "focusedBorderColor": "#568AF2",
@@ -93,14 +93,14 @@
       "foreground": "#abb2bf"
     },
 
-    "DebuggerPopup.borderColor": "#464646",
+    "DebuggerPopup.borderColor": "#46494f",
 
     "DebuggerTabs.selectedBackground": "#323844",
 
     "DragAndDrop": {
       "areaForeground": "#abb2bf",
       "areaBackground": "#323844",
-      "areaBorderColor": "#464646"
+      "areaBorderColor": "#46494f"
     },
 
     "Editor": {
@@ -116,7 +116,7 @@
       "selectedBackground": "#3d424b",
       "underlineColor": "#568AF2",
       "inactiveMaskColor": "#1b1d2166",
-      "borderColor": "#464646"
+      "borderColor": "#46494f"
     },
 
     "FileColor": {
@@ -135,10 +135,10 @@
       "visitedForeground": "#6494ed"
     },
 
-    "MenuBar.borderColor": "#464646",
+    "MenuBar.borderColor": "#46494f",
     "Menu.borderColor": "#2d3137",
 
-    "NavBar.borderColor": "#464646",
+    "NavBar.borderColor": "#46494f",
 
     "Notification": {
       "background": "#3d424b",
