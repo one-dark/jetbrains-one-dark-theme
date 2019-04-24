@@ -672,7 +672,10 @@ attributes:
   WRITE_SEARCH_RESULT_ATTRIBUTES:
     background: 42557b
     effect_color: 457dff
-  WRONG_REFERENCES_ATTRIBUTES: error
+  WRONG_REFERENCES_ATTRIBUTES:
+    effect_color: error
+    error_stripe_color: error
+    underwaved: always
   XML_NS_PREFIX: whiskey
   XML_TAG_NAME: coral
   XPATH.XPATH_NAME: green
