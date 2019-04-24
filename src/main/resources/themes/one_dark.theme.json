@@ -60,8 +60,8 @@
     },
 
     "Borders": {
-      "color": "#1b1d21",
-      "ContrastBorderColor": "#1b1d21"
+      "color": "#333841",
+      "ContrastBorderColor": "#333841"
     },
 
     "ComboBox": {
