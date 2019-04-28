@@ -1,4 +1,5 @@
 # JetBrains One dark theme
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Build status][1]][2]
 [![GitHub tag][3]][4]
@@ -37,3 +38,15 @@ See the [Wiki page][13] for more screenshots.
 [11]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Configuration "Configuration instructions"
 [12]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Development "Development instructions"
 [13]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Screenshots "Screenshots"
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://www.dacoto.com"><img src="https://avatars2.githubusercontent.com/u/16915053?v=4" width="100px;" alt="David Cortés"/><br /><sub><b>David Cortés</b></sub></a><br /><a href="https://github.com/markypython/jetbrains-one-dark-theme/issues?q=author%3Adacoto" title="Bug reports">🐛</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
