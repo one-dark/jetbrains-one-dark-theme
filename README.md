@@ -18,13 +18,9 @@ Check out the [Wiki][wiki] for more information and instructions or use one of t
 
 See the [Wiki page][wiki-screenshots] for more screenshots.
 
-### Normal theme
+![Editor][editor]
 
-![Normal theme](docs/screenshots/java.png)
-
-### Italic theme
-
-![Italic theme](docs/screenshots/java-italic.png)
+![Preferences][preferences]
 
 [build-status-badge]: https://img.shields.io/travis/com/markypython/jetbrains-one-dark-theme/master.svg
 [build-status]: https://travis-ci.com/markypython/jetbrains-one-dark-theme "Build status"
@@ -39,6 +35,8 @@ See the [Wiki page][wiki-screenshots] for more screenshots.
 [configuration]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Configuration "Configuration instructions"
 [development]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Development "Development instructions"
 [wiki-screenshots]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Screenshots "Screenshots"
+[editor]: https://github.com/markypython/jetbrains-one-dark-theme/raw/master/docs/screenshots/java.png "Editor"
+[preferences]: https://github.com/markypython/jetbrains-one-dark-theme/raw/master/docs/screenshots/preferences.png "Preferences"
 
 ## Contributors
 
