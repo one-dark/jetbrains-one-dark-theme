@@ -4,13 +4,15 @@ name: One dark
 parent-scheme: Darcula
 colors:
   ADDED_LINES_COLOR: green
+  ANNOTATIONS_COLOR: a0a7b4
   CARET_COLOR: 528bff
   CARET_ROW_COLOR: 2c313c
-  CONSOLE_BACKGROUND_KEY: 282c34
+  CONSOLE_BACKGROUND_KEY: ''
   DELETED_LINES_COLOR: coral
+  DIFF_SEPARATORS_BACKGROUND: 21252b
   DOCUMENTATION_COLOR: 3d424b
   ERROR_HINT: '781732'
-  FILESTATUS_IDEA_FILESTATUS_IGNORED: 6b6e73
+  FILESTATUS_IDEA_FILESTATUS_IGNORED: 4f575f
   FOLDED_TEXT_BORDER_COLOR: ''
   GUTTER_BACKGROUND: 282c34
   HTML_TAG_TREE_LEVEL0: error
@@ -33,11 +35,16 @@ colors:
   SELECTION_BACKGROUND: 3e4350
   SEPARATOR_BELOW_COLOR: ''
   TEARLINE_COLOR: 4f575f
+  VCS_ANNOTATIONS_COLOR_1: '335027'
+  VCS_ANNOTATIONS_COLOR_2: 3e443c
+  VCS_ANNOTATIONS_COLOR_5: 46333c
   VISUAL_INDENT_GUIDE: 3b4048
   WHITESPACES: 4b575f
+  WHITESPACES_MODIFIED_LINES_COLOR: dark
 inheriting-attributes:
   ANNOTATION_NAME_ATTRIBUTES: DEFAULT_METADATA
   Class: CLASS_NAME_ATTRIBUTES
+  CONSOLE_BLACK_OUTPUT: CONSOLE_NORMAL_OUTPUT
   CSS.IMPORTANT: DEFAULT_KEYWORD
   CSS.KEYWORD: DEFAULT_KEYWORD
   CSS.TAG_NAME: HTML_TAG_NAME
@@ -163,8 +170,11 @@ attributes:
     foreground: fountainBlue
     bold: always
   CONSOLE_CYAN_OUTPUT: fountainBlue
-  CONSOLE_ERROR_OUTPUT: be5046
-  CONSOLE_GRAY_OUTPUT: '828997'
+  CONSOLE_DARKGRAY_OUTPUT: 464c55
+  CONSOLE_ERROR_OUTPUT: coral
+  CONSOLE_GRAY_OUTPUT:
+    foreground: 646a73
+    error_stripe_color: 21252b
   CONSOLE_GREEN_BRIGHT_OUTPUT:
     foreground: green
     bold: always
@@ -180,15 +190,13 @@ attributes:
     foreground: coral
     bold: always
   CONSOLE_RED_OUTPUT: coral
-  CONSOLE_SYSTEM_OUTPUT: e4e4ff
-  CONSOLE_USER_INPUT:
-    foreground: 6ae96a
-    italic: theme
+  CONSOLE_SYSTEM_OUTPUT: e7f2ff
+  CONSOLE_USER_INPUT: green
   CONSOLE_WHITE_OUTPUT: lightWhite
   CONSOLE_YELLOW_BRIGHT_OUTPUT:
-    foreground: whiskey
+    foreground: chalky
     bold: always
-  CONSOLE_YELLOW_OUTPUT: whiskey
+  CONSOLE_YELLOW_OUTPUT: chalky
   CONSTRUCTOR_CALL_ATTRIBUTES: chalky
   CSS.COLOR: fountainBlue
   CSS.FUNCTION: malibu
@@ -206,9 +214,9 @@ attributes:
     foreground: malibu
     effect_color: malibu
     underscored: always
-  CUSTOM_KEYWORD2_ATTRIBUTES: fda5ff
-  CUSTOM_KEYWORD3_ATTRIBUTES: 71d7d7
-  CUSTOM_KEYWORD4_ATTRIBUTES: ffc2c2
+  CUSTOM_KEYWORD2_ATTRIBUTES: whiskey
+  CUSTOM_KEYWORD3_ATTRIBUTES: chalky
+  CUSTOM_KEYWORD4_ATTRIBUTES: malibu
   DEFAULT_ATTRIBUTE: whiskey
   DEFAULT_BLOCK_COMMENT:
     foreground: dark
@@ -251,17 +259,17 @@ attributes:
     effect_color: lightWhite
     strikeout: always
   DIFF_CONFLICT:
-    background: 763f34
-    error_stripe_color: ff6647
+    background: chalky
+    error_stripe_color: chalky
   DIFF_DELETED:
-    background: 5b5b5b
-    error_stripe_color: '747474'
+    background: 46333c
+    error_stripe_color: coral
   DIFF_INSERTED:
-    background: 2f632f
-    error_stripe_color: 99ff99
+    background: 354a3d
+    error_stripe_color: green
   DIFF_MODIFIED:
-    background: '465983'
-    error_stripe_color: 99ccff
+    background: 2c4957
+    error_stripe_color: malibu
   DJANGO_COMMENT:
     foreground: 59626f
     italic: theme
@@ -401,6 +409,9 @@ attributes:
   KOTLIN_VARIABLE_AS_FUNCTION: malibu
   KOTLIN_VARIABLE_AS_FUNCTION_LIKE: malibu
   LABEL: c679dd
+  LINE_FULL_COVERAGE: 354a3d
+  LINE_NONE_COVERAGE: 46333c
+  LINE_PARTIAL_COVERAGE: 2c4957
   List/map to object conversion: malibu
   LIVE_TEMPLATE_ATTRIBUTES:
     effect_color: error
@@ -413,6 +424,10 @@ attributes:
   LOCALE.MSGSTR_KEYWORD: c679dd
   LOCALE.MSGSTR_PLURAL_KEYWORD: c679dd
   LOCALE.STRING_LITERAL: green
+  LOG_DEBUG_OUTPUT: fountainBlue
+  LOG_ERROR_OUTPUT: coral
+  LOG_INFO_OUTPUT: green
+  LOG_VERBOSE_OUTPUT: malibu
   LOG_WARNING_OUTPUT: chalky
   MACRONAME: malibu
   MARKDOWN_BOLD:
