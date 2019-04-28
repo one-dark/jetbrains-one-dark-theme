@@ -17,9 +17,14 @@ patchPluginXml {
     sinceBuild '191'
 
     def changelogPath = "$projectDir/build/CHANGELOG.html"
+    def readmePath = "$projectDir/build/README.html"
 
     if (file(changelogPath).exists()) {
         changeNotes file(changelogPath).text
+    }
+
+    if (file(readmePath).exists()) {
+        pluginDescription file(readmePath).text
     }
 }
 
