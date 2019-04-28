@@ -1,5 +1,5 @@
 # JetBrains One dark theme
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
 [![Build status][1]][2]
 [![GitHub tag][3]][4]
@@ -45,7 +45,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://github.com/markypython"><img src="https://avatars3.githubusercontent.com/u/25914066?v=4" width="100px;" alt="Mark Skelton"/><br /><sub><b>Mark Skelton</b></sub></a><br /><a href="https://github.com/markypython/jetbrains-one-dark-theme/commits?author=markypython" title="Code">💻</a> <a href="#question-markypython" title="Answering Questions">💬</a> <a href="https://github.com/markypython/jetbrains-one-dark-theme/commits?author=markypython" title="Documentation">📖</a> <a href="#ideas-markypython" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-markypython" title="Maintenance">🚧</a></td><td align="center"><a href="https://www.dacoto.com"><img src="https://avatars2.githubusercontent.com/u/16915053?v=4" width="100px;" alt="David Cortés"/><br /><sub><b>David Cortés</b></sub></a><br /><a href="https://github.com/markypython/jetbrains-one-dark-theme/issues?q=author%3Adacoto" title="Bug reports">🐛</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/markypython"><img src="https://avatars3.githubusercontent.com/u/25914066?v=4" width="100px;" alt="Mark Skelton"/><br /><sub><b>Mark Skelton</b></sub></a><br /><a href="https://github.com/markypython/jetbrains-one-dark-theme/commits?author=markypython" title="Code">💻</a> <a href="#question-markypython" title="Answering Questions">💬</a> <a href="https://github.com/markypython/jetbrains-one-dark-theme/commits?author=markypython" title="Documentation">📖</a> <a href="#ideas-markypython" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-markypython" title="Maintenance">🚧</a></td><td align="center"><a href="https://www.dacoto.com"><img src="https://avatars2.githubusercontent.com/u/16915053?v=4" width="100px;" alt="David Cortés"/><br /><sub><b>David Cortés</b></sub></a><br /><a href="https://github.com/markypython/jetbrains-one-dark-theme/issues?q=author%3Adacoto" title="Bug reports">🐛</a></td><td align="center"><a href="http://x1unix.com"><img src="https://avatars0.githubusercontent.com/u/9203548?v=4" width="100px;" alt="Denis Sedchenko"/><br /><sub><b>Denis Sedchenko</b></sub></a><br /><a href="https://github.com/markypython/jetbrains-one-dark-theme/issues?q=author%3Ax1unix" title="Bug reports">🐛</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
