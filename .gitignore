@@ -23,8 +23,8 @@
 hs_err_pid*
 
 # Editors
-.idea/*
-!.idea/runConfigurations/
+**/.idea/*
+!**/.idea/runConfigurations/
 .vscode/
 
 # Generated files and folders
