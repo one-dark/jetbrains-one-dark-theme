@@ -1,5 +1,14 @@
 # Changelog
 
+#### 2.2.0
+
+- Update current branch background in version control log
+- Update console colors
+- Update version control gutter and annotation colors
+- Update diff and merge colors
+- Update line coverage colors
+- Update custom keyword colors
+
 #### 2.1.0
 
 - Update border colors
