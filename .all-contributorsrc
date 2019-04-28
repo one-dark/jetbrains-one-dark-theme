@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "dacoto",
+      "name": "David Cortés",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/16915053?v=4",
+      "profile": "https://www.dacoto.com",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "jetbrains-one-dark-theme",
+  "projectOwner": "markypython",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
