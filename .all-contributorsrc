@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "markypython",
+      "name": "Mark Skelton",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25914066?v=4",
+      "profile": "https://github.com/markypython",
+      "contributions": [
+        "code",
+        "question",
+        "doc",
+        "ideas",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "jetbrains-one-dark-theme",
+  "projectOwner": "markypython",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
