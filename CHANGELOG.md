@@ -1,5 +1,10 @@
 # Changelog
 
+#### 2.2.1
+
+- Update plugin description to pull from readme
+- Trim changelog to the latest three entries for the plugin listing
+
 #### 2.2.0
 
 - Update current branch background in version control log
