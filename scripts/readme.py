@@ -18,6 +18,14 @@ if __name__ == '__main__':
         # Remove build badges
         soup.find('p').decompose()
 
+        # Set image widths
+        for img in soup.find_all('img'):
+            img['width'] = '700'
+
+        # Add margin above images
+        for img in soup.find_all('img'):
+            img.insert_before(soup.new_tag('br'))
+
         # Remove contributors section
         contributors = soup.find('h2', text='Contributors')
 
