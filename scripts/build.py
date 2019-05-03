@@ -71,6 +71,7 @@ class Builder:
 
                 continue
 
+            saved_options = options.copy()
             for option, condition in list(options.items()):
                 if option in ide_map:
                     # Remove the original option
@@ -84,6 +85,13 @@ class Builder:
                         theme['attributes'][attribute][key] = value
                 else:
                     theme['attributes'][attribute][option] = self.get_color(condition)
+
+            # If an option is both bold and italic, update the config
+            if 'bold' in saved_options and \
+                    'italic' in saved_options and \
+                    self.should_add_option(saved_options['italic']):
+                bold_italic = ide['font-type']['bold-italic']
+                theme['attributes'][attribute]['font-type'] = bold_italic
 
         return theme
 
@@ -152,7 +160,7 @@ def main():
     if not os.path.exists(DEST_DIR):
         os.makedirs(DEST_DIR)
 
-    Builder(False, '%s.xml' % FILE_NAME).run()
+    # Builder(False, '%s.xml' % FILE_NAME).run()
     Builder(True, '%s_italic.xml' % FILE_NAME).run()
 
     build_json()
