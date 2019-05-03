@@ -6,6 +6,8 @@
 - Improves syntax highlighting for the following languages:
     - Python
     - Bash
+    - reStructuredText
+    - Buildout config
 
 #### 2.2.1
 
