@@ -1,5 +1,10 @@
 # Changelog
 
+#### 2.4.0
+
+- Fix bash shebang not using bold italic for italic theme
+- Improves syntax highlighting database and database diagrams
+
 #### 2.3.0
 
 - Update groovy unresolved reference color
