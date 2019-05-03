@@ -8,6 +8,6 @@ effect-type:
   underscored: '1'
   underwaved: '2'
   strikeout: '3'
-  # ?: '4'
+  bold-underscored: '4'
   dotted-line: '5'
-  # ?: '6'
+  bordered: '6'

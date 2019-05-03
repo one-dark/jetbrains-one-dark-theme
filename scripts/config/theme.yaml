@@ -677,7 +677,9 @@ attributes:
     underwaved: always
   UNMATCHED_BRACE_ATTRIBUTES:
     background: '583535'
-  Unresolved reference access: error
+  Unresolved reference access:
+    effect_color: error
+    underwaved: always
   WARNING_ATTRIBUTES:
     effect_color: ff8c00
     error_stripe_color: ff8c00
