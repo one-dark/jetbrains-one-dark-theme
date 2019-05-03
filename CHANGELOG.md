@@ -1,5 +1,12 @@
 # Changelog
 
+#### 2.3.0
+
+- Update groovy unresolved reference color
+- Improves syntax highlighting for the following languages:
+    - Python
+    - Bash
+
 #### 2.2.1
 
 - Update plugin description to pull from readme
