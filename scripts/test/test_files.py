@@ -6,10 +6,10 @@ META_DIR = 'src/main/resources/META-INF'
 BUILD_DIR = 'build'
 
 
-class FileTest(unittest.TestCase):
+class TestFiles(unittest.TestCase):
     @staticmethod
     def file_exists(file_path):
-        full_path = os.path.normpath('%s/../%s' % (os.path.dirname(__file__), file_path))
+        full_path = os.path.normpath('%s/../../%s' % (os.path.dirname(__file__), file_path))
 
         return os.path.exists(full_path) and os.path.isfile(full_path)
 
