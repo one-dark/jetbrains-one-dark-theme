@@ -1,5 +1,9 @@
 # Changelog
 
+#### 2.4.1
+
+- Fix issue where both theme files were being built
+
 #### 2.4.0
 
 - Fix bash shebang not using bold italic for italic theme
