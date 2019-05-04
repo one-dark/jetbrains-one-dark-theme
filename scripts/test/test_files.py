@@ -1,8 +1,8 @@
 import os
 import unittest
 
-THEME_DIR = 'src/main/resources/themes'
-META_DIR = 'src/main/resources/META-INF'
+THEME_DIR = '../src/main/resources/themes'
+META_DIR = '../src/main/resources/META-INF'
 BUILD_DIR = 'build'
 
 
