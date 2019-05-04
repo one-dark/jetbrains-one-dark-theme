@@ -4,12 +4,16 @@ install:
   - sudo apt-get install python3
   - sudo apt-get install python3-pip
   - sudo pip3 install -r requirements.txt
-script:
-  - python3 scripts/build.py
-  - python3 scripts/changelog.py
-  - python3 scripts/readme.py
-  - python3 -m unittest discover
-  - ./gradlew build
+jobs:
+  include:
+    - stage: Build plugin resources
+      script: python3 scripts/build.py
+    - script: python3 scripts/changelog.py
+    - script: python3 scripts/readme.py
+    - stage: Build plugin
+      script: ./gradlew build
+    - stage: Test plugin
+      script: python3 -m unittest discover
 deploy:
   - provider: releases
     api_key: $GITHUB_AUTH_TOKEN
