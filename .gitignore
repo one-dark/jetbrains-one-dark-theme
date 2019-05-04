@@ -37,3 +37,6 @@ src/main/resources/themes/*
 .gradle/
 gradle.properties
 !gradle/wrapper/gradle-wrapper.jar
+
+# Python compiled files
+*.pyc
