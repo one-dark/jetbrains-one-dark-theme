@@ -160,7 +160,7 @@ def main():
     if not os.path.exists(DEST_DIR):
         os.makedirs(DEST_DIR)
 
-    # Builder(False, '%s.xml' % FILE_NAME).run()
+    Builder(False, '%s.xml' % FILE_NAME).run()
     Builder(True, '%s_italic.xml' % FILE_NAME).run()
 
     build_json()
