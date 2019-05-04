@@ -4,7 +4,7 @@
 [![GitHub tag][latest-release-badge]][latest-release]
 [![JetBrains plugin version][plugin-version-badge]][plugin-page]
 [![JetBrains plugin downloads][plugin-downloads-badge]][plugin-page]
-[![All Contributors][all-contributors]](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg)](#contributors)
 
 [One dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs. Includes normal and italic variations.
 
