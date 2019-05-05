@@ -217,7 +217,7 @@ attributes:
     italic: theme
   DEFAULT_CLASS_NAME: chalky
   DEFAULT_COMMA: {}
-  DEFAULT_CONSTANT: fountainBlue
+  DEFAULT_CONSTANT: whiskey
   DEFAULT_DOC_COMMENT:
     foreground: dark
     italic: theme
