@@ -106,10 +106,6 @@ inheriting-attributes:
   XPATH.KEYWORD: DEFAULT_KEYWORD
 attributes:
   ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES: whiskey
-  APACHE_CONFIG.ARG_LEXEM: green
-  APACHE_CONFIG.COMMENT:
-    foreground: 59626f
-    italic: theme
   APACHE_CONFIG.IDENTIFIER: purple
   BAD_CHARACTER:
     background: 9b3636
@@ -120,6 +116,7 @@ attributes:
     foreground: dark
     bold: always
     italic: theme
+  BLADE_DIRECTIVE: c678dd
   BOOKMARKS_ATTRIBUTES: {}
   BREADCRUMBS_CURRENT:
     foreground: lightWhite
@@ -142,14 +139,9 @@ attributes:
   Clojure Literal:
     foreground: fda5ff
     bold: always
-  Clojure Numbers: d2945d
+  Clojure Numbers: d19a66
   Clojure Strings: green
-  COFFEESCRIPT.BAD_CHARACTER:
-    background: 6e3b3b
-  COFFEESCRIPT.BLOCK_COMMENT:
-    foreground: 59626f
-    italic: theme
-  COFFEESCRIPT.BOOLEAN: d2945d
+  COFFEESCRIPT.BOOLEAN: d19a66
   COFFEESCRIPT.CLASS_NAME: e5c17c
   COFFEESCRIPT.COLON: invalid
   COFFEESCRIPT.ESCAPE_SEQUENCE: 57b6c2
@@ -169,7 +161,7 @@ attributes:
   COFFEESCRIPT.LINE_COMMENT:
     foreground: 59626f
     italic: theme
-  COFFEESCRIPT.NUMBER: d2945d
+  COFFEESCRIPT.NUMBER: d19a66
   COFFEESCRIPT.OBJECT_KEY: df6a73
   COFFEESCRIPT.OPERATIONS: a6b2c0
   COFFEESCRIPT.PROTOTYPE: malibu
@@ -294,9 +286,9 @@ attributes:
     foreground: 59626f
     italic: theme
   DJANGO_FILTER: 57b6c2
-  DJANGO_ID: d2945d
+  DJANGO_ID: d19a66
   DJANGO_KEYWORD: purple
-  DJANGO_NUMBER: d2945d
+  DJANGO_NUMBER: d19a66
   DJANGO_STRING_LITERAL: green
   DJANGO_TAG_NAME: c676df
   DUPLICATE_FROM_SERVER: {}
@@ -331,13 +323,13 @@ attributes:
   GO_BRACES: aeb6c0
   GO_BRACKET: aeb6c0
   GO_BUILTIN_CONSTANT:
-    foreground: d2945d
+    foreground: d19a66
     italic: theme
   GO_BUILTIN_FUNCTION: 57b6c2
   GO_BUILTIN_FUNCTION_CALL: 57b6c2
   GO_BUILTIN_TYPE: purple
   GO_BUILTIN_TYPE_REFERENCE: purple
-  GO_BUILTIN_VARIABLE: d2945d
+  GO_BUILTIN_VARIABLE: d19a66
   GO_COMMA: aeb6c0
   GO_EXPORTED_FUNCTION:
     foreground: malibu
@@ -351,7 +343,7 @@ attributes:
   GO_LOCAL_FUNCTION_CALL: 57b6c2
   GO_LOCAL_VARIABLE_CALL: 57b6c2
   GO_METHOD_RECEIVER: aeb6c0
-  GO_NUMBER: d2945d
+  GO_NUMBER: d19a66
   GO_OPERATOR: purple
   GO_PACKAGE_EXPORTED_CONSTANT:
     foreground: coral
@@ -367,8 +359,8 @@ attributes:
   GO_STRUCT_EXPORTED_MEMBER_CALL: 57b6c2
   GO_STRUCT_LOCAL_MEMBER_CALL: 57b6c2
   GO_TYPE_REFERENCE: aeb6c0
-  GQL_ID: d2945d
-  GQL_INT_LITERAL: d2945d
+  GQL_ID: d19a66
+  GQL_INT_LITERAL: d19a66
   GQL_KEYWORD: purple
   GQL_STRING_LITERAL: green
   HAML_CLASS: df6a73
@@ -485,7 +477,7 @@ attributes:
     foreground: 59626f
     italic: theme
   OC.LOCAL_VARIABLE: df6a73
-  OC.NUMBER: d2945d
+  OC.NUMBER: d19a66
   OC.PARAMETER: a6b2c0
   OC.PROPERTY: df6a73
   OC.SELFSUPERTHIS: df6a73
@@ -496,7 +488,7 @@ attributes:
   PHP_COMMENT:
     foreground: 59626f
     italic: theme
-  PHP_CONSTANT: d2945d
+  PHP_CONSTANT: d19a66
   PHP_DOC_COMMENT_ID:
     foreground: 59626f
     italic: theme
@@ -510,7 +502,7 @@ attributes:
   PHP_KEYWORD: purple
   PHP_MARKUP_ID:
     background: 223f22
-  PHP_NUMBER: d2945d
+  PHP_NUMBER: d19a66
   PHP_OPERATION_SIGN: a6b2c0
   PHP_SCRIPTING_BACKGROUND:
     background: 2a2d32
@@ -527,7 +519,7 @@ attributes:
   PUPPET_CLASS: e5c17c
   PUPPET_ESCAPE_SEQUENCE: 57b6c2
   PUPPET_KEYWORD: purple
-  PUPPET_NUMBER: d2945d
+  PUPPET_NUMBER: d19a66
   PUPPET_OPERATION_SIGN: a6b2c0
   PUPPET_REGEX: 57b6c2
   PUPPET_SQ_STRING: green
@@ -566,7 +558,7 @@ attributes:
   RUBY_COMMENT:
     foreground: dark
     italic: theme
-  RUBY_CONSTANT: d2945d
+  RUBY_CONSTANT: d19a66
   RUBY_CONSTANT_DECLARATION: whiskey
   RUBY_CVAR: df6a73
   RUBY_ESCAPE_SEQUENCE: 57b6c2
@@ -585,7 +577,7 @@ attributes:
   RUBY_LOCAL_VAR_ID: lightWhite
   RUBY_METHOD_NAME: malibu
   RUBY_NTH_REF: coral
-  RUBY_NUMBER: d2945d
+  RUBY_NUMBER: d19a66
   RUBY_OPERATION_SIGN: a6b2c0
   RUBY_PARAMDEF_CALL: lightWhite
   RUBY_PARAMETER_ID: lightWhite
@@ -599,9 +591,9 @@ attributes:
     error_stripe_color: error
     dotted-line: always
   SASS_KEYWORD: purple
-  SASS_MIXIN: d2945d
-  SASS_NUMBER: d2945d
-  SASS_PROPERTY_NAME: d2945d
+  SASS_MIXIN: d19a66
+  SASS_NUMBER: d19a66
+  SASS_PROPERTY_NAME: d19a66
   SASS_PROPERTY_VALUE: 68e868
   SASS_STRING: green
   SASS_TAG_NAME: purple
@@ -623,7 +615,7 @@ attributes:
   SLIM_INTERPOLATION: green
   SLIM_STRING_INTERPOLATED: green
   SLIM_TAG: df6a73
-  SLIM_TAG_ATTR_KEY: d2945d
+  SLIM_TAG_ATTR_KEY: d19a66
   SMARTY_BACKGROUND:
     background: 2a2d32
   SMARTY_BAD_CHARACTER:
@@ -632,12 +624,12 @@ attributes:
     foreground: 59626f
     italic: theme
   SMARTY_KEYWORD: purple
-  SMARTY_NUMBER: d2945d
+  SMARTY_NUMBER: d19a66
   SMARTY_OPERATION_SIGN: a6b2c0
   SMARTY_STRING: green
   SQL_SYNTETIC_ENTITY: fda5ff
   STATIC_METHOD_IMPORTED_ATTRIBUTES: malibu
-  TAG_ATTR_KEY: d2945d
+  TAG_ATTR_KEY: d19a66
   TEMPLATE_VARIABLE_ATTRIBUTES: whiskey
   TEXT:
     foreground: lightWhite
@@ -659,7 +651,7 @@ attributes:
     foreground: 59626f
     italic: theme
   TWIG_KEYWORD: purple
-  TWIG_NUMBER: d2945d
+  TWIG_NUMBER: d19a66
   TWIG_OPERATION_SIGN: a6b2c0
   TWIG_STRING: green
   TYPEDEF: purple
