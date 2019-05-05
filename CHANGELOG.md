@@ -1,6 +1,6 @@
 # Changelog
 
-#### Unreleased
+#### 2.7.0
 
 - Update class reference to chalky
 - Improves syntax highlighting for the following languages:
