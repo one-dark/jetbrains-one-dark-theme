@@ -1,5 +1,15 @@
 # Changelog
 
+#### 2.5.0
+
+- Update global constant color to whiskey
+- Improves syntax highlighting for the following languages:
+    - CoffeeScript
+    - Haml
+    - PHP
+    - Sass
+    - XPath
+
 #### 2.4.1
 
 - Fix issue where both theme files were being built
