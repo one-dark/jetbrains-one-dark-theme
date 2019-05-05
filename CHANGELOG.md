@@ -1,5 +1,13 @@
 # Changelog
 
+#### 2.6.0
+
+- Update Java static final field color to whiskey
+- Update less and stylus variables to white
+- Improves syntax highlighting for the following languages:
+    - Dart
+    - Pug
+
 #### 2.5.0
 
 - Update global constant color to whiskey
