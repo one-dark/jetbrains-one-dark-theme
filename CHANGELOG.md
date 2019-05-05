@@ -1,11 +1,17 @@
 # Changelog
 
-#### Unreleased
+#### 2.7.0
 
 - Update class reference to chalky
 - Improves syntax highlighting for the following languages:
     - Go
     - x86 assembly
+    - Python
+    - Django/Jinja2 Template
+    - Mako Template
+    - Jupyter
+    - Puppet
+    - GQL
 
 #### 2.6.0
 
