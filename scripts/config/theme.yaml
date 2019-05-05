@@ -106,6 +106,7 @@ inheriting-attributes:
   REGEXP.REDUNDANT_ESCAPE: DEFAULT_VALID_STRING_ESCAPE
   REST.INLINE: DEFAULT_IDENTIFIER
   SASS_COMMENT: CSS.COMMENT
+  SASS_VARIABLE: DEFAULT_INSTANCE_FIELD
   SQL_OUTER_QUERY_COLUMN: SQL_COLUMN
   SQL_SYNTHETIC_ENTITY: DEFAULT_PREDEFINED_SYMBOL
   Static method access: STATIC_METHOD_ATTRIBUTES
@@ -116,6 +117,7 @@ inheriting-attributes:
   XML_PROLOGUE: TEXT
   XML_TAG: DEFAULT_TAG
   XPATH.KEYWORD: DEFAULT_KEYWORD
+  XPATH.XPATH_VARIABLE: DEFAULT_LOCAL_VARIABLE
 attributes:
   ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES: whiskey
   APACHE_CONFIG.IDENTIFIER: purple
@@ -375,6 +377,7 @@ attributes:
     effect_color: chalky
     error_stripe_color: chalky
     underwaved: always
+  INI.SECTION: c678dd
   INJECTED_LANGUAGE_FRAGMENT: {}
   INLINE_PARAMETER_HINT:
     foreground: lightWhite
@@ -433,6 +436,12 @@ attributes:
     bold: always
   MARKDOWN_CODE_SPAN: green
   MARKDOWN_CODE_SPAN_MARKER: green
+  MARKDOWN_HEADER_LEVEL_1: 56b6c2
+  MARKDOWN_HEADER_LEVEL_2: 56b6c2
+  MARKDOWN_HEADER_LEVEL_3: 56b6c2
+  MARKDOWN_HEADER_LEVEL_4: 56b6c2
+  MARKDOWN_HEADER_LEVEL_5: 56b6c2
+  MARKDOWN_HEADER_LEVEL_6: 56b6c2
   MARKDOWN_ITALIC:
     italic: always
   MARKDOWN_LINK_TITLE:
@@ -556,15 +565,7 @@ attributes:
     effect_color: ff8c00
     error_stripe_color: error
     dotted-line: always
-  SASS_KEYWORD: purple
   SASS_MIXIN: whiskey
-  SASS_NUMBER: whiskey
-  SASS_PROPERTY_NAME: whiskey
-  SASS_PROPERTY_VALUE: 68e868
-  SASS_STRING: green
-  SASS_TAG_NAME: purple
-  SASS_URL: df6a73
-  SASS_VARIABLE: df6a73
   SEARCH_RESULT_ATTRIBUTES:
     background: 42557b
     effect_color: 457dff
@@ -582,17 +583,6 @@ attributes:
   SLIM_STRING_INTERPOLATED: green
   SLIM_TAG: df6a73
   SLIM_TAG_ATTR_KEY: whiskey
-  SMARTY_BACKGROUND:
-    background: 2a2d32
-  SMARTY_BAD_CHARACTER:
-    background: 6e3b3b
-  SMARTY_COMMENT:
-    foreground: 59626f
-    italic: theme
-  SMARTY_KEYWORD: purple
-  SMARTY_NUMBER: whiskey
-  SMARTY_OPERATION_SIGN: a6b2c0
-  SMARTY_STRING: green
   SQL_SYNTETIC_ENTITY: fda5ff
   STATIC_METHOD_IMPORTED_ATTRIBUTES: malibu
   TEMPLATE_VARIABLE_ATTRIBUTES: whiskey
@@ -608,17 +598,6 @@ attributes:
     italic: theme
   TS.MODULE_NAME: chalky
   TS.TYPE_PARAMETER: chalky
-  TWIG_BACKGROUND:
-    background: 2a2d32
-  TWIG_BAD_CHARACTER:
-    background: 6e3b3b
-  TWIG_COMMENT:
-    foreground: 59626f
-    italic: theme
-  TWIG_KEYWORD: purple
-  TWIG_NUMBER: whiskey
-  TWIG_OPERATION_SIGN: a6b2c0
-  TWIG_STRING: green
   TYPEDEF: purple
   TYPE_PARAMETER_NAME_ATTRIBUTES: chalky
   TYPO:
@@ -645,7 +624,6 @@ attributes:
   XML_NS_PREFIX: whiskey
   XML_TAG_NAME: coral
   XPATH.XPATH_NAME: green
-  XPATH.XPATH_VARIABLE: coral
   YAML_ANCHOR: chalky
   YAML_SCALAR_KEY: coral
   YAML_SCALAR_LIST: green
