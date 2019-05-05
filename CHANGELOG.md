@@ -1,5 +1,12 @@
 # Changelog
 
+#### Unreleased
+
+- Update class reference to chalky
+- Improves syntax highlighting for the following languages:
+    - Go
+    - x86 assembly
+
 #### 2.6.0
 
 - Update Java static final field color to whiskey
