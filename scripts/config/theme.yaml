@@ -59,6 +59,8 @@ inheriting-attributes:
   BASH.REDIRECTION: DEFAULT_OPERATION_SIGN
   Class: CLASS_NAME_ATTRIBUTES
   COFFEESCRIPT.GLOBAL_VARIABLE: JS.GLOBAL_VARIABLE
+  com.plan9.LABEL: DEFAULT_LABEL
+  com.plan9.PSEUDO_INSTRUCTION: com.plan9.INSTRUCTION
   CONSOLE_BLACK_OUTPUT: CONSOLE_NORMAL_OUTPUT
   CSS.IMPORTANT: DEFAULT_KEYWORD
   CSS.KEYWORD: DEFAULT_KEYWORD
@@ -160,14 +162,18 @@ attributes:
   COFFEESCRIPT.BOOLEAN: whiskey
   COFFEESCRIPT.CLASS_NAME: chalky
   COFFEESCRIPT.EXPRESSIONS_SUBSTITUTION_MARK: coral
-  COFFEESCRIPT.FUNCTION: purple
   COFFEESCRIPT.FUNCTION_BINDING: purple
+  COFFEESCRIPT.FUNCTION: purple
   COFFEESCRIPT.HEREGEX_CONTENT: whiskey
   COFFEESCRIPT.HEREGEX_ID: fountainBlue
   COFFEESCRIPT.REGULAR_EXPRESSION_CONTENT: whiskey
   COFFEESCRIPT.REGULAR_EXPRESSION_FLAG: fountainBlue
   COFFEESCRIPT.REGULAR_EXPRESSION_ID: fountainBlue
   COFFEESCRIPT.STRING: green
+  com.plan9.IDENTIFIER: fountainBlue
+  com.plan9.INSTRUCTION: malibu
+  com.plan9.KEYWORD: purple
+  com.plan9.REGISTER: coral
   CONDITIONALLY_NOT_COMPILED:
     foreground: 59626f
     italic: theme
@@ -238,6 +244,7 @@ attributes:
     foreground: dark
     italic: theme
   DEFAULT_CLASS_NAME: chalky
+  DEFAULT_CLASS_REFERENCE: chalky
   DEFAULT_COMMA: {}
   DEFAULT_CONSTANT: whiskey
   DEFAULT_DOC_COMMENT:
@@ -323,45 +330,10 @@ attributes:
     error_stripe_color: ff8c00
     underwaved: always
   GHERKIN_TABLE_PIPE: {}
-  GO_BRACES: aeb6c0
-  GO_BRACKET: aeb6c0
-  GO_BUILTIN_CONSTANT:
-    foreground: whiskey
-    italic: theme
-  GO_BUILTIN_FUNCTION: fountainBlue
-  GO_BUILTIN_FUNCTION_CALL: fountainBlue
   GO_BUILTIN_TYPE: purple
-  GO_BUILTIN_TYPE_REFERENCE: purple
   GO_BUILTIN_VARIABLE: whiskey
-  GO_COMMA: aeb6c0
-  GO_EXPORTED_FUNCTION:
-    foreground: malibu
-    italic: theme
-  GO_EXPORTED_FUNCTION_CALL: fountainBlue
-  GO_KEYWORD: purple
-  GO_LOCAL_CONSTANT:
-    foreground: coral
-    italic: theme
-  GO_LOCAL_FUNCTION: malibu
-  GO_LOCAL_FUNCTION_CALL: fountainBlue
-  GO_LOCAL_VARIABLE_CALL: fountainBlue
-  GO_METHOD_RECEIVER: aeb6c0
-  GO_NUMBER: whiskey
-  GO_OPERATOR: purple
-  GO_PACKAGE_EXPORTED_CONSTANT:
-    foreground: coral
-    italic: theme
-  GO_PACKAGE_EXPORTED_VARIABLE_CALL: fountainBlue
-  GO_PACKAGE_LOCAL_CONSTANT:
-    foreground: coral
-    italic: theme
-  GO_PACKAGE_LOCAL_VARIABLE_CALL: fountainBlue
-  GO_SCOPE_VARIABLE: aeb6c0
-  GO_SEMICOLON: aeb6c0
-  GO_STRING: green
-  GO_STRUCT_EXPORTED_MEMBER_CALL: fountainBlue
-  GO_STRUCT_LOCAL_MEMBER_CALL: fountainBlue
-  GO_TYPE_REFERENCE: aeb6c0
+  GO_FUNCTION_PARAMETER: whiskey
+  GO_METHOD_RECEIVER: whiskey
   GQL_ID: whiskey
   GQL_INT_LITERAL: whiskey
   GQL_KEYWORD: purple
