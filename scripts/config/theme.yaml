@@ -106,7 +106,6 @@ inheriting-attributes:
   REGEXP.REDUNDANT_ESCAPE: DEFAULT_VALID_STRING_ESCAPE
   REST.INLINE: DEFAULT_IDENTIFIER
   SASS_COMMENT: CSS.COMMENT
-  SASS_VARIABLE: DEFAULT_INSTANCE_FIELD
   SQL_OUTER_QUERY_COLUMN: SQL_COLUMN
   SQL_SYNTHETIC_ENTITY: DEFAULT_PREDEFINED_SYMBOL
   Static method access: STATIC_METHOD_ATTRIBUTES
@@ -377,7 +376,7 @@ attributes:
     effect_color: chalky
     error_stripe_color: chalky
     underwaved: always
-  INI.SECTION: c678dd
+  INI.SECTION: purple
   INJECTED_LANGUAGE_FRAGMENT: {}
   INLINE_PARAMETER_HINT:
     foreground: lightWhite
@@ -436,12 +435,12 @@ attributes:
     bold: always
   MARKDOWN_CODE_SPAN: green
   MARKDOWN_CODE_SPAN_MARKER: green
-  MARKDOWN_HEADER_LEVEL_1: 56b6c2
-  MARKDOWN_HEADER_LEVEL_2: 56b6c2
-  MARKDOWN_HEADER_LEVEL_3: 56b6c2
-  MARKDOWN_HEADER_LEVEL_4: 56b6c2
-  MARKDOWN_HEADER_LEVEL_5: 56b6c2
-  MARKDOWN_HEADER_LEVEL_6: 56b6c2
+  MARKDOWN_HEADER_LEVEL_1: fountainBlue
+  MARKDOWN_HEADER_LEVEL_2: fountainBlue
+  MARKDOWN_HEADER_LEVEL_3: fountainBlue
+  MARKDOWN_HEADER_LEVEL_4: fountainBlue
+  MARKDOWN_HEADER_LEVEL_5: fountainBlue
+  MARKDOWN_HEADER_LEVEL_6: fountainBlue
   MARKDOWN_ITALIC:
     italic: always
   MARKDOWN_LINK_TITLE:
@@ -566,6 +565,7 @@ attributes:
     error_stripe_color: error
     dotted-line: always
   SASS_MIXIN: whiskey
+  SASS_VARIABLE: {}
   SEARCH_RESULT_ATTRIBUTES:
     background: 42557b
     effect_color: 457dff
