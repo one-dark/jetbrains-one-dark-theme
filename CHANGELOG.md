@@ -6,6 +6,12 @@
 - Improves syntax highlighting for the following languages:
     - Go
     - x86 assembly
+    - Python
+    - Django/Jinja2 Template
+    - Mako Template
+    - Jupyter
+    - Puppet
+    - GQL
 
 #### 2.6.0
 
