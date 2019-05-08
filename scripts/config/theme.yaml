@@ -113,6 +113,7 @@ inheriting-attributes:
   REGEXP.ESC_CHARACTER: DEFAULT_VALID_STRING_ESCAPE
   REGEXP.QUOTE_CHARACTER: DEFAULT_VALID_STRING_ESCAPE
   REGEXP.REDUNDANT_ESCAPE: DEFAULT_VALID_STRING_ESCAPE
+  ReSharper.STRING_ESCAPE_CHARACTER_2: DEFAULT_VALID_STRING_ESCAPE
   REST.INLINE: DEFAULT_IDENTIFIER
   SASS_COMMENT: CSS.COMMENT
   SQL_OUTER_QUERY_COLUMN: SQL_COLUMN
@@ -496,6 +497,26 @@ attributes:
   REGEXP.CHAR_CLASS: fountainBlue
   REGEXP.META: purple
   REGEXP.PARENTHS: fountainBlue
+  ReSharper.ASP_NET_MVC_ACTION: {}
+  ReSharper.ASP_NET_MVC_AREA: {}
+  ReSharper.ASP_NET_MVC_CONTROLLER: {}
+  ReSharper.ASP_NET_MVC_VIEW: {}
+  ReSharper.ASP_NET_MVC_VIEW_COMPONENT: {}
+  ReSharper.ASP_NET_RUN_AT_ATTRIBUTE: whiskey
+  ReSharper.BRACE_OUTLINE:
+    effect_color: lightWhite
+  ReSharper.FORMAT_STRING_ITEM: whiskey
+  ReSharper.FORMAT_STRING_ITEM_2: whiskey
+  ReSharper.HINT:
+    effect_color: malibu
+    dotted-line: always
+  ReSharper.IL_INSTRUCTION: coral
+  ReSharper.IL_TARGET_CODE_LABEL:
+    bold: always
+  ReSharper.IL_VIEWER_SYNCHRONIZATION: {}
+  ReSharper.MATCHED_FORMAT_STRING_ITEM: whiskey
+  ReSharper.OUTLINED_ENTITY:
+    effect_color: lightWhite
   REST.EXPLICIT: purple
   REST.FIELD: purple
   REST.FIXED:
@@ -568,6 +589,9 @@ attributes:
   STATIC_FINAL_FIELD_ATTRIBUTES: whiskey
   STATIC_METHOD_IMPORTED_ATTRIBUTES: malibu
   STYLUS_VARIABLE: {}
+  SUGGESTION:
+    effect_color: malibu
+    underwaved: always
   TEMPLATE_VARIABLE_ATTRIBUTES: whiskey
   TEXT:
     foreground: lightWhite

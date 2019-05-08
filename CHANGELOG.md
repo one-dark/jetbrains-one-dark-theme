@@ -1,5 +1,13 @@
 # Changelog
 
+#### 2.8.0
+
+- Improves syntax highlighting for the following languages:
+    - C
+    - C++
+    - Rust
+- Improves syntax highlighting for Rider
+
 #### 2.7.0
 
 - Update class reference to chalky
