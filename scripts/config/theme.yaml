@@ -443,31 +443,31 @@ attributes:
   NG.PROPERTY_BINDING_ATTR_NAME: whiskey
   NG.TEMPLATE_BINDINGS_ATTR_NAME: whiskey
   NOT_USED_ELEMENT_ATTRIBUTES: 7f8591
-  OC.CONDITIONALLY_NOT_COMPILED: 5c6370
+  OC.CONDITIONALLY_NOT_COMPILED: dark
   OC.CPP_KEYWORD: purple
   OC_FORMAT_TOKEN: green
   OC.LABEL:
-    foreground: abb2bf
+    foreground: lightWhite
     bold: always
-  OC.MACRONAME: e06c75
-  OC.MACRO_PARAMETER: d19a66
+  OC.MACRONAME: coral
+  OC.MACRO_PARAMETER: whiskey
   OC.OVERLOADED_OPERATOR: {}
   OC.PROPERTY: df6a73
-  OC.STRUCT_FIELD: e06c75
-  OC.STRUCT_LIKE: e5c07b
-  OC.TYPEDEF: e5c07b
-  org.rust.DOC_LINK: 61afef
-  org.rust.ENUM_VARIANT: d19a66
+  OC.STRUCT_FIELD: coral
+  OC.STRUCT_LIKE: chalky
+  OC.TYPEDEF: chalky
+  org.rust.DOC_LINK: malibu
+  org.rust.ENUM_VARIANT: whiskey
   org.rust.LIFETIME:
-    foreground: 56b6c2
+    foreground: fountainBlue
     italic: theme
-  org.rust.MACRO: 61afef
-  org.rust.PRIMITIVE_TYPE: e5c07b
+  org.rust.MACRO: malibu
+  org.rust.PRIMITIVE_TYPE: chalky
   org.rust.Q_OPERATOR: {}
   org.rust.TYPE_ALIAS:
-    foreground: e5c07b
+    foreground: chalky
     italic: always
-  org.rust.TYPE_PARAMETER: e5c07b
+  org.rust.TYPE_PARAMETER: chalky
   org.rust.UNSAFE_CODE: {}
   PHP_ALIAS_REFERENCE:
     foreground: chalky
