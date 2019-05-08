@@ -96,6 +96,9 @@ inheriting-attributes:
   KOTLIN_PACKAGE_FUNCTION_CALL: DEFAULT_STATIC_METHOD
   KOTLIN_TYPE_PARAMETER: TYPE_PARAMETER_NAME_ATTRIBUTES
   MAKO.SUBSTITUTION: DEFAULT_TEMPLATE_LANGUAGE_COLOR
+  OC.DIRECTIVE: DEFAULT_KEYWORD
+  org.rust.MUT_BINDING: DEFAULT_IDENTIFIER
+  org.rust.MUT_PARAMETER: DEFAULT_PARAMETER
   osmorc.attributeName: DEFAULT_INSTANCE_FIELD
   osmorc.directiveName: DEFAULT_INSTANCE_FIELD
   PHP_CONSTANT: DEFAULT_CONSTANT
@@ -440,26 +443,32 @@ attributes:
   NG.PROPERTY_BINDING_ATTR_NAME: whiskey
   NG.TEMPLATE_BINDINGS_ATTR_NAME: whiskey
   NOT_USED_ELEMENT_ATTRIBUTES: 7f8591
-  OC_FORMAT_TOKEN: green
-  OC.BLOCK_COMMENT:
-    foreground: 59626f
-    italic: theme
+  OC.CONDITIONALLY_NOT_COMPILED: 5c6370
   OC.CPP_KEYWORD: purple
-  OC.DIRECTIVE: purple
-  OC.EXTERN_VARIABLE: df6a73
-  OC.FUNCTION: malibu
-  OC.GLOBAL_VARIABLE: df6a73
-  OC.KEYWORD: purple
-  OC.LINE_COMMENT:
-    foreground: 59626f
-    italic: theme
-  OC.LOCAL_VARIABLE: df6a73
-  OC.NUMBER: whiskey
-  OC.PARAMETER: a6b2c0
+  OC_FORMAT_TOKEN: green
+  OC.LABEL:
+    foreground: abb2bf
+    bold: always
+  OC.MACRONAME: e06c75
+  OC.MACRO_PARAMETER: d19a66
+  OC.OVERLOADED_OPERATOR: {}
   OC.PROPERTY: df6a73
-  OC.SELFSUPERTHIS: df6a73
-  OC.STRING: green
-  OC.STRUCT_FIELD: green
+  OC.STRUCT_FIELD: e06c75
+  OC.STRUCT_LIKE: e5c07b
+  OC.TYPEDEF: e5c07b
+  org.rust.DOC_LINK: 61afef
+  org.rust.ENUM_VARIANT: d19a66
+  org.rust.LIFETIME:
+    foreground: 56b6c2
+    italic: theme
+  org.rust.MACRO: 61afef
+  org.rust.PRIMITIVE_TYPE: e5c07b
+  org.rust.Q_OPERATOR: {}
+  org.rust.TYPE_ALIAS:
+    foreground: e5c07b
+    italic: always
+  org.rust.TYPE_PARAMETER: e5c07b
+  org.rust.UNSAFE_CODE: {}
   PHP_ALIAS_REFERENCE:
     foreground: chalky
     italic: always
