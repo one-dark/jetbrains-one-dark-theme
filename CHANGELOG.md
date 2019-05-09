@@ -7,6 +7,8 @@
     - ERB
     - RDoc
     - Slim
+    - Objective-C
+    - Swift
 
 #### 2.8.0
 
