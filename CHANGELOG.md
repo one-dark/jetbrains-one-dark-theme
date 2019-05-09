@@ -1,5 +1,13 @@
 # Changelog
 
+#### 2.9.0
+
+- Improves syntax highlighting for the following languages:
+    - Ruby
+    - ERB
+    - RDoc
+    - Slim
+
 #### 2.8.0
 
 - Improves syntax highlighting for the following languages:
