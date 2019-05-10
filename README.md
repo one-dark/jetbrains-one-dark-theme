@@ -14,13 +14,11 @@ Check out the [Wiki][wiki] for more information and instructions or use one of t
 - [Configuration][configuration]
 - [Development][development]
 
-## Screenshots
+## Screenshot
 
 See the [Wiki page][wiki-screenshots] for more screenshots.
 
 ![Editor][editor]
-
-![Preferences][preferences]
 
 [build-status-badge]: https://img.shields.io/travis/com/markypython/jetbrains-one-dark-theme/master.svg
 [build-status]: https://travis-ci.com/markypython/jetbrains-one-dark-theme "Build status"
@@ -31,12 +29,11 @@ See the [Wiki page][wiki-screenshots] for more screenshots.
 [plugin-downloads-badge]: https://img.shields.io/jetbrains/plugin/d/11938-one-dark-theme.svg
 [all-contributors]: https://img.shields.io/badge/all_contributors-3-orange.svg "All Contributors"
 [wiki]: https://github.com/markypython/jetbrains-one-dark-theme/wiki "Wiki home"
-[installation]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Installation "Installation instructions"
+[installation]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Installation#legacy-v1-installation "Installation instructions"
 [configuration]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Configuration "Configuration instructions"
 [development]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Development "Development instructions"
 [wiki-screenshots]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Screenshots "Screenshots"
-[editor]: https://github.com/markypython/jetbrains-one-dark-theme/raw/master/docs/screenshots/java.png "Editor"
-[preferences]: https://github.com/markypython/jetbrains-one-dark-theme/raw/master/docs/screenshots/preferences.png "Preferences"
+[editor]: https://github.com/markypython/jetbrains-one-dark-theme/raw/idea181.x/docs/screenshots/java.png "Editor"
 
 ## Contributors
 

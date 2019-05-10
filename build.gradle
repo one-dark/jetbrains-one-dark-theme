@@ -10,11 +10,11 @@ repositories {
 }
 
 intellij {
-    version '2019.1'
+    version '2018.1'
 }
 
 patchPluginXml {
-    sinceBuild '191'
+    sinceBuild '181'
 
     def changelogPath = "$projectDir/build/CHANGELOG.html"
     def readmePath = "$projectDir/build/README.html"
