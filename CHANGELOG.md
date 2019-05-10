@@ -1,25 +1,37 @@
 # Changelog
 
-#### 2.9.0
+#### 1.8.0
 
+- Remove Rainbow Bracket colors. These should be defined by each user if they use this plugin.
+- Update ignored file colors
+- Change unused symbol to use the default foreground and red underwaved.
+- Update console colors
+- Update version control gutter and annotation colors
+- Update diff and merge colors
+- Update line coverage colors
+- Update custom keyword colors
+- Update plugin description to pull from readme
+- Trim changelog to the latest three entries for the plugin listing
+- Update groovy unresolved reference color
 - Improves syntax highlighting for the following languages:
-    - Ruby
-    - ERB
-    - RDoc
-    - Slim
-    - Objective-C
-    - Swift
-
-#### 2.8.0
-
+    - Python
+    - Bash
+    - reStructuredText
+    - Buildout config
+- Fix bash shebang not using bold italic for italic theme
+- Improves syntax highlighting database and database diagrams
+- Update global constant color to whiskey
 - Improves syntax highlighting for the following languages:
-    - C
-    - C++
-    - Rust
-- Improves syntax highlighting for Rider
-
-#### 2.7.0
-
+    - CoffeeScript
+    - Haml
+    - PHP
+    - Sass
+    - XPath
+- Update Java static final field color to whiskey
+- Update less and stylus variables to white
+- Improves syntax highlighting for the following languages:
+    - Dart
+    - Pug
 - Update class reference to chalky
 - Improves syntax highlighting for the following languages:
     - Go
@@ -30,74 +42,18 @@
     - Jupyter
     - Puppet
     - GQL
-
-#### 2.6.0
-
-- Update Java static final field color to whiskey
-- Update less and stylus variables to white
 - Improves syntax highlighting for the following languages:
-    - Dart
-    - Pug
-
-#### 2.5.0
-
-- Update global constant color to whiskey
+    - C
+    - C++
+    - Rust
+- Improves syntax highlighting for Rider
 - Improves syntax highlighting for the following languages:
-    - CoffeeScript
-    - Haml
-    - PHP
-    - Sass
-    - XPath
-
-#### 2.4.1
-
-- Fix issue where both theme files were being built
-
-#### 2.4.0
-
-- Fix bash shebang not using bold italic for italic theme
-- Improves syntax highlighting database and database diagrams
-
-#### 2.3.0
-
-- Update groovy unresolved reference color
-- Improves syntax highlighting for the following languages:
-    - Python
-    - Bash
-    - reStructuredText
-    - Buildout config
-
-#### 2.2.1
-
-- Update plugin description to pull from readme
-- Trim changelog to the latest three entries for the plugin listing
-
-#### 2.2.0
-
-- Update current branch background in version control log
-- Update console colors
-- Update version control gutter and annotation colors
-- Update diff and merge colors
-- Update line coverage colors
-- Update custom keyword colors
-
-#### 2.1.0
-
-- Update border colors
-- Remove Rainbow Bracket colors. These should be defined by each user if they use this plugin.
-- Update ignored file color
-- Update popup colors
-- Change unused symbol to use the default foreground and red underwaved.
-- Update screenshots
-
-#### 2.0.1
-
-- Fixes an issue where the italic theme was not inheriting colors properly due to the CI server changing the order of the JSON theme definition file.
-
-#### 2.0.0
-
-- Added UI theme to make the editor and UI complement each other for the full One dark experience!
-- See [the wiki](https://github.com/markypython/jetbrains-one-dark-theme/wiki/Updating-to-v2) for more details and upgrade instructions.
+    - Ruby
+    - ERB
+    - RDoc
+    - Slim
+    - Objective-C
+    - Swift
 
 #### 1.7.1
 
