@@ -14,9 +14,7 @@ class TestFiles(unittest.TestCase):
         return os.path.exists(full_path) and os.path.isfile(full_path)
 
     def test_theme_files(self):
-        self.assertTrue(self.file_exists(THEME_DIR + '/one_dark.theme.json'))
         self.assertTrue(self.file_exists(THEME_DIR + '/one_dark.xml'))
-        self.assertTrue(self.file_exists(THEME_DIR + '/one_dark_italic.theme.json'))
         self.assertTrue(self.file_exists(THEME_DIR + '/one_dark_italic.xml'))
 
     def test_meta_files(self):
