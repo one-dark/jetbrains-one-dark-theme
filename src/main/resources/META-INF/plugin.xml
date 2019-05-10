@@ -1,14 +1,14 @@
 <idea-plugin>
     <id>com.markskelton.one-dark-theme</id>
     <name>One dark theme</name>
-    <category>UI</category>
+    <category>Editor Color Schemes</category>
     <vendor email="mdskelton99@gmail.com"
             url="https://github.com/markypython/jetbrains-one-dark-theme">Mark Skelton</vendor>
 
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <themeProvider id="f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" path="/themes/one_dark.theme.json"/>
-        <themeProvider id="1a92aa6f-c2f1-4994-ae01-6a78e43eeb24" path="/themes/one_dark_italic.theme.json"/>
+        <bundledColorScheme id="3e77a6ce-becf-4139-8ae6-4e589c51d9cf" path="/themes/one_dark.xml" />
+        <bundledColorScheme id="b419cbef-7340-4aa8-b734-3a05c40c62a6" path="/themes/one_dark_italic.xml" />
     </extensions>
 </idea-plugin>
