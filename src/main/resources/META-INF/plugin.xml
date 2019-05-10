@@ -8,7 +8,7 @@
     <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <bundledColorScheme id="3e77a6ce-becf-4139-8ae6-4e589c51d9cf" path="/themes/one_dark.xml" />
-        <bundledColorScheme id="b419cbef-7340-4aa8-b734-3a05c40c62a6" path="/themes/one_dark_italic.xml" />
+        <bundledColorScheme id="3e77a6ce-becf-4139-8ae6-4e589c51d9cf" path="/themes/one_dark" />
+        <bundledColorScheme id="b419cbef-7340-4aa8-b734-3a05c40c62a6" path="/themes/one_dark_italic" />
     </extensions>
 </idea-plugin>
