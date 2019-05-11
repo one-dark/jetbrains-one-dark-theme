@@ -268,6 +268,15 @@ attributes:
   DART_LOCAL_FUNCTION_REFERENCE: malibu
   DART_STATIC_GETTER_DECLARATION: malibu
   DART_STATIC_SETTER_DECLARATION: malibu
+  DEBUGGER_INLINED_VALUES:
+    foreground: dark
+    italic: always
+  DEBUGGER_INLINED_VALUES_EXECUTION_LINE:
+    foreground: dark
+    italic: always
+  DEBUGGER_INLINED_VALUES_MODIFIED:
+    foreground: ff8c00
+    italic: always
   DEFAULT_ATTRIBUTE: whiskey
   DEFAULT_BLOCK_COMMENT:
     foreground: dark
@@ -293,6 +302,8 @@ attributes:
   DEFAULT_KEYWORD:
     foreground: purple
     italic: theme
+  DEFAULT_LABEL:
+    bold: always
   DEFAULT_LINE_COMMENT:
     foreground: dark
     italic: theme
@@ -311,13 +322,13 @@ attributes:
     effect_color: lightWhite
     strikeout: always
   DIFF_CONFLICT:
-    background: chalky
-    error_stripe_color: chalky
-  DIFF_DELETED:
-    background: 46333c
+    background: 913a3a
     error_stripe_color: coral
+  DIFF_DELETED:
+    background: 353c46
+    error_stripe_color: dark
   DIFF_INSERTED:
-    background: 354a3d
+    background: 2d4134
     error_stripe_color: green
   DIFF_MODIFIED:
     background: 2c4957
@@ -336,8 +347,10 @@ attributes:
     effect_color: error
     error_stripe_color: error
     underwaved: always
+  EVALUATED_EXPRESSION_ATTRIBUTES: {}
+  EVALUATED_EXPRESSION_EXECUTION_LINE_ATTRIBUTES: {}
   EXECUTIONPOINT_ATTRIBUTES:
-    foreground: '101'
+    foreground: '000000'
     background: c7c7ff
   FIRST SYMBOL IN LIST:
     foreground: df6a73
@@ -403,20 +416,28 @@ attributes:
   JSON.PROPERTY_KEY: coral
   JSP_DIRECTIVE_NAME: purple
   JUPYTER_SELECTED_CELL: malibu
+  KOTLIN_ABSTRACT_CLASS:
+    foreground: chalky
+    italic: always
   KOTLIN_BACKING_FIELD_VARIABLE: {}
-  KOTLIN_CLOSURE_DEFAULT_PARAMETER: {}
+  KOTLIN_CLOSURE_DEFAULT_PARAMETER: whiskey
   KOTLIN_DYNAMIC_FUNCTION_CALL:
     foreground: malibu
     italic: always
   KOTLIN_DYNAMIC_PROPERTY_CALL:
     foreground: coral
     italic: always
+  KOTLIN_ENUM_ENTRY: whiskey
+  KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW: {}
   KOTLIN_MUTABLE_VARIABLE:
     italic: always
   KOTLIN_NAMED_ARGUMENT: whiskey
   KOTLIN_SMART_CAST_RECEIVER: {}
   KOTLIN_SMART_CAST_VALUE: {}
   KOTLIN_SMART_CONSTANT: {}
+  KOTLIN_TYPE_ALIAS:
+    foreground: chalky
+    italic: always
   KOTLIN_VARIABLE_AS_FUNCTION: malibu
   KOTLIN_VARIABLE_AS_FUNCTION_LIKE: malibu
   LABEL: purple
@@ -642,5 +663,4 @@ attributes:
   YAML_SCALAR_KEY: coral
   YAML_SCALAR_LIST: green
   YAML_SCALAR_VALUE: green
-  YAML_TEXT:
-    foreground: green
+  YAML_TEXT: green
