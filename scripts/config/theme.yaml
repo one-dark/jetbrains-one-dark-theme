@@ -268,6 +268,15 @@ attributes:
   DART_LOCAL_FUNCTION_REFERENCE: malibu
   DART_STATIC_GETTER_DECLARATION: malibu
   DART_STATIC_SETTER_DECLARATION: malibu
+  DEBUGGER_INLINED_VALUES:
+    foreground: 5c6370
+    italic: always
+  DEBUGGER_INLINED_VALUES_EXECUTION_LINE:
+    foreground: 5c6370
+    italic: always
+  DEBUGGER_INLINED_VALUES_MODIFIED:
+    foreground: ff8c00
+    italic: always
   DEFAULT_ATTRIBUTE: whiskey
   DEFAULT_BLOCK_COMMENT:
     foreground: dark
@@ -336,8 +345,10 @@ attributes:
     effect_color: error
     error_stripe_color: error
     underwaved: always
+  EVALUATED_EXPRESSION_ATTRIBUTES: {}
+  EVALUATED_EXPRESSION_EXECUTION_LINE_ATTRIBUTES: {}
   EXECUTIONPOINT_ATTRIBUTES:
-    foreground: '101'
+    foreground: '000000'
     background: c7c7ff
   FIRST SYMBOL IN LIST:
     foreground: df6a73
