@@ -403,20 +403,28 @@ attributes:
   JSON.PROPERTY_KEY: coral
   JSP_DIRECTIVE_NAME: purple
   JUPYTER_SELECTED_CELL: malibu
+  KOTLIN_ABSTRACT_CLASS:
+    foreground: chalky
+    italic: always
   KOTLIN_BACKING_FIELD_VARIABLE: {}
-  KOTLIN_CLOSURE_DEFAULT_PARAMETER: {}
+  KOTLIN_CLOSURE_DEFAULT_PARAMETER: whiskey
   KOTLIN_DYNAMIC_FUNCTION_CALL:
     foreground: malibu
     italic: always
   KOTLIN_DYNAMIC_PROPERTY_CALL:
     foreground: coral
     italic: always
+  KOTLIN_ENUM_ENTRY: whiskey
+  KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW: {}
   KOTLIN_MUTABLE_VARIABLE:
     italic: always
   KOTLIN_NAMED_ARGUMENT: whiskey
   KOTLIN_SMART_CAST_RECEIVER: {}
   KOTLIN_SMART_CAST_VALUE: {}
   KOTLIN_SMART_CONSTANT: {}
+  KOTLIN_TYPE_ALIAS:
+    foreground: chalky
+    italic: always
   KOTLIN_VARIABLE_AS_FUNCTION: malibu
   KOTLIN_VARIABLE_AS_FUNCTION_LIKE: malibu
   LABEL: purple
@@ -642,5 +650,4 @@ attributes:
   YAML_SCALAR_KEY: coral
   YAML_SCALAR_LIST: green
   YAML_SCALAR_VALUE: green
-  YAML_TEXT:
-    foreground: green
+  YAML_TEXT: green
