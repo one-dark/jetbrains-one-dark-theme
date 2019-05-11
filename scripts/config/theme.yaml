@@ -269,10 +269,10 @@ attributes:
   DART_STATIC_GETTER_DECLARATION: malibu
   DART_STATIC_SETTER_DECLARATION: malibu
   DEBUGGER_INLINED_VALUES:
-    foreground: 5c6370
+    foreground: dark
     italic: always
   DEBUGGER_INLINED_VALUES_EXECUTION_LINE:
-    foreground: 5c6370
+    foreground: dark
     italic: always
   DEBUGGER_INLINED_VALUES_MODIFIED:
     foreground: ff8c00
