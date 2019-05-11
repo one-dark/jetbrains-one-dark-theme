@@ -302,6 +302,8 @@ attributes:
   DEFAULT_KEYWORD:
     foreground: purple
     italic: theme
+  DEFAULT_LABEL:
+    bold: always
   DEFAULT_LINE_COMMENT:
     foreground: dark
     italic: theme
