@@ -311,13 +311,13 @@ attributes:
     effect_color: lightWhite
     strikeout: always
   DIFF_CONFLICT:
-    background: chalky
-    error_stripe_color: chalky
-  DIFF_DELETED:
-    background: 46333c
+    background: 913a3a
     error_stripe_color: coral
+  DIFF_DELETED:
+    background: 353c46
+    error_stripe_color: dark
   DIFF_INSERTED:
-    background: 354a3d
+    background: 2d4134
     error_stripe_color: green
   DIFF_MODIFIED:
     background: 2c4957
