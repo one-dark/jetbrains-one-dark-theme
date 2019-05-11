@@ -1,5 +1,12 @@
 # Changelog
 
+#### 2.10.0
+
+- Minor Kotlin improvements
+- Make labels bold
+- Improve debugger colors
+- Improve diff and merge colors
+
 #### 2.9.0
 
 - Improves syntax highlighting for the following languages:
