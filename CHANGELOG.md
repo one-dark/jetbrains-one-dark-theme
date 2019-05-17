@@ -1,5 +1,10 @@
 # Changelog
 
+
+#### 2.10.1
+
+- Improve file colors
+
 #### 2.10.0
 
 - Minor Kotlin improvements
