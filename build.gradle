@@ -10,7 +10,7 @@ repositories {
 }
 
 intellij {
-    version '2019.1'
+    version 'LATEST-EAP-SNAPSHOT'
 }
 
 patchPluginXml {
