@@ -1,5 +1,9 @@
 # Changelog
 
+#### 2.10.2
+
+- Lighten selection color
+- Fix console black color
 
 #### 2.10.1
 
