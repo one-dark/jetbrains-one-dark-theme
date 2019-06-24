@@ -63,6 +63,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "cliffordp",
+      "name": "Clifford",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1812179?v=4",
+      "profile": "https://github.com/cliffordp",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
