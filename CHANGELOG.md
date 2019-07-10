@@ -1,5 +1,9 @@
 # Changelog
 
+#### 2.11.2
+
+- Improve tabbed pane hover color
+
 #### 2.11.1
 
 - Lighten selection color

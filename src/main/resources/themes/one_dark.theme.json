@@ -256,7 +256,8 @@
 
     "TabbedPane": {
       "underlineColor": "#568AF2",
-      "contentAreaColor": "#3d424b"
+      "contentAreaColor": "#323844",
+      "hoverColor": "#323844"
     },
 
     "Table": {
