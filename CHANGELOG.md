@@ -1,5 +1,9 @@
 # Changelog
 
+#### 2.11.3
+
+- Fix Go syntax highlighting
+
 #### 2.11.2
 
 - Improve tabbed pane hover color
