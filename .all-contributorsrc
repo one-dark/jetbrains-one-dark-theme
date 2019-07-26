@@ -81,6 +81,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "defman21",
+      "name": "Sergey Kislyakov",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7100645?v=4",
+      "profile": "https://defman.me",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
