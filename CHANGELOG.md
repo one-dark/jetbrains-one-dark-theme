@@ -1,5 +1,9 @@
 # Changelog
 
+#### 2.12.0
+
+- Update the selection and identifier under caret background colors
+
 #### 2.11.3
 
 - Fix Go syntax highlighting

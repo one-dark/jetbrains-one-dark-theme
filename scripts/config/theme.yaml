@@ -41,7 +41,7 @@ colors:
   RIGHT_MARGIN_COLOR: '606368'
   SELECTED_INDENT_GUIDE: '606368'
   SELECTED_TEARLINE_COLOR: 6b6e73
-  SELECTION_BACKGROUND: 4a525f
+  SELECTION_BACKGROUND: '404859'
   SEPARATOR_BELOW_COLOR: ''
   TEARLINE_COLOR: 4f575f
   VCS_ANNOTATIONS_COLOR_1: '335027'
@@ -397,7 +397,7 @@ attributes:
     effect_color: purple
     underscored: always
   IDENTIFIER_UNDER_CARET_ATTRIBUTES:
-    background: 484e5b
+    background: '353940'
   IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES: {}
   INACTIVE_HYPERLINK_ATTRIBUTES:
     effect_color: lightWhite
@@ -661,7 +661,7 @@ attributes:
     error_stripe_color: ff8c00
     underwaved: always
   WRITE_IDENTIFIER_UNDER_CARET_ATTRIBUTES:
-    background: 484e5b
+    background: '353940'
   WRITE_SEARCH_RESULT_ATTRIBUTES:
     background: 42557b
     effect_color: 457dff
