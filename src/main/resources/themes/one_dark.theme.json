@@ -77,8 +77,7 @@
     "ComboPopup.border": "1,1,1,1,2d3137",
 
     "CompletionPopup":  {
-      "matchForeground": "#568AF2",
-      "matchSelectionForeground": "#568AF2"
+      "matchForeground": "#568AF2"
     },
 
     "Component": {
@@ -95,7 +94,11 @@
 
     "DebuggerPopup.borderColor": "#46494f",
 
-    "DebuggerTabs.selectedBackground": "#323844",
+    "DefaultTabs": {
+      "underlineColor": "#568AF2",
+      "inactiveUnderlineColor": "#4269b9",
+      "hoverBackground": "#323844"
+    },
 
     "DragAndDrop": {
       "areaForeground": "#abb2bf",
@@ -112,11 +115,7 @@
     "EditorPane.inactiveBackground": "#282c34",
 
     "EditorTabs": {
-      "selectedForeground": "#abb2bf",
-      "selectedBackground": "#3d424b",
-      "underlineColor": "#568AF2",
-      "inactiveMaskColor": "#1b1d2166",
-      "borderColor": "#46494f"
+      "underlinedTabBackground": "#3d424b"
     },
 
     "FileColor": {

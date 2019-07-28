@@ -3,6 +3,8 @@
 #### 2.12.0
 
 - Update the selection and identifier under caret background colors
+- Update editor tab colors for IntelliJ 2019.2 compatibility
+- Remove active debugger tab background in favor of the blue underline
 
 #### 2.11.3
 
