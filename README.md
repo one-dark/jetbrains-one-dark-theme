@@ -4,7 +4,7 @@
 [![GitHub tag][latest-release-badge]][latest-release]
 [![JetBrains plugin version][plugin-version-badge]][plugin-page]
 [![JetBrains plugin downloads][plugin-downloads-badge]][plugin-page]
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg)](#contributors)
 
 [One dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs. Includes normal and italic variations.
 
@@ -57,6 +57,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/cliffordp"><img src="https://avatars0.githubusercontent.com/u/1812179?v=4" width="100px;" alt="Clifford"/><br /><sub><b>Clifford</b></sub></a><br /><a href="https://github.com/markypython/jetbrains-one-dark-theme/issues?q=author%3Acliffordp" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://defman.me"><img src="https://avatars2.githubusercontent.com/u/7100645?v=4" width="100px;" alt="Sergey Kislyakov"/><br /><sub><b>Sergey Kislyakov</b></sub></a><br /><a href="https://github.com/markypython/jetbrains-one-dark-theme/issues?q=author%3Adefman21" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/sundongmin"><img src="https://avatars2.githubusercontent.com/u/17910228?v=4" width="100px;" alt="Sun Dongmin"/><br /><sub><b>Sun Dongmin</b></sub></a><br /><a href="#design-sundongmin" title="Design">🎨</a></td>
   </tr>
 </table>
 
