@@ -40,3 +40,5 @@ if __name__ == '__main__':
 
     with open(os.path.join(DEST_PATH, 'README.html'), 'w') as output_file:
         output_file.write(str(soup).strip())
+
+    print('README generated!')

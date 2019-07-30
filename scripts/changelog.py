@@ -57,3 +57,5 @@ if __name__ == '__main__':
     with open(os.path.join(DEST_PATH, 'CHANGELOG.html'), 'w') as output_file:
         # Trim whitespace and write to file
         output_file.write(str(soup).strip())
+
+    print('CHANGELOG generated!')

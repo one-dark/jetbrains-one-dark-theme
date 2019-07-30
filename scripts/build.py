@@ -165,6 +165,8 @@ def main():
 
     build_json()
 
+    print('Theme files generated!')
+
 
 if __name__ == '__main__':
     main()
