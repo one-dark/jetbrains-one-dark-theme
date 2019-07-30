@@ -1,5 +1,9 @@
 # Changelog
 
+#### 2.12.1
+
+- Fix JavaScript and TypeScript colors after the 2019.2 release
+
 #### 2.12.0
 
 - Update the selection and identifier under caret background colors
