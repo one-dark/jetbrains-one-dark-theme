@@ -1,1 +1,17 @@
-theme: jekyll-theme-architect
+theme: just-the-docs
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+title: One Dark
+description: One dark color scheme for JetBrains IDEs
+source: pages
+include:
+  - index.md
+  - Updating-to-v2.md
+  - Configuration.md
+  - Development.md
+  - Installation.md
+  - Publishing.md
+  - Screenshots.md
