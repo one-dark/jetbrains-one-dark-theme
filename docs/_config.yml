@@ -20,5 +20,3 @@ include:
   - publishing.md
   - screenshots.md
   - updating-to-v2.md
-
-theme: jekyll-theme-cayman
