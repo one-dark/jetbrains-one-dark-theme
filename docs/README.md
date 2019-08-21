@@ -1,10 +1,4 @@
----
-layout: default
-title: Home
-nav_order: 1
----
-
-Welcome to One dark for JetBrains! This theme aims to provide JetBrains users with the lovely colors of the [Atom One dark theme][atom-one-dark]. This repository uses Python and YAML to generate the JetBrains color scheme XML files to allow more flexible control.
+Welcome to One dark theme for JetBrains! This theme aims to provide JetBrains users with the lovely colors of the [Atom One dark theme][atom-one-dark]. This repository uses Python and YAML to generate the JetBrains color scheme XML files to allow more flexible control.
 
 Contributions are always welcome! Don't feel pressured into putting a lot of time into a pull request or an elaborate issue description, just do what you can and we will work from there.
 

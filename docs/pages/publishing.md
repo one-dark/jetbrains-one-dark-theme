@@ -1,9 +1,3 @@
----
-layout: default
-title: Publishing
-nav_order: 6
----
-
 This plugin uses Travis CI for publishing builds, so the following instructions are included only for reference purposes for the future if the build process requires change.
 
 - Create a personal access token

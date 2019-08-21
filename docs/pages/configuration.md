@@ -1,9 +1,3 @@
----
-layout: default
-title: Configuration
-nav_order: 3
----
-
 ## Available theme variants
 
 This theme currently supports two theme variants: One dark and One dark italic. Both variants are built from the same source files and will thus have the same colors and effects with the only difference being the italic variant italicizes certain language constructs such as keywords, comments, annotations, etc.

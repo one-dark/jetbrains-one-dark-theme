@@ -1,9 +1,3 @@
----
-layout: default
-title: Development
-nav_order: 5
----
-
 ## Theme source files
 
 The color scheme source files are stored in the `scripts/config` directory. To build the XML files used in IntelliJ, run `python3 ./scripts/build.py`. This will create the following files in the `src/main/resources/themes` directory:

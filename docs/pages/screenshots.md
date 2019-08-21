@@ -1,9 +1,3 @@
----
-layout: default
-title: Screenshots
-nav_order: 7
----
-
 ## Default
 
 ![Default][java]

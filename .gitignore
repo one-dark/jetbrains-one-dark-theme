@@ -41,7 +41,3 @@ gradle.properties
 
 # Python compiled files
 *.pyc
-
-# Jekyll
-.ruby-version
-docs/_site/

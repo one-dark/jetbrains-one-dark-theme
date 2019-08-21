@@ -1,9 +1,3 @@
----
-layout: default
-title: Installation
-nav_order: 2
----
-
 **If you are using a 2018 version IDE or Android Studio 3.4 please refer to the legacy v1 installation section below.**
 
 ## Plugin marketplace **(recommended)**
