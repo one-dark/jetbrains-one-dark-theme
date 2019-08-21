@@ -8,7 +8,7 @@
 
 [One dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs. Includes normal and italic variations.
 
-Check out the [Wiki][wiki] for more information and instructions or use one of the quick links below.
+Check out the [docs][docs] for more information and instructions or use one of the quick links below.
 
 - [Installation][installation]
 - [Configuration][configuration]
@@ -16,7 +16,7 @@ Check out the [Wiki][wiki] for more information and instructions or use one of t
 
 ## Screenshots
 
-See the [Wiki page][wiki-screenshots] for more screenshots.
+See the [screenshots page][screenshots] in the docs for more screenshots.
 
 ![Editor][editor]
 
@@ -30,11 +30,11 @@ See the [Wiki page][wiki-screenshots] for more screenshots.
 [plugin-page]: https://plugins.jetbrains.com/plugin/11938-one-dark-theme "Plugin homepage"
 [plugin-downloads-badge]: https://img.shields.io/jetbrains/plugin/d/11938-one-dark-theme.svg
 [all-contributors]: https://img.shields.io/badge/all_contributors-3-orange.svg "All Contributors"
-[wiki]: https://github.com/markypython/jetbrains-one-dark-theme/wiki "Wiki home"
-[installation]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Installation "Installation instructions"
-[configuration]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Configuration "Configuration instructions"
-[development]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Development "Development instructions"
-[wiki-screenshots]: https://github.com/markypython/jetbrains-one-dark-theme/wiki/Screenshots "Screenshots"
+[docs]: https://onedark.gitbook.io/jetbrains "Docs home"
+[installation]: https://onedark.gitbook.io/jetbrains/the-basics/installation "Installation instructions"
+[configuration]: https://onedark.gitbook.io/jetbrains/the-basics/configuration "Configuration instructions"
+[development]: https://onedark.gitbook.io/jetbrains/development/development "Development instructions"
+[screenshots]: https://onedark.gitbook.io/jetbrains/the-basics/screenshots "Screenshots"
 [editor]: https://github.com/markypython/jetbrains-one-dark-theme/raw/master/docs/screenshots/java.png "Editor"
 [preferences]: https://github.com/markypython/jetbrains-one-dark-theme/raw/master/docs/screenshots/preferences.png "Preferences"
 
