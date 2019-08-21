@@ -9,7 +9,7 @@
 ## Development
 
 * [Development](pages/development.md)
-* [Screenshots](pages/screenshots.md)
+* [Publishing](pages/publishing.md)
 
 ## Migration
 
