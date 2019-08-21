@@ -1,16 +1,19 @@
-# Summary
+# Table of contents
+
+* [Introduction](README.md)
 
 ## The Basics
 
-* [Installation](pages/installation.md)
-* [Configuration](pages/configuration.md)
-* [Screenshots](pages/screenshots.md)
+* [Installation](the-basics/installation.md)
+* [Configuration](the-basics/configuration.md)
+* [Screenshots](the-basics/screenshots.md)
 
 ## Development
 
-* [Development](pages/development.md)
-* [Publishing](pages/publishing.md)
+* [Development](development/development.md)
+* [Publishing](development/publishing.md)
 
 ## Migration
 
-* [Updating to V2](pages/updating-to-v2.md)
+* [Updating to V2](migration/updating-to-v2.md)
+
