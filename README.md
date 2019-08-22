@@ -30,11 +30,11 @@ See the [screenshots page][screenshots] in the docs for more screenshots.
 [plugin-page]: https://plugins.jetbrains.com/plugin/11938-one-dark-theme "Plugin homepage"
 [plugin-downloads-badge]: https://img.shields.io/jetbrains/plugin/d/11938-one-dark-theme.svg
 [all-contributors]: https://img.shields.io/badge/all_contributors-3-orange.svg "All Contributors"
-[docs]: https://onedark.gitbook.io/jetbrains "Docs home"
-[installation]: https://onedark.gitbook.io/jetbrains/the-basics/installation "Installation instructions"
-[configuration]: https://onedark.gitbook.io/jetbrains/the-basics/configuration "Configuration instructions"
-[development]: https://onedark.gitbook.io/jetbrains/development/development "Development instructions"
-[screenshots]: https://onedark.gitbook.io/jetbrains/the-basics/screenshots "Screenshots"
+[docs]: https://one-dark.gitbook.io/jetbrains "Docs home"
+[installation]: https://one-dark.gitbook.io/jetbrains/the-basics/installation "Installation instructions"
+[configuration]: https://one-dark.gitbook.io/jetbrains/the-basics/configuration "Configuration instructions"
+[development]: https://one-dark.gitbook.io/jetbrains/development/development "Development instructions"
+[screenshots]: https://one-dark.gitbook.io/jetbrains/the-basics/screenshots "Screenshots"
 [editor]: https://github.com/markypython/jetbrains-one-dark-theme/raw/master/docs/screenshots/java.png "Editor"
 [preferences]: https://github.com/markypython/jetbrains-one-dark-theme/raw/master/docs/screenshots/preferences.png "Preferences"
 
