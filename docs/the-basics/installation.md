@@ -13,7 +13,7 @@
 
 To install the plugin manually, use the following steps.
 
-1. Download the JAR file for the [latest release](https://github.com/markypython/jetbrains-one-dark-theme/releases/latest) on GitHub
+1. Download the JAR file for the [latest release](https://github.com/one-dark/jetbrains-one-dark-theme/releases/latest) on GitHub
 2. Go to `Preferences | Plugins` in your editor and click the gear icon at the top
 3. Click **Install Plugin from Disk...**
 4. Select the JAR file you downloaded

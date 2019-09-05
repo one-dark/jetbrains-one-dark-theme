@@ -43,7 +43,7 @@ if __name__ == '__main__':
         # Add the link to the full changelog
         more_link = soup.new_tag(
             'a',
-            href='https://github.com/markypython/jetbrains-one-dark-theme/blob/master/CHANGELOG.md'
+            href='https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md'
         )
         more_link.string = 'GitHub repo'
 

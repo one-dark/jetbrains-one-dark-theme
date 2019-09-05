@@ -16,11 +16,11 @@ This theme aims to create a color scheme that is as consistent as possible acros
 
 | Name | Value | Preview | Name | Value | Preview |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| **chalky** | \#e5c07b | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/chalky.jpg) | **green** | \#98c379 | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/green.jpg) |
-| **coral** | \#e06c75 | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/coral.jpg) | **lightWhite** | \#abb2bf | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/light-white.jpg) |
-| **dark** | \#5c6370 | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/dark.jpg) | **malibu** | \#61afef | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/malibu.jpg) |
-| **error** | \#f44747 | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/error.jpg) | **purple** | \#c678dd | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/purple.jpg) |
-| **fountainBlue** | \#56b6c2 | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/fountain-blue.jpg) | **whiskey** | \#d19a66 | ![](https://raw.githubusercontent.com/markypython/jetbrains-one-dark-theme/master/docs/colors/whiskey.jpg) |
+| **chalky** | \#e5c07b | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/chalky.jpg) | **green** | \#98c379 | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/green.jpg) |
+| **coral** | \#e06c75 | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/coral.jpg) | **lightWhite** | \#abb2bf | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/light-white.jpg) |
+| **dark** | \#5c6370 | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/dark.jpg) | **malibu** | \#61afef | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/malibu.jpg) |
+| **error** | \#f44747 | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/error.jpg) | **purple** | \#c678dd | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/purple.jpg) |
+| **fountainBlue** | \#56b6c2 | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/fountain-blue.jpg) | **whiskey** | \#d19a66 | ![](https://raw.githubusercontent.com/one-dark/jetbrains-one-dark-theme/master/docs/colors/whiskey.jpg) |
 
 ## Building the plugin
 

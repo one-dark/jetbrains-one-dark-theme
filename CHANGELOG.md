@@ -131,7 +131,7 @@
 #### 2.0.0
 
 - Added UI theme to make the editor and UI complement each other for the full One dark experience!
-- See [the wiki](https://github.com/markypython/jetbrains-one-dark-theme/wiki/Updating-to-v2) for more details and upgrade instructions.
+- See [the wiki](https://github.com/one-dark/jetbrains-one-dark-theme/wiki/Updating-to-v2) for more details and upgrade instructions.
 
 #### 1.7.1
 
