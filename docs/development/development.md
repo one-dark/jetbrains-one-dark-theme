@@ -28,5 +28,5 @@ To build the plugin, run `./gradlew build`. If using IntelliJ, sync the Gradle p
 
 ## Testing the plugin
 
-To test the plugin, run `./gradlew runIde` to build and launch the plugin in a fresh instance of IntelliJ. If using IntelliJ, run the **Run IDE** task. All plugins will be disabled and settings will be the default settings for a new installation. When first running this task, you will need to change the appearance to Darcula to enable the one dark themes in the color schemes. Select whichever scheme you wish to test, and save the settings.
+To test the plugin, run `./gradlew runIde` to build and launch the plugin in a fresh instance of IntelliJ. If using IntelliJ, run the **Run IDE** task. All plugins will be disabled and settings will be the default settings for a new installation. When first running this task, you will need to change the appearance to Darcula to enable the One Dark themes in the color schemes. Select whichever scheme you wish to test, and save the settings.
 

@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.markskelton.one-dark-theme</id>
-    <name>One dark theme</name>
+    <name>One Dark theme</name>
     <category>UI</category>
     <vendor email="mdskelton99@gmail.com"
             url="https://github.com/one-dark/jetbrains-one-dark-theme">Mark Skelton</vendor>

@@ -149,7 +149,7 @@ def build_json():
     with open(input_path, 'r') as input_file:
         data = json.load(input_file, object_pairs_hook=OrderedDict)
 
-    data['name'] = 'One dark italic'
+    data['name'] = 'One Dark italic'
     data['editorScheme'] = '/themes/one_dark_italic.xml'
 
     with open(output_path, 'w') as output_file:
