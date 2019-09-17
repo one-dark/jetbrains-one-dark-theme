@@ -154,7 +154,7 @@ class Builder:
 
 def write_json(data: dict, output_path: str):
     with open(os.path.join(DEST_DIR, output_path + '.theme.json'), 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+        json.dump(data, output_file)
 
 
 def build_json():
