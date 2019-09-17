@@ -1,5 +1,11 @@
 # Changelog
 
+#### 3.0.0
+
+- Adds vivid and vivid italic themes!
+  - This change may require you to reselect the color theme in the `Editor` -> `Color Scheme` preferences.
+- Update
+
 #### 2.12.1
 
 - Fix JavaScript and TypeScript colors after the 2019.2 release
@@ -37,51 +43,51 @@
 #### 2.9.0
 
 - Improves syntax highlighting for the following languages:
-    - Ruby
-    - ERB
-    - RDoc
-    - Slim
-    - Objective-C
-    - Swift
+  - Ruby
+  - ERB
+  - RDoc
+  - Slim
+  - Objective-C
+  - Swift
 
 #### 2.8.0
 
 - Improves syntax highlighting for the following languages:
-    - C
-    - C++
-    - Rust
+  - C
+  - C++
+  - Rust
 - Improves syntax highlighting for Rider
 
 #### 2.7.0
 
 - Update class reference to chalky
 - Improves syntax highlighting for the following languages:
-    - Go
-    - x86 assembly
-    - Python
-    - Django/Jinja2 Template
-    - Mako Template
-    - Jupyter
-    - Puppet
-    - GQL
+  - Go
+  - x86 assembly
+  - Python
+  - Django/Jinja2 Template
+  - Mako Template
+  - Jupyter
+  - Puppet
+  - GQL
 
 #### 2.6.0
 
 - Update Java static final field color to whiskey
 - Update less and stylus variables to white
 - Improves syntax highlighting for the following languages:
-    - Dart
-    - Pug
+  - Dart
+  - Pug
 
 #### 2.5.0
 
 - Update global constant color to whiskey
 - Improves syntax highlighting for the following languages:
-    - CoffeeScript
-    - Haml
-    - PHP
-    - Sass
-    - XPath
+  - CoffeeScript
+  - Haml
+  - PHP
+  - Sass
+  - XPath
 
 #### 2.4.1
 
@@ -96,10 +102,10 @@
 
 - Update groovy unresolved reference color
 - Improves syntax highlighting for the following languages:
-    - Python
-    - Bash
-    - reStructuredText
-    - Buildout config
+  - Python
+  - Bash
+  - reStructuredText
+  - Buildout config
 
 #### 2.2.1
 
@@ -136,39 +142,39 @@
 #### 1.7.1
 
 - Improves syntax highlighting for the following languages:
-    - JSP
-    - Sass
-    - OSGi Manifest
-    - XPath
-    - Less
+  - JSP
+  - Sass
+  - OSGi Manifest
+  - XPath
+  - Less
 
 #### 1.6.0
 
 - Improves syntax highlighting for the following languages:
-    - Markdown
-    - Properties
-    - Angular
-    - XML
-    - Database
-    - Regex
+  - Markdown
+  - Properties
+  - Angular
+  - XML
+  - Database
+  - Regex
 
 #### 1.5.0
 
 - Improves syntax highlighting for the following languages:
-    - JavaScript
-    - TypeScript
-    - Kotlin
-    - CSS
+  - JavaScript
+  - TypeScript
+  - Kotlin
+  - CSS
 
 #### 1.4.1
 
 - Improves syntax highlighting for the following languages:
-    - Groovy
-    - YAML
-    - EditorConfig
-    - Gerkin
-    - JSON
-    - HTML
+  - Groovy
+  - YAML
+  - EditorConfig
+  - Gerkin
+  - JSON
+  - HTML
 
 #### 1.3.6
 
