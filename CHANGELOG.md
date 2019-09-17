@@ -4,7 +4,7 @@
 
 - Adds vivid and vivid italic themes!
   - This change may require you to reselect the color theme in the `Editor` -> `Color Scheme` preferences.
-- Update
+- Update file colors to improve contrast
 
 #### 2.12.1
 
