@@ -20,8 +20,21 @@ DEST_DIR = os.path.join(
 FILE_NAME = 'one_dark'
 
 
+def build_theme_name(color: str, italic: bool):
+    name = 'One Dark'
+
+    if color != 'normal':
+        name += ' ' + color
+
+    if italic:
+        name += ' italic'
+
+    return name
+
+
 class Builder:
-    def __init__(self, italic: bool, filename: str):
+    def __init__(self, color: str, italic: bool, filename: str):
+        self.color = color
         self.italic = italic
         self.filename = filename
 
@@ -50,7 +63,7 @@ class Builder:
         return color
 
     def build_yaml(self) -> dict:
-        self.colors = self.read_yaml('colors')
+        self.colors = self.read_yaml(os.path.join('colors', self.color))
         ide = self.read_yaml('ide')
         theme = self.read_yaml('theme')
 
@@ -101,10 +114,7 @@ class Builder:
     def build_xml(self) -> ElementTree:
         scheme = ET.Element('scheme')
 
-        scheme.attrib['name'] = '%s italic' % self.yaml['name'] \
-            if self.italic \
-            else self.yaml['name']
-
+        scheme.attrib['name'] = build_theme_name(self.color, self.italic)
         scheme.attrib['parent_scheme'] = self.yaml['parent-scheme']
         scheme.attrib['version'] = '142'
 
@@ -142,26 +152,38 @@ class Builder:
         self.xml.write(os.path.join(DEST_DIR, self.filename))
 
 
+def write_json(data: dict, output_path: str):
+    with open(os.path.join(DEST_DIR, output_path + '.theme.json'), 'w') as output_file:
+        json.dump(data, output_file)
+
+
 def build_json():
     input_path = os.path.join(DEST_DIR, 'one_dark.theme.json')
-    output_path = os.path.join(DEST_DIR, 'one_dark_italic.theme.json')
 
     with open(input_path, 'r') as input_file:
         data = json.load(input_file, object_pairs_hook=OrderedDict)
 
-    data['name'] = 'One Dark italic'
+    data['name'] = build_theme_name('normal', True)
     data['editorScheme'] = '/themes/one_dark_italic.xml'
+    write_json(data, 'one_dark_italic')
 
-    with open(output_path, 'w') as output_file:
-        json.dump(data, output_file, indent=2)
+    data['name'] = build_theme_name('vivid', False)
+    data['editorScheme'] = '/themes/one_dark_vivid.xml'
+    write_json(data, 'one_dark_vivid')
+
+    data['name'] = build_theme_name('vivid', True)
+    data['editorScheme'] = '/themes/one_dark_vivid_italic.xml'
+    write_json(data, 'one_dark_vivid_italic')
 
 
 def main():
     if not os.path.exists(DEST_DIR):
         os.makedirs(DEST_DIR)
 
-    Builder(False, '%s.xml' % FILE_NAME).run()
-    Builder(True, '%s_italic.xml' % FILE_NAME).run()
+    Builder('normal', False, '%s.xml' % FILE_NAME).run()
+    Builder('normal', True, '%s_italic.xml' % FILE_NAME).run()
+    Builder('vivid', False, '%s_vivid.xml' % FILE_NAME).run()
+    Builder('vivid', True, '%s_vivid_italic.xml' % FILE_NAME).run()
 
     build_json()
 
