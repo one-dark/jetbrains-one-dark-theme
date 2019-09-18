@@ -4,7 +4,7 @@ Welcome to One Dark theme for JetBrains! This theme aims to provide JetBrains us
 
 Contributions are always welcome! Don't feel pressured into putting a lot of time into a pull request or an elaborate issue description, just do what you can and we will work from there.
 
-### Acknowledgments
+## Acknowledgments
 
 * Thanks to [Egor Yurtaev](https://github.com/yurtaev) who created the repository this project was based on. Without that starting point, this plugin may have never been created.
 * Thanks to GitBook for hosting these docs!

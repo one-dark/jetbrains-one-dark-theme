@@ -29,3 +29,4 @@
 _Code style was chosen as it some of the different inputs and buttons in the IDE settings._
 
 ![](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/preferences.png)
+

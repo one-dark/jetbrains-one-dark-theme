@@ -7,6 +7,10 @@ The color scheme source files are stored in the `scripts/config` directory. To b
 * `one_dark.xml`
 * `one_dark_italic.theme.json`
 * `one_dark_italic.xml`
+* `one_dark_vivid.theme.json`
+* `one_dark_vivid.xml`
+* `one_dark_vivid_italic.theme.json`
+* `one_dark_vivid_italic.sml`
 
 The JSON files were added as part of version 2 of this plugin when IntelliJ added support for [custom UI themes](https://blog.jetbrains.com/idea/2019/03/brighten-up-your-day-add-color-to-intellij-idea). Because IntelliJ includes the ability to preview a UI theme within the editor, these JSON files are not constructed using the same process as the XML color scheme files. Instead, the complete UI theme is contained in `src/main/resources/themes/one_dark.theme.json` and is used when creating the italic version which contains the same properties, but with a different name and editor color scheme.
 
