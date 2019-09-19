@@ -292,14 +292,14 @@ attributes:
     italic: always
   DEFAULT_ATTRIBUTE: whiskey
   DEFAULT_BLOCK_COMMENT:
-    foreground: dark
+    foreground: 7c8391
     italic: theme
   DEFAULT_CLASS_NAME: chalky
   DEFAULT_CLASS_REFERENCE: chalky
   DEFAULT_COMMA: {}
   DEFAULT_CONSTANT: whiskey
   DEFAULT_DOC_COMMENT:
-    foreground: dark
+    foreground: 7c8391
     italic: theme
   DEFAULT_DOC_COMMENT_TAG: purple
   DEFAULT_DOC_COMMENT_TAG_VALUE: whiskey
@@ -318,7 +318,7 @@ attributes:
   DEFAULT_LABEL:
     bold: always
   DEFAULT_LINE_COMMENT:
-    foreground: dark
+    foreground: 7c8391
     italic: theme
   DEFAULT_METADATA:
     foreground: chalky
