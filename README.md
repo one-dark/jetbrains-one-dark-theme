@@ -4,7 +4,7 @@
 [![GitHub tag][latest-release-badge]][latest-release]
 [![JetBrains plugin version][plugin-version-badge]][plugin-page]
 [![JetBrains plugin downloads][plugin-downloads-badge]][plugin-page]
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg)](#contributors)
 
 [One Dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs. Includes normal, vivid, and italic variations.
 
@@ -59,6 +59,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://defman.me"><img src="https://avatars2.githubusercontent.com/u/7100645?v=4" width="100px;" alt="Sergey Kislyakov"/><br /><sub><b>Sergey Kislyakov</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Adefman21" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/sundongmin"><img src="https://avatars2.githubusercontent.com/u/17910228?v=4" width="100px;" alt="Sun Dongmin"/><br /><sub><b>Sun Dongmin</b></sub></a><br /><a href="#design-sundongmin" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/levani"><img src="https://avatars0.githubusercontent.com/u/184472?v=4" width="100px;" alt="Levani Melikishvili"/><br /><sub><b>Levani Melikishvili</b></sub></a><br /><a href="#design-levani" title="Design">🎨</a></td>
+    <td align="center"><a href="https://blog.csdn.net/qq_21019419"><img src="https://avatars2.githubusercontent.com/u/12908403?v=4" width="100px;" alt="lynn"/><br /><sub><b>lynn</b></sub></a><br /><a href="#design-tulongxCodes" title="Design">🎨</a></td>
   </tr>
 </table>
 
