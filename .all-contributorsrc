@@ -1,113 +1,85 @@
 {
-  "files": [
-    "README.md"
-  ],
+  "files": ["README.md"],
   "imageSize": 100,
   "commit": false,
   "badgeTemplate": "[![All Contributors](https://img.shields.io/badge/all_contributors-<%= contributors.length %>-orange.svg)](#contributors)",
   "contributors": [
     {
-      "login": "markypython",
+      "login": "mskelton",
       "name": "Mark Skelton",
       "avatar_url": "https://avatars3.githubusercontent.com/u/25914066?v=4",
-      "profile": "https://github.com/markypython",
-      "contributions": [
-        "code",
-        "question",
-        "doc",
-        "ideas",
-        "maintenance"
-      ]
+      "profile": "https://github.com/mskelton",
+      "contributions": ["code", "question", "doc", "ideas", "maintenance"]
     },
     {
       "login": "dacoto",
       "name": "David Cortés",
       "avatar_url": "https://avatars2.githubusercontent.com/u/16915053?v=4",
       "profile": "https://www.dacoto.com",
-      "contributions": [
-        "bug"
-      ]
+      "contributions": ["bug"]
     },
     {
       "login": "x1unix",
       "name": "Denis Sedchenko",
       "avatar_url": "https://avatars0.githubusercontent.com/u/9203548?v=4",
       "profile": "http://x1unix.com",
-      "contributions": [
-        "bug"
-      ]
+      "contributions": ["bug"]
     },
     {
       "login": "zakh508",
       "name": "zakh508",
       "avatar_url": "https://avatars1.githubusercontent.com/u/3613383?v=4",
       "profile": "https://github.com/zakh508",
-      "contributions": [
-        "bug"
-      ]
+      "contributions": ["bug"]
     },
     {
       "login": "GauthierPLM",
       "name": "Gauthier Pogam--Le Montagner",
       "avatar_url": "https://avatars0.githubusercontent.com/u/2579741?v=4",
       "profile": "https://github.com/GauthierPLM",
-      "contributions": [
-        "ideas"
-      ]
+      "contributions": ["ideas"]
     },
     {
       "login": "eickit",
       "name": "eickit",
       "avatar_url": "https://avatars3.githubusercontent.com/u/4112464?v=4",
       "profile": "https://github.com/eickit",
-      "contributions": [
-        "design"
-      ]
+      "contributions": ["design"]
     },
     {
       "login": "cnfn",
       "name": "Cnfn",
       "avatar_url": "https://avatars3.githubusercontent.com/u/1445517?v=4",
       "profile": "https://github.com/cnfn",
-      "contributions": [
-        "design"
-      ]
+      "contributions": ["design"]
     },
     {
       "login": "cliffordp",
       "name": "Clifford",
       "avatar_url": "https://avatars0.githubusercontent.com/u/1812179?v=4",
       "profile": "https://github.com/cliffordp",
-      "contributions": [
-        "bug"
-      ]
+      "contributions": ["bug"]
     },
     {
       "login": "defman21",
       "name": "Sergey Kislyakov",
       "avatar_url": "https://avatars2.githubusercontent.com/u/7100645?v=4",
       "profile": "https://defman.me",
-      "contributions": [
-        "bug"
-      ]
+      "contributions": ["bug"]
     },
     {
       "login": "sundongmin",
       "name": "Sun Dongmin",
       "avatar_url": "https://avatars2.githubusercontent.com/u/17910228?v=4",
       "profile": "https://github.com/sundongmin",
-      "contributions": [
-        "design"
-      ]
+      "contributions": ["design"]
     },
     {
       "login": "levani",
       "name": "Levani Melikishvili",
       "avatar_url": "https://avatars0.githubusercontent.com/u/184472?v=4",
       "profile": "https://github.com/levani",
-      "contributions": [
-        "design"
-      ]
+      "contributions": ["design"]
     }
   ],
   "contributorsPerLine": 7,
