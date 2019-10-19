@@ -127,6 +127,10 @@
       "Rose": "#561a2b55"
     },
 
+    "Label": {
+      "infoForeground": "#7e8491"
+    },
+
     "Link": {
       "activeForeground": "#6494ed",
       "hoverForeground": "#6494ed",
