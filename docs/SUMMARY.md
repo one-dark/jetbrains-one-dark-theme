@@ -12,7 +12,3 @@
 
 - [Development](contributing/development.md)
 - [Publishing](contributing/publishing.md)
-
-## Migration
-
-- [Updating to V2](migration/updating-to-v2.md)
