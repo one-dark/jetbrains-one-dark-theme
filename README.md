@@ -6,7 +6,7 @@
 
 > [One Dark](https://github.com/atom/one-dark-syntax) theme for JetBrains.
 
-![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/java.png)
+![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/default.png)
 
 ## Setup 🔧
 
