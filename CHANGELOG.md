@@ -1,5 +1,12 @@
 # Changelog
 
+#### 3.1.0
+
+- Move information from the docs to the readme to make initial setup easier.
+- Update the main screenshot with a higher res image.
+- Remove the v2 migration information from the docs.
+- Remove legacy v2 installation instructions from the docs.
+
 #### 3.0.0
 
 - Adds vivid and vivid italic themes!
