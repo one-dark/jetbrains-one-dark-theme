@@ -1,11 +1,17 @@
 # Changelog
 
-#### 3.1.0
+#### 3.2.0
 
 - Move information from the docs to the readme to make initial setup easier.
 - Update the main screenshot with a higher res image.
 - Remove the v2 migration information from the docs.
 - Remove legacy v2 installation instructions from the docs.
+
+#### 3.1.0
+
+Improve the info label color to be more visible and have better color contrast. This is also used for the info color in the auto completion popup.
+
+Thanks @tulongxCodes for the report of this issue!
 
 #### 3.0.0
 
