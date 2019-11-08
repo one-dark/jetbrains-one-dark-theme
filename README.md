@@ -1,44 +1,36 @@
-# JetBrains One Dark theme
+# JetBrains One Dark Theme
 
-[![Build status][build-status-badge]][build-status]
-[![GitHub tag][latest-release-badge]][latest-release]
-[![JetBrains plugin version][plugin-version-badge]][plugin-page]
-[![JetBrains plugin downloads][plugin-downloads-badge]][plugin-page]
+[![JetBrains plugin version](https://img.shields.io/jetbrains/plugin/v/11938-one-dark-theme.svg)](https://plugins.jetbrains.com/plugin/11938-one-dark-theme)
+[![JetBrains plugin downloads](https://img.shields.io/jetbrains/plugin/d/11938-one-dark-theme.svg)](https://plugins.jetbrains.com/plugin/11938-one-dark-theme)
 [![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg)](#contributors)
 
-[One Dark](https://github.com/atom/one-dark-syntax) theme for JetBrains IDEs. Includes normal, vivid, and italic variations.
+> [One Dark](https://github.com/atom/one-dark-syntax) theme for JetBrains.
 
-Check out the [docs][docs] for more information and instructions or use one of the quick links below.
+![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/java.png)
 
-- [Installation][installation]
-- [Configuration][configuration]
-- [Development][development]
+## Setup 🔧
 
-## Screenshots
+After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select one of the new themes in the theme dropdown.
 
-See the [screenshots page][screenshots] in the docs for more screenshots.
+![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/configuration.png)
 
-![Editor][editor]
+## Further Documentation 📖
 
-![Preferences][preferences]
+Check out the [docs][docs] for manual installation instructions, additional screenshots, and contributing guidelines.
 
-[build-status-badge]: https://img.shields.io/travis/com/one-dark/jetbrains-one-dark-theme/master.svg
-[build-status]: https://travis-ci.com/one-dark/jetbrains-one-dark-theme "Build status"
-[latest-release-badge]: https://img.shields.io/github/tag/one-dark/jetbrains-one-dark-theme.svg
-[latest-release]: https://github.com/one-dark/jetbrains-one-dark-theme/releases/latest "Latest release"
-[plugin-version-badge]: https://img.shields.io/jetbrains/plugin/v/11938-one-dark-theme.svg
-[plugin-page]: https://plugins.jetbrains.com/plugin/11938-one-dark-theme "Plugin homepage"
-[plugin-downloads-badge]: https://img.shields.io/jetbrains/plugin/d/11938-one-dark-theme.svg
-[all-contributors]: https://img.shields.io/badge/all_contributors-3-orange.svg "All Contributors"
-[docs]: https://one-dark.gitbook.io/jetbrains "Docs home"
-[installation]: https://one-dark.gitbook.io/jetbrains/the-basics/installation "Installation instructions"
-[configuration]: https://one-dark.gitbook.io/jetbrains/the-basics/configuration "Configuration instructions"
-[development]: https://one-dark.gitbook.io/jetbrains/development/development "Development instructions"
-[screenshots]: https://one-dark.gitbook.io/jetbrains/the-basics/screenshots "Screenshots"
-[editor]: https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/java.png "Editor"
-[preferences]: https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/preferences.png "Preferences"
+Check out the [docs](https://one-dark.gitbook.io/jetbrains) for manual installation instructions, additional screenshots, and contributing guidelines.
 
-## Contributors
+- [Installation](https://one-dark.gitbook.io/jetbrains/the-basics/installation)
+- [Screenshots](https://one-dark.gitbook.io/jetbrains/the-basics/screenshots)
+- [Contributing](https://one-dark.gitbook.io/jetbrains/contributing/development)
+
+## Thanks 🙏
+
+- Thanks to [Egor Yurtaev](https://github.com/yurtaev) who created the repository this project was based on. Without that starting point, this plugin may have never been created.
+- Thanks to GitBook for hosting the docs!
+- Finally, thanks to everyone who has contributed to this project through issues, pull requests, and plugin usage. Your usage and feedback has helped to make this plugin what it is!
+
+## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
