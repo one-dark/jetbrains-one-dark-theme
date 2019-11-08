@@ -26,13 +26,15 @@ if __name__ == '__main__':
         for img in soup.find_all('img'):
             img.insert_before(soup.new_tag('br'))
 
-        # Remove contributors section
-        contributors = soup.find('h2', text='Contributors')
+        sections_to_remove = ['Contributors ✨', 'Thanks 🙏']
 
-        for tag in contributors.find_next_siblings():
-            tag.decompose()
+        for header in sections_to_remove:
+            section = soup.find('h2', text=header)
 
-        contributors.decompose()
+            for tag in section.find_next_siblings():
+                tag.decompose()
+
+            section.decompose()
 
         # Remove comments
         for element in soup(text=lambda text: isinstance(text, Comment)):
