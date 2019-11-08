@@ -16,8 +16,6 @@ After installing the theme, go to `Preferences | Appearance & Behavior | Appeara
 
 ## Further Documentation 📖
 
-Check out the [docs][docs] for manual installation instructions, additional screenshots, and contributing guidelines.
-
 Check out the [docs](https://one-dark.gitbook.io/jetbrains) for manual installation instructions, additional screenshots, and contributing guidelines.
 
 - [Installation](https://one-dark.gitbook.io/jetbrains/the-basics/installation)
