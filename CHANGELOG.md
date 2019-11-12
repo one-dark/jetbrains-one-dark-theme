@@ -1,5 +1,9 @@
 # Changelog
 
+#### 3.3.0
+
+- Add blue background to current item in combo box and tree list.
+
 #### 3.2.0
 
 - Move information from the docs to the readme to make initial setup easier.
