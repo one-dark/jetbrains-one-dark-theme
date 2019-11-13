@@ -3,6 +3,7 @@
 #### 3.3.0
 
 - Add blue background to current item in combo box and tree list.
+- Fix Go colors.
 
 #### 3.2.0
 
