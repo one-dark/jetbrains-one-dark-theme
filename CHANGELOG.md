@@ -1,5 +1,9 @@
 # Changelog
 
+#### 3.3.1
+
+- Fix JavaScript colors
+
 #### 3.3.0
 
 - Add blue background to current item in combo box and tree list.
