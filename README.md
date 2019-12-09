@@ -8,13 +8,13 @@
 
 ![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/default.png)
 
-## Setup 🔧
+## Setup
 
 After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select one of the new themes in the theme dropdown. Once you have selected one of the theme options, click the **OK** button to apply the changes so you can start enjoying One Dark theme!
 
 ![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/configuration.png)
 
-## Further Documentation 📖
+## Further Documentation
 
 Check out the [docs](https://one-dark.gitbook.io/jetbrains) for manual installation instructions, additional screenshots, and contributing guidelines.
 
@@ -22,7 +22,7 @@ Check out the [docs](https://one-dark.gitbook.io/jetbrains) for manual installat
 - [Screenshots](https://one-dark.gitbook.io/jetbrains/the-basics/screenshots)
 - [Contributing](https://one-dark.gitbook.io/jetbrains/contributing/development)
 
-## Thanks 🙏
+## Thanks
 
 - Thanks to [Egor Yurtaev](https://github.com/yurtaev) who created the repository this project was based on. Without that starting point, this plugin may have never been created.
 - Thanks to GitBook for hosting the docs!
