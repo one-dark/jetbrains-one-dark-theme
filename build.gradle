@@ -11,6 +11,7 @@ repositories {
 
 intellij {
     version 'LATEST-EAP-SNAPSHOT'
+    alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 }
 
 patchPluginXml {
