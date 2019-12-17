@@ -117,11 +117,21 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "cyclic-reference",
+      "name": "Alex Simons",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/15972415?v=4",
+      "profile": "http://acari.io",
+      "contributions": [
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "jetbrains-one-dark-theme",
   "projectOwner": "one-dark",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
