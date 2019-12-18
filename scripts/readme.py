@@ -26,7 +26,7 @@ if __name__ == '__main__':
         for img in soup.find_all('img'):
             img.insert_before(soup.new_tag('br'))
 
-        sections_to_remove = ['Contributors ✨', 'Thanks 🙏']
+        sections_to_remove = ['Contributors ✨', 'Thanks']
 
         for header in sections_to_remove:
             section = soup.find('h2', text=header)
