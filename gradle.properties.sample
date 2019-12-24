@@ -1,2 +1,7 @@
 publishUsername=
 publishToken=
+
+# Allows you to run the plugin
+# on alternate JetBrains IDEs
+# example: idePath=/home/alex/.local/share/JetBrains/Toolbox/apps/PhpStorm/ch-0/193.5662.42
+idePath=
