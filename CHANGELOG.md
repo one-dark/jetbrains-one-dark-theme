@@ -1,5 +1,9 @@
 # Changelog
 
+#### 3.3.2
+
+- Fixed issue with PyCharm not applying correct colors after restart.
+
 #### 3.3.1
 
 - Fix JavaScript colors
