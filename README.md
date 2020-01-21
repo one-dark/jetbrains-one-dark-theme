@@ -52,6 +52,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/levani"><img src="https://avatars0.githubusercontent.com/u/184472?v=4" width="100px;" alt=""/><br /><sub><b>Levani Melikishvili</b></sub></a><br /><a href="#design-levani" title="Design">🎨</a></td>
     <td align="center"><a href="https://blog.csdn.net/qq_21019419"><img src="https://avatars2.githubusercontent.com/u/12908403?v=4" width="100px;" alt=""/><br /><sub><b>lynn</b></sub></a><br /><a href="#design-tulongxCodes" title="Design">🎨</a></td>
     <td align="center"><a href="http://acari.io"><img src="https://avatars1.githubusercontent.com/u/15972415?v=4" width="100px;" alt=""/><br /><sub><b>Alex Simons</b></sub></a><br /><a href="#question-cyclic-reference" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="https://github.com/XanderCheung"><img src="https://avatars1.githubusercontent.com/u/28296509?v=4" width="100px;" alt=""/><br /><sub><b>XanderCheung</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3AXanderCheung" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
