@@ -1,5 +1,9 @@
 # Changelog
 
+#### 3.3.3
+
+- Fixed issue with Go not applying correct colors.
+
 #### 3.3.2
 
 - Fixed issue with PyCharm not applying correct colors after restart.
