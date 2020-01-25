@@ -1,5 +1,9 @@
 # Changelog
 
+#### 3.3.4
+
+- Fixed issue with remaining editors not applying correct colors.
+
 #### 3.3.3
 
 - Fixed issue with Go not applying correct colors.

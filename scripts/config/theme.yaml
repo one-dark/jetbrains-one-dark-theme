@@ -31,8 +31,8 @@ colors:
   HTML_TAG_TREE_LEVEL5: purple
   INDENT_GUIDE: 3b4048
   INFORMATION_HINT: 3d424b
-  LINE_NUMBER_ON_CARET_ROW_COLOR: '737984'
   LINE_NUMBERS_COLOR: '495162'
+  LINE_NUMBER_ON_CARET_ROW_COLOR: '737984'
   METHOD_SEPARATORS_COLOR: 3b4048
   MODIFIED_LINES_COLOR: whiskey
   QUESTION_HINT: 2e4280
@@ -50,134 +50,153 @@ colors:
   WHITESPACES: 4b575f
   WHITESPACES_MODIFIED_LINES_COLOR: dark
 inheriting-attributes:
-  ANNOTATION_NAME_ATTRIBUTES: DEFAULT_METADATA
-  BASH.FUNCTION_CALL: DEFAULT_FUNCTION_CALL
-  BASH.HERE_DOC_END: DEFAULT_KEYWORD
-  BASH.HERE_DOC_START: DEFAULT_KEYWORD
-  BASH.HERE_DOC: DEFAULT_STRING
   BASH.REDIRECTION: DEFAULT_OPERATION_SIGN
-  Class: CLASS_NAME_ATTRIBUTES
   COFFEESCRIPT.GLOBAL_VARIABLE: JS.GLOBAL_VARIABLE
-  com.plan9.LABEL: DEFAULT_LABEL
-  com.plan9.PSEUDO_INSTRUCTION: com.plan9.INSTRUCTION
-  CSS.IMPORTANT: DEFAULT_KEYWORD
-  CSS.KEYWORD: DEFAULT_KEYWORD
-  CSS.TAG_NAME: HTML_TAG_NAME
-  CUSTOM_KEYWORD1_ATTRIBUTES: DEFAULT_KEYWORD
-  CUSTOM_STRING_ATTRIBUTES: DEFAULT_STRING
-  CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES: DEFAULT_VALID_STRING_ESCAPE
-  DEFAULT_IDENTIFIER: TEXT
+  Class: CLASS_NAME_ATTRIBUTES
   DEFAULT_REASSIGNED_LOCAL_VARIABLE: DEFAULT_LOCAL_VARIABLE
-  DEFAULT_REASSIGNED_PARAMETER: DEFAULT_PARAMETER
-  DEFAULT_STATIC_METHOD: DEFAULT_FUNCTION_DECLARATION
-  DEFAULT_TEMPLATE_LANGUAGE_COLOR: TEXT
-  GHERKIN_REGEXP_PARAMETER: DEFAULT_PARAMETER
   GO_BUILTIN_VARIABLE: DEFAULT_GLOBAL_VARIABLE
   GO_PACKAGE: DEFAULT_IDENTIFIER
   Groovy method declaration: METHOD_DECLARATION_ATTRIBUTES
-  HAML_COMMENT: DEFAULT_DOC_COMMENT
   HAML_FILTER_CONTENT: DEFAULT_TEMPLATE_LANGUAGE_COLOR
-  HAML_FILTER: DEFAULT_LABEL
-  HAML_RUBY_CODE: INJECTED_LANGUAGE_FRAGMENT
-  HAML_TEXT: TEXT
   HAML_XHTML: DEFAULT_TEMPLATE_LANGUAGE_COLOR
-  HTML_ATTRIBUTE_NAME: DEFAULT_ATTRIBUTE
-  HTML_ATTRIBUTE_VALUE: DEFAULT_STRING
-  HTML_ENTITY_REFERENCE: DEFAULT_ENTITY
   HTML_TAG: DEFAULT_TAG
-  JADE_FILE_PATH: DEFAULT_STRING
-  JADE_FILTER_NAME: DEFAULT_LABEL
   JADE_JS_BLOCK: DEFAULT_IDENTIFIER
-  JADE_STATEMENTS: DEFAULT_KEYWORD
-  JAVA_KEYWORD: DEFAULT_KEYWORD
-  JAVA_VALID_STRING_ESCAPE: DEFAULT_VALID_STRING_ESCAPE
-  JS.GLOBAL_FUNCTION: DEFAULT_FUNCTION_DECLARATION
   JS.GLOBAL_VARIABLE: DEFAULT_GLOBAL_VARIABLE
   JS.INSTANCE_MEMBER_FUNCTION: DEFAULT_INSTANCE_METHOD
   JS.LOCAL_VARIABLE: DEFAULT_LOCAL_VARIABLE
   KOTLIN_ANNOTATION: ANNOTATION_NAME_ATTRIBUTES
-  KOTLIN_LABEL: DEFAULT_LABEL
   KOTLIN_PACKAGE_FUNCTION_CALL: DEFAULT_STATIC_METHOD
-  KOTLIN_TYPE_PARAMETER: TYPE_PARAMETER_NAME_ATTRIBUTES
   MAKO.SUBSTITUTION: DEFAULT_TEMPLATE_LANGUAGE_COLOR
-  OC.MESSAGE_ARGUMENT: DEFAULT_FUNCTION_CALL
-  OC.METHOD_DECLARATION: DEFAULT_FUNCTION_DECLARATION
-  org.rust.MUT_BINDING: DEFAULT_IDENTIFIER
-  org.rust.MUT_PARAMETER: DEFAULT_PARAMETER
-  osmorc.attributeName: DEFAULT_INSTANCE_FIELD
-  osmorc.directiveName: DEFAULT_INSTANCE_FIELD
-  PHP_CONSTANT: DEFAULT_CONSTANT
-  PHP_EXEC_COMMAND_ID: DEFAULT_STRING
-  PHP_PARAMETER: DEFAULT_PARAMETER
   PHP_VAR: DEFAULT_LOCAL_VARIABLE
-  PROPERTIES.INVALID_STRING_ESCAPE: DEFAULT_INVALID_STRING_ESCAPE
   PROPERTIES.KEY_VALUE_SEPARATOR: DEFAULT_OPERATION_SIGN
-  PROPERTIES.VALID_STRING_ESCAPE: DEFAULT_VALID_STRING_ESCAPE
-  REGEXP.ESC_CHARACTER: DEFAULT_VALID_STRING_ESCAPE
-  REGEXP.QUOTE_CHARACTER: DEFAULT_VALID_STRING_ESCAPE
-  REGEXP.REDUNDANT_ESCAPE: DEFAULT_VALID_STRING_ESCAPE
-  ReSharper.STRING_ESCAPE_CHARACTER_2: DEFAULT_VALID_STRING_ESCAPE
   REST.INLINE: DEFAULT_IDENTIFIER
   RHTML_COMMENT_ID: HTML_COMMENT
-  RUBY_BAD_CHARACTER: BAD_CHARACTER
-  RUBY_COMMENT: DEFAULT_DOC_COMMENT
-  RUBY_CONSTANT_DECLARATION: DEFAULT_CONSTANT
-  RUBY_CONSTANT: DEFAULT_CONSTANT
-  RUBY_ESCAPE_SEQUENCE: DEFAULT_VALID_STRING_ESCAPE
   RUBY_GVAR: DEFAULT_GLOBAL_VARIABLE
-  RUBY_INVALID_ESCAPE_SEQUENCE: DEFAULT_INVALID_STRING_ESCAPE
-  RUBY_LINE_CONTINUATION: DEFAULT_COMMA
   RUBY_LOCAL_VAR_ID: DEFAULT_LOCAL_VARIABLE
   RUBY_METHOD_NAME: DEFAULT_INSTANCE_METHOD
-  RUBY_NUMBER: DEFAULT_NUMBER
   RUBY_PARAMDEF_CALL: DEFAULT_STATIC_METHOD
-  RUBY_PARAMETER_ID: DEFAULT_PARAMETER
   RUBY_SPECIFIC_CALL: DEFAULT_STATIC_METHOD
-  RUBY_WORDS: DEFAULT_STRING
   SASS_COMMENT: CSS.COMMENT
-  SLIM_COMMENT: DEFAULT_DOC_COMMENT
-  SLIM_FILTER: DEFAULT_LABEL
   SLIM_PARENTHS: DEFAULT_PARENTHS
   SLIM_RUBY_CODE: DEFAULT_TEMPLATE_LANGUAGE_COLOR
-  SLIM_STATIC_CONTENT: TEXT
-  SLIM_STRING_INTERPOLATED: DEFAULT_STRING
   SQL_OUTER_QUERY_COLUMN: SQL_COLUMN
   SQL_SYNTHETIC_ENTITY: DEFAULT_PREDEFINED_SYMBOL
-  Static method access: STATIC_METHOD_ATTRIBUTES
-  Static property reference ID: STATIC_FINAL_FIELD_ATTRIBUTES
   STATIC_METHOD_ATTRIBUTES: DEFAULT_STATIC_METHOD
-  XML_ATTRIBUTE_NAME: DEFAULT_ATTRIBUTE
-  XML_ENTITY_REFERENCE: DEFAULT_ENTITY
-  XML_PROLOGUE: TEXT
+  Static method access: STATIC_METHOD_ATTRIBUTES
   XML_TAG: DEFAULT_TAG
-  XPATH.KEYWORD: DEFAULT_KEYWORD
   XPATH.XPATH_VARIABLE: DEFAULT_LOCAL_VARIABLE
+  org.rust.MUT_BINDING: DEFAULT_IDENTIFIER
 attributes:
   ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES: whiskey
+  ANNOTATION_NAME_ATTRIBUTES:
+    foreground: chalky
+    italic: theme
   APACHE_CONFIG.IDENTIFIER: purple
   BAD_CHARACTER:
     background: 9b3636
   BASH.BINARY_DATA: ''
   BASH.CONDITIONAL: ''
   BASH.EXTERNAL_COMMAND: malibu
+  BASH.FUNCTION_CALL: malibu
+  BASH.HERE_DOC: green
+  BASH.HERE_DOC_END: &id001
+    foreground: purple
+    italic: theme
+  BASH.HERE_DOC_START: *id001
   BASH.SHEBANG:
-    foreground: dark
     bold: always
+    foreground: dark
     italic: theme
   BLADE_DIRECTIVE: purple
   BOOKMARKS_ATTRIBUTES: {}
   BREADCRUMBS_CURRENT:
-    foreground: lightWhite
     background: 353a46
+    foreground: lightWhite
   BREADCRUMBS_DEFAULT: lightWhite
   BREADCRUMBS_HOVERED:
-    foreground: lightWhite
     background: 444b5a
+    foreground: lightWhite
   BREADCRUMBS_INACTIVE: lightWhite
   BREAKPOINT_ATTRIBUTES:
     background: 743d3d
   BUILDOUT.KEY: purple
   CLASS_REFERENCE: chalky
+  COFFEESCRIPT.BOOLEAN: whiskey
+  COFFEESCRIPT.CLASS_NAME: chalky
+  COFFEESCRIPT.EXPRESSIONS_SUBSTITUTION_MARK: coral
+  COFFEESCRIPT.FUNCTION: purple
+  COFFEESCRIPT.FUNCTION_BINDING: purple
+  COFFEESCRIPT.HEREGEX_CONTENT: whiskey
+  COFFEESCRIPT.HEREGEX_ID: fountainBlue
+  COFFEESCRIPT.REGULAR_EXPRESSION_CONTENT: whiskey
+  COFFEESCRIPT.REGULAR_EXPRESSION_FLAG: fountainBlue
+  COFFEESCRIPT.REGULAR_EXPRESSION_ID: fountainBlue
+  COFFEESCRIPT.STRING: green
+  CONDITIONALLY_NOT_COMPILED:
+    foreground: 59626f
+    italic: theme
+  CONSOLE_BLACK_OUTPUT: '000000'
+  CONSOLE_BLUE_BRIGHT_OUTPUT:
+    bold: always
+    foreground: malibu
+  CONSOLE_BLUE_OUTPUT: malibu
+  CONSOLE_CYAN_BRIGHT_OUTPUT:
+    bold: always
+    foreground: fountainBlue
+  CONSOLE_CYAN_OUTPUT: fountainBlue
+  CONSOLE_DARKGRAY_OUTPUT: 464c55
+  CONSOLE_ERROR_OUTPUT: coral
+  CONSOLE_GRAY_OUTPUT:
+    error_stripe_color: 21252b
+    foreground: 646a73
+  CONSOLE_GREEN_BRIGHT_OUTPUT:
+    bold: always
+    foreground: green
+  CONSOLE_GREEN_OUTPUT: green
+  CONSOLE_MAGENTA_BRIGHT_OUTPUT:
+    bold: always
+    foreground: purple
+  CONSOLE_MAGENTA_OUTPUT: purple
+  CONSOLE_NORMAL_OUTPUT: lightWhite
+  CONSOLE_RANGE_TO_EXECUTE:
+    EFFECT_COLOR: dark
+  CONSOLE_RED_BRIGHT_OUTPUT:
+    bold: always
+    foreground: coral
+  CONSOLE_RED_OUTPUT: coral
+  CONSOLE_SYSTEM_OUTPUT: e7f2ff
+  CONSOLE_USER_INPUT: green
+  CONSOLE_WHITE_OUTPUT: lightWhite
+  CONSOLE_YELLOW_BRIGHT_OUTPUT:
+    bold: always
+    foreground: chalky
+  CONSOLE_YELLOW_OUTPUT: chalky
+  CONSTRUCTOR_CALL_ATTRIBUTES: chalky
+  CSS.COLOR: fountainBlue
+  CSS.FUNCTION: malibu
+  CSS.HASH: malibu
+  CSS.IDENT: d39a63
+  CSS.IMPORTANT: *id001
+  CSS.KEYWORD: *id001
+  CSS.PROPERTY_NAME: {}
+  CSS.PROPERTY_VALUE: whiskey
+  CSS.PSEUDO: fountainBlue
+  CSS.TAG_NAME: coral
+  CSS.URL:
+    effect_color: whiskey
+    foreground: whiskey
+    italic: theme
+    underscored: always
+  CTRL_CLICKABLE:
+    effect_color: malibu
+    foreground: malibu
+    underscored: always
+  CUSTOM_KEYWORD1_ATTRIBUTES: *id001
+  CUSTOM_KEYWORD2_ATTRIBUTES: whiskey
+  CUSTOM_KEYWORD3_ATTRIBUTES: chalky
+  CUSTOM_KEYWORD4_ATTRIBUTES: malibu
+  CUSTOM_STRING_ATTRIBUTES: green
+  CUSTOM_VALID_STRING_ESCAPE_ATTRIBUTES: fountainBlue
   Clojure Atom: purple
   Clojure Character: green
   Clojure Keyword: df6a73
@@ -185,84 +204,10 @@ attributes:
     foreground: 59626f
     italic: theme
   Clojure Literal:
-    foreground: fda5ff
     bold: always
+    foreground: fda5ff
   Clojure Numbers: whiskey
   Clojure Strings: green
-  COFFEESCRIPT.BOOLEAN: whiskey
-  COFFEESCRIPT.CLASS_NAME: chalky
-  COFFEESCRIPT.EXPRESSIONS_SUBSTITUTION_MARK: coral
-  COFFEESCRIPT.FUNCTION_BINDING: purple
-  COFFEESCRIPT.FUNCTION: purple
-  COFFEESCRIPT.HEREGEX_CONTENT: whiskey
-  COFFEESCRIPT.HEREGEX_ID: fountainBlue
-  COFFEESCRIPT.REGULAR_EXPRESSION_CONTENT: whiskey
-  COFFEESCRIPT.REGULAR_EXPRESSION_FLAG: fountainBlue
-  COFFEESCRIPT.REGULAR_EXPRESSION_ID: fountainBlue
-  COFFEESCRIPT.STRING: green
-  com.plan9.IDENTIFIER: fountainBlue
-  com.plan9.INSTRUCTION: malibu
-  com.plan9.KEYWORD: purple
-  com.plan9.REGISTER: coral
-  CONDITIONALLY_NOT_COMPILED:
-    foreground: 59626f
-    italic: theme
-  CONSOLE_BLACK_OUTPUT: '000000'
-  CONSOLE_BLUE_BRIGHT_OUTPUT:
-    foreground: malibu
-    bold: always
-  CONSOLE_BLUE_OUTPUT: malibu
-  CONSOLE_CYAN_BRIGHT_OUTPUT:
-    foreground: fountainBlue
-    bold: always
-  CONSOLE_CYAN_OUTPUT: fountainBlue
-  CONSOLE_DARKGRAY_OUTPUT: 464c55
-  CONSOLE_ERROR_OUTPUT: coral
-  CONSOLE_GRAY_OUTPUT:
-    foreground: 646a73
-    error_stripe_color: 21252b
-  CONSOLE_GREEN_BRIGHT_OUTPUT:
-    foreground: green
-    bold: always
-  CONSOLE_GREEN_OUTPUT: green
-  CONSOLE_MAGENTA_BRIGHT_OUTPUT:
-    foreground: purple
-    bold: always
-  CONSOLE_MAGENTA_OUTPUT: purple
-  CONSOLE_NORMAL_OUTPUT: lightWhite
-  CONSOLE_RANGE_TO_EXECUTE:
-    EFFECT_COLOR: dark
-  CONSOLE_RED_BRIGHT_OUTPUT:
-    foreground: coral
-    bold: always
-  CONSOLE_RED_OUTPUT: coral
-  CONSOLE_SYSTEM_OUTPUT: e7f2ff
-  CONSOLE_USER_INPUT: green
-  CONSOLE_WHITE_OUTPUT: lightWhite
-  CONSOLE_YELLOW_BRIGHT_OUTPUT:
-    foreground: chalky
-    bold: always
-  CONSOLE_YELLOW_OUTPUT: chalky
-  CONSTRUCTOR_CALL_ATTRIBUTES: chalky
-  CSS.COLOR: fountainBlue
-  CSS.FUNCTION: malibu
-  CSS.HASH: malibu
-  CSS.IDENT: d39a63
-  CSS.PROPERTY_NAME: {}
-  CSS.PROPERTY_VALUE: whiskey
-  CSS.PSEUDO: fountainBlue
-  CSS.URL:
-    foreground: whiskey
-    effect_color: whiskey
-    italic: theme
-    underscored: always
-  CTRL_CLICKABLE:
-    foreground: malibu
-    effect_color: malibu
-    underscored: always
-  CUSTOM_KEYWORD2_ATTRIBUTES: whiskey
-  CUSTOM_KEYWORD3_ATTRIBUTES: chalky
-  CUSTOM_KEYWORD4_ATTRIBUTES: malibu
   DART_ENUM_CONSTANT: whiskey
   DART_INSTANCE_GETTER_DECLARATION: malibu
   DART_INSTANCE_SETTER_DECLARATION: malibu
@@ -295,11 +240,14 @@ attributes:
   DEFAULT_ENTITY: coral
   DEFAULT_FUNCTION_CALL: malibu
   DEFAULT_FUNCTION_DECLARATION: malibu
+  DEFAULT_IDENTIFIER: &id002
+    background: 282c34
+    foreground: lightWhite
   DEFAULT_INSTANCE_FIELD: coral
   DEFAULT_INTERFACE_NAME: chalky
   DEFAULT_INVALID_STRING_ESCAPE:
-    foreground: fountainBlue
     effect_color: error
+    foreground: fountainBlue
     underwaved: always
   DEFAULT_KEYWORD:
     foreground: purple
@@ -314,9 +262,12 @@ attributes:
     italic: theme
   DEFAULT_NUMBER: whiskey
   DEFAULT_PARAMETER: whiskey
+  DEFAULT_REASSIGNED_PARAMETER: whiskey
   DEFAULT_SEMICOLON: {}
   DEFAULT_STATIC_FIELD: coral
+  DEFAULT_STATIC_METHOD: malibu
   DEFAULT_STRING: green
+  DEFAULT_TEMPLATE_LANGUAGE_COLOR: *id002
   DEFAULT_VALID_STRING_ESCAPE: fountainBlue
   DELETED_TEXT_ATTRIBUTES:
     background: '692424'
@@ -352,23 +303,24 @@ attributes:
   EVALUATED_EXPRESSION_ATTRIBUTES: {}
   EVALUATED_EXPRESSION_EXECUTION_LINE_ATTRIBUTES: {}
   EXECUTIONPOINT_ATTRIBUTES:
-    foreground: '000000'
     background: c7c7ff
+    foreground: '000000'
   FIRST SYMBOL IN LIST:
-    foreground: df6a73
     bold: always
+    foreground: df6a73
   FOLDED_TEXT_ATTRIBUTES:
-    foreground: 878e9b
     background: '313741'
+    foreground: 878e9b
     underwaved: always
   FOLLOWED_HYPERLINK_ATTRIBUTES:
-    foreground: purple
     effect_color: purple
+    foreground: purple
     underscored: always
   GENERIC_SERVER_ERROR_OR_WARNING:
     effect_color: ff8c00
     error_stripe_color: ff8c00
     underwaved: always
+  GHERKIN_REGEXP_PARAMETER: whiskey
   GHERKIN_TABLE_PIPE: {}
   GO_BLOCK_COMMENT:
     foreground: dark
@@ -377,29 +329,39 @@ attributes:
   GO_BUILTIN_FUNCTION_CALL: malibu
   GO_BUILTIN_TYPE: purple
   GO_BUILTIN_TYPE_REFERENCE: chalky
-  GO_EXPORTED_FUNCTION_CALL: malibu
   GO_EXPORTED_FUNCTION: malibu
+  GO_EXPORTED_FUNCTION_CALL: malibu
+  GO_FUNCTION_PARAMETER: whiskey
   GO_KEYWORD:
     foreground: purple
     italic: theme
   GO_LINE_COMMENT:
     foreground: dark
     italic: theme
-  GO_LOCAL_FUNCTION_CALL: malibu
   GO_LOCAL_FUNCTION: malibu
-  GO_TYPE_REFERENCE: chalky
-  GO_FUNCTION_PARAMETER: whiskey
+  GO_LOCAL_FUNCTION_CALL: malibu
   GO_METHOD_RECEIVER: whiskey
+  GO_TYPE_REFERENCE: chalky
   GQL_ID: {}
   HAML_CLASS: whiskey
+  HAML_COMMENT: &id004
+    foreground: dark
+    italic: theme
+  HAML_FILTER: &id003
+    bold: always
   HAML_ID: malibu
+  HAML_RUBY_CODE: {}
   HAML_STRING_INTERPOLATED: green
   HAML_TAG: chalky
   HAML_TAG_NAME: coral
+  HAML_TEXT: *id002
+  HTML_ATTRIBUTE_NAME: whiskey
+  HTML_ATTRIBUTE_VALUE: green
+  HTML_ENTITY_REFERENCE: coral
   HTML_TAG_NAME: coral
   HYPERLINK_ATTRIBUTES:
-    foreground: purple
     effect_color: purple
+    foreground: purple
     underscored: always
   IDENTIFIER_UNDER_CARET_ATTRIBUTES:
     background: '353940'
@@ -414,20 +376,26 @@ attributes:
   INI.SECTION: purple
   INJECTED_LANGUAGE_FRAGMENT: {}
   INLINE_PARAMETER_HINT:
-    foreground: lightWhite
     background: '414855'
+    foreground: lightWhite
   INLINE_PARAMETER_HINT_CURRENT:
-    foreground: lightWhite
     background: 48709b
-  INLINE_PARAMETER_HINT_HIGHLIGHTED:
     foreground: lightWhite
+  INLINE_PARAMETER_HINT_HIGHLIGHTED:
     background: dark
+    foreground: lightWhite
   IVAR: df6a73
+  JADE_FILE_PATH: green
+  JADE_FILTER_NAME: *id003
+  JADE_STATEMENTS: *id001
   JADE_TAG_CLASS: whiskey
   JADE_TAG_ID: malibu
+  JAVA_KEYWORD: *id001
   JAVA_STRING: green
+  JAVA_VALID_STRING_ESCAPE: fountainBlue
   JS.ATTRIBUTE:
     background: '423535'
+  JS.GLOBAL_FUNCTION: malibu
   JS.MODULE_NAME: chalky
   JS.REGEXP: fountainBlue
   JSON.KEYWORD: whiskey
@@ -447,6 +415,7 @@ attributes:
     italic: always
   KOTLIN_ENUM_ENTRY: whiskey
   KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW: {}
+  KOTLIN_LABEL: *id003
   KOTLIN_MUTABLE_VARIABLE:
     italic: always
   KOTLIN_NAMED_ARGUMENT: whiskey
@@ -456,6 +425,7 @@ attributes:
   KOTLIN_TYPE_ALIAS:
     foreground: chalky
     italic: always
+  KOTLIN_TYPE_PARAMETER: chalky
   KOTLIN_VARIABLE_AS_FUNCTION: malibu
   KOTLIN_VARIABLE_AS_FUNCTION_LIKE: malibu
   LABEL: purple
@@ -463,7 +433,6 @@ attributes:
   LINE_FULL_COVERAGE: 354a3d
   LINE_NONE_COVERAGE: 46333c
   LINE_PARTIAL_COVERAGE: 2c4957
-  List/map to object conversion: malibu
   LIVE_TEMPLATE_ATTRIBUTES:
     effect_color: error
   LOCALE.MSGCTXT_KEYWORD: purple
@@ -476,9 +445,10 @@ attributes:
   LOG_INFO_OUTPUT: green
   LOG_VERBOSE_OUTPUT: malibu
   LOG_WARNING_OUTPUT: chalky
+  List/map to object conversion: malibu
   MACRONAME: malibu
-  MAKO.TAG: chalky
   MAGIC_MEMBER_ACCESS: whiskey
+  MAKO.TAG: chalky
   MARKDOWN_BOLD:
     bold: always
   MARKDOWN_CODE_SPAN: green
@@ -512,12 +482,13 @@ attributes:
   OC.DIRECTIVE:
     foreground: purple
     italic: theme
-  OC_FORMAT_TOKEN: green
   OC.LABEL:
-    foreground: lightWhite
     bold: always
+    foreground: lightWhite
   OC.MACRONAME: coral
   OC.MACRO_PARAMETER: whiskey
+  OC.MESSAGE_ARGUMENT: malibu
+  OC.METHOD_DECLARATION: malibu
   OC.OVERLOADED_OPERATOR: {}
   OC.PROPERTY: coral
   OC.PROPERTY_ATTRIBUTE: whiskey
@@ -525,25 +496,21 @@ attributes:
   OC.STRUCT_FIELD: coral
   OC.STRUCT_LIKE: chalky
   OC.TYPEDEF: chalky
-  org.rust.DOC_LINK: malibu
-  org.rust.ENUM_VARIANT: whiskey
-  org.rust.LIFETIME:
-    foreground: fountainBlue
-    italic: theme
-  org.rust.MACRO: malibu
-  org.rust.PRIMITIVE_TYPE: chalky
-  org.rust.Q_OPERATOR: {}
-  org.rust.TYPE_ALIAS:
-    foreground: chalky
-    italic: always
-  org.rust.TYPE_PARAMETER: chalky
-  org.rust.UNSAFE_CODE: {}
+  OC_FORMAT_TOKEN: green
   PHP_ALIAS_REFERENCE:
     foreground: chalky
     italic: always
+  PHP_CONSTANT: whiskey
+  PHP_EXEC_COMMAND_ID: green
   PHP_HEREDOC_ID: purple
+  PHP_PARAMETER: whiskey
   PHP_SCRIPTING_BACKGROUND: {}
+  PROPERTIES.INVALID_STRING_ESCAPE: &id005
+    effect_color: error
+    foreground: fountainBlue
+    underwaved: always
   PROPERTIES.KEY: whiskey
+  PROPERTIES.VALID_STRING_ESCAPE: fountainBlue
   PROTOCOL_REFERENCE: chalky
   PUPPET_CLASS: chalky
   PUPPET_HEREDOC_TAGS: green
@@ -572,28 +539,11 @@ attributes:
   REGEXP.BRACES: whiskey
   REGEXP.BRACKETS: whiskey
   REGEXP.CHAR_CLASS: fountainBlue
+  REGEXP.ESC_CHARACTER: fountainBlue
   REGEXP.META: purple
   REGEXP.PARENTHS: fountainBlue
-  ReSharper.ASP_NET_MVC_ACTION: {}
-  ReSharper.ASP_NET_MVC_AREA: {}
-  ReSharper.ASP_NET_MVC_CONTROLLER: {}
-  ReSharper.ASP_NET_MVC_VIEW: {}
-  ReSharper.ASP_NET_MVC_VIEW_COMPONENT: {}
-  ReSharper.ASP_NET_RUN_AT_ATTRIBUTE: whiskey
-  ReSharper.BRACE_OUTLINE:
-    effect_color: lightWhite
-  ReSharper.FORMAT_STRING_ITEM: whiskey
-  ReSharper.FORMAT_STRING_ITEM_2: whiskey
-  ReSharper.HINT:
-    effect_color: malibu
-    dotted-line: always
-  ReSharper.IL_INSTRUCTION: coral
-  ReSharper.IL_TARGET_CODE_LABEL:
-    bold: always
-  ReSharper.IL_VIEWER_SYNCHRONIZATION: {}
-  ReSharper.MATCHED_FORMAT_STRING_ITEM: whiskey
-  ReSharper.OUTLINED_ENTITY:
-    effect_color: lightWhite
+  REGEXP.QUOTE_CHARACTER: fountainBlue
+  REGEXP.REDUNDANT_ESCAPE: fountainBlue
   REST.EXPLICIT: purple
   REST.FIELD: purple
   REST.FIXED:
@@ -607,28 +557,64 @@ attributes:
   RHTML_SCRIPTING_BACKGROUND_ID: {}
   RHTML_SCRIPTLET_END_ID: chalky
   RHTML_SCRIPTLET_START_ID: chalky
+  RUBY_BAD_CHARACTER:
+    background: 9b3636
+  RUBY_COMMENT: *id004
+  RUBY_CONSTANT: whiskey
+  RUBY_CONSTANT_DECLARATION: whiskey
+  RUBY_ESCAPE_SEQUENCE: fountainBlue
   RUBY_EXPR_IN_STRING: coral
   RUBY_HEREDOC_CONTENT: green
   RUBY_HEREDOC_ID: purple
+  RUBY_INVALID_ESCAPE_SEQUENCE: *id005
+  RUBY_LINE_CONTINUATION: {}
   RUBY_NTH_REF: whiskey
+  RUBY_NUMBER: whiskey
+  RUBY_PARAMETER_ID: whiskey
   RUBY_REGEXP: fountainBlue
   RUBY_SYMBOL: fountainBlue
+  RUBY_WORDS: green
   RUNTIME_ERROR:
+    dotted-line: always
     effect_color: ff8c00
     error_stripe_color: error
+  ReSharper.ASP_NET_MVC_ACTION: {}
+  ReSharper.ASP_NET_MVC_AREA: {}
+  ReSharper.ASP_NET_MVC_CONTROLLER: {}
+  ReSharper.ASP_NET_MVC_VIEW: {}
+  ReSharper.ASP_NET_MVC_VIEW_COMPONENT: {}
+  ReSharper.ASP_NET_RUN_AT_ATTRIBUTE: whiskey
+  ReSharper.BRACE_OUTLINE:
+    effect_color: lightWhite
+  ReSharper.FORMAT_STRING_ITEM: whiskey
+  ReSharper.FORMAT_STRING_ITEM_2: whiskey
+  ReSharper.HINT:
     dotted-line: always
+    effect_color: malibu
+  ReSharper.IL_INSTRUCTION: coral
+  ReSharper.IL_TARGET_CODE_LABEL:
+    bold: always
+  ReSharper.IL_VIEWER_SYNCHRONIZATION: {}
+  ReSharper.MATCHED_FORMAT_STRING_ITEM: whiskey
+  ReSharper.OUTLINED_ENTITY:
+    effect_color: lightWhite
+  ReSharper.STRING_ESCAPE_CHARACTER_2: fountainBlue
   SASS_MIXIN: whiskey
   SASS_VARIABLE: {}
   SEARCH_RESULT_ATTRIBUTES:
     background: 42557b
     effect_color: 457dff
   SLIM_BAD_CHARACTER:
-    foreground: 272b33
     background: f2777a
+    foreground: 272b33
   SLIM_CLASS: whiskey
+  SLIM_COMMENT: *id004
   SLIM_DOCTYPE_KWD: coral
+  SLIM_FILTER: *id003
   SLIM_ID: fountainBlue
   SLIM_INTERPOLATION: coral
+  SLIM_STATIC_CONTENT: *id002
+  SLIM_STRING_INTERPOLATED: green
   SLIM_TAG: coral
   SLIM_TAG_ATTR_KEY: whiskey
   STATIC_FINAL_FIELD_ATTRIBUTES: whiskey
@@ -640,13 +626,14 @@ attributes:
   SWIFT_ATTRIBUTE_ARGUMENT: whiskey
   SWIFT_EXTERNAL_PARAMETER: fountainBlue
   SWIFT_SHEBANG_COMMENT:
-    foreground: dark
     bold: always
+    foreground: dark
     italic: theme
+  Static property reference ID: whiskey
   TEMPLATE_VARIABLE_ATTRIBUTES: whiskey
   TEXT:
-    foreground: lightWhite
     background: 282c34
+    foreground: lightWhite
   TEXT_SEARCH_RESULT_ATTRIBUTES:
     background: 42557b
     effect_color: 457dff
@@ -679,11 +666,37 @@ attributes:
     effect_color: error
     error_stripe_color: error
     underwaved: always
+  XML_ATTRIBUTE_NAME: whiskey
+  XML_ENTITY_REFERENCE: coral
   XML_NS_PREFIX: whiskey
+  XML_PROLOGUE: *id002
   XML_TAG_NAME: coral
+  XPATH.KEYWORD: *id001
   XPATH.XPATH_NAME: green
   YAML_ANCHOR: chalky
   YAML_SCALAR_KEY: coral
   YAML_SCALAR_LIST: green
   YAML_SCALAR_VALUE: green
   YAML_TEXT: green
+  com.plan9.IDENTIFIER: fountainBlue
+  com.plan9.INSTRUCTION: malibu
+  com.plan9.KEYWORD: purple
+  com.plan9.LABEL: *id003
+  com.plan9.PSEUDO_INSTRUCTION: malibu
+  com.plan9.REGISTER: coral
+  org.rust.DOC_LINK: malibu
+  org.rust.ENUM_VARIANT: whiskey
+  org.rust.LIFETIME:
+    foreground: fountainBlue
+    italic: theme
+  org.rust.MACRO: malibu
+  org.rust.MUT_PARAMETER: whiskey
+  org.rust.PRIMITIVE_TYPE: chalky
+  org.rust.Q_OPERATOR: {}
+  org.rust.TYPE_ALIAS:
+    foreground: chalky
+    italic: always
+  org.rust.TYPE_PARAMETER: chalky
+  org.rust.UNSAFE_CODE: {}
+  osmorc.attributeName: coral
+  osmorc.directiveName: coral
