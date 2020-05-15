@@ -1,5 +1,10 @@
 # Changelog
 
+#### 3.3.5
+
+- Fix border color inconsistencies.
+- Add sponsorship section to the readme.
+
 #### 3.3.4
 
 - Fixed issue with remaining editors not applying correct colors.
