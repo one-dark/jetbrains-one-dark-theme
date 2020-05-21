@@ -49,9 +49,9 @@ class ThemeSettingsUI : SearchableConfigurable {
   }
 
   override fun createComponent(): JComponent? =
-      createMaterialIconsPane()
+      createSettingsPane()
 
-  private fun createMaterialIconsPane(): DialogPanel {
+  private fun createSettingsPane(): DialogPanel {
     val directoryIcon = JLabel()
 //    directoryIcon.icon = ImageIcon(javaClass.getResource("/icons/settings/directoryIcon.png"))
     val fileIcon = JLabel()
