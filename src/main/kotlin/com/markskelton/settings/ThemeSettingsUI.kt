@@ -43,9 +43,28 @@ class ThemeSettingsUI : SearchableConfigurable {
   }
 
   override fun apply() {
+    persistChanges()
     ApplicationManager.getApplication().messageBus.syncPublisher(
         THEME_CONFIG_TOPIC
     ).themeConfigUpdated(ThemeSettings.instance)
+  }
+
+  private fun persistChanges() {
+    registerSettingsChange(themeSettingsModel.isBold, {
+      ThemeSettings.instance.isBold
+    }) {
+      ThemeSettings.instance.isBold = it
+    }
+    registerSettingsChange(themeSettingsModel.isVivid, {
+      ThemeSettings.instance.isVivid
+    }) {
+      ThemeSettings.instance.isVivid = it
+    }
+    registerSettingsChange(themeSettingsModel.isItalic, {
+      ThemeSettings.instance.isItalic
+    }) {
+      ThemeSettings.instance.isItalic = it
+    }
   }
 
   override fun createComponent(): JComponent? =
@@ -116,5 +135,12 @@ class ThemeSettingsUI : SearchableConfigurable {
         }
       }
     }
+  }
+}
+
+
+fun <T> registerSettingsChange(setValue: T, getStoredValue: () -> T, onChanged: (T) -> Unit) {
+  if(getStoredValue() != setValue) {
+    onChanged(setValue)
   }
 }
