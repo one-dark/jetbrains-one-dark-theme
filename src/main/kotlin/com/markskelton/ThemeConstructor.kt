@@ -20,6 +20,10 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import javax.swing.UIManager
 
+enum class FontVariant(val schemeValue: Int) {
+  BOLD(1), ITALIC(2), BOLD_ITALIC(3), NONE(0)
+}
+
 object ThemeConstructor {
   private val gson = Gson()
 
@@ -55,7 +59,7 @@ object ThemeConstructor {
 
   private fun applySettingsToTemplate(
     editorTemplate: Node,
-    fontVariants: Map<String, String>,
+    fontVariants: FontVariant,
     colorPalette: Map<String, String>
   ): Node {
     TODO("Not yet implemented")
@@ -65,8 +69,13 @@ object ThemeConstructor {
     TODO("Not yet implemented")
   }
 
-  private fun getFontVariants(themeSettings: ThemeSettings): Map<String, String> {
-    TODO("Not yet implemented")
+  private fun getFontVariants(themeSettings: ThemeSettings): FontVariant {
+    return when {
+      themeSettings.isBold && themeSettings.isItalic -> FontVariant.BOLD_ITALIC
+      themeSettings.isBold -> FontVariant.BOLD
+      themeSettings.isItalic -> FontVariant.ITALIC
+      else -> FontVariant.NONE
+    }
   }
 
   private fun getColorPalette(themeSettings: ThemeSettings): Map<String, String> {
