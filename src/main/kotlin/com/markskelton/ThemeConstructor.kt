@@ -1,5 +1,7 @@
 package com.markskelton
 
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
@@ -19,6 +21,7 @@ import java.nio.file.Paths
 import javax.swing.UIManager
 
 object ThemeConstructor {
+  private val gson = Gson()
 
   fun constructNewTheme(newSettings: ThemeSettings): UIManager.LookAndFeelInfo {
     val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
@@ -67,7 +70,10 @@ object ThemeConstructor {
   }
 
   private fun getColorPalette(themeSettings: ThemeSettings): Map<String, String> {
-    TODO("Not yet implemented")
+    val selectedPalette = if(themeSettings.isVivid) "vivid" else "normal"
+    return gson.fromJson(this::class.java.getResourceAsStream(
+      "$selectedPalette.palette.json"
+    ).reader(), object: TypeToken<Map<String, String>>() {}.type)
   }
 
   private fun getAssetsDirectory(): Path {
