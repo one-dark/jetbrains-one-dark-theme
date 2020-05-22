@@ -10,9 +10,9 @@ import javax.swing.JComponent
 import javax.swing.JLabel
 
 data class ThemeSettingsModel(
-    var isBold: Boolean,
-    var isVivid: Boolean,
-    var isItalic: Boolean
+  var isBold: Boolean,
+  var isVivid: Boolean,
+  var isItalic: Boolean
 )
 
 class ThemeSettingsUI : SearchableConfigurable {
@@ -138,9 +138,8 @@ class ThemeSettingsUI : SearchableConfigurable {
   }
 }
 
-
 fun <T> registerSettingsChange(setValue: T, getStoredValue: () -> T, onChanged: (T) -> Unit) {
-  if(getStoredValue() != setValue) {
+  if (getStoredValue() != setValue) {
     onChanged(setValue)
   }
 }

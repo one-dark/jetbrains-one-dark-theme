@@ -11,7 +11,7 @@ object LegacyMigration {
     "4f556d32-83cb-4b8b-9932-c4eccc4ce3af" to LegacyThemes.VIVID_ITALIC
   )
 
-  fun migrateIfNecessary(){
+  fun migrateIfNecessary() {
     // todo: this!
   }
 }

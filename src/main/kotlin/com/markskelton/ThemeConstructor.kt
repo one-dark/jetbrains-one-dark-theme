@@ -6,12 +6,18 @@ import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.PathManager
+import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.vfs.VfsUtil
 import com.markskelton.OneDarkThemeManager.ONE_DARK_ID
 import com.markskelton.settings.ThemeSettings
 import groovy.util.Node
 import groovy.util.XmlNodePrinter
+import groovy.util.XmlParser
+import org.xml.sax.ErrorHandler
+import org.xml.sax.InputSource
+import org.xml.sax.SAXParseException
 import java.io.BufferedOutputStream
+import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.io.PrintWriter
 import java.nio.charset.StandardCharsets
@@ -26,6 +32,7 @@ enum class FontVariant(val schemeValue: Int) {
 
 object ThemeConstructor {
   private val gson = Gson()
+  private val logger = Logger.getInstance(this::class.java)
 
   fun constructNewTheme(newSettings: ThemeSettings): UIManager.LookAndFeelInfo {
     val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
@@ -62,12 +69,59 @@ object ThemeConstructor {
     fontVariants: FontVariant,
     colorPalette: Map<String, String>
   ): Node {
-    TODO("Not yet implemented")
+    val themeTemplate = editorTemplate.clone() as Node
+    themeTemplate.breadthFirst()
+      .map { it as Node }
+      .forEach {
+        when (it.name()) {
+          "option" -> {
+            val value = it.attribute("value") as? String
+            if (value?.contains('$') == true) {
+              val (end, replacementColor) = getReplacementColor(value, '$') { templateColor ->
+                colorPalette[templateColor]
+                  ?: throw IllegalArgumentException("$templateColor is not in the color definition.")
+              }
+              it.attributes()["value"] = buildReplacement(replacementColor, value, end)
+            }
+          }
+        }
+      }
+
+    return themeTemplate
   }
 
-  private fun getEditorXMLTemplate(): Node {
-    TODO("Not yet implemented")
+  private fun buildReplacement(replacementColor: String, value: String, end: Int) =
+    "$replacementColor${value.substring(end + 1)}"
+
+  private fun getReplacementColor(
+    value: String,
+    templateDelemiter: Char,
+    replacementSupplier: (CharSequence) -> String
+  ): Pair<Int, String> {
+    val start = value.indexOf(templateDelemiter)
+    val end = value.lastIndexOf(templateDelemiter)
+    val templateColor = value.subSequence(start + 1, end)
+    val replacementHexColor = replacementSupplier(templateColor)
+    val replacementColor = replacementHexColor.substring(1)
+    return Pair(end, replacementColor)
   }
+
+  private fun getEditorXMLTemplate(): Node =
+    this::class.java.getResourceAsStream("/templates/one-dark.template.xml").use { input ->
+      val inputSource = InputSource(InputStreamReader(input, "UTF-8"))
+      val parser = XmlParser(false, true, true)
+      parser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)
+      parser.errorHandler = object : ErrorHandler {
+        override fun warning(exception: SAXParseException?) {}
+
+        override fun error(exception: SAXParseException?) {}
+
+        override fun fatalError(exception: SAXParseException) {
+          throw exception
+        }
+      }
+      parser.parse(inputSource)
+    }
 
   private fun getFontVariants(themeSettings: ThemeSettings): FontVariant {
     return when {
@@ -79,10 +133,11 @@ object ThemeConstructor {
   }
 
   private fun getColorPalette(themeSettings: ThemeSettings): Map<String, String> {
-    val selectedPalette = if(themeSettings.isVivid) "vivid" else "normal"
+    val selectedPalette = if (themeSettings.isVivid) "vivid" else "normal"
+    logger.info("Building theme with $selectedPalette palette.")
     return gson.fromJson(this::class.java.getResourceAsStream(
-      "$selectedPalette.palette.json"
-    ).reader(), object: TypeToken<Map<String, String>>() {}.type)
+      "/templates/$selectedPalette.palette.json"
+    ).reader(), object : TypeToken<Map<String, String>>() {}.type)
   }
 
   private fun getAssetsDirectory(): Path {

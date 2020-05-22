@@ -11,4 +11,3 @@ class OneDarkTheme : StartupActivity, DumbAware {
     OneDarkThemeManager.registerStartup()
   }
 }
-
