@@ -24,11 +24,21 @@ import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
+import java.util.*
 import javax.swing.UIManager
+
+enum class ColorVariant {
+  VIVID, NORMAL
+}
 
 enum class FontVariant(val schemeValue: Int) {
   BOLD(1), ITALIC(2), BOLD_ITALIC(3), NONE(0)
 }
+
+data class ColorPalette(
+  val variant: ColorVariant,
+  val colors: Map<String, String>
+)
 
 object ThemeConstructor {
   private val gson = Gson()
@@ -47,9 +57,18 @@ object ThemeConstructor {
   }
 
   private fun getUpdatedEditorScheme(themeSettings: ThemeSettings): Path {
-    val newEditorSchemeFile = Paths.get(getAssetsDirectory().toAbsolutePath().toString(), "one_dark.xml")
+    val assetsDirectory = getAssetsDirectory()
+    cleanDirectory(assetsDirectory)
+    // Intellij caches files, and will not update if you change the file
+    val newEditorSchemeFile = Paths.get(assetsDirectory.toAbsolutePath().toString(), "one-dark-${UUID.randomUUID()}.xml")
     buildNewEditorScheme(themeSettings, newEditorSchemeFile)
     return newEditorSchemeFile
+  }
+
+  private fun cleanDirectory(assetsDirectory: Path) {
+    Files.walk(assetsDirectory)
+      .filter { it.fileName.toString().startsWith("one-dark-") }
+      .forEach { Files.delete(it) }
   }
 
   private fun buildNewEditorScheme(themeSettings: ThemeSettings, newSchemeFile: Path) {
@@ -66,20 +85,24 @@ object ThemeConstructor {
 
   private fun applySettingsToTemplate(
     editorTemplate: Node,
-    fontVariants: FontVariant,
-    colorPalette: Map<String, String>
+    fontVariant: FontVariant,
+    colorPalette: ColorPalette
   ): Node {
+    val (paletteVariant, colors) = colorPalette
     val themeTemplate = editorTemplate.clone() as Node
     themeTemplate.breadthFirst()
       .map { it as Node }
       .forEach {
         when (it.name()) {
+          "scheme" -> {
+            it.attributes().replace("name", "One Dark $paletteVariant $fontVariant")
+          }
           "option" -> {
             val value = it.attribute("value") as? String
             if (value?.contains('$') == true) {
               val (end, replacementColor) = getReplacementColor(value, '$') { templateColor ->
-                colorPalette[templateColor]
-                  ?: throw IllegalArgumentException("$templateColor is not in the color definition.")
+                colors[templateColor]
+                  ?: throw IllegalArgumentException("$templateColor is not in the color definition for $paletteVariant.")
               }
               it.attributes()["value"] = buildReplacement(replacementColor, value, end)
             }
@@ -132,12 +155,15 @@ object ThemeConstructor {
     }
   }
 
-  private fun getColorPalette(themeSettings: ThemeSettings): Map<String, String> {
+  private fun getColorPalette(themeSettings: ThemeSettings): ColorPalette {
     val selectedPalette = if (themeSettings.isVivid) "vivid" else "normal"
     logger.info("Building theme with $selectedPalette palette.")
-    return gson.fromJson(this::class.java.getResourceAsStream(
-      "/templates/$selectedPalette.palette.json"
-    ).reader(), object : TypeToken<Map<String, String>>() {}.type)
+    return ColorPalette(
+      if (themeSettings.isVivid) ColorVariant.VIVID else ColorVariant.NORMAL,
+      gson.fromJson(this::class.java.getResourceAsStream(
+        "/templates/$selectedPalette.palette.json"
+      ).reader(), object : TypeToken<Map<String, String>>() {}.type)
+    )
   }
 
   private fun getAssetsDirectory(): Path {
