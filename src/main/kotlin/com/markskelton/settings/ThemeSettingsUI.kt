@@ -8,7 +8,6 @@ import com.intellij.ui.layout.panel
 import com.markskelton.settings.ThemeSettings.Companion.constructSettingModel
 import java.net.URI
 import javax.swing.JComponent
-import javax.swing.JLabel
 
 data class ThemeSettingsModel(
   var isBold: Boolean,
@@ -29,7 +28,7 @@ class ThemeSettingsUI : SearchableConfigurable {
   override fun getId(): String = "com.markskelton.ThemeSettings"
 
   override fun getDisplayName(): String =
-      THEME_SETTINGS_DISPLAY_NAME
+    THEME_SETTINGS_DISPLAY_NAME
 
   private val initialThemeSettingsModel = constructSettingModel()
 
@@ -42,7 +41,7 @@ class ThemeSettingsUI : SearchableConfigurable {
   override fun apply() {
     persistChanges()
     ApplicationManager.getApplication().messageBus.syncPublisher(
-        THEME_CONFIG_TOPIC
+      THEME_CONFIG_TOPIC
     ).themeConfigUpdated(ThemeSettings.instance)
   }
 
@@ -65,53 +64,44 @@ class ThemeSettingsUI : SearchableConfigurable {
   }
 
   override fun createComponent(): JComponent? =
-      createSettingsPane()
+    createSettingsPane()
 
-  private fun createSettingsPane(): DialogPanel {
-    val directoryIcon = JLabel()
-//    directoryIcon.icon = ImageIcon(javaClass.getResource("/icons/settings/directoryIcon.png"))
-    val fileIcon = JLabel()
-//    fileIcon.icon = ImageIcon(javaClass.getResource("/icons/settings/fileIcon.png"))
-    val psiIcon = JLabel()
-//    psiIcon.icon = ImageIcon(javaClass.getResource("/icons/settings/psiIcon.png"))
-    return panel {
+  private fun createSettingsPane(): DialogPanel =
+    panel {
       titledRow("Main Settings") {
+//        row {
+//          cell {
+//            checkBox(
+//              "Bold Characters",
+//              themeSettingsModel.isBold,
+//              comment = "Uses bold fonts for certain language keywords",
+//              actionListener = { _, component ->
+//                themeSettingsModel.isBold = component.isSelected
+//              }
+//            )
+//          }
+//        }
         row {
           cell {
-            directoryIcon()
             checkBox(
-                "Bold Characters",
-                themeSettingsModel.isBold,
-                comment = "Uses bold fonts for certain language keywords",
-                actionListener = { _, component ->
-                  themeSettingsModel.isBold = component.isSelected
-                }
+              "Italic Characters",
+              themeSettingsModel.isItalic,
+              comment = "Uses italic font for language keywords and comments",
+              actionListener = { _, component ->
+                themeSettingsModel.isItalic = component.isSelected
+              }
             )
           }
         }
         row {
           cell {
-            fileIcon()
             checkBox(
-                "Italic Characters",
-                themeSettingsModel.isItalic,
-                comment = "Uses italic font for language keywords and comments",
-                actionListener = { _, component ->
-                  themeSettingsModel.isItalic = component.isSelected
-                }
-            )
-          }
-        }
-        row {
-          cell {
-            psiIcon()
-            checkBox(
-                "Vivid Pallette",
-                themeSettingsModel.isVivid,
-                comment = "Uses the One-Dark vivid color pallette",
-                actionListener = { _, component ->
-                  themeSettingsModel.isVivid = component.isSelected
-                }
+              "Vivid Pallette",
+              themeSettingsModel.isVivid,
+              comment = "Uses the One-Dark vivid color pallette",
+              actionListener = { _, component ->
+                themeSettingsModel.isVivid = component.isSelected
+              }
             )
           }
         }
@@ -132,7 +122,6 @@ class ThemeSettingsUI : SearchableConfigurable {
         }
       }
     }
-  }
 }
 
 fun <T> registerSettingsChange(setValue: T, getStoredValue: () -> T, onChanged: (T) -> Unit) {
