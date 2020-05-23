@@ -18,4 +18,9 @@ object LegacyMigration {
   fun migrateIfNecessary() {
     // todo: this!
   }
+
+  fun notifyUserOfDeprecation() {
+    // display message
+    // set laf as One One Dark from theme provider
+  }
 }

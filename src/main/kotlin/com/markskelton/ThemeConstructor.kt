@@ -43,8 +43,27 @@ data class ColorPalette(
 object ThemeConstructor {
   private val gson = Gson()
   private val logger = Logger.getInstance(this::class.java)
+  private const val ONE_DARK_FILE_PREFIX = "one-dark-"
 
   fun constructNewTheme(newSettings: ThemeSettings): UIManager.LookAndFeelInfo {
+    val updatedEditorScheme = getUpdatedEditorScheme(newSettings)
+    return constructLookAndFeel(updatedEditorScheme)
+  }
+
+  fun useExistingTheme(): UIManager.LookAndFeelInfo {
+    val updatedEditorScheme = getPreExistingTheme()
+    return constructLookAndFeel(updatedEditorScheme)
+  }
+
+  private fun getPreExistingTheme(): Path {
+    return findConstructedThemes(getAssetsDirectory())
+      .findFirst()
+      .orElseGet {
+        getUpdatedEditorScheme(ThemeSettings.instance)
+      }
+  }
+
+  private fun constructLookAndFeel(updatedEditorScheme: Path): TempUIThemeBasedLookAndFeelInfo {
     val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
       .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
       .first {
@@ -52,7 +71,7 @@ object ThemeConstructor {
       }
     return TempUIThemeBasedLookAndFeelInfo(
       oneDarkLAF.theme,
-      VfsUtil.findFile(getUpdatedEditorScheme(newSettings), true)
+      VfsUtil.findFile(updatedEditorScheme, true)
     )
   }
 
@@ -60,16 +79,21 @@ object ThemeConstructor {
     val assetsDirectory = getAssetsDirectory()
     cleanDirectory(assetsDirectory)
     // Intellij caches files, and will not update if you change the file
-    val newEditorSchemeFile = Paths.get(assetsDirectory.toAbsolutePath().toString(), "one-dark-${UUID.randomUUID()}.xml")
+    val newEditorSchemeFile = Paths.get(
+      assetsDirectory.toAbsolutePath().toString(),
+      "$ONE_DARK_FILE_PREFIX${UUID.randomUUID()}.xml"
+    )
     buildNewEditorScheme(themeSettings, newEditorSchemeFile)
     return newEditorSchemeFile
   }
 
   private fun cleanDirectory(assetsDirectory: Path) {
-    Files.walk(assetsDirectory)
-      .filter { it.fileName.toString().startsWith("one-dark-") }
+    findConstructedThemes(assetsDirectory)
       .forEach { Files.delete(it) }
   }
+
+  private fun findConstructedThemes(assetsDirectory: Path) = Files.walk(assetsDirectory)
+    .filter { it.fileName.toString().startsWith(ONE_DARK_FILE_PREFIX) }
 
   private fun buildNewEditorScheme(themeSettings: ThemeSettings, newSchemeFile: Path) {
     val colorPalette = getColorPalette(themeSettings)
