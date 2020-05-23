@@ -123,10 +123,16 @@ object ThemeConstructor {
           }
           "option" -> {
             val value = it.attribute("value") as? String
-            if (value?.contains('$') == true) {
+            if (value?.startsWith('$') == true) {
               val (end, replacementColor) = getReplacementColor(value, '$') { templateColor ->
                 colors[templateColor]
                   ?: throw IllegalArgumentException("$templateColor is not in the color definition for $paletteVariant.")
+              }
+              it.attributes()["value"] = buildReplacement(replacementColor, value, end)
+            } else if (value?.startsWith('%') == true) {
+              val (end, replacementColor) = getReplacementColor(value, '%') { fontSpec ->
+                colors[fontSpec]
+                  ?: throw IllegalArgumentException("$fontSpec is not in the color definition for $paletteVariant.")
               }
               it.attributes()["value"] = buildReplacement(replacementColor, value, end)
             }
