@@ -14,6 +14,15 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   companion object {
     val instance: ThemeSettings
       get() = ServiceManager.getService(ThemeSettings::class.java)
+
+    fun constructSettingModel(): ThemeSettingsModel {
+      return ThemeSettingsModel(
+        instance.isBold,
+        instance.isVivid,
+        instance.isItalic
+      )
+    }
+
   }
 
   var version: String = "0.0.0"

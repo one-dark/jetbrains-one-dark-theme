@@ -5,6 +5,7 @@ import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.options.SearchableConfigurable
 import com.intellij.openapi.ui.DialogPanel
 import com.intellij.ui.layout.panel
+import com.markskelton.settings.ThemeSettings.Companion.constructSettingModel
 import java.net.URI
 import javax.swing.JComponent
 import javax.swing.JLabel
@@ -30,11 +31,7 @@ class ThemeSettingsUI : SearchableConfigurable {
   override fun getDisplayName(): String =
       THEME_SETTINGS_DISPLAY_NAME
 
-  private val initialThemeSettingsModel = ThemeSettingsModel(
-      ThemeSettings.instance.isBold,
-      ThemeSettings.instance.isVivid,
-      ThemeSettings.instance.isItalic
-  )
+  private val initialThemeSettingsModel = constructSettingModel()
 
   private val themeSettingsModel = initialThemeSettingsModel.copy()
 
