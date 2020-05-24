@@ -8,6 +8,6 @@ import com.markskelton.legacy.LegacyMigration
 class OneDarkTheme : StartupActivity, DumbAware {
   override fun runActivity(project: Project) {
     LegacyMigration.migrateIfNecessary()
-    OneDarkThemeManager.registerStartup()
+    OneDarkThemeManager.registerStartup(project)
   }
 }

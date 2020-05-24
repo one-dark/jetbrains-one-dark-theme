@@ -5,9 +5,12 @@ import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.project.Project
 import com.intellij.util.messages.MessageBusConnection
 import com.markskelton.legacy.LegacyMigration.isLegacyTheme
 import com.markskelton.legacy.LegacyMigration.migrateAndNotifyUserOfDeprecation
+import com.markskelton.notification.CURRENT_VERSION
+import com.markskelton.notification.Notifications
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeConfigListener
 import com.markskelton.settings.ThemeSettings
@@ -16,8 +19,12 @@ object OneDarkThemeManager {
   private lateinit var messageBus: MessageBusConnection
   const val ONE_DARK_ID = "f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3"
 
-  fun registerStartup() {
+  fun registerStartup(project: Project) {
     if (!this::messageBus.isInitialized) {
+      if (ThemeSettings.instance.version != CURRENT_VERSION) {
+        ThemeSettings.instance.version = CURRENT_VERSION
+        Notifications.displayUpdateNotification(project)
+      }
       applyConfigurableTheme()
       messageBus = ApplicationManager.getApplication().messageBus.connect()
       messageBus.subscribe(THEME_CONFIG_TOPIC, object : ThemeConfigListener {
