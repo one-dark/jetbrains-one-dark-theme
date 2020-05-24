@@ -22,13 +22,17 @@ object LegacyMigration {
   fun isLegacyTheme(laf: UIThemeBasedLookAndFeelInfo): Boolean = legacyThemes.containsKey(laf.theme.id)
 
   fun migrateIfNecessary() {
-    migrateAndNotifyUserOfDeprecation()
+    migrateUser()
   }
 
   fun migrateAndNotifyUserOfDeprecation() {
+    Notifications.displayDeprecationMessage()
+    migrateUser()
+  }
+
+  private fun migrateUser() {
     val legacyTheme = LafManagerImpl.getInstance().currentLookAndFeel
     if (legacyTheme is UIThemeBasedLookAndFeelInfo && isLegacyTheme(legacyTheme)) {
-      Notifications.displayDeprecationMessage()
       LafManagerImpl.getInstance().setCurrentLookAndFeel(LafManagerImpl.getInstance().installedLookAndFeels
         .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
         .first {
