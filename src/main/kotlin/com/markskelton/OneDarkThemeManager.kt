@@ -7,7 +7,7 @@ import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.util.messages.MessageBusConnection
 import com.markskelton.legacy.LegacyMigration.isLegacyTheme
-import com.markskelton.legacy.LegacyMigration.notifyUserOfDeprecation
+import com.markskelton.legacy.LegacyMigration.migrateAndNotifyUserOfDeprecation
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeConfigListener
 import com.markskelton.settings.ThemeSettings
@@ -36,7 +36,7 @@ object OneDarkThemeManager {
           when {
             currentLaf !is TempUIThemeBasedLookAndFeelInfo &&
               isOneDarkTheme(currentLaf) -> setOneDarkTheme()
-            isLegacyTheme(currentLaf) -> notifyUserOfDeprecation()
+            isLegacyTheme(currentLaf) -> migrateAndNotifyUserOfDeprecation()
           }
         }
       })

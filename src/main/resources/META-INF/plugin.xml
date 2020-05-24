@@ -8,7 +8,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.markskelton.settings.ThemeSettings"/>
-        <applicationConfigurable id="oneDarkConfig" displayName="One Dark Settings" groupId="appearance"
+        <applicationConfigurable groupId="appearance"
                                  instance="com.markskelton.settings.ThemeSettingsUI" />
         <postStartupActivity implementation="com.markskelton.OneDarkTheme" />
         <themeProvider id="f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" path="/themes/one_dark.theme.json"/>
