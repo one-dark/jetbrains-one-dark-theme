@@ -26,7 +26,9 @@ object LegacyMigration {
   }
 
   fun migrateAndNotifyUserOfDeprecation() {
-    Notifications.displayDeprecationMessage()
+    ApplicationManager.getApplication().invokeLater {
+      Notifications.displayDeprecationMessage()
+    }
     migrateUser()
   }
 

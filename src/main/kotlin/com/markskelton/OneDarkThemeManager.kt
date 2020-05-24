@@ -21,7 +21,7 @@ object OneDarkThemeManager {
 
   fun registerStartup(project: Project) {
     if (!this::messageBus.isInitialized) {
-      attemptToDisplayUpdates(project)
+      attemptToDisplayUpdates()
 
       applyConfigurableTheme()
 
@@ -29,10 +29,12 @@ object OneDarkThemeManager {
     }
   }
 
-  private fun attemptToDisplayUpdates(project: Project) {
+  private fun attemptToDisplayUpdates() {
     if (ThemeSettings.instance.version != CURRENT_VERSION) {
       ThemeSettings.instance.version = CURRENT_VERSION
-      Notifications.displayUpdateNotification(project)
+      ApplicationManager.getApplication().invokeLater {
+        Notifications.displayUpdateNotification()
+      }
     }
   }
 

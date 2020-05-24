@@ -8,10 +8,8 @@ import com.intellij.notification.NotificationDisplayType
 import com.intellij.notification.NotificationGroup
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
-import com.intellij.notification.SingletonNotificationManager
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.options.ShowSettingsUtil
-import com.intellij.openapi.project.Project
 import com.markskelton.settings.ThemeSettingsUI
 
 val UPDATE_MESSAGE: String = """
@@ -28,36 +26,36 @@ const val CURRENT_VERSION = "4.0.0"
 
 object Notifications {
 
-  private val notificationManager by lazy {
-    SingletonNotificationManager(
-      NotificationGroup(
-        "One-Dark Notifications",
-        NotificationDisplayType.STICKY_BALLOON, true
-      ),
-      NotificationType.INFORMATION
-    )
-  }
+  private val notificationGroup = NotificationGroup(
+    "One-Dark Theme",
+    NotificationDisplayType.BALLOON,
+    false,
+    "One-Dark Theme"
+  )
 
-  fun displayUpdateNotification(project: Project) {
+  fun displayUpdateNotification() {
     val pluginName =
       getPlugin(
         getPluginOrPlatformByClassName(Notifications::class.java.canonicalName)
       )?.name
-    notificationManager.notify(
+    notificationGroup.createNotification(
       "$pluginName updated to v$CURRENT_VERSION",
       UPDATE_MESSAGE,
-      project,
+      NotificationType.INFORMATION,
       NotificationListener.URL_OPENING_LISTENER
-    )
+    ).notify(null)
   }
 
   fun displayDeprecationMessage() {
-    notificationManager.notify(
+    notificationGroup.createNotification(
       "Theme is Deprecated",
       """The other variants of the One-Dark theme are currently deprecated. 
-|Please use the '${ThemeSettingsUI.THEME_SETTINGS_DISPLAY_NAME}' menu in the settings to configure the theme""".trimMargin(),
-        action = SettingsAction("Show Settings")
-    )
+        |For convenience, this theme's settings have been automatically applied. 
+|Please use the '${ThemeSettingsUI.THEME_SETTINGS_DISPLAY_NAME}' menu in the settings to configure One-Dark in the future.""".trimMargin(),
+      NotificationType.WARNING,
+      null
+    ).addAction(SettingsAction("Show Settings"))
+      .notify(null)
   }
 }
 
