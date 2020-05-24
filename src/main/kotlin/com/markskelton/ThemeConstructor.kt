@@ -73,7 +73,7 @@ object ThemeConstructor {
   private fun getUpdatedEditorScheme(themeSettings: ThemeSettings): Path {
     val assetsDirectory = getAssetsDirectory()
     cleanDirectory(assetsDirectory)
-    // Intellij caches files, and will not update if you change the file
+    // Intellij caches files, and will not update if you change the contents of the file
     val newEditorSchemeFile = Paths.get(
       assetsDirectory.toAbsolutePath().toString(),
       "$ONE_DARK_FILE_PREFIX${UUID.randomUUID()}.xml"
@@ -125,7 +125,7 @@ object ThemeConstructor {
               it.attributes()["value"] = buildReplacement(replacementColor, value, end)
             } else if (value?.startsWith('%') == true) {
               val (_, fontVariant) = extractValueFromTemplateString(value, '%') { fontSpec ->
-                val fontSpecifications = fontSpec.split("$")
+                val fontSpecifications = fontSpec.split('$')
                 val shouldEffectBeBold = isEffectBold(fontSpecifications, themeSettings)
                 val shouldEffectBeItalic = isEffectItalic(fontSpecifications, themeSettings)
                 when {

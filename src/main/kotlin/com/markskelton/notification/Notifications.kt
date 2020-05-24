@@ -38,7 +38,6 @@ object Notifications {
     )
   }
 
-
   fun displayUpdateNotification(project: Project) {
     val pluginName =
       getPlugin(
@@ -62,7 +61,7 @@ object Notifications {
   }
 }
 
-class SettingsAction(text: String): NotificationAction(text) {
+class SettingsAction(text: String) : NotificationAction(text) {
   override fun actionPerformed(e: AnActionEvent, notification: Notification) {
     ShowSettingsUtil.getInstance().showSettingsDialog(e.project, ThemeSettingsUI.THEME_SETTINGS_DISPLAY_NAME)
   }

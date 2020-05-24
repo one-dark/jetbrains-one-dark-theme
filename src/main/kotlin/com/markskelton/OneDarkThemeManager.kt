@@ -21,33 +21,43 @@ object OneDarkThemeManager {
 
   fun registerStartup(project: Project) {
     if (!this::messageBus.isInitialized) {
-      if (ThemeSettings.instance.version != CURRENT_VERSION) {
-        ThemeSettings.instance.version = CURRENT_VERSION
-        Notifications.displayUpdateNotification(project)
-      }
-      applyConfigurableTheme()
-      messageBus = ApplicationManager.getApplication().messageBus.connect()
-      messageBus.subscribe(THEME_CONFIG_TOPIC, object : ThemeConfigListener {
-        override fun themeConfigUpdated(themeSettings: ThemeSettings) {
-          if (isCurrentTheme()) {
-            LafManagerImpl.getInstance().setCurrentLookAndFeel(
-              ThemeConstructor.constructNewTheme(themeSettings)
-            )
-          }
-        }
-      })
+      attemptToDisplayUpdates(project)
 
-      messageBus.subscribe(LafManagerListener.TOPIC, LafManagerListener {
-        val currentLaf = it.currentLookAndFeel
-        if (currentLaf is UIThemeBasedLookAndFeelInfo) {
-          when {
-            currentLaf !is TempUIThemeBasedLookAndFeelInfo &&
-              isOneDarkTheme(currentLaf) -> setOneDarkTheme()
-            isLegacyTheme(currentLaf) -> migrateAndNotifyUserOfDeprecation()
-          }
-        }
-      })
+      applyConfigurableTheme()
+
+      subscribeToEvents()
     }
+  }
+
+  private fun attemptToDisplayUpdates(project: Project) {
+    if (ThemeSettings.instance.version != CURRENT_VERSION) {
+      ThemeSettings.instance.version = CURRENT_VERSION
+      Notifications.displayUpdateNotification(project)
+    }
+  }
+
+  private fun subscribeToEvents() {
+    messageBus = ApplicationManager.getApplication().messageBus.connect()
+    messageBus.subscribe(THEME_CONFIG_TOPIC, object : ThemeConfigListener {
+      override fun themeConfigUpdated(themeSettings: ThemeSettings) {
+        if (isCurrentTheme()) {
+          LafManagerImpl.getInstance().setCurrentLookAndFeel(
+            ThemeConstructor.constructNewTheme(themeSettings)
+          )
+        }
+      }
+    })
+
+    messageBus.subscribe(LafManagerListener.TOPIC, LafManagerListener {
+      val currentLaf = it.currentLookAndFeel
+      if (currentLaf is UIThemeBasedLookAndFeelInfo) {
+        when {
+          currentLaf !is TempUIThemeBasedLookAndFeelInfo &&
+            isOneDarkTheme(currentLaf) -> setOneDarkTheme()
+          isLegacyTheme(currentLaf) -> migrateAndNotifyUserOfDeprecation()
+        }
+      }
+    })
   }
 
   private fun isOneDarkTheme(uiThemeBasedLookAndFeelInfo: UIThemeBasedLookAndFeelInfo): Boolean =

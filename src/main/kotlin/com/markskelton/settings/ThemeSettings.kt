@@ -22,7 +22,6 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
         instance.isItalic
       )
     }
-
   }
 
   var version: String = "0.0.0"

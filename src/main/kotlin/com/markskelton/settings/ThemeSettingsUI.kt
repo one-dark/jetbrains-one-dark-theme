@@ -3,6 +3,7 @@ package com.markskelton.settings
 import com.intellij.ide.BrowserUtil.browse
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.options.SearchableConfigurable
+import com.intellij.openapi.project.DumbAware
 import com.intellij.openapi.ui.DialogPanel
 import com.intellij.ui.layout.panel
 import com.markskelton.settings.ThemeSettings.Companion.constructSettingModel
@@ -15,14 +16,14 @@ data class ThemeSettingsModel(
   var isItalic: Boolean
 )
 
-class ThemeSettingsUI : SearchableConfigurable {
+class ThemeSettingsUI : DumbAware, SearchableConfigurable {
 
   companion object {
     const val THEME_SETTINGS_DISPLAY_NAME = "One Dark Theme Settings"
     private const val REPOSITORY = "https://github.com/one-dark/jetbrains-one-dark-theme"
-    val CHANGELOG_URI = URI("$REPOSITORY/blob/master/CHANGELOG.md")
-    val ISSUES_URI = URI("$REPOSITORY/issues")
-    val MARKETPLACE_URI = URI("https://plugins.jetbrains.com/plugin/11938-one-dark-theme")
+    private val CHANGELOG_URI = URI("$REPOSITORY/blob/master/CHANGELOG.md")
+    private val ISSUES_URI = URI("$REPOSITORY/issues")
+    private val MARKETPLACE_URI = URI("https://plugins.jetbrains.com/plugin/11938-one-dark-theme")
   }
 
   override fun getId(): String = "com.markskelton.ThemeSettings"
