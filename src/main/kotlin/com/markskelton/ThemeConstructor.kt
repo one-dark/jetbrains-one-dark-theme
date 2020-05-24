@@ -45,23 +45,18 @@ object ThemeConstructor {
   private val logger = Logger.getInstance(this::class.java)
   private const val ONE_DARK_FILE_PREFIX = "one-dark-"
 
-  fun constructNewTheme(newSettings: ThemeSettings): UIManager.LookAndFeelInfo {
-    val updatedEditorScheme = getUpdatedEditorScheme(newSettings)
-    return constructLookAndFeel(updatedEditorScheme)
-  }
+  fun constructNewTheme(newSettings: ThemeSettings): UIManager.LookAndFeelInfo =
+    constructLookAndFeel(getUpdatedEditorScheme(newSettings))
 
-  fun useExistingTheme(): UIManager.LookAndFeelInfo {
-    val updatedEditorScheme = getPreExistingTheme()
-    return constructLookAndFeel(updatedEditorScheme)
-  }
+  fun useExistingTheme(): UIManager.LookAndFeelInfo =
+    constructLookAndFeel(getPreExistingTheme())
 
-  private fun getPreExistingTheme(): Path {
-    return findConstructedThemes(getAssetsDirectory())
+  private fun getPreExistingTheme(): Path =
+    findConstructedThemes(getAssetsDirectory())
       .findFirst()
       .orElseGet {
         getUpdatedEditorScheme(ThemeSettings.instance)
       }
-  }
 
   private fun constructLookAndFeel(updatedEditorScheme: Path): TempUIThemeBasedLookAndFeelInfo {
     val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
@@ -97,11 +92,10 @@ object ThemeConstructor {
 
   private fun buildNewEditorScheme(themeSettings: ThemeSettings, newSchemeFile: Path) {
     val colorPalette = getColorPalette(themeSettings)
-    val fontVariants = getFontVariants(themeSettings)
     val editorTemplate = getEditorXMLTemplate()
     val updatedScheme = applySettingsToTemplate(
       editorTemplate,
-      fontVariants,
+      themeSettings,
       colorPalette
     )
     writeXmlToFile(newSchemeFile, updatedScheme)
@@ -109,7 +103,7 @@ object ThemeConstructor {
 
   private fun applySettingsToTemplate(
     editorTemplate: Node,
-    fontVariant: FontVariant,
+    themeSettings: ThemeSettings,
     colorPalette: ColorPalette
   ): Node {
     val (paletteVariant, colors) = colorPalette
@@ -119,7 +113,7 @@ object ThemeConstructor {
       .forEach {
         when (it.name()) {
           "scheme" -> {
-            it.attributes().replace("name", "One Dark $paletteVariant $fontVariant")
+            it.attributes().replace("name", "One Dark")
           }
           "option" -> {
             val value = it.attribute("value") as? String
@@ -130,11 +124,18 @@ object ThemeConstructor {
               }
               it.attributes()["value"] = buildReplacement(replacementColor, value, end)
             } else if (value?.startsWith('%') == true) {
-              val (end, replacementColor) = getReplacementColor(value, '%') { fontSpec ->
-                colors[fontSpec]
-                  ?: throw IllegalArgumentException("$fontSpec is not in the color definition for $paletteVariant.")
+              val (_, fontVariant) = extractValueFromTemplateString(value, '%') { fontSpec ->
+                val fontSpecifications = fontSpec.split("$")
+                val shouldEffectBeBold = isEffectBold(fontSpecifications, themeSettings)
+                val shouldEffectBeItalic = isEffectItalic(fontSpecifications, themeSettings)
+                when {
+                  shouldEffectBeBold && shouldEffectBeItalic -> FontVariant.BOLD_ITALIC
+                  shouldEffectBeBold -> FontVariant.BOLD
+                  shouldEffectBeItalic -> FontVariant.ITALIC
+                  else -> FontVariant.NONE
+                }
               }
-              it.attributes()["value"] = buildReplacement(replacementColor, value, end)
+              it.attributes()["value"] = fontVariant.schemeValue
             }
           }
         }
@@ -142,6 +143,29 @@ object ThemeConstructor {
 
     return themeTemplate
   }
+
+  private fun isEffectBold(
+    fontSpecifications: List<String>,
+    themeSettings: ThemeSettings
+  ): Boolean =
+    matchesThemeSetting(fontSpecifications, "bold:") {
+      themeSettings.isBold
+    }
+
+  private fun isEffectItalic(
+    fontSpecifications: List<String>,
+    themeSettings: ThemeSettings
+  ): Boolean =
+    matchesThemeSetting(fontSpecifications, "italic:") {
+      themeSettings.isItalic
+    }
+
+  private fun matchesThemeSetting(fontSpecifications: List<String>, prefix: String, isCurrentThemeSetting: () -> Boolean): Boolean =
+    fontSpecifications.any {
+      it.startsWith(prefix) &&
+        (it.endsWith(":always") ||
+          (it.endsWith(":theme") && isCurrentThemeSetting()))
+    }
 
   private fun buildReplacement(replacementColor: String, value: String, end: Int) =
     "$replacementColor${value.substring(end + 1)}"
@@ -151,12 +175,21 @@ object ThemeConstructor {
     templateDelemiter: Char,
     replacementSupplier: (CharSequence) -> String
   ): Pair<Int, String> {
+    val (end, replacementHexColor) = extractValueFromTemplateString(value, templateDelemiter, replacementSupplier)
+    val replacementColor = replacementHexColor.substring(1)
+    return Pair(end, replacementColor)
+  }
+
+  private fun <T> extractValueFromTemplateString(
+    value: String,
+    templateDelemiter: Char,
+    replacementSupplier: (CharSequence) -> T
+  ): Pair<Int, T> {
     val start = value.indexOf(templateDelemiter)
     val end = value.lastIndexOf(templateDelemiter)
     val templateColor = value.subSequence(start + 1, end)
     val replacementHexColor = replacementSupplier(templateColor)
-    val replacementColor = replacementHexColor.substring(1)
-    return Pair(end, replacementColor)
+    return Pair(end, replacementHexColor)
   }
 
   private fun getEditorXMLTemplate(): Node =
@@ -175,15 +208,6 @@ object ThemeConstructor {
       }
       parser.parse(inputSource)
     }
-
-  private fun getFontVariants(themeSettings: ThemeSettings): FontVariant {
-    return when {
-      themeSettings.isBold && themeSettings.isItalic -> FontVariant.BOLD_ITALIC
-      themeSettings.isBold -> FontVariant.BOLD
-      themeSettings.isItalic -> FontVariant.ITALIC
-      else -> FontVariant.NONE
-    }
-  }
 
   private fun getColorPalette(themeSettings: ThemeSettings): ColorPalette {
     val selectedPalette = if (themeSettings.isVivid) "vivid" else "normal"
