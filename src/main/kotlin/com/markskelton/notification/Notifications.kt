@@ -43,18 +43,8 @@ object Notifications {
       UPDATE_MESSAGE,
       NotificationType.INFORMATION,
       NotificationListener.URL_OPENING_LISTENER
-    ).notify(null)
-  }
-
-  fun displayDeprecationMessage() {
-    notificationGroup.createNotification(
-      "Theme is Deprecated",
-      """The other variants of the One-Dark theme are currently deprecated. 
-        |For convenience, this theme's settings have been automatically applied. 
-|Please use the '${ThemeSettingsUI.THEME_SETTINGS_DISPLAY_NAME}' menu in the settings to configure One-Dark in the future.""".trimMargin(),
-      NotificationType.WARNING,
-      null
-    ).addAction(SettingsAction("Show Settings"))
+    )
+      .addAction(SettingsAction("Show Settings"))
       .notify(null)
   }
 }

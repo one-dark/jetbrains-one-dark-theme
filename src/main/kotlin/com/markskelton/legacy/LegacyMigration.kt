@@ -7,7 +7,6 @@ import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.application.PathManager
 import com.intellij.openapi.components.RoamingType
 import com.markskelton.OneDarkThemeManager
-import com.markskelton.notification.Notifications
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeSettings
 import com.markskelton.toOptional
