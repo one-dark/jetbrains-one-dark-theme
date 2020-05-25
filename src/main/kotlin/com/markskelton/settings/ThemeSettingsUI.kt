@@ -19,7 +19,7 @@ data class ThemeSettingsModel(
 class ThemeSettingsUI : DumbAware, SearchableConfigurable {
 
   companion object {
-    const val THEME_SETTINGS_DISPLAY_NAME = "One Dark Theme Settings"
+    const val THEME_SETTINGS_DISPLAY_NAME = "One Dark Theme"
     private const val REPOSITORY = "https://github.com/one-dark/jetbrains-one-dark-theme"
     private val CHANGELOG_URI = URI("$REPOSITORY/blob/master/CHANGELOG.md")
     private val ISSUES_URI = URI("$REPOSITORY/issues")
