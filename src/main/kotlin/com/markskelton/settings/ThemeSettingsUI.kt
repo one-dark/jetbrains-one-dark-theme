@@ -97,7 +97,7 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
         row {
           cell {
             checkBox(
-              "Vivid Pallette",
+              "Vivid Palette",
               themeSettingsModel.isVivid,
               comment = "Uses the One-Dark vivid color pallette",
               actionListener = { _, component ->
