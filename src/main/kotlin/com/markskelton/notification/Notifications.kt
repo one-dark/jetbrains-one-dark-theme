@@ -30,7 +30,7 @@ object Notifications {
     "One Dark Theme",
     NotificationDisplayType.BALLOON,
     false,
-    "One-Dark Theme"
+    "One Dark Theme"
   )
 
   fun displayUpdateNotification() {
