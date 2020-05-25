@@ -7,10 +7,12 @@ import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.application.PathManager
 import com.intellij.openapi.components.RoamingType
 import com.markskelton.OneDarkThemeManager
+import com.markskelton.doOrElse
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeSettings
 import com.markskelton.toOptional
 import java.nio.file.Paths
+import java.util.*
 
 enum class LegacyThemes {
   ITALIC, VIVID, VIVID_ITALIC
@@ -43,24 +45,39 @@ object LegacyMigration {
       .map { it.value }
       .filter { legacyThemes.containsKey(it) }
       .ifPresent { legacyThemeId ->
-        LafManagerImpl.getInstance().setCurrentLookAndFeel(LafManagerImpl.getInstance().installedLookAndFeels
-          .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
-          .first {
-            it.theme.id == OneDarkThemeManager.ONE_DARK_ID
-          }
-        )
-        when (legacyThemes[legacyThemeId]) {
-          LegacyThemes.VIVID_ITALIC -> applyVividItalicSettings()
-          LegacyThemes.VIVID -> applyVividSettings()
-          LegacyThemes.ITALIC -> applyItalicSettings()
-        }
-        ApplicationManager.getApplication().invokeLater {
-          ApplicationManager.getApplication().messageBus.syncPublisher(
-            THEME_CONFIG_TOPIC
-          ).themeConfigUpdated(ThemeSettings.instance)
-        }
+        attemptToMigrateToOneDarkTheme(legacyThemeId)
       }
   }
+
+  private fun attemptToMigrateToOneDarkTheme(legacyThemeId: String, attempt: Int = 0) {
+    if (attempt < 3) {
+      getOneDarkTheme()
+        .doOrElse({ oneDarkTheme ->
+          LafManagerImpl.getInstance().setCurrentLookAndFeel(oneDarkTheme)
+          when (legacyThemes[legacyThemeId]) {
+            LegacyThemes.VIVID_ITALIC -> applyVividItalicSettings()
+            LegacyThemes.VIVID -> applyVividSettings()
+            LegacyThemes.ITALIC -> applyItalicSettings()
+          }
+          ApplicationManager.getApplication().invokeLater {
+            ApplicationManager.getApplication().messageBus.syncPublisher(
+              THEME_CONFIG_TOPIC
+            ).themeConfigUpdated(ThemeSettings.instance)
+          }
+        }) {
+          ApplicationManager.getApplication().invokeLater {
+            attemptToMigrateToOneDarkTheme(legacyThemeId, attempt + 1)
+          }
+        }
+    }
+  }
+
+  private fun getOneDarkTheme(): Optional<UIThemeBasedLookAndFeelInfo> =
+    LafManagerImpl.getInstance().installedLookAndFeels
+      .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
+      .firstOrNull {
+        it.theme.id == OneDarkThemeManager.ONE_DARK_ID
+      }.toOptional()
 
   private fun applyItalicSettings() {
     ThemeSettings.instance.isItalic = true
