@@ -23,7 +23,7 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
     private const val REPOSITORY = "https://github.com/one-dark/jetbrains-one-dark-theme"
     private val CHANGELOG_URI = URI("$REPOSITORY/blob/master/CHANGELOG.md#changelog")
     private val ISSUES_URI = URI("$REPOSITORY/issues")
-    private val MARKETPLACE_URI = URI("https://plugins.jetbrains.com/plugin/11938-one-dark-theme")
+    private val MARKETPLACE_URI = URI("https://plugins.jetbrains.com/plugin/11938-one-dark-theme/reviews")
   }
 
   override fun getId(): String = "com.markskelton.ThemeSettings"
@@ -116,7 +116,7 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
             button("View Changelog") {
               browse(CHANGELOG_URI)
             }
-            button("Marketplace Homepage") {
+            button("Leave a Review") {
               browse(MARKETPLACE_URI)
             }
           }
