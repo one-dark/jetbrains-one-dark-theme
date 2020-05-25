@@ -110,7 +110,7 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
       titledRow("Miscellaneous Items") {
         row {
           cell {
-            button("View Issues") {
+            button("Report an Issue") {
               browse(ISSUES_URI)
             }
             button("View Changelog") {
