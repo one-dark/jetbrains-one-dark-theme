@@ -27,7 +27,7 @@ const val CURRENT_VERSION = "4.0.0"
 object Notifications {
 
   private val notificationGroup = NotificationGroup(
-    "One-Dark Theme",
+    "One Dark Theme",
     NotificationDisplayType.BALLOON,
     false,
     "One-Dark Theme"
