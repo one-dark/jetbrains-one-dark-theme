@@ -31,7 +31,7 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
   override fun getDisplayName(): String =
     THEME_SETTINGS_DISPLAY_NAME
 
-  private val initialThemeSettingsModel = constructSettingModel()
+  private var initialThemeSettingsModel = constructSettingModel()
 
   private val themeSettingsModel = initialThemeSettingsModel.copy()
 
@@ -44,6 +44,7 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
     ApplicationManager.getApplication().messageBus.syncPublisher(
       THEME_CONFIG_TOPIC
     ).themeConfigUpdated(ThemeSettings.instance)
+    initialThemeSettingsModel = themeSettingsModel.copy()
   }
 
   private fun persistChanges() {
