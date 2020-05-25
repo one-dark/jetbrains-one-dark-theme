@@ -1,12 +1,17 @@
 package com.markskelton.legacy
 
+import com.intellij.configurationStore.FileBasedStorage
 import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.application.PathManager
+import com.intellij.openapi.components.RoamingType
 import com.markskelton.OneDarkThemeManager
 import com.markskelton.notification.Notifications
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeSettings
+import com.markskelton.toOptional
+import java.nio.file.Paths
 
 enum class LegacyThemes {
   ITALIC, VIVID, VIVID_ITALIC
@@ -19,39 +24,43 @@ object LegacyMigration {
     "4f556d32-83cb-4b8b-9932-c4eccc4ce3af" to LegacyThemes.VIVID_ITALIC
   )
 
-  fun isLegacyTheme(laf: UIThemeBasedLookAndFeelInfo): Boolean = legacyThemes.containsKey(laf.theme.id)
-
   fun migrateIfNecessary() {
     migrateUser()
   }
 
-  fun migrateAndNotifyUserOfDeprecation() {
-    ApplicationManager.getApplication().invokeLater {
-      Notifications.displayDeprecationMessage()
-    }
-    migrateUser()
-  }
-
   private fun migrateUser() {
-    val legacyTheme = LafManagerImpl.getInstance().currentLookAndFeel
-    if (legacyTheme is UIThemeBasedLookAndFeelInfo && isLegacyTheme(legacyTheme)) {
-      LafManagerImpl.getInstance().setCurrentLookAndFeel(LafManagerImpl.getInstance().installedLookAndFeels
-        .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
-        .first {
-          it.theme.id == OneDarkThemeManager.ONE_DARK_ID
+    FileBasedStorage(
+      Paths.get(PathManager.getConfigDir().toAbsolutePath().toString(), "options", "laf.xml"),
+      "laf.xml",
+      "application",
+      null,
+      RoamingType.PER_OS
+
+    ).getStorageData()
+      .getState("LafManager")
+      .toOptional()
+      .map { it.getChild("laf") }
+      .map { it.getAttribute("themeId") }
+      .map { it.value }
+      .filter { legacyThemes.containsKey(it) }
+      .ifPresent { legacyThemeId ->
+        LafManagerImpl.getInstance().setCurrentLookAndFeel(LafManagerImpl.getInstance().installedLookAndFeels
+          .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
+          .first {
+            it.theme.id == OneDarkThemeManager.ONE_DARK_ID
+          }
+        )
+        when (legacyThemes[legacyThemeId]) {
+          LegacyThemes.VIVID_ITALIC -> applyVividItalicSettings()
+          LegacyThemes.VIVID -> applyVividSettings()
+          LegacyThemes.ITALIC -> applyItalicSettings()
         }
-      )
-      when (legacyThemes[legacyTheme.theme.id]) {
-        LegacyThemes.VIVID_ITALIC -> applyVividItalicSettings()
-        LegacyThemes.VIVID -> applyVividSettings()
-        LegacyThemes.ITALIC -> applyItalicSettings()
+        ApplicationManager.getApplication().invokeLater {
+          ApplicationManager.getApplication().messageBus.syncPublisher(
+            THEME_CONFIG_TOPIC
+          ).themeConfigUpdated(ThemeSettings.instance)
+        }
       }
-      ApplicationManager.getApplication().invokeLater {
-        ApplicationManager.getApplication().messageBus.syncPublisher(
-          THEME_CONFIG_TOPIC
-        ).themeConfigUpdated(ThemeSettings.instance)
-      }
-    }
   }
 
   private fun applyItalicSettings() {
