@@ -28,6 +28,7 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   var isBold: Boolean = false
   var isVivid: Boolean = false
   var isItalic: Boolean = false
+  var customSchemeSet: Boolean = false
 
   override fun getState(): ThemeSettings? =
       XmlSerializerUtil.createCopy(this)

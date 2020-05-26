@@ -118,6 +118,10 @@ class Builder:
         scheme.attrib['parent_scheme'] = self.yaml['parent-scheme']
         scheme.attrib['version'] = '142'
 
+        meta = ET.SubElement(scheme, 'metaInfo')
+        oneDarkProperty = ET.SubElement(meta, 'property', name='oneDarkScheme')
+        oneDarkProperty.text = 'bundled'
+
         colors = ET.SubElement(scheme, 'colors')
         for name, value in self.yaml['colors'].items():
             ET.SubElement(colors, 'option', name=name, value=self.get_color(value))
@@ -157,35 +161,11 @@ def write_json(data: dict, output_path: str):
         json.dump(data, output_file)
 
 
-def build_json():
-    input_path = os.path.join(DEST_DIR, 'one_dark.theme.json')
-
-    with open(input_path, 'r') as input_file:
-        data = json.load(input_file, object_pairs_hook=OrderedDict)
-
-    data['name'] = build_theme_name('normal', True)
-    data['editorScheme'] = '/themes/one_dark_italic.xml'
-    write_json(data, 'one_dark_italic')
-
-    data['name'] = build_theme_name('vivid', False)
-    data['editorScheme'] = '/themes/one_dark_vivid.xml'
-    write_json(data, 'one_dark_vivid')
-
-    data['name'] = build_theme_name('vivid', True)
-    data['editorScheme'] = '/themes/one_dark_vivid_italic.xml'
-    write_json(data, 'one_dark_vivid_italic')
-
-
 def main():
     if not os.path.exists(DEST_DIR):
         os.makedirs(DEST_DIR)
 
     Builder('normal', False, '%s.xml' % FILE_NAME).run()
-    Builder('normal', True, '%s_italic.xml' % FILE_NAME).run()
-    Builder('vivid', False, '%s_vivid.xml' % FILE_NAME).run()
-    Builder('vivid', True, '%s_vivid_italic.xml' % FILE_NAME).run()
-
-    build_json()
 
     print('Theme files generated!')
 

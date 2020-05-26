@@ -113,7 +113,7 @@ object ThemeConstructor {
       .forEach {
         when (it.name()) {
           "scheme" -> {
-            it.attributes().replace("name", "One Dark")
+            it.attributes().replace("name", "One Dark Generated")
           }
           "option" -> {
             val value = it.attribute("value") as? String

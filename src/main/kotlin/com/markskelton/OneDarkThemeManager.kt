@@ -5,6 +5,8 @@ import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.editor.colors.EditorColorsListener
+import com.intellij.openapi.editor.colors.EditorColorsManager
 import com.intellij.openapi.project.Project
 import com.intellij.util.messages.MessageBusConnection
 import com.markskelton.notification.CURRENT_VERSION
@@ -30,6 +32,7 @@ object OneDarkThemeManager {
   private fun attemptToDisplayUpdates() {
     if (ThemeSettings.instance.version != CURRENT_VERSION) {
       ThemeSettings.instance.version = CURRENT_VERSION
+      ThemeSettings.instance.customSchemeSet = false
       ApplicationManager.getApplication().invokeLater {
         Notifications.displayUpdateNotification()
       }
@@ -41,6 +44,7 @@ object OneDarkThemeManager {
     messageBus.subscribe(THEME_CONFIG_TOPIC, object : ThemeConfigListener {
       override fun themeConfigUpdated(themeSettings: ThemeSettings) {
         if (isCurrentTheme()) {
+          ThemeSettings.instance.customSchemeSet = false
           LafManagerImpl.getInstance().setCurrentLookAndFeel(
             ThemeConstructor.constructNewTheme(themeSettings)
           )
@@ -57,13 +61,18 @@ object OneDarkThemeManager {
         }
       }
     })
+
+    messageBus.subscribe(EditorColorsManager.TOPIC, EditorColorsListener {
+      ThemeSettings.instance.customSchemeSet =
+        it != null && !it.metaProperties.containsKey("oneDarkScheme")
+    })
   }
 
   private fun isOneDarkTheme(uiThemeBasedLookAndFeelInfo: UIThemeBasedLookAndFeelInfo): Boolean =
     uiThemeBasedLookAndFeelInfo.theme.id == ONE_DARK_ID
 
   private fun applyConfigurableTheme() {
-    if (isCurrentTheme()) {
+    if (isCurrentTheme() && !ThemeSettings.instance.customSchemeSet) {
       setOneDarkTheme()
     }
   }

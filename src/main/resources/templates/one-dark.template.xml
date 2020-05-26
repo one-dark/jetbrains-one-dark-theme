@@ -1,4 +1,7 @@
 <scheme name="One Dark" parent_scheme="Darcula" version="142">
+  <metaInfo>
+    <property name="oneDarkScheme">runtimeGenerated</property>
+  </metaInfo>
   <colors>
     <option name="ADDED_LINES_COLOR" value="$green$"/>
     <option name="ANNOTATIONS_COLOR" value="a0a7b4"/>
