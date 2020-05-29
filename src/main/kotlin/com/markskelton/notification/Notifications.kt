@@ -22,8 +22,6 @@ val UPDATE_MESSAGE: String = """
       Thank you for choosing the One Dark Theme!<br>
 """.trimIndent()
 
-const val CURRENT_VERSION = "4.0.0"
-
 object Notifications {
 
   private val notificationGroup = NotificationGroup(
@@ -33,13 +31,13 @@ object Notifications {
     "One Dark Theme"
   )
 
-  fun displayUpdateNotification() {
+  fun displayUpdateNotification(versionNumber: String) {
     val pluginName =
       getPlugin(
         getPluginOrPlatformByClassName(Notifications::class.java.canonicalName)
       )?.name
     notificationGroup.createNotification(
-      "$pluginName updated to v$CURRENT_VERSION",
+      "$pluginName updated to v$versionNumber",
       UPDATE_MESSAGE,
       NotificationType.INFORMATION,
       NotificationListener.URL_OPENING_LISTENER
