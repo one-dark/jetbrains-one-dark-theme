@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'com.markskelton'
-version System.getenv('VERSION')
+version System.getenv('VERSION').replace('refs/tags/v', '')
 
 repositories {
     mavenCentral()

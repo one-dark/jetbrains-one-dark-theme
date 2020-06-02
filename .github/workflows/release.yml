@@ -1,0 +1,28 @@
+name: Release
+on:
+  push:
+    tags: ['v*']
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - run: pip3 install -r requirements.txt
+      - run: ./build.sh
+      - run: ./gradlew build
+        env:
+          VERSION: ${{ github.ref }}
+      - uses: svenstaro/upload-release-action@1.0.1
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          asset_name: one-dark-theme.jar
+          file: build/libs/*.jar
+          file_glob: true
+          tag: ${{ github.ref }}
+      - run: ./gradlew publishPlugin
