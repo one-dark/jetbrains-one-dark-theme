@@ -1,7 +1,8 @@
 name: Release
 on:
-  push:
-    tags: ['v*']
+  release:
+    types:
+      - created
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -18,11 +19,16 @@ jobs:
       - run: ./gradlew build
         env:
           VERSION: ${{ github.ref }}
-      - uses: svenstaro/upload-release-action@1.0.1
+      - name: Copy jar file
+        run: cp build/libs/*.jar one-dark-theme.jar
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: one-dark-theme.jar
           asset_name: one-dark-theme.jar
-          file: build/libs/*.jar
-          file_glob: true
-          tag: ${{ github.ref }}
+          asset_content_type: application/zip
       - run: ./gradlew publishPlugin
+        env:
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
