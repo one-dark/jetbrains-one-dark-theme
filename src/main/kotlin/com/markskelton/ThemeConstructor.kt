@@ -149,7 +149,9 @@ object ThemeConstructor {
     themeSettings: ThemeSettings
   ): Boolean =
     matchesThemeSetting(fontSpecifications, "bold:") {
-      themeSettings.isBold
+      // todo: revisit this
+//      themeSettings.isBold
+      false
     }
 
   private fun isEffectItalic(
@@ -157,7 +159,9 @@ object ThemeConstructor {
     themeSettings: ThemeSettings
   ): Boolean =
     matchesThemeSetting(fontSpecifications, "italic:") {
-      themeSettings.isItalic
+      // todo: revisit this
+//      themeSettings.isBold
+      false
     }
 
   private fun matchesThemeSetting(fontSpecifications: List<String>, prefix: String, isCurrentThemeSetting: () -> Boolean): Boolean =

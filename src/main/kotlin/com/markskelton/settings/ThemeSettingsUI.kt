@@ -57,6 +57,21 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
     }) {
       ThemeSettings.instance.isVivid = it
     }
+    registerSettingsChange(themeSettingsModel.attributesStyle.value, {
+      ThemeSettings.instance.attributesStyle
+    }) {
+      ThemeSettings.instance.attributesStyle = it
+    }
+    registerSettingsChange(themeSettingsModel.commentStyle.value, {
+      ThemeSettings.instance.commentStyle
+    }) {
+      ThemeSettings.instance.commentStyle = it
+    }
+    registerSettingsChange(themeSettingsModel.keywordStyle.value, {
+      ThemeSettings.instance.keywordStyle
+    }) {
+      ThemeSettings.instance.keywordStyle = it
+    }
   }
 
   override fun createComponent(): JComponent? =
@@ -127,7 +142,11 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
   }
 }
 
-fun <T> registerSettingsChange(setValue: T, getStoredValue: () -> T, onChanged: (T) -> Unit) {
+fun <T> registerSettingsChange(
+  setValue: T,
+  getStoredValue: () -> T,
+  onChanged: (T) -> Unit
+) {
   if (getStoredValue() != setValue) {
     onChanged(setValue)
   }
