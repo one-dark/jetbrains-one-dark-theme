@@ -31,4 +31,5 @@ jobs:
           asset_content_type: application/zip
       - run: ./gradlew publishPlugin
         env:
+          VERSION: ${{ github.ref }}
           PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
