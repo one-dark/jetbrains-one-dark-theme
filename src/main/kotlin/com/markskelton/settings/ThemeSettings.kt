@@ -6,6 +6,18 @@ import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 
+enum class GroupStyling(
+  val value: String
+) {
+  REGULAR("Regular"), ITALIC("Italic"), BOLD("Bold"), BOLD_ITALIC("Bold Italic")
+}
+private val styleMappings = GroupStyling.values()
+  .map { it.value to it }
+  .toMap()
+fun String.toGroupStyle(): GroupStyling = styleMappings.getOrDefault(
+  this, GroupStyling.REGULAR
+)
+
 @State(
     name = "OneDarkConfig",
     storages = [Storage("one_dark_config.xml")]
@@ -17,9 +29,10 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
 
     fun constructSettingModel(): ThemeSettingsModel {
       return ThemeSettingsModel(
-        instance.isBold,
-        instance.isVivid,
-        instance.isItalic
+        instance.commentStyle.toGroupStyle(),
+        instance.keywordStyle.toGroupStyle(),
+        instance.attributesStyle.toGroupStyle(),
+        instance.isVivid
       )
     }
   }
@@ -29,6 +42,9 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   var isBold: Boolean = false
   var isVivid: Boolean = false
   var isItalic: Boolean = false
+  var commentStyle: String = GroupStyling.REGULAR.value
+  var keywordStyle: String = GroupStyling.REGULAR.value
+  var attributesStyle: String = GroupStyling.REGULAR.value
   var customSchemeSet: Boolean = false
 
   override fun getState(): ThemeSettings? =

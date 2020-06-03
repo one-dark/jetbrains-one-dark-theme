@@ -4,16 +4,20 @@ import com.intellij.ide.BrowserUtil.browse
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.options.SearchableConfigurable
 import com.intellij.openapi.project.DumbAware
+import com.intellij.openapi.ui.ComboBox
 import com.intellij.openapi.ui.DialogPanel
 import com.intellij.ui.layout.panel
 import com.markskelton.settings.ThemeSettings.Companion.constructSettingModel
 import java.net.URI
+import java.util.*
+import javax.swing.DefaultComboBoxModel
 import javax.swing.JComponent
 
 data class ThemeSettingsModel(
-  var isBold: Boolean,
-  var isVivid: Boolean,
-  var isItalic: Boolean
+  var commentStyle: GroupStyling,
+  var keywordStyle: GroupStyling,
+  var attributesStyle: GroupStyling,
+  var isVivid: Boolean
 )
 
 class ThemeSettingsUI : DumbAware, SearchableConfigurable {
@@ -48,20 +52,10 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
   }
 
   private fun persistChanges() {
-    registerSettingsChange(themeSettingsModel.isBold, {
-      ThemeSettings.instance.isBold
-    }) {
-      ThemeSettings.instance.isBold = it
-    }
     registerSettingsChange(themeSettingsModel.isVivid, {
       ThemeSettings.instance.isVivid
     }) {
       ThemeSettings.instance.isVivid = it
-    }
-    registerSettingsChange(themeSettingsModel.isItalic, {
-      ThemeSettings.instance.isItalic
-    }) {
-      ThemeSettings.instance.isItalic = it
     }
   }
 
@@ -70,31 +64,24 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
 
   private fun createSettingsPane(): DialogPanel =
     panel {
-      titledRow("Main Settings") {
-//        row {
-//          cell {
-//            checkBox(
-//              "Bold Characters",
-//              themeSettingsModel.isBold,
-//              comment = "Uses bold fonts for certain language keywords",
-//              actionListener = { _, component ->
-//                themeSettingsModel.isBold = component.isSelected
-//              }
-//            )
-//          }
-//        }
-        row {
-          cell {
-            checkBox(
-              "Italic Characters",
-              themeSettingsModel.isItalic,
-              comment = "Uses italic font for language keywords and comments",
-              actionListener = { _, component ->
-                themeSettingsModel.isItalic = component.isSelected
-              }
-            )
-          }
+      titledRow("Font Styling") {
+        row("Attributes") {
+            buildComboBox(themeSettingsModel.attributesStyle) {
+              themeSettingsModel.attributesStyle = it
+            }().focused()
         }
+        row("Comments") {
+            buildComboBox(themeSettingsModel.commentStyle) {
+              themeSettingsModel.commentStyle = it
+            }()
+        }
+        row("Keywords") {
+            buildComboBox(themeSettingsModel.keywordStyle) {
+              themeSettingsModel.keywordStyle = it
+            }()
+        }
+      }
+      titledRow("Color Settings") {
         row {
           cell {
             checkBox(
@@ -124,6 +111,20 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
         }
       }
     }
+
+  private fun buildComboBox(
+    initialValue: GroupStyling,
+    handler: (e: GroupStyling) -> Unit
+  ): ComboBox<String> {
+    val womboComboBox = ComboBox(DefaultComboBoxModel(
+      Vector(GroupStyling.values().map { it.value }))
+    )
+    womboComboBox.model.selectedItem = initialValue.value
+    womboComboBox.addActionListener {
+      handler(GroupStyling.valueOf(womboComboBox.model.selectedItem as String))
+    }
+    return womboComboBox
+  }
 }
 
 fun <T> registerSettingsChange(setValue: T, getStoredValue: () -> T, onChanged: (T) -> Unit) {
