@@ -8,5 +8,5 @@ This plugin uses GitHub Actions for publishing builds, so the following instruct
   - Click on the **Authentication** tab
   - Click **New token ...**
   - Enter any name
-  - Select **Plugin Repository** for the scope
+  - Select **Marketplace** for the scope
 - Enter the personal access token as a GitHub secret named `PUBLISH_TOKEN`.
