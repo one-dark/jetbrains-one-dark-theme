@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'com.markskelton'
-version System.getenv('VERSION')
+version System.getenv('VERSION').replace('refs/tags/v', '')
 
 repositories {
     mavenCentral()
@@ -39,11 +39,6 @@ patchPluginXml {
     }
 }
 
-def getSecret = { String prop, String env ->
-    project.hasProperty(prop) ? project.findProperty(prop) : System.getenv(env)
-}
-
 publishPlugin {
-    username getSecret('publishUsername', 'PUBLISH_USERNAME')
-    token getSecret('publishToken', 'PUBLISH_TOKEN')
+    token System.getenv('PUBLISH_TOKEN')
 }

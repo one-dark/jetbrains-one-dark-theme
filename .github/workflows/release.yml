@@ -1,0 +1,35 @@
+name: Release
+on:
+  release:
+    types:
+      - created
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - run: pip3 install -r requirements.txt
+      - run: ./build.sh
+      - run: ./gradlew build
+        env:
+          VERSION: ${{ github.ref }}
+      - name: Copy jar file
+        run: cp build/libs/*.jar one-dark-theme.jar
+      - uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: one-dark-theme.jar
+          asset_name: one-dark-theme.jar
+          asset_content_type: application/zip
+      - run: ./gradlew publishPlugin
+        env:
+          VERSION: ${{ github.ref }}
+          PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
