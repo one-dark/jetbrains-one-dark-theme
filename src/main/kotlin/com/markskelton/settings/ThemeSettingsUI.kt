@@ -136,7 +136,7 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
     )
     womboComboBox.model.selectedItem = initialValue.value
     womboComboBox.addActionListener {
-      handler(GroupStyling.valueOf(womboComboBox.model.selectedItem as String))
+      handler((womboComboBox.model.selectedItem as String).toGroupStyle())
     }
     return womboComboBox
   }

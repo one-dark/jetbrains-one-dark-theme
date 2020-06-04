@@ -9,7 +9,11 @@ import com.intellij.openapi.application.PathManager
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.vfs.VfsUtil
 import com.markskelton.OneDarkThemeManager.ONE_DARK_ID
+import com.markskelton.settings.GroupStyling
+import com.markskelton.settings.Groups
+import com.markskelton.settings.Groups.*
 import com.markskelton.settings.ThemeSettings
+import com.markskelton.settings.toGroup
 import groovy.util.Node
 import groovy.util.XmlNodePrinter
 import groovy.util.XmlParser
@@ -149,9 +153,16 @@ object ThemeConstructor {
     themeSettings: ThemeSettings
   ): Boolean =
     matchesThemeSetting(fontSpecifications, "bold:") {
-      // todo: revisit this
-//      themeSettings.isBold
-      false
+      val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
+      relevantGroupStyle == GroupStyling.BOLD.value ||
+        relevantGroupStyle == GroupStyling.BOLD_ITALIC.value
+    }
+
+  private fun getRelevantGroupStyle(it: Groups, themeSettings: ThemeSettings): String =
+    when (it) {
+      ATTRIBUTES -> themeSettings.attributesStyle
+      COMMENTS -> themeSettings.commentStyle
+      KEYWORDS -> themeSettings.keywordStyle
     }
 
   private fun isEffectItalic(
@@ -159,16 +170,24 @@ object ThemeConstructor {
     themeSettings: ThemeSettings
   ): Boolean =
     matchesThemeSetting(fontSpecifications, "italic:") {
-      // todo: revisit this
-//      themeSettings.isBold
-      false
+      val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
+      relevantGroupStyle == GroupStyling.ITALIC.value ||
+        relevantGroupStyle == GroupStyling.BOLD_ITALIC.value
     }
 
-  private fun matchesThemeSetting(fontSpecifications: List<String>, prefix: String, isCurrentThemeSetting: () -> Boolean): Boolean =
+  private fun matchesThemeSetting(
+    fontSpecifications: List<String>,
+    prefix: String,
+    isCurrentThemeSetting: (group: Groups) -> Boolean
+  ): Boolean =
     fontSpecifications.any {
       it.startsWith(prefix) &&
         (it.endsWith(":always") ||
-          (it.endsWith(":theme") && isCurrentThemeSetting()))
+          (it.endsWith(":theme") &&
+            isCurrentThemeSetting(
+              it.substringAfter("^").toGroup()
+            ))
+          )
     }
 
   private fun buildReplacement(replacementColor: String, value: String, end: Int) =
