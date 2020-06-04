@@ -9,11 +9,8 @@ import com.intellij.openapi.application.PathManager
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.vfs.VfsUtil
 import com.markskelton.OneDarkThemeManager.ONE_DARK_ID
-import com.markskelton.settings.GroupStyling
-import com.markskelton.settings.Groups
+import com.markskelton.settings.*
 import com.markskelton.settings.Groups.*
-import com.markskelton.settings.ThemeSettings
-import com.markskelton.settings.toGroup
 import groovy.util.Node
 import groovy.util.XmlNodePrinter
 import groovy.util.XmlParser
@@ -154,16 +151,16 @@ object ThemeConstructor {
   ): Boolean =
     matchesThemeSetting(fontSpecifications, "bold:") {
       val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
-      relevantGroupStyle == GroupStyling.BOLD.value ||
-        relevantGroupStyle == GroupStyling.BOLD_ITALIC.value
+      relevantGroupStyle == GroupStyling.BOLD ||
+        relevantGroupStyle == GroupStyling.BOLD_ITALIC
     }
 
-  private fun getRelevantGroupStyle(it: Groups, themeSettings: ThemeSettings): String =
+  private fun getRelevantGroupStyle(it: Groups, themeSettings: ThemeSettings): GroupStyling =
     when (it) {
       ATTRIBUTES -> themeSettings.attributesStyle
       COMMENTS -> themeSettings.commentStyle
       KEYWORDS -> themeSettings.keywordStyle
-    }
+    }.toGroupStyle()
 
   private fun isEffectItalic(
     fontSpecifications: List<String>,
@@ -171,8 +168,8 @@ object ThemeConstructor {
   ): Boolean =
     matchesThemeSetting(fontSpecifications, "italic:") {
       val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
-      relevantGroupStyle == GroupStyling.ITALIC.value ||
-        relevantGroupStyle == GroupStyling.BOLD_ITALIC.value
+      relevantGroupStyle == GroupStyling.ITALIC ||
+        relevantGroupStyle == GroupStyling.BOLD_ITALIC
     }
 
   private fun matchesThemeSetting(
@@ -183,7 +180,7 @@ object ThemeConstructor {
     fontSpecifications.any {
       it.startsWith(prefix) &&
         (it.endsWith(":always") ||
-          (it.endsWith(":theme") &&
+          (it.contains(":theme") &&
             isCurrentThemeSetting(
               it.substringAfter("^").toGroup()
             ))
