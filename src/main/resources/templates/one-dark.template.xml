@@ -936,6 +936,7 @@
     <option name="HTML_ATTRIBUTE_NAME">
       <value>
         <option name="FOREGROUND" value="$whiskey$"/>
+        <option name="FONT_TYPE" value="%theme^attributes%"/>
       </value>
     </option>
     <option name="HTML_ATTRIBUTE_VALUE">
