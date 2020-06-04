@@ -149,7 +149,7 @@ object ThemeConstructor {
     fontSpecifications: List<String>,
     themeSettings: ThemeSettings
   ): Boolean =
-    matchesThemeSetting(fontSpecifications, "bold:") {
+    matchesThemeSetting(fontSpecifications, "bold") {
       val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
       relevantGroupStyle == GroupStyling.BOLD ||
         relevantGroupStyle == GroupStyling.BOLD_ITALIC
@@ -166,7 +166,7 @@ object ThemeConstructor {
     fontSpecifications: List<String>,
     themeSettings: ThemeSettings
   ): Boolean =
-    matchesThemeSetting(fontSpecifications, "italic:") {
+    matchesThemeSetting(fontSpecifications, "italic") {
       val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
       relevantGroupStyle == GroupStyling.ITALIC ||
         relevantGroupStyle == GroupStyling.BOLD_ITALIC
@@ -178,13 +178,11 @@ object ThemeConstructor {
     isCurrentThemeSetting: (group: Groups) -> Boolean
   ): Boolean =
     fontSpecifications.any {
-      it.startsWith(prefix) &&
-        (it.endsWith(":always") ||
-          (it.contains(":theme") &&
+      it.startsWith(prefix) ||
+          (it.startsWith("theme") &&
             isCurrentThemeSetting(
               it.substringAfter("^").toGroup()
             ))
-          )
     }
 
   private fun buildReplacement(replacementColor: String, value: String, end: Int) =
