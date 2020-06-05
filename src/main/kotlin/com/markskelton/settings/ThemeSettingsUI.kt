@@ -9,7 +9,7 @@ import com.intellij.openapi.ui.DialogPanel
 import com.intellij.ui.layout.panel
 import com.markskelton.settings.ThemeSettings.Companion.constructSettingModel
 import java.net.URI
-import java.util.*
+import java.util.Vector
 import javax.swing.DefaultComboBoxModel
 import javax.swing.JComponent
 
@@ -81,19 +81,19 @@ class ThemeSettingsUI : DumbAware, SearchableConfigurable {
     panel {
       titledRow("Font Styling") {
         row("Attributes") {
-            buildComboBox(themeSettingsModel.attributesStyle) {
-              themeSettingsModel.attributesStyle = it
-            }().focused()
+          buildComboBox(themeSettingsModel.attributesStyle) {
+            themeSettingsModel.attributesStyle = it
+          }().focused()
         }
         row("Comments") {
-            buildComboBox(themeSettingsModel.commentStyle) {
-              themeSettingsModel.commentStyle = it
-            }()
+          buildComboBox(themeSettingsModel.commentStyle) {
+            themeSettingsModel.commentStyle = it
+          }()
         }
         row("Keywords") {
-            buildComboBox(themeSettingsModel.keywordStyle) {
-              themeSettingsModel.keywordStyle = it
-            }()
+          buildComboBox(themeSettingsModel.keywordStyle) {
+            themeSettingsModel.keywordStyle = it
+          }()
         }
       }
       titledRow("Color Settings") {
