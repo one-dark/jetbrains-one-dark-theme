@@ -21,8 +21,7 @@ configurations {
 
 
 intellij {
-  version '2020.1'
-  type 'IU'
+  version 'LATEST-EAP-SNAPSHOT'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 }
 

@@ -5,31 +5,6 @@ import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
-import com.markskelton.toOptional
-import java.lang.IllegalStateException
-
-enum class Groups(val value: String) {
-  ATTRIBUTES("attributes"), COMMENTS("comments"), KEYWORDS("keywords")
-}
-private val groupMappings = Groups.values()
-  .map { it.value to it }
-  .toMap()
-
-fun String.toGroup(): Groups = groupMappings[this]
-  .toOptional()
-  .orElseThrow { IllegalStateException("Unknown grouping $this") }
-
-enum class GroupStyling(
-  val value: String
-) {
-  REGULAR("Regular"), ITALIC("Italic"), BOLD("Bold"), BOLD_ITALIC("Bold Italic")
-}
-private val styleMappings = GroupStyling.values()
-  .map { it.value to it }
-  .toMap()
-fun String.toGroupStyle(): GroupStyling = styleMappings.getOrDefault(
-  this, GroupStyling.REGULAR
-)
 
 @State(
     name = "OneDarkConfig",

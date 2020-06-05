@@ -81,7 +81,7 @@ object LegacyMigration {
       }.toOptional()
 
   private fun applyItalicSettings() {
-    ThemeSettings.instance.attributesStyle = GroupStyling.REGULAR.value
+    ThemeSettings.instance.attributesStyle = GroupStyling.ITALIC.value
     ThemeSettings.instance.commentStyle = GroupStyling.ITALIC.value
     ThemeSettings.instance.keywordStyle = GroupStyling.ITALIC.value
     ThemeSettings.instance.isVivid = false
@@ -95,7 +95,7 @@ object LegacyMigration {
   }
 
   private fun applyVividItalicSettings() {
-    ThemeSettings.instance.attributesStyle = GroupStyling.REGULAR.value
+    ThemeSettings.instance.attributesStyle = GroupStyling.ITALIC.value
     ThemeSettings.instance.commentStyle = GroupStyling.ITALIC.value
     ThemeSettings.instance.keywordStyle = GroupStyling.ITALIC.value
     ThemeSettings.instance.isVivid = true
