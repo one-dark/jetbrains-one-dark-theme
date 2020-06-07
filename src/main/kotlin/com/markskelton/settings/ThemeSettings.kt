@@ -25,6 +25,7 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   }
 
   var version: String = "0.0.0"
+  var userId: String = ""
   var isBold: Boolean = false
   var isVivid: Boolean = false
   var isItalic: Boolean = false
