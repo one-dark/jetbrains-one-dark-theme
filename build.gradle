@@ -5,11 +5,20 @@ plugins {
 }
 
 group 'com.markskelton'
-version System.getenv('VERSION').replace('refs/tags/v', '')
+version System.getenv().getOrDefault('VERSION', '').replace('refs/tags/v', '')
 
 repositories {
     mavenCentral()
 }
+
+dependencies {
+  implementation 'io.sentry:sentry:1.7.30'
+}
+
+configurations {
+  implementation.exclude group: 'org.slf4j'
+}
+
 
 intellij {
     version 'LATEST-EAP-SNAPSHOT'

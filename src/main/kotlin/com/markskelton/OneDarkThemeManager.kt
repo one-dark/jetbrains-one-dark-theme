@@ -24,11 +24,19 @@ object OneDarkThemeManager {
 
   fun registerStartup(project: Project) {
     if (!this::messageBus.isInitialized) {
+      registerUser()
+
       attemptToDisplayUpdates()
 
       applyConfigurableTheme()
 
       subscribeToEvents()
+    }
+  }
+
+  private fun registerUser() {
+    if (ThemeSettings.instance.userId.isEmpty()) {
+      ThemeSettings.instance.userId = UUID.randomUUID().toString()
     }
   }
 
