@@ -1,5 +1,9 @@
 # Changelog
 
+#### 3.3.6
+
+- Add support for 2020.2
+
 #### 3.3.5
 
 - Fix border color inconsistencies.
