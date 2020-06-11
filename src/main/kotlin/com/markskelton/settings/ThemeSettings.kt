@@ -17,18 +17,20 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
 
     fun constructSettingModel(): ThemeSettingsModel {
       return ThemeSettingsModel(
-        instance.isBold,
-        instance.isVivid,
-        instance.isItalic
+        instance.commentStyle.toGroupStyle(),
+        instance.keywordStyle.toGroupStyle(),
+        instance.attributesStyle.toGroupStyle(),
+        instance.isVivid
       )
     }
   }
 
   var version: String = "0.0.0"
   var userId: String = ""
-  var isBold: Boolean = false
   var isVivid: Boolean = false
-  var isItalic: Boolean = false
+  var commentStyle: String = GroupStyling.REGULAR.value
+  var keywordStyle: String = GroupStyling.REGULAR.value
+  var attributesStyle: String = GroupStyling.REGULAR.value
   var customSchemeSet: Boolean = false
 
   override fun getState(): ThemeSettings? =
@@ -39,9 +41,10 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   }
 
   fun asJson(): Map<String, Any> = mapOf(
-      "version" to version,
-      "isBold" to isBold,
-      "isVivid" to isVivid,
-      "isItalic" to isItalic
+    "version" to version,
+    "isVivid" to isVivid,
+    "attributesStyle" to attributesStyle,
+    "commentStyle" to commentStyle,
+    "keywordStyle" to keywordStyle
   )
 }

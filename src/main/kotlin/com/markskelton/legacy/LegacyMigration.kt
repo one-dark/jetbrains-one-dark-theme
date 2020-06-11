@@ -8,6 +8,7 @@ import com.intellij.openapi.application.PathManager
 import com.intellij.openapi.components.RoamingType
 import com.markskelton.OneDarkThemeManager
 import com.markskelton.doOrElse
+import com.markskelton.settings.GroupStyling
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeSettings
 import com.markskelton.toOptional
@@ -80,17 +81,23 @@ object LegacyMigration {
       }.toOptional()
 
   private fun applyItalicSettings() {
-    ThemeSettings.instance.isItalic = true
+    ThemeSettings.instance.attributesStyle = GroupStyling.ITALIC.value
+    ThemeSettings.instance.commentStyle = GroupStyling.ITALIC.value
+    ThemeSettings.instance.keywordStyle = GroupStyling.ITALIC.value
     ThemeSettings.instance.isVivid = false
   }
 
   private fun applyVividSettings() {
+    ThemeSettings.instance.attributesStyle = GroupStyling.REGULAR.value
+    ThemeSettings.instance.commentStyle = GroupStyling.REGULAR.value
+    ThemeSettings.instance.keywordStyle = GroupStyling.REGULAR.value
     ThemeSettings.instance.isVivid = true
-    ThemeSettings.instance.isItalic = false
   }
 
   private fun applyVividItalicSettings() {
-    ThemeSettings.instance.isItalic = true
+    ThemeSettings.instance.attributesStyle = GroupStyling.ITALIC.value
+    ThemeSettings.instance.commentStyle = GroupStyling.ITALIC.value
+    ThemeSettings.instance.keywordStyle = GroupStyling.ITALIC.value
     ThemeSettings.instance.isVivid = true
   }
 }
