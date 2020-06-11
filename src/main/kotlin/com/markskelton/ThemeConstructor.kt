@@ -9,7 +9,12 @@ import com.intellij.openapi.application.PathManager
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.vfs.VfsUtil
 import com.markskelton.OneDarkThemeManager.ONE_DARK_ID
+import com.markskelton.settings.GroupStyling
+import com.markskelton.settings.Groups
+import com.markskelton.settings.Groups.*
 import com.markskelton.settings.ThemeSettings
+import com.markskelton.settings.toGroup
+import com.markskelton.settings.toGroupStyle
 import groovy.util.Node
 import groovy.util.XmlNodePrinter
 import groovy.util.XmlParser
@@ -24,7 +29,7 @@ import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
-import java.util.*
+import java.util.UUID
 import javax.swing.UIManager
 
 enum class ColorVariant {
@@ -148,23 +153,40 @@ object ThemeConstructor {
     fontSpecifications: List<String>,
     themeSettings: ThemeSettings
   ): Boolean =
-    matchesThemeSetting(fontSpecifications, "bold:") {
-      themeSettings.isBold
+    matchesThemeSetting(fontSpecifications, "bold") {
+      val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
+      relevantGroupStyle == GroupStyling.BOLD ||
+        relevantGroupStyle == GroupStyling.BOLD_ITALIC
     }
 
   private fun isEffectItalic(
     fontSpecifications: List<String>,
     themeSettings: ThemeSettings
   ): Boolean =
-    matchesThemeSetting(fontSpecifications, "italic:") {
-      themeSettings.isItalic
+    matchesThemeSetting(fontSpecifications, "italic") {
+      val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
+      relevantGroupStyle == GroupStyling.ITALIC ||
+        relevantGroupStyle == GroupStyling.BOLD_ITALIC
     }
 
-  private fun matchesThemeSetting(fontSpecifications: List<String>, prefix: String, isCurrentThemeSetting: () -> Boolean): Boolean =
+  private fun getRelevantGroupStyle(it: Groups, themeSettings: ThemeSettings): GroupStyling =
+    when (it) {
+      ATTRIBUTES -> themeSettings.attributesStyle
+      COMMENTS -> themeSettings.commentStyle
+      KEYWORDS -> themeSettings.keywordStyle
+    }.toGroupStyle()
+
+  private fun matchesThemeSetting(
+    fontSpecifications: List<String>,
+    prefix: String,
+    isCurrentThemeSetting: (group: Groups) -> Boolean
+  ): Boolean =
     fontSpecifications.any {
-      it.startsWith(prefix) &&
-        (it.endsWith(":always") ||
-          (it.endsWith(":theme") && isCurrentThemeSetting()))
+      it.startsWith(prefix) ||
+        (it.startsWith("theme") &&
+          isCurrentThemeSetting(
+            it.substringAfter("^").toGroup()
+          ))
     }
 
   private fun buildReplacement(replacementColor: String, value: String, end: Int) =
