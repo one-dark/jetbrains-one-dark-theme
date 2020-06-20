@@ -24,9 +24,9 @@ Once you have selected `One Dark` in the theme options, click the **OK** button 
 
 ## Configuration
 
-After setting up the theme, you can configure the appearance of the syntax highlighting of the theme.
+After set up, you can configure the appearance of the syntax highlighting of the theme.
 
-Go to `Preferences | Appearance & Behavior | One Dark Theme` where you have various appearance settings to configure at your disposal.
+Go to `Preferences | Appearance & Behavior | One Dark Theme` where you have various appearance settings at your disposal.
 
 ![Theme configurations](./docs/screenshots/theme-configuration.png)
 
