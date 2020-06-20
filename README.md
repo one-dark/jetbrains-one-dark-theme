@@ -6,7 +6,7 @@
 
 > [One Dark](https://github.com/atom/one-dark-syntax) theme for JetBrains.
 
-![Code example](./docs/screenshots/default.png)
+![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/default.png)
 
 ## Sponsors
 
@@ -20,7 +20,7 @@ Request and perform code reviews from inside your IDE. Review any code, even if 
 After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select the new `One Dark` theme in the theme dropdown. 
 Once you have selected `One Dark` in the theme options, click the **OK** button to apply the changes, so you can start enjoying One Dark theme!
 
-![Code example](./docs/screenshots/theme-selection.png)
+![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/theme-selection.png)
 
 ## Configuration
 
@@ -28,7 +28,7 @@ After set up, you can configure the appearance of the syntax highlighting of the
 
 Go to `Preferences | Appearance & Behavior | One Dark Theme` where you have various appearance settings at your disposal.
 
-![Theme configurations](./docs/screenshots/theme-configuration.png)
+![Theme configurations](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/theme-configuration.png)
 
 ### Font Styling
 
