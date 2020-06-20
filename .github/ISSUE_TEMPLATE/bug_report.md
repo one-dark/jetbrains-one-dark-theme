@@ -8,9 +8,8 @@ assignees: ''
 ---
 
 <!-- 
-    NOTE: Did you check the FAQs to see if your problem
-    already has a work around?
-    
+    NOTE: Did you check the FAQs (https://one-dark.gitbook.io/jetbrains/help/faqs)
+    to see if your problem already has a work around?
 -->
 
 **Describe the bug**

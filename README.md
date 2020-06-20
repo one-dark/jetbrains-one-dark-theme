@@ -15,6 +15,11 @@
 Request and perform code reviews from inside your IDE. Review any code, even if it's a work-in-progress that hasn't been committed yet, and use jump-to-definition, your favorite keybindings, and other IDE tools.<br>
 [Try it free](https://sponsorlink.codestream.com/?utm_source=jbmarket&utm_campaign=jbonedarktheme&utm_medium=banner)
 
+## I need help!
+
+Please check [the docs FAQs](https://one-dark.gitbook.io/jetbrains/help/faqs) to see if we can solve your problem.
+If that does not fix your problem, please submit an issue.
+
 ## Setup
 
 After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select one of the new themes in the theme dropdown. Once you have selected one of the theme options, click the **OK** button to apply the changes so you can start enjoying One Dark theme!
