@@ -1,7 +1,9 @@
 plugins {
+    id 'one-dark-theme-plugin'
     id 'org.jetbrains.intellij' version '0.4.7'
     id 'org.jetbrains.kotlin.jvm' version '1.3.72'
-    id "org.jlleitschuh.gradle.ktlint" version "8.2.0"
+    id 'org.jlleitschuh.gradle.ktlint' version '8.2.0'
+    id 'org.kordamp.gradle.markdown' version '2.2.0'
 }
 
 group 'com.markskelton'
@@ -21,7 +23,8 @@ configurations {
 
 
 intellij {
-  version 'LATEST-EAP-SNAPSHOT'   
+  version '2020.1'
+  type 'IU'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 }
 
@@ -32,12 +35,18 @@ compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
 
+markdownToHtml {
+  sourceDir = new File("$projectDir/build/markdown")
+  outputDir = new File("$projectDir/build/html")
+
+  tables = false
+}
 
 patchPluginXml {
     sinceBuild '191'
 
-    def changelogPath = "$projectDir/build/CHANGELOG.html"
-    def readmePath = "$projectDir/build/README.html"
+    def changelogPath = "$projectDir/build/html/CHANGELOG.html"
+    def readmePath = "$projectDir/build/html/README.html"
 
     if (file(changelogPath).exists()) {
         changeNotes file(changelogPath).text
@@ -47,6 +56,11 @@ patchPluginXml {
         pluginDescription file(readmePath).text
     }
 }
+
+tasks.markdownToHtml.dependsOn("createReleaseNotes")
+tasks.markdownToHtml.dependsOn("copyChangelog")
+tasks.patchReadMeHtml.dependsOn("markdownToHtml")
+tasks.patchPluginXml.dependsOn("patchReadMeHtml")
 
 publishPlugin {
     token System.getenv('PUBLISH_TOKEN')
