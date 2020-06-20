@@ -18,7 +18,7 @@ Request and perform code reviews from inside your IDE. Review any code, even if 
 ## I need help!
 
 Please check [the docs FAQs](https://one-dark.gitbook.io/jetbrains/help/faqs) to see if we can solve your problem.
-If that does not fix your problem, please submit an issue.
+If that does not fix your problem, please [submit an issue](https://github.com/one-dark/jetbrains-one-dark-theme/issues/new).
 
 ## Setup
 
