@@ -22,9 +22,6 @@ Steps to reproduce the behavior:
 1. Scroll down to '....'
 1. See error
 
-**Actual Behaviour**
-What is happening that you do not want to be happening
-
 **Expected Behavior**
 A clear and concise description of what you expected to happen.
 
