@@ -17,7 +17,7 @@ open class CreateReleaseNotes : DefaultTask() {
       Paths.get(markdownDir.toString(), "CHANGELOG.md")
     ).use {
       it.write(System.getenv().getOrDefault(
-        "RELEASE-NOTES",
+        "RELEASE_NOTES",
         "- Some Markdown"
       ))
     }

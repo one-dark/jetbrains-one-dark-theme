@@ -31,6 +31,7 @@ open class CopyReadme : DefaultTask() {
       .stream()
       .skip(1)
       .filter {
+        // ignore badges
         it.contains("img.shields.io").not()
       }
       .map { readmeLine ->

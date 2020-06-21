@@ -11,9 +11,9 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: 11
-      - run: ./build.sh
       - run: ./gradlew build
         env:
+          RELEASE_NOTES: ${{ github.event.release.body }}
           VERSION: ${{ github.ref }}
       - name: Copy jar file
         run: cp build/libs/*.jar one-dark-theme.jar

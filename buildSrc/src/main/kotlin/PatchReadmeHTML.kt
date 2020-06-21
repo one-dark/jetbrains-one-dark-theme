@@ -5,7 +5,6 @@ import org.jsoup.nodes.Element
 import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.StandardOpenOption
-import javax.xml.soap.Node
 
 open class PatchReadmeHTML : DefaultTask() {
 
