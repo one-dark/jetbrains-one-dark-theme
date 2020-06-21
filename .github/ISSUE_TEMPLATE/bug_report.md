@@ -23,14 +23,14 @@ assignees: ''
 <!-- A clear and concise description of what you expected to happen. -->
 
 **Environment**
-Please go to *IntelliJ IDEA -> About IntelliJ IDEA (Mac)* or *Help -> About IntelliJ IDEA (Windows)* and copy the infos
+<!-- Please go to *IntelliJ IDEA -> About IntelliJ IDEA (Mac)* or *Help -> About IntelliJ IDEA (Windows)* and copy the infos
 to the clipboard and paste it here.
 
 It should contain:
 * OS (Windows, Linux, Mac)
 * IntelliJ Product + version (IDEA, RubyMine...)
 * Plugin version 
-* If needed a list of enabled plugins
+* If needed a list of enabled plugins -->
 
 
 **Screenshots**
