@@ -15,15 +15,15 @@ jobs:
         env:
           RELEASE_NOTES: ${{ github.event.release.body }}
           VERSION: ${{ github.ref }}
-      - name: Copy jar file
-        run: cp build/libs/*.jar one-dark-theme.jar
+      - name: Copy zip file
+        run: cp build/libs/*.zip one-dark-theme.zip
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: one-dark-theme.jar
-          asset_name: one-dark-theme.jar
+          asset_path: one-dark-theme.zip
+          asset_name: one-dark-theme.zip
           asset_content_type: application/zip
       - run: ./gradlew publishPlugin
         env:
