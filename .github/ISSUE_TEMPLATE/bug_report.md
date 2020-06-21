@@ -20,7 +20,7 @@ assignees: ''
 1.
 
 **Expected Behavior**
-A clear and concise description of what you expected to happen.
+<!-- A clear and concise description of what you expected to happen. -->
 
 **Environment**
 Please go to *IntelliJ IDEA -> About IntelliJ IDEA (Mac)* or *Help -> About IntelliJ IDEA (Windows)* and copy the infos
