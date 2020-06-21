@@ -11,3 +11,6 @@
 
 - [Development](contributing/development.md)
 - [Publishing](contributing/publishing.md)
+
+## Help
+- [FAQs](help/faqs.md)
