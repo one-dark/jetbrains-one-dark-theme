@@ -16,11 +16,8 @@ assignees: ''
 <!-- A clear and concise description of what the bug is. -->
 
 **To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-1. Click on '....'
-1. Scroll down to '....'
-1. See error
+<!-- Steps to reproduce the behavior -->
+1.
 
 **Expected Behavior**
 A clear and concise description of what you expected to happen.
