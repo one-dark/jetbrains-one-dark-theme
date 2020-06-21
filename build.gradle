@@ -59,7 +59,8 @@ patchPluginXml {
 
 tasks.markdownToHtml.dependsOn("createReleaseNotes")
 tasks.markdownToHtml.dependsOn("copyReadme")
-tasks.patchPluginXml.dependsOn("markdownToHtml")
+tasks.patchReadMeHtml.dependsOn("markdownToHtml")
+tasks.patchPluginXml.dependsOn("patchReadMeHtml")
 
 publishPlugin {
     token System.getenv('PUBLISH_TOKEN')

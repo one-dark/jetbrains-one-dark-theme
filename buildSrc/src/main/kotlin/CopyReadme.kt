@@ -5,6 +5,8 @@ import java.nio.file.Paths
 import java.nio.file.StandardCopyOption
 import java.nio.file.StandardOpenOption
 
+const val READ_ME_FILE = "README.md"
+
 open class CopyReadme : DefaultTask() {
 
   init {
@@ -17,15 +19,20 @@ open class CopyReadme : DefaultTask() {
     val markdownPath = createMarkdownDirectory(project)
     val readmeMarkdown = Paths.get(
       markdownPath.toString(),
-      "README.md"
+      READ_ME_FILE
     )
     Files.copy(
-      Paths.get(project.rootDir.absolutePath, "README.md"),
+      Paths.get(project.rootDir.absolutePath, READ_ME_FILE),
       readmeMarkdown,
       StandardCopyOption.REPLACE_EXISTING
     )
 
     val trimmedREADME = Files.readAllLines(readmeMarkdown)
+      .stream()
+      .skip(1)
+      .filter {
+        it.contains("img.shields.io").not()
+      }
       .map { readmeLine ->
         readmeLine to (readmeLine != "## Thanks")
       }
@@ -40,7 +47,7 @@ open class CopyReadme : DefaultTask() {
         } else {
           accum // ignore all lines after "Thanks"
         }
-      }.first
+      }.get().first
 
     Files.newBufferedWriter(
       readmeMarkdown,

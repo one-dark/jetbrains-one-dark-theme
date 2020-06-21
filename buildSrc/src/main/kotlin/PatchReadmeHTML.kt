@@ -1,0 +1,35 @@
+import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.TaskAction
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Element
+import java.nio.file.Files
+import java.nio.file.Paths
+import java.nio.file.StandardOpenOption
+import javax.xml.soap.Node
+
+open class PatchReadmeHTML : DefaultTask() {
+
+  init {
+    group = "documentation"
+    description = "Patches the Readme HTML to make it pretty."
+  }
+
+  @TaskAction
+  fun run() {
+    val htmlDirectory = createHtmlDirectory(project)
+    val readmeToPatch = Paths.get(htmlDirectory.toString(), "README.html")
+
+   val readmeHTML = Jsoup.parse(readmeToPatch.toFile(), Charsets.UTF_8.name())
+    readmeHTML.getElementsByTag("img")
+      .forEach {
+        image ->
+        image.attr("width", "700")
+          .parent().insertChildren(0, Element("br"))
+      }
+
+    Files.newBufferedWriter(readmeToPatch, StandardOpenOption.TRUNCATE_EXISTING)
+      .use {
+        it.write(readmeHTML.html())
+      }
+  }
+}
