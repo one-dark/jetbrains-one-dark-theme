@@ -16,7 +16,7 @@ jobs:
           RELEASE_NOTES: ${{ github.event.release.body }}
           VERSION: ${{ github.ref }}
       - name: Copy zip file
-        run: cp build/libs/*.zip one-dark-theme.zip
+        run: cp build/distributions/*.zip one-dark-theme.zip
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
