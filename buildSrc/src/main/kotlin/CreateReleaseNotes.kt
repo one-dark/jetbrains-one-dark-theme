@@ -18,7 +18,7 @@ open class CreateReleaseNotes : DefaultTask() {
     ).use {
       it.write(System.getenv().getOrDefault(
         "RELEASE_NOTES",
-        "- Some Markdown"
+        "No release notes available"
       ))
     }
   }
