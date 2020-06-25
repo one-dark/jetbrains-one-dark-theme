@@ -6,8 +6,10 @@ The One Dark Theme is different from other [custom UI themes](https://blog.jetbr
 
 The look and feel scheme is a static file that can be modified and is located here: `src/main/resources/themes/one_dark.theme.json`.
 
-The editor color scheme is not static, it is generated at run-time and stored in a configuration directory to prevent the need to generate the color scheme when the user has not changed any configurations.
+The editor color scheme is not static, it is generated at run-time.
+The generated scheme file is stored in a configuration directory to prevent the need to generate the color scheme when the user has not changed any configurations.
 The theme creates its scheme by building from the template located in the directory `src/main/resources/templates/one-dark.template.xml`.
+
 For technical reasons we still need an empty `one_dark.xml` theme xml file.
 
 Template replacement structure:
