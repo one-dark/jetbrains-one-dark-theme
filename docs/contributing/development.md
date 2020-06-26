@@ -1,22 +1,27 @@
 # Development
 
-## Theme source files
+## Theme
 
-The color scheme source files are stored in the `scripts/config` directory. To build the XML files used in IntelliJ, run `python3 ./scripts/build.py`. This will create the following files in the `src/main/resources/themes` directory:
+The One Dark Theme is different from other [custom UI themes](https://blog.jetbrains.com/idea/2019/03/brighten-up-your-day-add-color-to-intellij-idea) for the JetBrains platform.
 
-* `one_dark.xml`
-* `one_dark_italic.theme.json`
-* `one_dark_italic.xml`
-* `one_dark_vivid.theme.json`
-* `one_dark_vivid.xml`
-* `one_dark_vivid_italic.theme.json`
-* `one_dark_vivid_italic.sml`
+The look and feel scheme is a static file that can be modified and is located here: `src/main/resources/themes/one_dark.theme.json`.
 
-The JSON files were added as part of version 2 of this plugin when IntelliJ added support for [custom UI themes](https://blog.jetbrains.com/idea/2019/03/brighten-up-your-day-add-color-to-intellij-idea). Because IntelliJ includes the ability to preview a UI theme within the editor, these JSON files are not constructed using the same process as the XML color scheme files. Instead, the complete UI theme is contained in `src/main/resources/themes/one_dark.theme.json` and is used when creating the italic version which contains the same properties, but with a different name and editor color scheme.
+The editor color scheme is not static, it is generated at run-time.
+The generated scheme file is stored in a configuration directory to prevent the need to generate the color scheme when the user has not changed any configurations.
+The theme creates its scheme by building from the template located in the directory `src/main/resources/templates/one-dark.template.xml`.
+
+For technical reasons we still need an empty `one_dark.xml` theme xml file.
+
+Template replacement structure:
+
+- `%bold$theme^comments%` will always have the `bold` variant, so it will be italic only if the user specifies an italic variant: `ITALIC` or `BOLD_ITALIC`.
+- `theme^attribute` will set the attribute to whatever the user has configured for the `attribute` group.
+- `$purple$` will replace the value with the associated color.
 
 ## Color palette
 
-This theme aims to create a color scheme that is as consistent as possible across languages. As such, this theme uses colors from the following color palette for as many scopes as applicable.
+This theme aims to create a color scheme that is as consistent as possible across languages. 
+As such, this theme uses colors from the following color palette for as many scopes as applicable.
 
 | Name | Value | Preview | Name | Value | Preview |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -28,9 +33,14 @@ This theme aims to create a color scheme that is as consistent as possible acros
 
 ## Building the plugin
 
-To build the plugin, run `./gradlew build`. If using IntelliJ, sync the Gradle project and run the **Build** task.
+To build the plugin, run `./gradlew build`. 
+If using IntelliJ, sync the Gradle project and run the **Build** task.
 
 ## Testing the plugin
 
-To test the plugin, run `./gradlew runIde` to build and launch the plugin in a fresh instance of IntelliJ. If using IntelliJ, run the **Run IDE** task. All plugins will be disabled and settings will be the default settings for a new installation. When first running this task, you will need to change the appearance to Darcula to enable the One Dark themes in the color schemes. Select whichever scheme you wish to test, and save the settings.
+To test the plugin, run `./gradlew runIde` to build and launch the plugin in a fresh instance of IntelliJ. 
+If using IntelliJ, run the **Run IDE** task. 
+All plugins will be disabled and settings will be the default settings for a new installation. 
+When first running this task, you will need to change the appearance to Darcula to enable the One Dark themes in the color schemes. 
+Select whichever scheme you wish to test, and change the settings.
 
