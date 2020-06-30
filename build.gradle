@@ -1,24 +1,51 @@
 plugins {
+    id 'one-dark-theme-plugin'
     id 'org.jetbrains.intellij' version '0.4.7'
+    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+    id 'org.jlleitschuh.gradle.ktlint' version '8.2.0'
+    id 'org.kordamp.gradle.markdown' version '2.2.0'
 }
 
 group 'com.markskelton'
-version System.getenv('VERSION')
+version System.getenv().getOrDefault('VERSION', '').replace('refs/tags/v', '')
 
 repositories {
     mavenCentral()
 }
 
+dependencies {
+  implementation 'io.sentry:sentry:1.7.30'
+}
+
+configurations {
+  implementation.exclude group: 'org.slf4j'
+}
+
+
 intellij {
-    version 'LATEST-EAP-SNAPSHOT'
-    alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
+  version 'LATEST-EAP-SNAPSHOT'
+  alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+
+markdownToHtml {
+  sourceDir = new File("$projectDir/build/markdown")
+  outputDir = new File("$projectDir/build/html")
+
+  tables = false
 }
 
 patchPluginXml {
     sinceBuild '191'
 
-    def changelogPath = "$projectDir/build/CHANGELOG.html"
-    def readmePath = "$projectDir/build/README.html"
+    def changelogPath = "$projectDir/build/html/CHANGELOG.html"
+    def readmePath = "$projectDir/build/html/README.html"
 
     if (file(changelogPath).exists()) {
         changeNotes file(changelogPath).text
@@ -29,11 +56,11 @@ patchPluginXml {
     }
 }
 
-def getSecret = { String prop, String env ->
-    project.hasProperty(prop) ? project.findProperty(prop) : System.getenv(env)
-}
+tasks.markdownToHtml.dependsOn("createReleaseNotes")
+tasks.markdownToHtml.dependsOn("copyReadme")
+tasks.patchReadMeHtml.dependsOn("markdownToHtml")
+tasks.patchPluginXml.dependsOn("patchReadMeHtml")
 
 publishPlugin {
-    username getSecret('publishUsername', 'PUBLISH_USERNAME')
-    token getSecret('publishToken', 'PUBLISH_TOKEN')
+    token System.getenv('PUBLISH_TOKEN')
 }

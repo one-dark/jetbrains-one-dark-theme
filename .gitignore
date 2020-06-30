@@ -30,8 +30,6 @@ hs_err_pid*
 
 # Generated files and folders
 build/
-src/main/resources/themes/*
-!src/main/resources/themes/one_dark.theme.json
 *.icls
 
 # Gradle
