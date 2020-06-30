@@ -24,7 +24,7 @@ configurations {
 
 
 intellij {
-  version '2019.2.4'
+  version '2019.3.4'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 }
 

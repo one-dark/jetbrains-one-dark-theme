@@ -16,10 +16,11 @@ open class CreateReleaseNotes : DefaultTask() {
     Files.newBufferedWriter(
       Paths.get(markdownDir.toString(), "CHANGELOG.md")
     ).use {
-      it.write(System.getenv().getOrDefault(
-        "RELEASE_NOTES",
-        "No release notes available"
-      ))
+      it.write("""
+          - Fixed issue with the settings not showing up in 2019.X builds.
+          - Fixed issue with the notifications not showing up.
+        """.trimIndent()
+      )
     }
   }
 }

@@ -16,6 +16,7 @@ val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
         <li>Theme is now configurable through settings.</li>
+        <li>Fixed issue with not being able to see the settings.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
