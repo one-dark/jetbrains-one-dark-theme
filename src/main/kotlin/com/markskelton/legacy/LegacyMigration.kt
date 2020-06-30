@@ -12,6 +12,9 @@ import com.markskelton.settings.GroupStyling
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeSettings
 import com.markskelton.toOptional
+import com.markskelton.utils.readXmlInputStream
+import groovy.util.Node
+import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.*
 
@@ -31,19 +34,17 @@ object LegacyMigration {
   }
 
   private fun migrateUser() {
-    FileBasedStorage(
-      Paths.get(PathManager.getConfigPath(), "options", "laf.xml"),
-      "laf.xml",
-      "application",
-      null,
-      RoamingType.PER_OS
-
-    ).getStorageData()
-      .getState("LafManager")
+    Files.newInputStream(Paths.get(PathManager.getConfigPath(), "options", "laf.xml"))
+      .use {
+        readXmlInputStream(it)
+      }.breadthFirst()
+      .filterIsInstance<Node>()
+      .first { it.attribute("name") == "LafManager" }
       .toOptional()
-      .map { it.getChild("laf") }
-      .map { it.getAttribute("themeId") }
-      .map { it.value }
+      .map { it.children().filterIsInstance<Node>().first { child -> child.attribute("themeId") != null } }
+      .map { it.attribute("themeId") }
+      .filter { it is String }
+      .map { it as String }
       .filter { legacyThemes.containsKey(it) }
       .ifPresent { legacyThemeId ->
         attemptToMigrateToOneDarkTheme(legacyThemeId)

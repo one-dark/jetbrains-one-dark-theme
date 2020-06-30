@@ -1,6 +1,6 @@
 package com.markskelton.notification
 
-import com.intellij.ide.plugins.PluginManagerCore.getPlugin
+import com.intellij.ide.plugins.PluginManager.getPlugin
 import com.intellij.ide.plugins.PluginManagerCore.getPluginOrPlatformByClassName
 import com.intellij.notification.Notification
 import com.intellij.notification.NotificationAction

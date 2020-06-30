@@ -1,7 +1,6 @@
 package com.markskelton
 
-import com.intellij.ide.plugins.PluginManagerCore
-import com.intellij.ide.ui.LafManagerListener
+import com.intellij.ide.plugins.PluginManager
 import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
@@ -53,7 +52,7 @@ object OneDarkThemeManager {
   }
 
   private fun getVersion(): Optional<String> =
-    PluginManagerCore.getPlugin(PluginId.getId(PLUGIN_ID)).toOptional()
+    PluginManager.getPlugin(PluginId.getId(PLUGIN_ID)).toOptional()
       .map { it.version }
 
   private fun subscribeToEvents() {
@@ -69,7 +68,7 @@ object OneDarkThemeManager {
       }
     })
 
-    messageBus.subscribe(LafManagerListener.TOPIC, LafManagerListener {
+    LafManagerImpl.getInstance().addLafManagerListener {
       val currentLaf = it.currentLookAndFeel
       if (currentLaf is UIThemeBasedLookAndFeelInfo) {
         when {
@@ -77,7 +76,7 @@ object OneDarkThemeManager {
             isOneDarkTheme(currentLaf) -> setOneDarkTheme()
         }
       }
-    })
+    }
 
     messageBus.subscribe(EditorColorsManager.TOPIC, EditorColorsListener {
       ThemeSettings.instance.customSchemeSet =
