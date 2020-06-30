@@ -24,7 +24,7 @@ configurations {
 
 
 intellij {
-  version 'LATEST-EAP-SNAPSHOT'
+  version '2019.3.4'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 }
 
@@ -44,6 +44,7 @@ markdownToHtml {
 
 patchPluginXml {
     sinceBuild '191'
+    untilBuild '193.*'
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"
