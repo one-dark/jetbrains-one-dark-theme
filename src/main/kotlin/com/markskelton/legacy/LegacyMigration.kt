@@ -32,7 +32,7 @@ object LegacyMigration {
 
   private fun migrateUser() {
     FileBasedStorage(
-      Paths.get(PathManager.getConfigDir().toAbsolutePath().toString(), "options", "laf.xml"),
+      Paths.get(PathManager.getConfigPath(), "options", "laf.xml"),
       "laf.xml",
       "application",
       null,
