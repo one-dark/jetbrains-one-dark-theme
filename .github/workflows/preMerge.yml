@@ -26,7 +26,8 @@ jobs:
     - name: IntelliJ Plugin Verifier
       uses: thepieterdc/intellij-plugin-verifier-action@v1.1.2
       plugin: '/home/runner/work/jetbrains-one-dark-theme/jetbrains-one-dark-theme/build/distributions/one-dark-theme*'
+#      todo: change to 2020 once ready
       versions: |
-        181.5684.4
-        2019.3.3
-        LATEST-EAP-SNAPSHOT
+        2019.1.4
+        2019.2.4
+        2019.3.4
