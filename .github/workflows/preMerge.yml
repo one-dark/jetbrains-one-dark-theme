@@ -17,17 +17,13 @@ jobs:
         java-version: 11
     - name: Grant execute permission for scripts
       run: chmod +x gradlew
-#    - name: Perform quality check
-#      run: ./gradlew clean check
     - run: ./ciScripts/buildPlugin.sh
       env:
-        RELEASE_NOTES: ${{ github.event.release.body }}
-        VERSION: ${{ github.ref }}
-    - name: IntelliJ Plugin Verifier
-      uses: thepieterdc/intellij-plugin-verifier-action@v1.1.2
-      plugin: '/home/runner/work/jetbrains-one-dark-theme/jetbrains-one-dark-theme/build/distributions/one-dark-theme*'
-#      todo: change to 2020 once ready
-      versions: |
-        2019.1.4
-        2019.2.4
-        2019.3.4
+        RELEASE_NOTES: '-This is a test and should not be released.\n-Also a test there might be a character minimum'
+    - uses: thepieterdc/intellij-plugin-verifier-action@v1.1.2
+      with:
+        plugin: '/home/runner/work/jetbrains-one-dark-theme/jetbrains-one-dark-theme/build/distributions/one-dark-theme*'
+        versions: |
+          2019.1.4
+          2019.2.4
+          2019.3.4
