@@ -61,9 +61,8 @@ object ThemeConstructor {
         getUpdatedEditorScheme(ThemeSettings.instance)
       }
 
-  private fun constructLookAndFeel(updatedEditorScheme: Path): VirtualFile {
-    return VfsUtil.findFile(updatedEditorScheme, true)!!
-  }
+  private fun constructLookAndFeel(updatedEditorScheme: Path): VirtualFile =
+    VfsUtil.findFile(updatedEditorScheme, true)!!
 
   private fun getUpdatedEditorScheme(themeSettings: ThemeSettings): Path {
     val assetsDirectory = getAssetsDirectory()

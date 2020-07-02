@@ -1,7 +1,5 @@
 package com.markskelton
 
-import com.intellij.application.options.colors.ColorSchemeImporter
-import com.intellij.application.options.schemes.SchemeNameGenerator
 import com.intellij.ide.plugins.PluginManagerCore
 import com.intellij.ide.ui.LafManager
 import com.intellij.ide.ui.LafManagerListener
@@ -11,16 +9,9 @@ import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.colors.EditorColorsListener
 import com.intellij.openapi.editor.colors.EditorColorsManager
-import com.intellij.openapi.editor.colors.EditorColorsScheme
-import com.intellij.openapi.editor.colors.impl.AbstractColorsScheme
-import com.intellij.openapi.editor.colors.impl.EditorColorsSchemeImpl
-import com.intellij.openapi.editor.colors.impl.EmptyColorScheme
 import com.intellij.openapi.extensions.PluginId
-import com.intellij.openapi.options.SchemeImportUtil
-import com.intellij.openapi.project.DefaultProjectFactory
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.util.containers.ContainerUtil
 import com.intellij.util.messages.MessageBusConnection
 import com.markskelton.notification.Notifications
 import com.markskelton.settings.THEME_CONFIG_TOPIC
@@ -119,29 +110,7 @@ object OneDarkThemeManager {
     if (!hasAppliedColorScheme) {
       hasAppliedColorScheme = true
       ApplicationManager.getApplication().invokeLater {
-        val importer = ColorSchemeImporter()
-        val colorsManager = EditorColorsManager.getInstance()
-        val names = ContainerUtil.map(colorsManager.allSchemes) { obj: EditorColorsScheme -> obj.name }
-        val imported = importer.importScheme(
-          DefaultProjectFactory.getInstance().defaultProject,
-          schemeProvider(),
-          colorsManager.globalScheme
-        ) { name ->
-          val preferredName = name ?: "Unnamed"
-          val newName = SchemeNameGenerator.getUniqueName(preferredName) { candidate: String? ->
-            names.contains(candidate)
-          }
-          val newScheme: AbstractColorsScheme = EditorColorsSchemeImpl(EmptyColorScheme.INSTANCE)
-          newScheme.name = newName
-          newScheme.setDefaultMetaInfo(EmptyColorScheme.INSTANCE)
-          newScheme
-        }
-        if (imported != null) {
-          val root = SchemeImportUtil.loadSchemeDom(schemeProvider())
-          imported.readExternal(root)
-          colorsManager.addColorsScheme(imported)
-          colorsManager.globalScheme = imported
-        }
+        SchemeImporter.importScheme(schemeProvider)
       }
     }
   }
