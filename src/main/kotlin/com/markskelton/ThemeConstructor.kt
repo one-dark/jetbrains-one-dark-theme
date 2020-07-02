@@ -14,14 +14,10 @@ import com.markskelton.settings.Groups.KEYWORDS
 import com.markskelton.settings.ThemeSettings
 import com.markskelton.settings.toGroup
 import com.markskelton.settings.toGroupStyle
+import com.markskelton.utils.readXmlInputStream
 import groovy.util.Node
 import groovy.util.XmlNodePrinter
-import groovy.util.XmlParser
-import org.xml.sax.ErrorHandler
-import org.xml.sax.InputSource
-import org.xml.sax.SAXParseException
 import java.io.BufferedOutputStream
-import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.io.PrintWriter
 import java.nio.charset.StandardCharsets
@@ -205,19 +201,7 @@ object ThemeConstructor {
 
   private fun getEditorXMLTemplate(): Node =
     this::class.java.getResourceAsStream("/templates/one-dark.template.xml").use { input ->
-      val inputSource = InputSource(InputStreamReader(input, "UTF-8"))
-      val parser = XmlParser(false, true, true)
-      parser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)
-      parser.errorHandler = object : ErrorHandler {
-        override fun warning(exception: SAXParseException?) {}
-
-        override fun error(exception: SAXParseException?) {}
-
-        override fun fatalError(exception: SAXParseException) {
-          throw exception
-        }
-      }
-      parser.parse(inputSource)
+        readXmlInputStream(input)
     }
 
   private fun getColorPalette(themeSettings: ThemeSettings): ColorPalette {
