@@ -4,6 +4,8 @@
     <vendor email="mdskelton99@gmail.com"
             url="https://github.com/one-dark/jetbrains-one-dark-theme">Mark Skelton</vendor>
 
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.xml</depends>
     <depends>com.intellij.modules.lang</depends>
 
 <!--    Leave this in here so the IDE gives you feedback on-->
