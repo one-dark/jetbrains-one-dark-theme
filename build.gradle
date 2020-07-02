@@ -26,6 +26,10 @@ configurations {
 intellij {
   version 'LATEST-EAP-SNAPSHOT'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
+
+  setPlugins(
+    'indent-rainbow.indent-rainbow:1.5.1'
+  )
 }
 
 compileKotlin {
@@ -43,7 +47,7 @@ markdownToHtml {
 }
 
 patchPluginXml {
-    sinceBuild '191'
+    sinceBuild '201.5985.32'
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"

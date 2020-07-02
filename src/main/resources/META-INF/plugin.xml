@@ -6,6 +6,10 @@
 
     <depends>com.intellij.modules.lang</depends>
 
+<!--    Leave this in here so the IDE gives you feedback on-->
+<!--    What API's are available-->
+    <idea-version since-build="201.5985.32"/>
+
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.markskelton.settings.ThemeSettings"/>
         <applicationConfigurable groupId="appearance"

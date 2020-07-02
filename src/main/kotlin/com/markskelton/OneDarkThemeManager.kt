@@ -16,6 +16,7 @@ import com.intellij.openapi.editor.colors.impl.AbstractColorsScheme
 import com.intellij.openapi.editor.colors.impl.EditorColorsSchemeImpl
 import com.intellij.openapi.editor.colors.impl.EmptyColorScheme
 import com.intellij.openapi.extensions.PluginId
+import com.intellij.openapi.options.SchemeImportUtil
 import com.intellij.openapi.project.DefaultProjectFactory
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
@@ -71,6 +72,7 @@ object OneDarkThemeManager {
     messageBus = ApplicationManager.getApplication().messageBus.connect()
     messageBus.subscribe(THEME_CONFIG_TOPIC, object : ThemeConfigListener {
       override fun themeConfigUpdated(themeSettings: ThemeSettings) {
+        hasAppliedColorScheme = false
         if (isCurrentTheme()) {
           ThemeSettings.instance.customSchemeSet = false
           setOneDarkTheme {ThemeConstructor.constructNewTheme(themeSettings)}
@@ -135,6 +137,8 @@ object OneDarkThemeManager {
           newScheme
         }
         if (imported != null) {
+          val root = SchemeImportUtil.loadSchemeDom(schemeProvider())
+          imported.readExternal(root)
           colorsManager.addColorsScheme(imported)
           colorsManager.globalScheme = imported
         }
