@@ -1,6 +1,9 @@
 package com.markskelton
 
+import com.intellij.application.options.colors.ColorSchemeImporter
+import com.intellij.application.options.schemes.SchemeNameGenerator
 import com.intellij.ide.plugins.PluginManagerCore
+import com.intellij.ide.ui.LafManager
 import com.intellij.ide.ui.LafManagerListener
 import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
@@ -8,14 +11,22 @@ import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.editor.colors.EditorColorsListener
 import com.intellij.openapi.editor.colors.EditorColorsManager
+import com.intellij.openapi.editor.colors.EditorColorsScheme
+import com.intellij.openapi.editor.colors.impl.AbstractColorsScheme
+import com.intellij.openapi.editor.colors.impl.EditorColorsSchemeImpl
+import com.intellij.openapi.editor.colors.impl.EmptyColorScheme
 import com.intellij.openapi.extensions.PluginId
+import com.intellij.openapi.project.DefaultProjectFactory
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.vfs.VirtualFile
+import com.intellij.util.containers.ContainerUtil
 import com.intellij.util.messages.MessageBusConnection
 import com.markskelton.notification.Notifications
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeConfigListener
 import com.markskelton.settings.ThemeSettings
-import java.util.*
+import java.util.Optional
+import java.util.UUID
 
 object OneDarkThemeManager {
   private lateinit var messageBus: MessageBusConnection
@@ -62,9 +73,7 @@ object OneDarkThemeManager {
       override fun themeConfigUpdated(themeSettings: ThemeSettings) {
         if (isCurrentTheme()) {
           ThemeSettings.instance.customSchemeSet = false
-          LafManagerImpl.getInstance().setCurrentLookAndFeel(
-            ThemeConstructor.constructNewTheme(themeSettings)
-          )
+          setOneDarkTheme {ThemeConstructor.constructNewTheme(themeSettings)}
         }
       }
     })
@@ -73,8 +82,8 @@ object OneDarkThemeManager {
       val currentLaf = it.currentLookAndFeel
       if (currentLaf is UIThemeBasedLookAndFeelInfo) {
         when {
-          currentLaf !is TempUIThemeBasedLookAndFeelInfo &&
-            isOneDarkTheme(currentLaf) -> setOneDarkTheme()
+          isOneDarkTheme(currentLaf) -> setOneDarkTheme { ThemeConstructor.useExistingTheme() }
+          else -> hasAppliedColorScheme = false
         }
       }
     })
@@ -88,16 +97,49 @@ object OneDarkThemeManager {
   private fun isOneDarkTheme(uiThemeBasedLookAndFeelInfo: UIThemeBasedLookAndFeelInfo): Boolean =
     uiThemeBasedLookAndFeelInfo.theme.id == ONE_DARK_ID
 
+  private var hasAppliedColorScheme = false
   private fun applyConfigurableTheme() {
     if (isCurrentTheme() && !ThemeSettings.instance.customSchemeSet) {
-      setOneDarkTheme()
+      setOneDarkTheme { ThemeConstructor.useExistingTheme() }
     }
   }
 
-  private fun setOneDarkTheme() {
-    LafManagerImpl.getInstance().setCurrentLookAndFeel(
-      ThemeConstructor.useExistingTheme()
-    )
+  private fun setOneDarkTheme(schemeProvider: () -> VirtualFile) {
+    if (!isCurrentTheme()) {
+      val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
+        .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
+        .first {
+          it.theme.id == ONE_DARK_ID
+        }
+      LafManager.getInstance().setCurrentLookAndFeel(oneDarkLAF)
+    }
+
+    if (!hasAppliedColorScheme) {
+      hasAppliedColorScheme = true
+      ApplicationManager.getApplication().invokeLater {
+        val importer = ColorSchemeImporter()
+        val colorsManager = EditorColorsManager.getInstance()
+        val names = ContainerUtil.map(colorsManager.allSchemes) { obj: EditorColorsScheme -> obj.name }
+        val imported = importer.importScheme(
+          DefaultProjectFactory.getInstance().defaultProject,
+          schemeProvider(),
+          colorsManager.globalScheme
+        ) { name ->
+          val preferredName = name ?: "Unnamed"
+          val newName = SchemeNameGenerator.getUniqueName(preferredName) { candidate: String? ->
+            names.contains(candidate)
+          }
+          val newScheme: AbstractColorsScheme = EditorColorsSchemeImpl(EmptyColorScheme.INSTANCE)
+          newScheme.name = newName
+          newScheme.setDefaultMetaInfo(EmptyColorScheme.INSTANCE)
+          newScheme
+        }
+        if (imported != null) {
+          colorsManager.addColorsScheme(imported)
+          colorsManager.globalScheme = imported
+        }
+      }
+    }
   }
 
   fun isCurrentTheme(): Boolean =

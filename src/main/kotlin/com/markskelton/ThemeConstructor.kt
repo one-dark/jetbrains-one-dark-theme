@@ -2,16 +2,15 @@ package com.markskelton
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import com.intellij.ide.ui.laf.LafManagerImpl
-import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
-import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.PathManager
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.vfs.VfsUtil
-import com.markskelton.OneDarkThemeManager.ONE_DARK_ID
+import com.intellij.openapi.vfs.VirtualFile
 import com.markskelton.settings.GroupStyling
 import com.markskelton.settings.Groups
-import com.markskelton.settings.Groups.*
+import com.markskelton.settings.Groups.ATTRIBUTES
+import com.markskelton.settings.Groups.COMMENTS
+import com.markskelton.settings.Groups.KEYWORDS
 import com.markskelton.settings.ThemeSettings
 import com.markskelton.settings.toGroup
 import com.markskelton.settings.toGroupStyle
@@ -30,7 +29,6 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.UUID
-import javax.swing.UIManager
 
 enum class ColorVariant {
   VIVID, NORMAL
@@ -50,10 +48,10 @@ object ThemeConstructor {
   private val logger = Logger.getInstance(this::class.java)
   private const val ONE_DARK_FILE_PREFIX = "one-dark-"
 
-  fun constructNewTheme(newSettings: ThemeSettings): UIManager.LookAndFeelInfo =
+  fun constructNewTheme(newSettings: ThemeSettings): VirtualFile =
     constructLookAndFeel(getUpdatedEditorScheme(newSettings))
 
-  fun useExistingTheme(): UIManager.LookAndFeelInfo =
+  fun useExistingTheme(): VirtualFile =
     constructLookAndFeel(getPreExistingTheme())
 
   private fun getPreExistingTheme(): Path =
@@ -63,16 +61,8 @@ object ThemeConstructor {
         getUpdatedEditorScheme(ThemeSettings.instance)
       }
 
-  private fun constructLookAndFeel(updatedEditorScheme: Path): TempUIThemeBasedLookAndFeelInfo {
-    val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
-      .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
-      .first {
-        it.theme.id == ONE_DARK_ID
-      }
-    return TempUIThemeBasedLookAndFeelInfo(
-      oneDarkLAF.theme,
-      VfsUtil.findFile(updatedEditorScheme, true)
-    )
+  private fun constructLookAndFeel(updatedEditorScheme: Path): VirtualFile {
+    return VfsUtil.findFile(updatedEditorScheme, true)!!
   }
 
   private fun getUpdatedEditorScheme(themeSettings: ThemeSettings): Path {
