@@ -31,8 +31,6 @@ object OneDarkThemeManager {
 
       attemptToDisplayUpdates()
 
-      applyConfigurableTheme()
-
       subscribeToEvents()
     }
   }
@@ -44,14 +42,17 @@ object OneDarkThemeManager {
   }
 
   private fun attemptToDisplayUpdates() {
-    getVersion().ifPresent { currentVersion ->
+    getVersion().doOrElse({ currentVersion ->
       if (ThemeSettings.instance.version != currentVersion) {
         ThemeSettings.instance.version = currentVersion
         ThemeSettings.instance.customSchemeSet = false
+        applyConfigurableTheme { ThemeConstructor.constructNewTheme(ThemeSettings.instance) }
         ApplicationManager.getApplication().invokeLater {
           Notifications.displayUpdateNotification(currentVersion)
         }
       }
+    }) {
+      applyConfigurableTheme { ThemeConstructor.useExistingTheme() }
     }
   }
 
@@ -91,13 +92,12 @@ object OneDarkThemeManager {
     uiThemeBasedLookAndFeelInfo.theme.id == ONE_DARK_ID
 
   private var hasAppliedColorScheme = false
-  private fun applyConfigurableTheme() {
+  private fun applyConfigurableTheme(schemeProvider: () -> VirtualFile) {
     if (isCurrentTheme() && !ThemeSettings.instance.customSchemeSet) {
-      setOneDarkTheme { ThemeConstructor.useExistingTheme() }
+      setOneDarkTheme(schemeProvider)
     }
   }
 
-  // Todo: don't set colors: when already set and version number is the same
   private fun setOneDarkTheme(schemeProvider: () -> VirtualFile) {
     if (!isCurrentTheme()) {
       val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
