@@ -7,6 +7,7 @@ import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
+import com.intellij.openapi.diagnostic.Logger
 import com.intellij.openapi.editor.colors.EditorColorsListener
 import com.intellij.openapi.editor.colors.EditorColorsManager
 import com.intellij.openapi.extensions.PluginId
@@ -24,6 +25,7 @@ object OneDarkThemeManager {
   private lateinit var messageBus: MessageBusConnection
   const val ONE_DARK_ID = "f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3"
   private const val PLUGIN_ID = "com.markskelton.one-dark-theme"
+  private val log = Logger.getInstance(this::class.java)
 
   fun registerStartup(project: Project) {
     if (!this::messageBus.isInitialized) {
@@ -83,8 +85,13 @@ object OneDarkThemeManager {
     })
 
     messageBus.subscribe(EditorColorsManager.TOPIC, EditorColorsListener {
+      val isCustomThemeSet = it != null && !it.metaProperties.containsKey("oneDarkScheme")
+      log.info("A new editor color has appeared and ${
+      if(isCustomThemeSet) "it is a non-one dark theme" 
+      else "it is a default one-dark theme"
+      }.")
       ThemeSettings.instance.customSchemeSet =
-        it != null && !it.metaProperties.containsKey("oneDarkScheme")
+        isCustomThemeSet
     })
   }
 
