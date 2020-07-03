@@ -97,6 +97,7 @@ object OneDarkThemeManager {
     }
   }
 
+  // Todo: don't set colors: when already set and version number is the same
   private fun setOneDarkTheme(schemeProvider: () -> VirtualFile) {
     if (!isCurrentTheme()) {
       val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
