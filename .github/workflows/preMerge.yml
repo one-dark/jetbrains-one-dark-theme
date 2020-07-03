@@ -19,11 +19,11 @@ jobs:
       run: chmod +x gradlew
     - run: ./ciScripts/buildPlugin.sh
       env:
+        VERSION: 999
         RELEASE_NOTES: '-This is a test and should not be released.\n-Also a test there might be a character minimum'
     - uses: thepieterdc/intellij-plugin-verifier-action@v1.1.2
       with:
         plugin: '/home/runner/work/jetbrains-one-dark-theme/jetbrains-one-dark-theme/build/distributions/one-dark-theme*'
         versions: |
-          2019.1.4
-          2019.2.4
-          2019.3.4
+          2020.1.2
+          LATEST-EAP-SNAPSHOT
