@@ -31,7 +31,6 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   var commentStyle: String = GroupStyling.REGULAR.value
   var keywordStyle: String = GroupStyling.REGULAR.value
   var attributesStyle: String = GroupStyling.REGULAR.value
-  var customSchemeSet: Boolean = false
 
   override fun getState(): ThemeSettings? =
       XmlSerializerUtil.createCopy(this)

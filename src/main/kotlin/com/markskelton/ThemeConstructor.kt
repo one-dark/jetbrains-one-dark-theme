@@ -38,7 +38,7 @@ data class ColorPalette(
   val variant: ColorVariant,
   val colors: Map<String, String>
 )
-
+const val ONE_DARK_GENERATED_NAME = "One Dark Generated"
 object ThemeConstructor {
   private val gson = Gson()
   private val logger = Logger.getInstance(this::class.java)
@@ -103,7 +103,7 @@ object ThemeConstructor {
       .forEach {
         when (it.name()) {
           "scheme" -> {
-            it.attributes().replace("name", "One Dark Generated")
+            it.attributes().replace("name", ONE_DARK_GENERATED_NAME)
           }
           "option" -> {
             val value = it.attribute("value") as? String

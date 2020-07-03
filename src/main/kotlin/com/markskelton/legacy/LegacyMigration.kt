@@ -1,22 +1,17 @@
 package com.markskelton.legacy
 
-import com.intellij.configurationStore.FileBasedStorage
 import com.intellij.ide.ui.laf.LafManagerImpl
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
-import com.intellij.openapi.application.PathManager
-import com.intellij.openapi.components.RoamingType
 import com.markskelton.OneDarkThemeManager
 import com.markskelton.doOrElse
 import com.markskelton.settings.GroupStyling
 import com.markskelton.settings.THEME_CONFIG_TOPIC
 import com.markskelton.settings.ThemeSettings
 import com.markskelton.toOptional
-import com.markskelton.utils.readXmlInputStream
+import com.markskelton.utils.PlatformConfigurationManager
 import groovy.util.Node
-import java.nio.file.Files
-import java.nio.file.Paths
-import java.util.*
+import java.util.Optional
 
 enum class LegacyThemes {
   ITALIC, VIVID, VIVID_ITALIC
@@ -34,14 +29,14 @@ object LegacyMigration {
   }
 
   private fun migrateUser() {
-    Files.newInputStream(Paths.get(PathManager.getConfigPath(), "options", "laf.xml"))
-      .use {
-        readXmlInputStream(it)
-      }.breadthFirst()
-      .filterIsInstance<Node>()
-      .first { it.attribute("name") == "LafManager" }
-      .toOptional()
-      .map { it.children().filterIsInstance<Node>().first { child -> child.attribute("themeId") != null } }
+    PlatformConfigurationManager.readConfigurationFile(
+      "laf.xml",
+      "LafManager"
+    ).map {
+      it.children()
+        .filterIsInstance<Node>()
+        .first { child -> child.attribute("themeId") != null }
+    }
       .map { it.attribute("themeId") }
       .filter { it is String }
       .map { it as String }

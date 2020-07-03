@@ -47,11 +47,12 @@ object OneDarkThemeManager {
     getVersion().doOrElse({ currentVersion ->
       if (ThemeSettings.instance.version != currentVersion) {
         ThemeSettings.instance.version = currentVersion
-        ThemeSettings.instance.customSchemeSet = false
         applyConfigurableTheme { ThemeConstructor.constructNewTheme(ThemeSettings.instance) }
         ApplicationManager.getApplication().invokeLater {
           Notifications.displayUpdateNotification(currentVersion)
         }
+      } else {
+        applyConfigurableTheme { ThemeConstructor.useExistingTheme() }
       }
     }) {
       applyConfigurableTheme { ThemeConstructor.useExistingTheme() }
@@ -68,8 +69,7 @@ object OneDarkThemeManager {
       override fun themeConfigUpdated(themeSettings: ThemeSettings) {
         hasAppliedColorScheme = false
         if (isCurrentTheme()) {
-          ThemeSettings.instance.customSchemeSet = false
-          setOneDarkTheme {ThemeConstructor.constructNewTheme(themeSettings)}
+          setOneDarkTheme { ThemeConstructor.constructNewTheme(themeSettings) }
         }
       }
     })
@@ -83,16 +83,6 @@ object OneDarkThemeManager {
         }
       }
     })
-
-    messageBus.subscribe(EditorColorsManager.TOPIC, EditorColorsListener {
-      val isCustomThemeSet = it != null && !it.metaProperties.containsKey("oneDarkScheme")
-      log.info("A new editor color has appeared and ${
-      if(isCustomThemeSet) "it is a non-one dark theme" 
-      else "it is a default one-dark theme"
-      }.")
-      ThemeSettings.instance.customSchemeSet =
-        isCustomThemeSet
-    })
   }
 
   private fun isOneDarkTheme(uiThemeBasedLookAndFeelInfo: UIThemeBasedLookAndFeelInfo): Boolean =
@@ -100,10 +90,13 @@ object OneDarkThemeManager {
 
   private var hasAppliedColorScheme = false
   private fun applyConfigurableTheme(schemeProvider: () -> VirtualFile) {
-    if (isCurrentTheme() && !ThemeSettings.instance.customSchemeSet) {
+    if (isCurrentTheme() && isEditorSchemeOneDark()) {
       setOneDarkTheme(schemeProvider)
     }
   }
+
+  private fun isEditorSchemeOneDark() =
+    EditorSchemeInspector.isEditorSchemeOneDark()
 
   private fun setOneDarkTheme(schemeProvider: () -> VirtualFile) {
     if (!isCurrentTheme()) {
