@@ -2,6 +2,10 @@
 
 #### 4.1.0
 
+- Fixed issues with the theme having a mix of a light/dark theme after restarting the IDE.
+- Restored Rainbow-Indent integrations
+- Not overwriting custom set editor schemes when using One Dark.
+- Added Android Log-Cat Colors
 
 
 #### 4.0.0

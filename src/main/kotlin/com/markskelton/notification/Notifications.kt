@@ -15,7 +15,10 @@ import com.markskelton.settings.ThemeSettingsUI
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-        <li>Theme is now configurable through settings.</li>
+        <li>Fixed Startup issues</li>
+        <li>Restored Rainbow-Indent Integrations</li>
+        <li>Fully supporting custom schemes</li>
+        <li>Added Android Logcat colors</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
