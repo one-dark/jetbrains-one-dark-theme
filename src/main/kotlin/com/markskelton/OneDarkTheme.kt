@@ -12,7 +12,6 @@ class OneDarkTheme : StartupActivity, DumbAware {
     Sentry.init("https://cb598170e51a44adbf0079abe2d79624@o403546.ingest.sentry.io/5267019?maxmessagelength=50000")
   }
 
-
   override fun runActivity(project: Project) {
     LegacyMigration.migrateIfNecessary()
     OneDarkThemeManager.registerStartup(project)

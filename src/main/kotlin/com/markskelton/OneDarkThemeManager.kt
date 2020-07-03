@@ -8,8 +8,6 @@ import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
 import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.diagnostic.Logger
-import com.intellij.openapi.editor.colors.EditorColorsListener
-import com.intellij.openapi.editor.colors.EditorColorsManager
 import com.intellij.openapi.extensions.PluginId
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
