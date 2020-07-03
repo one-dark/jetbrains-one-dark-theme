@@ -45,7 +45,7 @@ object OneDarkThemeManager {
     getVersion().doOrElse({ currentVersion ->
       if (ThemeSettings.instance.version != currentVersion) {
         ThemeSettings.instance.version = currentVersion
-        applyConfigurableTheme { ThemeConstructor.constructNewTheme(ThemeSettings.instance) }
+        setOneDarkTheme { ThemeConstructor.constructNewTheme(ThemeSettings.instance) }
         ApplicationManager.getApplication().invokeLater {
           Notifications.displayUpdateNotification(currentVersion)
         }
