@@ -15,7 +15,9 @@ import com.intellij.openapi.util.registry.Registry
 import com.intellij.util.Consumer
 import com.intellij.util.text.DateFormatUtil
 import com.markskelton.settings.ThemeSettings
-import io.sentry.Sentry
+import io.sentry.DefaultSentryClientFactory
+import io.sentry.SentryClient
+import io.sentry.dsn.Dsn
 import io.sentry.event.Event
 import io.sentry.event.EventBuilder
 import io.sentry.event.UserBuilder
@@ -29,6 +31,17 @@ import java.util.stream.Collectors
 class ErrorReporter : ErrorReportSubmitter() {
   override fun getReportActionText(): String = "Report Anonymously"
 
+  companion object {
+    private val sentryClient: SentryClient =
+      DefaultSentryClientFactory().createSentryClient(Dsn(
+        RestClient.performGet(
+          "https://jetbrains.assets.unthrottled.io/one-dark/sentry-dsn.txt"
+        )
+          .map { it.trim() }
+          .orElse("https://cb598170e51a44adbf0079abe2d79624@o403546.ingest.sentry.io/5267019?maxmessagelength=50000")
+      ))
+  }
+
   override fun submit(
     events: Array<out IdeaLoggingEvent>,
     additionalInfo: String?,
@@ -37,9 +50,9 @@ class ErrorReporter : ErrorReportSubmitter() {
   ): Boolean {
     return try {
       events.forEach {
-        Sentry.getContext().user =
+        sentryClient.context.user =
           UserBuilder().setId(ThemeSettings.instance.userId).build()
-        Sentry.capture(
+        sentryClient.sendEvent(
           addSystemInfo(
             EventBuilder()
               .withLevel(Event.Level.ERROR)
@@ -48,7 +61,7 @@ class ErrorReporter : ErrorReportSubmitter() {
               .withExtra("Additional Info", additionalInfo ?: "None")
           ).withMessage(it.throwableText)
         )
-        Sentry.clearContext()
+        sentryClient.clearContext()
       }
       true
     } catch (e: Exception) {
