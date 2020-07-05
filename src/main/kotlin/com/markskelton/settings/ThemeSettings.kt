@@ -14,24 +14,10 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   companion object {
     val instance: ThemeSettings
       get() = ServiceManager.getService(ThemeSettings::class.java)
-
-    fun constructSettingModel(): ThemeSettingsModel {
-      return ThemeSettingsModel(
-        instance.commentStyle.toGroupStyle(),
-        instance.keywordStyle.toGroupStyle(),
-        instance.attributesStyle.toGroupStyle(),
-        instance.isVivid
-      )
-    }
   }
 
   var version: String = "0.0.0"
   var userId: String = ""
-  var isVivid: Boolean = false
-  var commentStyle: String = GroupStyling.REGULAR.value
-  var keywordStyle: String = GroupStyling.REGULAR.value
-  var attributesStyle: String = GroupStyling.REGULAR.value
-  var customSchemeSet: Boolean = false
 
   override fun getState(): ThemeSettings? =
       XmlSerializerUtil.createCopy(this)
@@ -41,10 +27,6 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   }
 
   fun asJson(): Map<String, Any> = mapOf(
-    "version" to version,
-    "isVivid" to isVivid,
-    "attributesStyle" to attributesStyle,
-    "commentStyle" to commentStyle,
-    "keywordStyle" to keywordStyle
+    "version" to version
   )
 }

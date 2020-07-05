@@ -1,6 +1,7 @@
-package com.markskelton.settings
+package themes
 
-import com.markskelton.toOptional
+import toOptional
+
 
 enum class Groups(val value: String) {
   ATTRIBUTES("attributes"), COMMENTS("comments"), KEYWORDS("keywords")

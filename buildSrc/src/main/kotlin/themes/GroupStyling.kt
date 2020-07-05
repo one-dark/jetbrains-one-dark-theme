@@ -1,4 +1,4 @@
-package com.markskelton.settings
+package themes
 
 enum class GroupStyling(
   val value: String

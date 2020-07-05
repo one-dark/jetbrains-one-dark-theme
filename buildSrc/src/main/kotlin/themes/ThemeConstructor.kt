@@ -1,23 +1,10 @@
-package com.markskelton
+package themes
 
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import com.intellij.ide.ui.laf.LafManagerImpl
-import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
-import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
-import com.intellij.openapi.application.PathManager
-import com.intellij.openapi.diagnostic.Logger
-import com.intellij.openapi.vfs.VfsUtil
-import com.markskelton.OneDarkThemeManager.ONE_DARK_ID
-import com.markskelton.settings.GroupStyling
-import com.markskelton.settings.Groups
-import com.markskelton.settings.Groups.*
-import com.markskelton.settings.ThemeSettings
-import com.markskelton.settings.toGroup
-import com.markskelton.settings.toGroupStyle
 import groovy.util.Node
 import groovy.util.XmlNodePrinter
 import groovy.util.XmlParser
+import org.gradle.internal.impldep.com.google.gson.Gson
+import org.gradle.internal.impldep.com.google.gson.reflect.TypeToken
 import org.xml.sax.ErrorHandler
 import org.xml.sax.InputSource
 import org.xml.sax.SAXParseException
@@ -30,6 +17,7 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 import java.util.UUID
+import java.util.logging.Logger
 import javax.swing.UIManager
 
 enum class ColorVariant {
@@ -47,32 +35,14 @@ data class ColorPalette(
 
 object ThemeConstructor {
   private val gson = Gson()
-  private val logger = Logger.getInstance(this::class.java)
   private const val ONE_DARK_FILE_PREFIX = "one-dark-"
 
-  fun constructNewTheme(newSettings: ThemeSettings): UIManager.LookAndFeelInfo =
+  fun constructNewTheme(newSettings: ThemeSettings) =
     constructLookAndFeel(getUpdatedEditorScheme(newSettings))
 
-  fun useExistingTheme(): UIManager.LookAndFeelInfo =
-    constructLookAndFeel(getPreExistingTheme())
 
-  private fun getPreExistingTheme(): Path =
-    findConstructedThemes(getAssetsDirectory())
-      .findFirst()
-      .orElseGet {
-        getUpdatedEditorScheme(ThemeSettings.instance)
-      }
-
-  private fun constructLookAndFeel(updatedEditorScheme: Path): TempUIThemeBasedLookAndFeelInfo {
-    val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
-      .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
-      .first {
-        it.theme.id == ONE_DARK_ID
-      }
-    return TempUIThemeBasedLookAndFeelInfo(
-      oneDarkLAF.theme,
-      VfsUtil.findFile(updatedEditorScheme, true)
-    )
+  private fun constructLookAndFeel(updatedEditorScheme: Path) {
+    // todo move the file
   }
 
   private fun getUpdatedEditorScheme(themeSettings: ThemeSettings): Path {
@@ -171,9 +141,9 @@ object ThemeConstructor {
 
   private fun getRelevantGroupStyle(it: Groups, themeSettings: ThemeSettings): GroupStyling =
     when (it) {
-      ATTRIBUTES -> themeSettings.attributesStyle
-      COMMENTS -> themeSettings.commentStyle
-      KEYWORDS -> themeSettings.keywordStyle
+      Groups.ATTRIBUTES -> themeSettings.attributesStyle
+      Groups.COMMENTS -> themeSettings.commentStyle
+      Groups.KEYWORDS -> themeSettings.keywordStyle
     }.toGroupStyle()
 
   private fun matchesThemeSetting(
@@ -233,7 +203,6 @@ object ThemeConstructor {
 
   private fun getColorPalette(themeSettings: ThemeSettings): ColorPalette {
     val selectedPalette = if (themeSettings.isVivid) "vivid" else "normal"
-    logger.info("Building theme with $selectedPalette palette.")
     return ColorPalette(
       if (themeSettings.isVivid) ColorVariant.VIVID else ColorVariant.NORMAL,
       gson.fromJson(this::class.java.getResourceAsStream(
@@ -243,7 +212,8 @@ object ThemeConstructor {
   }
 
   private fun getAssetsDirectory(): Path {
-    val configDirectory = Paths.get(PathManager.getConfigPath(), "oneDarkAssets")
+    // todo: place to put stuff
+    val configDirectory = Paths.get(".", "oneDarkAssets")
     if (Files.notExists(configDirectory)) {
       Files.createDirectories(configDirectory)
     }
