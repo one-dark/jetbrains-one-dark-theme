@@ -13,7 +13,6 @@ enum class LegacyThemes {
   REGULAR, ITALIC, VIVID, VIVID_ITALIC
 }
 
-
 object OneDarkThemeManager {
   private lateinit var messageBus: MessageBusConnection
   val THEMES = mapOf(
