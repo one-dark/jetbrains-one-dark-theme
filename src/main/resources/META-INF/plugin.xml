@@ -5,7 +5,13 @@
           url="https://github.com/one-dark/jetbrains-one-dark-theme">Mark Skelton
   </vendor>
 
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.xml</depends>
   <depends>com.intellij.modules.lang</depends>
+
+  <!--    Leave this in here so the IDE gives you feedback on-->
+  <!--    What API's are available-->
+  <idea-version since-build="201.5985.32"/>
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationService serviceImplementation="com.markskelton.settings.ThemeSettings"/>
