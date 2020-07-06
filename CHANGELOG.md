@@ -1,10 +1,13 @@
 # Changelog
 
-#### 5.0.1 [Non-Functional]
+#### 5.0.1 
 
-- Cleaned up documentation
-- Updated build process
-- Removed log noise
+- Added settings spotlight border color.
+    - Color of the border around highlighted items when searching in the Settings dialog
+- Non-Functional changes:
+    - Cleaned up documentation
+    - Updated build process
+    - Removed log noise
 
 #### 5.0.0
 
