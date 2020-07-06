@@ -1,5 +1,11 @@
 # Changelog
 
+#### 5.0.1 [Non-Functional]
+
+- Cleaned up documentation
+- Updated build process
+- Removed log noise
+
 #### 5.0.0
 
 - Reverted 4.X changes

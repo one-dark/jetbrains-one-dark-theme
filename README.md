@@ -32,7 +32,7 @@ After set up, you can configure the appearance of the syntax highlighting of the
 
 Go to `Preferences | Appearance & Behavior | One Dark Theme` where you have various appearance settings at your disposal.
 
-![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/configuration.png)
+![Configuration example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/configuration.png)
 
 ## Further Documentation
 

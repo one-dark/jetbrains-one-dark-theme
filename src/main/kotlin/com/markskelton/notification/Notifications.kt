@@ -10,7 +10,7 @@ import com.intellij.notification.NotificationType
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-        <li>Theme is now configurable through settings.</li>
+        <li>Added Android Log Cat colors.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
