@@ -126,7 +126,7 @@ open class ThemeConstructor : DefaultTask() {
         project.rootDir.absolutePath,
         "buildSrc",
         "templates",
-        "oneDark.template.json"
+        "oneDark.template.theme.json"
       ))
         .use {
           gson.fromJson<MutableMap<String, Any>>(JsonReader(it.reader()),
