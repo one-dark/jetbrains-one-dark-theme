@@ -1,12 +1,13 @@
 package themes
 
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.google.gson.stream.JsonReader
 import groovy.util.Node
 import groovy.util.XmlNodePrinter
 import groovy.util.XmlParser
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
-import org.gradle.internal.impldep.com.google.gson.Gson
-import org.gradle.internal.impldep.com.google.gson.reflect.TypeToken
 import org.xml.sax.ErrorHandler
 import org.xml.sax.InputSource
 import org.xml.sax.SAXParseException
@@ -35,7 +36,6 @@ data class ColorPalette(
 
 open class ThemeConstructor : DefaultTask() {
   companion object {
-    private const val ONE_DARK_FILE_PREFIX = "one-dark-"
     private val gson = Gson()
     private const val REGULAR = "One Dark"
     private const val ITALIC = "One Dark Italic"
@@ -51,6 +51,8 @@ open class ThemeConstructor : DefaultTask() {
 
   @TaskAction
   fun run() {
+    val assetsDirectory = getAssetsDirectory()
+    cleanDirectory(assetsDirectory)
     THEMES.entries.forEach {
       constructNewTheme(getSettings(it.value), it.value)
     }
@@ -76,7 +78,6 @@ open class ThemeConstructor : DefaultTask() {
     themeName: String
   ) {
     val assetsDirectory = getAssetsDirectory()
-    cleanDirectory(assetsDirectory)
     val newEditorSchemeFile = Paths.get(
       assetsDirectory.toAbsolutePath().toString(),
       "${createFileName(themeName)}.xml"
@@ -88,27 +89,34 @@ open class ThemeConstructor : DefaultTask() {
   }
 
   private fun buildThemeJson(themeName: String, destinationFile: Path) {
-    val themeJsonTemplate: MutableMap<String, Any> = this::class.java.getResourceAsStream("/templates/oneDark.template.json")
-      .use {
-        gson.fromJson(
-          InputStreamReader(it, StandardCharsets.UTF_8),
-          object : TypeToken<MutableMap<String, String>>() {}.type
-        )
-      }
+    val themeJsonTemplate: MutableMap<String, Any> =
+      Files.newInputStream(Paths.get(
+        project.rootDir.absolutePath,
+        "buildSrc",
+        "templates",
+        "oneDark.template.json"
+      ))
+        .use {
+          gson.fromJson<MutableMap<String, Any>>(JsonReader(it.reader()),
+            object : TypeToken<MutableMap<String, Any>>() {}.type
+          )
+        }
     val themeFileName = createFileName(themeName)
     themeJsonTemplate["editorScheme"] = "/themes/$themeFileName.xml"
     themeJsonTemplate["name"] = themeName
 
-    Files.newBufferedWriter(destinationFile, StandardOpenOption.TRUNCATE_EXISTING)
+    Files.newBufferedWriter(destinationFile, StandardOpenOption.CREATE_NEW)
       .use {
         it.write(gson.toJson(themeJsonTemplate))
       }
   }
 
-  private fun createFileName(themeName: String): String = themeName.toLowerCase().replace(' ', '_')
+  private fun createFileName(themeName: String): String =
+    themeName.toLowerCase().replace(' ', '_')
 
   private fun cleanDirectory(assetsDirectory: Path) {
     findResources(assetsDirectory)
+      .filter { Files.isDirectory(it).not() }
       .forEach { Files.delete(it) }
   }
 
@@ -235,7 +243,12 @@ open class ThemeConstructor : DefaultTask() {
   }
 
   private fun getEditorXMLTemplate(): Node =
-    this::class.java.getResourceAsStream("/templates/one-dark.template.xml").use { input ->
+    Files.newInputStream(Paths.get(
+      project.rootDir.absolutePath,
+      "buildSrc",
+      "templates",
+      "one-dark.template.xml"
+    )).use { input ->
       val inputSource = InputSource(InputStreamReader(input, "UTF-8"))
       val parser = XmlParser(false, true, true)
       parser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)
@@ -255,9 +268,14 @@ open class ThemeConstructor : DefaultTask() {
     val selectedPalette = if (themeSettings.isVivid) "vivid" else "normal"
     return ColorPalette(
       if (themeSettings.isVivid) ColorVariant.VIVID else ColorVariant.NORMAL,
-      gson.fromJson(this::class.java.getResourceAsStream(
-        "/templates/$selectedPalette.palette.json"
-      ).reader(), object : TypeToken<Map<String, String>>() {}.type)
+      Files.newInputStream(Paths.get(
+        project.rootDir.absolutePath,
+        "buildSrc",
+        "templates",
+        "$selectedPalette.palette.json"
+      )).use {
+         gson.fromJson<MutableMap<String, String>>(JsonReader(it.reader()), object : TypeToken<MutableMap<String, String>>() {}.type)
+        }
     )
   }
 
@@ -276,7 +294,7 @@ open class ThemeConstructor : DefaultTask() {
   }
 
   private fun writeXmlToFile(pluginXml: Path, parsedPluginXml: Node) {
-    Files.newOutputStream(pluginXml).use {
+    Files.newOutputStream(pluginXml, StandardOpenOption.CREATE_NEW).use {
       val outputStream = BufferedOutputStream(it)
       val writer = PrintWriter(OutputStreamWriter(outputStream, StandardCharsets.UTF_8))
       val printer = XmlNodePrinter(writer)
