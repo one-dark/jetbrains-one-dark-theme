@@ -1,6 +1,6 @@
 package themes
 
-import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import groovy.util.Node
@@ -11,6 +11,7 @@ import org.gradle.api.tasks.TaskAction
 import org.xml.sax.ErrorHandler
 import org.xml.sax.InputSource
 import org.xml.sax.SAXParseException
+import themes.GroupStyling.*
 import java.io.BufferedOutputStream
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
@@ -34,9 +35,14 @@ data class ColorPalette(
   val colors: Map<String, String>
 )
 
+data class OneDarkThemeDefinition(
+  val id: String,
+  val name: String
+)
+
 open class ThemeConstructor : DefaultTask() {
   companion object {
-    private val gson = Gson()
+    private val gson = GsonBuilder().setPrettyPrinting().create()
     private const val REGULAR = "One Dark"
     private const val ITALIC = "One Dark Italic"
     private const val VIVID = "One Dark Vivid"
@@ -54,41 +60,67 @@ open class ThemeConstructor : DefaultTask() {
     val assetsDirectory = getAssetsDirectory()
     cleanDirectory(assetsDirectory)
     THEMES.entries.forEach {
-      constructNewTheme(getSettings(it.value), it.value)
+      constructNewTheme(getSettings(it.value), OneDarkThemeDefinition(
+        it.key,
+        it.value
+      ))
     }
   }
 
   private fun getSettings(themeName: String): ThemeSettings {
     return when (themeName) {
-      REGULAR -> ThemeSettings(false, REGULAR, REGULAR, REGULAR)
-      ITALIC -> ThemeSettings(false, ITALIC, ITALIC, ITALIC)
-      VIVID -> ThemeSettings(true, REGULAR, REGULAR, REGULAR)
-      VIVID_ITALIC -> ThemeSettings(true, ITALIC, ITALIC, ITALIC)
+      REGULAR -> ThemeSettings(
+        false,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value
+      )
+      ITALIC -> ThemeSettings(
+        false,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value
+      )
+      VIVID -> ThemeSettings(
+        true,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value
+      )
+      VIVID_ITALIC -> ThemeSettings(
+        true,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value
+      )
       else -> throw IllegalArgumentException("Bro, I don't know what theme is $themeName")
     }
   }
 
   private fun constructNewTheme(
     newSettings: ThemeSettings,
-    themeName: String
-  ) = buildScheme(newSettings, themeName)
+    themeDefinition: OneDarkThemeDefinition
+  ) = buildScheme(newSettings, themeDefinition)
 
   private fun buildScheme(
     themeSettings: ThemeSettings,
-    themeName: String
+    themeDefinition: OneDarkThemeDefinition
   ) {
     val assetsDirectory = getAssetsDirectory()
     val newEditorSchemeFile = Paths.get(
       assetsDirectory.toAbsolutePath().toString(),
-      "${createFileName(themeName)}.xml"
+      "${createFileName(themeDefinition.name)}.xml"
     )
-    buildNewEditorScheme(themeSettings, newEditorSchemeFile)
-    buildThemeJson(themeName, Paths.get(
+    buildNewEditorScheme(themeSettings, newEditorSchemeFile, themeDefinition)
+    buildThemeJson(themeDefinition, Paths.get(
       assetsDirectory.toAbsolutePath().toString(),
-      "${createFileName(themeName)}.json"))
+      "${createFileName(themeDefinition.name)}.theme.json"))
   }
 
-  private fun buildThemeJson(themeName: String, destinationFile: Path) {
+  private fun buildThemeJson(
+    themeDefinition: OneDarkThemeDefinition,
+    destinationFile: Path
+  ) {
     val themeJsonTemplate: MutableMap<String, Any> =
       Files.newInputStream(Paths.get(
         project.rootDir.absolutePath,
@@ -101,9 +133,10 @@ open class ThemeConstructor : DefaultTask() {
             object : TypeToken<MutableMap<String, Any>>() {}.type
           )
         }
-    val themeFileName = createFileName(themeName)
+    val themeFileName = createFileName(themeDefinition.name)
     themeJsonTemplate["editorScheme"] = "/themes/$themeFileName.xml"
-    themeJsonTemplate["name"] = themeName
+    themeJsonTemplate["name"] = themeDefinition.name
+    themeJsonTemplate["id"] = themeDefinition.id
 
     Files.newBufferedWriter(destinationFile, StandardOpenOption.CREATE_NEW)
       .use {
@@ -123,13 +156,18 @@ open class ThemeConstructor : DefaultTask() {
   private fun findResources(assetsDirectory: Path) =
     Files.walk(assetsDirectory)
 
-  private fun buildNewEditorScheme(themeSettings: ThemeSettings, newSchemeFile: Path) {
+  private fun buildNewEditorScheme(
+    themeSettings: ThemeSettings,
+    newSchemeFile: Path,
+    oneDarkThemeDefinition: OneDarkThemeDefinition
+  ) {
     val colorPalette = getColorPalette(themeSettings)
     val editorTemplate = getEditorXMLTemplate()
     val updatedScheme = applySettingsToTemplate(
       editorTemplate,
       themeSettings,
-      colorPalette
+      colorPalette,
+      oneDarkThemeDefinition
     )
     writeXmlToFile(newSchemeFile, updatedScheme)
   }
@@ -137,7 +175,8 @@ open class ThemeConstructor : DefaultTask() {
   private fun applySettingsToTemplate(
     editorTemplate: Node,
     themeSettings: ThemeSettings,
-    colorPalette: ColorPalette
+    colorPalette: ColorPalette,
+    oneDarkThemeDefinition: OneDarkThemeDefinition
   ): Node {
     val (paletteVariant, colors) = colorPalette
     val themeTemplate = editorTemplate.clone() as Node
@@ -146,7 +185,7 @@ open class ThemeConstructor : DefaultTask() {
       .forEach {
         when (it.name()) {
           "scheme" -> {
-            it.attributes().replace("name", "One Dark Generated")
+            it.attributes().replace("name", oneDarkThemeDefinition.name)
           }
           "option" -> {
             val value = it.attribute("value") as? String
@@ -183,8 +222,8 @@ open class ThemeConstructor : DefaultTask() {
   ): Boolean =
     matchesThemeSetting(fontSpecifications, "bold") {
       val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
-      relevantGroupStyle == GroupStyling.BOLD ||
-        relevantGroupStyle == GroupStyling.BOLD_ITALIC
+      relevantGroupStyle == BOLD ||
+        relevantGroupStyle == BOLD_ITALIC
     }
 
   private fun isEffectItalic(
@@ -194,7 +233,7 @@ open class ThemeConstructor : DefaultTask() {
     matchesThemeSetting(fontSpecifications, "italic") {
       val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
       relevantGroupStyle == GroupStyling.ITALIC ||
-        relevantGroupStyle == GroupStyling.BOLD_ITALIC
+        relevantGroupStyle == BOLD_ITALIC
     }
 
   private fun getRelevantGroupStyle(it: Groups, themeSettings: ThemeSettings): GroupStyling =
@@ -274,8 +313,8 @@ open class ThemeConstructor : DefaultTask() {
         "templates",
         "$selectedPalette.palette.json"
       )).use {
-         gson.fromJson<MutableMap<String, String>>(JsonReader(it.reader()), object : TypeToken<MutableMap<String, String>>() {}.type)
-        }
+        gson.fromJson<MutableMap<String, String>>(JsonReader(it.reader()), object : TypeToken<MutableMap<String, String>>() {}.type)
+      }
     )
   }
 
