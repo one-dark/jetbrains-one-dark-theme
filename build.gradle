@@ -28,10 +28,12 @@ intellij {
   version 'LATEST-EAP-SNAPSHOT'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 
-// Convenience tool for development to include other plugins
-//  setPlugins(
-//    'indent-rainbow.indent-rainbow:1.5.1'
-//  )
+  if("DEV" == System.getenv("ENV")){
+    // Convenience tool for development to include other plugins
+    setPlugins(
+      'indent-rainbow.indent-rainbow:1.5.1'
+    )
+  }
 }
 
 compileKotlin {
