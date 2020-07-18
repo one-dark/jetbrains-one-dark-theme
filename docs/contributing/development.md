@@ -2,15 +2,14 @@
 
 ## Theme
 
-The One Dark Theme is different from other [custom UI themes](https://blog.jetbrains.com/idea/2019/03/brighten-up-your-day-add-color-to-intellij-idea) for the JetBrains platform.
+The One Dark Theme is similar to other [custom UI themes](https://blog.jetbrains.com/idea/2019/03/brighten-up-your-day-add-color-to-intellij-idea) for the JetBrains platform.
 
-The look and feel scheme is a static file that can be modified and is located here: `src/main/resources/themes/one_dark.theme.json`.
+The look and feel scheme is a static file that can be modified and is located here: `buildSrc/templates/oneDark.template.json`.
 
-The editor color scheme is not static, it is generated at run-time.
-The generated scheme file is stored in a configuration directory to prevent the need to generate the color scheme when the user has not changed any configurations.
-The theme creates its scheme by building from the template located in the directory `src/main/resources/templates/one-dark.template.xml`.
+The 4 editor color schemes are built when the plugin is built or the `./gradlew runIde` task run.
 
-For technical reasons we still need an empty `one_dark.xml` theme xml file.
+Settings for the theme can be found in [configuration directory](https://intellij-support.jetbrains.com/hc/en-us/articles/206544519-Directories-used-by-the-IDE-to-store-settings-caches-plugins-and-logs)
+on path `<configDir>/options/one_dark_config.xml` or when developing `build/idea-sandbox/config/options/one_dark_theme.xml`.
 
 Template replacement structure:
 

@@ -15,15 +15,14 @@
 Request and perform code reviews from inside your IDE. Review any code, even if it's a work-in-progress that hasn't been committed yet, and use jump-to-definition, your favorite keybindings, and other IDE tools.<br>
 [Try it free](https://sponsorlink.codestream.com/?utm_source=jbmarket&utm_campaign=jbonedarktheme&utm_medium=banner)
 
-## I need help!
+## Do you need help?
 
 Please check [the docs FAQs](https://one-dark.gitbook.io/jetbrains/help/faqs) to see if we can solve your problem.
 If that does not fix your problem, please [submit an issue](https://github.com/one-dark/jetbrains-one-dark-theme/issues/new).
 
 ## Setup
 
-After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select the new `One Dark` theme in the theme dropdown. 
-Once you have selected `One Dark` in the theme options, click the **OK** button to apply the changes, so you can start enjoying One Dark theme!
+After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select one of the new themes in the theme dropdown. Once you have selected one of the theme options, click the **OK** button to apply the changes so you can start enjoying One Dark theme!
 
 ![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/theme-selection.png)
 
@@ -33,22 +32,7 @@ After set up, you can configure the appearance of the syntax highlighting of the
 
 Go to `Preferences | Appearance & Behavior | One Dark Theme` where you have various appearance settings at your disposal.
 
-![Theme configurations](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/theme-configuration.png)
-
-### Font Styling
-
-This section affects the styling of your font in the code editor. 
-Each option represents a collection of [PSI elements](https://www.jetbrains.org/intellij/sdk/docs/basics/architectural_overview/psi.html).
-Which can have `Regular | Italic | Bold | Bold Italic` styling applied to them.
-
-- **Attributes**: These include various supporting elements such as (but not limited to):
-    - Annotations, HTML Attributes, URLS, etc.
-- **Comments**: This includes things such as: Block Comments, Inline Comments, and other forms of comments.
-- **Keywords**: These are all the representations of reserved words in your current language.
-
-### Color Settings
-
-- **Vivid Palette**: This applies the [vivid syntax color palette](https://atom.io/themes/one-dark-vivid-syntax) inplace of the default color palette.
+![Configuration example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/configuration.png)
 
 ## Further Documentation
 

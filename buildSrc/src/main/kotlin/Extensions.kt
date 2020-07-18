@@ -1,7 +1,3 @@
-package com.markskelton
-
-import org.apache.commons.io.IOUtils
-import java.io.InputStream
 import java.util.*
 
 fun <T> T?.toOptional() = Optional.ofNullable(this)
@@ -22,5 +18,3 @@ fun <T> Optional<T>.doOrElse(present: (T) -> Unit, notThere: () -> Unit) =
       notThere()
     }
   }
-
-fun InputStream.readAllTheBytes(): ByteArray = IOUtils.toByteArray(this)

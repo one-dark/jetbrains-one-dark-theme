@@ -1,5 +1,20 @@
 # Changelog
 
+#### 5.0.1 
+
+- Added settings spotlight border color.
+    - Color of the border around highlighted items when searching in the Settings dialog
+- Non-Functional changes:
+    - Cleaned up documentation
+    - Updated build process
+    - Removed log noise
+
+#### 5.0.0
+
+- Reverted 4.X changes
+- HTML Attributes can now be italic. 
+- Added Android Log-Cat Colors
+
 #### 4.0.0
 
 - Customizable Theme Settings

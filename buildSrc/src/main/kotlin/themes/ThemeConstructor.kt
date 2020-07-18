@@ -1,26 +1,17 @@
-package com.markskelton
+package themes
 
-import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.intellij.ide.ui.laf.LafManagerImpl
-import com.intellij.ide.ui.laf.TempUIThemeBasedLookAndFeelInfo
-import com.intellij.ide.ui.laf.UIThemeBasedLookAndFeelInfo
-import com.intellij.openapi.application.PathManager
-import com.intellij.openapi.diagnostic.Logger
-import com.intellij.openapi.vfs.VfsUtil
-import com.markskelton.OneDarkThemeManager.ONE_DARK_ID
-import com.markskelton.settings.GroupStyling
-import com.markskelton.settings.Groups
-import com.markskelton.settings.Groups.*
-import com.markskelton.settings.ThemeSettings
-import com.markskelton.settings.toGroup
-import com.markskelton.settings.toGroupStyle
+import com.google.gson.stream.JsonReader
 import groovy.util.Node
 import groovy.util.XmlNodePrinter
 import groovy.util.XmlParser
+import org.gradle.api.DefaultTask
+import org.gradle.api.tasks.TaskAction
 import org.xml.sax.ErrorHandler
 import org.xml.sax.InputSource
 import org.xml.sax.SAXParseException
+import themes.GroupStyling.*
 import java.io.BufferedOutputStream
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
@@ -29,8 +20,7 @@ import java.nio.charset.StandardCharsets
 import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
-import java.util.UUID
-import javax.swing.UIManager
+import java.nio.file.StandardOpenOption
 
 enum class ColorVariant {
   VIVID, NORMAL
@@ -45,63 +35,139 @@ data class ColorPalette(
   val colors: Map<String, String>
 )
 
-object ThemeConstructor {
-  private val gson = Gson()
-  private val logger = Logger.getInstance(this::class.java)
-  private const val ONE_DARK_FILE_PREFIX = "one-dark-"
+data class OneDarkThemeDefinition(
+  val id: String,
+  val name: String
+)
 
-  fun constructNewTheme(newSettings: ThemeSettings): UIManager.LookAndFeelInfo =
-    constructLookAndFeel(getUpdatedEditorScheme(newSettings))
-
-  fun useExistingTheme(): UIManager.LookAndFeelInfo =
-    constructLookAndFeel(getPreExistingTheme())
-
-  private fun getPreExistingTheme(): Path =
-    findConstructedThemes(getAssetsDirectory())
-      .findFirst()
-      .orElseGet {
-        getUpdatedEditorScheme(ThemeSettings.instance)
-      }
-
-  private fun constructLookAndFeel(updatedEditorScheme: Path): TempUIThemeBasedLookAndFeelInfo {
-    val oneDarkLAF = LafManagerImpl.getInstance().installedLookAndFeels
-      .filterIsInstance<UIThemeBasedLookAndFeelInfo>()
-      .first {
-        it.theme.id == ONE_DARK_ID
-      }
-    return TempUIThemeBasedLookAndFeelInfo(
-      oneDarkLAF.theme,
-      VfsUtil.findFile(updatedEditorScheme, true)
+open class ThemeConstructor : DefaultTask() {
+  companion object {
+    private val gson = GsonBuilder().setPrettyPrinting().create()
+    private const val REGULAR = "One Dark"
+    private const val ITALIC = "One Dark Italic"
+    private const val VIVID = "One Dark Vivid"
+    private const val VIVID_ITALIC = "One Dark Vivid Italic"
+    val THEMES = mapOf(
+      "f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" to REGULAR,
+      "1a92aa6f-c2f1-4994-ae01-6a78e43eeb24" to ITALIC,
+      "4b6007f7-b596-4ee2-96f9-968d3d3eb392" to VIVID,
+      "4f556d32-83cb-4b8b-9932-c4eccc4ce3af" to VIVID_ITALIC
     )
   }
 
-  private fun getUpdatedEditorScheme(themeSettings: ThemeSettings): Path {
+  @TaskAction
+  fun run() {
     val assetsDirectory = getAssetsDirectory()
     cleanDirectory(assetsDirectory)
-    // Intellij caches files, and will not update if you change the contents of the file
-    val newEditorSchemeFile = Paths.get(
-      assetsDirectory.toAbsolutePath().toString(),
-      "$ONE_DARK_FILE_PREFIX${UUID.randomUUID()}.xml"
-    )
-    buildNewEditorScheme(themeSettings, newEditorSchemeFile)
-    return newEditorSchemeFile
+    THEMES.entries.forEach {
+      constructNewTheme(getSettings(it.value), OneDarkThemeDefinition(
+        it.key,
+        it.value
+      ))
+    }
   }
 
+  private fun getSettings(themeName: String): ThemeSettings {
+    return when (themeName) {
+      REGULAR -> ThemeSettings(
+        false,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value
+      )
+      ITALIC -> ThemeSettings(
+        false,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value
+      )
+      VIVID -> ThemeSettings(
+        true,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value
+      )
+      VIVID_ITALIC -> ThemeSettings(
+        true,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value
+      )
+      else -> throw IllegalArgumentException("Bro, I don't know what theme is $themeName")
+    }
+  }
+
+  private fun constructNewTheme(
+    newSettings: ThemeSettings,
+    themeDefinition: OneDarkThemeDefinition
+  ) = buildScheme(newSettings, themeDefinition)
+
+  private fun buildScheme(
+    themeSettings: ThemeSettings,
+    themeDefinition: OneDarkThemeDefinition
+  ) {
+    val assetsDirectory = getAssetsDirectory()
+    val newEditorSchemeFile = Paths.get(
+      assetsDirectory.toAbsolutePath().toString(),
+      "${createFileName(themeDefinition.name)}.xml"
+    )
+    buildNewEditorScheme(themeSettings, newEditorSchemeFile, themeDefinition)
+    buildThemeJson(themeDefinition, Paths.get(
+      assetsDirectory.toAbsolutePath().toString(),
+      "${createFileName(themeDefinition.name)}.theme.json"))
+  }
+
+  private fun buildThemeJson(
+    themeDefinition: OneDarkThemeDefinition,
+    destinationFile: Path
+  ) {
+    val themeJsonTemplate: MutableMap<String, Any> =
+      Files.newInputStream(Paths.get(
+        project.rootDir.absolutePath,
+        "buildSrc",
+        "templates",
+        "oneDark.template.theme.json"
+      ))
+        .use {
+          gson.fromJson<MutableMap<String, Any>>(JsonReader(it.reader()),
+            object : TypeToken<MutableMap<String, Any>>() {}.type
+          )
+        }
+    val themeFileName = createFileName(themeDefinition.name)
+    themeJsonTemplate["editorScheme"] = "/themes/$themeFileName.xml"
+    themeJsonTemplate["name"] = themeDefinition.name
+    themeJsonTemplate["id"] = themeDefinition.id
+
+    Files.newBufferedWriter(destinationFile, StandardOpenOption.CREATE_NEW)
+      .use {
+        it.write(gson.toJson(themeJsonTemplate))
+      }
+  }
+
+  private fun createFileName(themeName: String): String =
+    themeName.toLowerCase().replace(' ', '_')
+
   private fun cleanDirectory(assetsDirectory: Path) {
-    findConstructedThemes(assetsDirectory)
+    findResources(assetsDirectory)
+      .filter { Files.isDirectory(it).not() }
       .forEach { Files.delete(it) }
   }
 
-  private fun findConstructedThemes(assetsDirectory: Path) = Files.walk(assetsDirectory)
-    .filter { it.fileName.toString().startsWith(ONE_DARK_FILE_PREFIX) }
+  private fun findResources(assetsDirectory: Path) =
+    Files.walk(assetsDirectory)
 
-  private fun buildNewEditorScheme(themeSettings: ThemeSettings, newSchemeFile: Path) {
+  private fun buildNewEditorScheme(
+    themeSettings: ThemeSettings,
+    newSchemeFile: Path,
+    oneDarkThemeDefinition: OneDarkThemeDefinition
+  ) {
     val colorPalette = getColorPalette(themeSettings)
     val editorTemplate = getEditorXMLTemplate()
     val updatedScheme = applySettingsToTemplate(
       editorTemplate,
       themeSettings,
-      colorPalette
+      colorPalette,
+      oneDarkThemeDefinition
     )
     writeXmlToFile(newSchemeFile, updatedScheme)
   }
@@ -109,7 +175,8 @@ object ThemeConstructor {
   private fun applySettingsToTemplate(
     editorTemplate: Node,
     themeSettings: ThemeSettings,
-    colorPalette: ColorPalette
+    colorPalette: ColorPalette,
+    oneDarkThemeDefinition: OneDarkThemeDefinition
   ): Node {
     val (paletteVariant, colors) = colorPalette
     val themeTemplate = editorTemplate.clone() as Node
@@ -118,7 +185,7 @@ object ThemeConstructor {
       .forEach {
         when (it.name()) {
           "scheme" -> {
-            it.attributes().replace("name", "One Dark Generated")
+            it.attributes().replace("name", oneDarkThemeDefinition.name)
           }
           "option" -> {
             val value = it.attribute("value") as? String
@@ -155,8 +222,8 @@ object ThemeConstructor {
   ): Boolean =
     matchesThemeSetting(fontSpecifications, "bold") {
       val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
-      relevantGroupStyle == GroupStyling.BOLD ||
-        relevantGroupStyle == GroupStyling.BOLD_ITALIC
+      relevantGroupStyle == BOLD ||
+        relevantGroupStyle == BOLD_ITALIC
     }
 
   private fun isEffectItalic(
@@ -166,14 +233,14 @@ object ThemeConstructor {
     matchesThemeSetting(fontSpecifications, "italic") {
       val relevantGroupStyle = getRelevantGroupStyle(it, themeSettings)
       relevantGroupStyle == GroupStyling.ITALIC ||
-        relevantGroupStyle == GroupStyling.BOLD_ITALIC
+        relevantGroupStyle == BOLD_ITALIC
     }
 
   private fun getRelevantGroupStyle(it: Groups, themeSettings: ThemeSettings): GroupStyling =
     when (it) {
-      ATTRIBUTES -> themeSettings.attributesStyle
-      COMMENTS -> themeSettings.commentStyle
-      KEYWORDS -> themeSettings.keywordStyle
+      Groups.ATTRIBUTES -> themeSettings.attributesStyle
+      Groups.COMMENTS -> themeSettings.commentStyle
+      Groups.KEYWORDS -> themeSettings.keywordStyle
     }.toGroupStyle()
 
   private fun matchesThemeSetting(
@@ -215,7 +282,12 @@ object ThemeConstructor {
   }
 
   private fun getEditorXMLTemplate(): Node =
-    this::class.java.getResourceAsStream("/templates/one-dark.template.xml").use { input ->
+    Files.newInputStream(Paths.get(
+      project.rootDir.absolutePath,
+      "buildSrc",
+      "templates",
+      "one-dark.template.xml"
+    )).use { input ->
       val inputSource = InputSource(InputStreamReader(input, "UTF-8"))
       val parser = XmlParser(false, true, true)
       parser.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false)
@@ -233,17 +305,27 @@ object ThemeConstructor {
 
   private fun getColorPalette(themeSettings: ThemeSettings): ColorPalette {
     val selectedPalette = if (themeSettings.isVivid) "vivid" else "normal"
-    logger.info("Building theme with $selectedPalette palette.")
     return ColorPalette(
       if (themeSettings.isVivid) ColorVariant.VIVID else ColorVariant.NORMAL,
-      gson.fromJson(this::class.java.getResourceAsStream(
-        "/templates/$selectedPalette.palette.json"
-      ).reader(), object : TypeToken<Map<String, String>>() {}.type)
+      Files.newInputStream(Paths.get(
+        project.rootDir.absolutePath,
+        "buildSrc",
+        "templates",
+        "$selectedPalette.palette.json"
+      )).use {
+        gson.fromJson<MutableMap<String, String>>(JsonReader(it.reader()), object : TypeToken<MutableMap<String, String>>() {}.type)
+      }
     )
   }
 
   private fun getAssetsDirectory(): Path {
-    val configDirectory = Paths.get(PathManager.getConfigPath(), "oneDarkAssets")
+    val configDirectory = Paths.get(
+      project.rootDir.absolutePath,
+      "src",
+      "main",
+      "resources",
+      "themes"
+    )
     if (Files.notExists(configDirectory)) {
       Files.createDirectories(configDirectory)
     }
@@ -251,7 +333,7 @@ object ThemeConstructor {
   }
 
   private fun writeXmlToFile(pluginXml: Path, parsedPluginXml: Node) {
-    Files.newOutputStream(pluginXml).use {
+    Files.newOutputStream(pluginXml, StandardOpenOption.CREATE_NEW).use {
       val outputStream = BufferedOutputStream(it)
       val writer = PrintWriter(OutputStreamWriter(outputStream, StandardCharsets.UTF_8))
       val printer = XmlNodePrinter(writer)
