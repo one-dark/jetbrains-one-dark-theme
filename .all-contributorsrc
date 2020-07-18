@@ -154,6 +154,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "chengziorange",
+      "name": "chengziorange",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/30137964?v=4",
+      "profile": "https://blog.orange233.top/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
