@@ -78,6 +78,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/maxmalov"><img src="https://avatars2.githubusercontent.com/u/284129?v=4" width="100px;" alt=""/><br /><sub><b>Maxim Malov</b></sub></a><br /><a href="#design-maxmalov" title="Design">🎨</a></td>
     <td align="center"><a href="https://github.com/dorudumitru"><img src="https://avatars0.githubusercontent.com/u/11142539?v=4" width="100px;" alt=""/><br /><sub><b>Doru Dumitru</b></sub></a><br /><a href="#ideas-dorudumitru" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://blog.orange233.top/"><img src="https://avatars0.githubusercontent.com/u/30137964?v=4" width="100px;" alt=""/><br /><sub><b>chengziorange</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Achengziorange" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/hongsefb"><img src="https://avatars3.githubusercontent.com/u/29223722?v=4" width="100px;" alt=""/><br /><sub><b>hongsefb</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Ahongsefb" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
