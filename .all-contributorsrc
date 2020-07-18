@@ -182,6 +182,15 @@
         "ideas",
         "bug"
       ]
+    },
+    {
+      "login": "skrubbel",
+      "name": "skrubbel",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/868432?v=4",
+      "profile": "https://github.com/skrubbel",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
