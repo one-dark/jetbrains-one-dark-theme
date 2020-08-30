@@ -4,6 +4,7 @@ import com.intellij.ide.plugins.PluginManagerCore
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.extensions.PluginId
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.startup.StartupManager
 import com.intellij.util.messages.MessageBusConnection
 import com.markskelton.notification.Notifications
 import com.markskelton.settings.ThemeSettings
@@ -27,7 +28,7 @@ object OneDarkThemeManager {
     if (!this::messageBus.isInitialized) {
       registerUser()
 
-      attemptToDisplayUpdates()
+      attemptToDisplayUpdates(project)
 
       subscribeToEvents()
     }
@@ -39,11 +40,11 @@ object OneDarkThemeManager {
     }
   }
 
-  private fun attemptToDisplayUpdates() {
+  private fun attemptToDisplayUpdates(project: Project) {
     getVersion().ifPresent { currentVersion ->
       if (ThemeSettings.instance.version != currentVersion) {
         ThemeSettings.instance.version = currentVersion
-        ApplicationManager.getApplication().invokeLater {
+        StartupManager.getInstance(project).runWhenProjectIsInitialized {
           Notifications.displayUpdateNotification(currentVersion)
         }
       }
