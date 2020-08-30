@@ -26,7 +26,6 @@ configurations {
 
 intellij {
   version 'LATEST-EAP-SNAPSHOT'
-  type 'IU'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 
   if("DEV" == System.getenv("ENV")){

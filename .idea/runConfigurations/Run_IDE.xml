@@ -4,6 +4,7 @@
       <option name="env">
         <map>
           <entry key="ENV" value="DEV" />
+          <entry key="VERSION" value="5.1.0" />
         </map>
       </option>
       <option name="executionName" />
