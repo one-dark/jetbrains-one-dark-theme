@@ -1943,9 +1943,7 @@
         <option name="FOREGROUND" value="$whiskey$"/>
       </value>
     </option>
-    <option name="SASS_VARIABLE">
-      <value/>
-    </option>
+    <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="42557b"/>
