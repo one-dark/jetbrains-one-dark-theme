@@ -588,6 +588,12 @@
         <option name="FOREGROUND" value="$malibu$"/>
       </value>
     </option>
+    <option name="DEFAULT_GLOBAL_VARIABLE">
+      <value>
+        <option name="FOREGROUND" value="$coral$" />
+        <option name="BACKGROUND" value="282c34" />
+      </value>
+    </option>
     <option name="DEFAULT_IDENTIFIER">
       <value>
         <option name="BACKGROUND" value="282c34"/>
@@ -955,6 +961,31 @@
         <option name="FOREGROUND" value="$coral$"/>
       </value>
     </option>
+    <option name="HTTP_REQUEST_INPUT_FILE">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_MESSAGE_BODY">
+      <value>
+        <option name="FOREGROUND" value="$fountainBlue$" />
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_PARAMETER_NAME">
+      <value>
+        <option name="FOREGROUND" value="$green$" />
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_PARAMETER_VALUE">
+      <value>
+        <option name="FOREGROUND" value="$fountainBlue$" />
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_VARIABLE_BRACES">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
     <option name="HYPERLINK_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="$purple$"/>
@@ -1187,7 +1218,9 @@
       </value>
     </option>
     <option name="LESS_VARIABLE">
-      <value/>
+      <value>
+        <option name="FOREGROUND" value="$coral$" />
+      </value>
     </option>
     <option name="LINE_FULL_COVERAGE">
       <value>
@@ -2282,6 +2315,12 @@
     <option name="osmorc.directiveName">
       <value>
         <option name="FOREGROUND" value="$coral$"/>
+      </value>
+    </option>
+    <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+        <option name="BACKGROUND" value="282c34" />
       </value>
     </option>
   </attributes>
