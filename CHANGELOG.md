@@ -10,6 +10,7 @@
     - XSLT
 - Enhanced Shell Script scope colorings.
 - Enhanced HTTP Request scope colorings.
+- Enhanced EJS tag scope colorings
 - Supporting SCSS variable colors now.
 
 #### 5.0.1 

@@ -749,6 +749,31 @@
         <option name="FOREGROUND" value="$coral$"/>
       </value>
     </option>
+    <option name="EJS_OPEN">
+      <value>
+        <option name="FOREGROUND" value="$green$" />
+      </value>
+    </option>
+    <option name="EJS_OPEN_EQ">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
+    <option name="EJS_OPEN_EQ_EQ">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
+    <option name="EJS_OPEN_EQ_GENERATOR">
+      <value>
+        <option name="FOREGROUND" value="$malibu$" />
+      </value>
+    </option>
+    <option name="EJS_OPEN_FILTER">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
     <option name="EL.BOUNDS">
       <value>
         <option name="FOREGROUND" value="$purple$"/>
