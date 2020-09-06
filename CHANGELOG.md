@@ -13,6 +13,8 @@
 - Enhanced EJS tag scope colorings
 - Supporting SCSS variable colors now.
 
+Please see [this pull request for more details](https://github.com/one-dark/jetbrains-one-dark-theme/pull/184#issue-475964163)
+
 #### 5.0.1 
 
 - Added settings spotlight border color.
