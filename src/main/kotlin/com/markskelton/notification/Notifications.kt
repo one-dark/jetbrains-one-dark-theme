@@ -6,11 +6,12 @@ import com.intellij.notification.NotificationDisplayType
 import com.intellij.notification.NotificationGroup
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
+import com.intellij.ui.IconManager
 
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-        <li>Added Android Log Cat colors.</li>
+        <li>Better consistency across various languages and platforms.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
@@ -19,11 +20,18 @@ val UPDATE_MESSAGE: String = """
 
 object Notifications {
 
+  private val NOTIFICATION_ICON = IconManager.getInstance().getIcon(
+    "/icons/one-dark-logo.svg",
+    Notifications::class.java
+  )
+
+
   private val notificationGroup = NotificationGroup(
     "One Dark Theme",
     NotificationDisplayType.BALLOON,
     false,
-    "One Dark Theme"
+    "One Dark Theme",
+    NOTIFICATION_ICON
   )
 
   fun displayUpdateNotification(versionNumber: String) {
@@ -37,6 +45,7 @@ object Notifications {
       NotificationType.INFORMATION,
       NotificationListener.URL_OPENING_LISTENER
     )
+      .setIcon(NOTIFICATION_ICON)
       .notify(null)
   }
 }

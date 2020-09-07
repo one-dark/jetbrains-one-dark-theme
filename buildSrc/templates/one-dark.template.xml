@@ -588,6 +588,12 @@
         <option name="FOREGROUND" value="$malibu$"/>
       </value>
     </option>
+    <option name="DEFAULT_GLOBAL_VARIABLE">
+      <value>
+        <option name="FOREGROUND" value="$coral$" />
+        <option name="BACKGROUND" value="282c34" />
+      </value>
+    </option>
     <option name="DEFAULT_IDENTIFIER">
       <value>
         <option name="BACKGROUND" value="282c34"/>
@@ -741,6 +747,31 @@
     <option name="EDITORCONFIG_VARIABLE">
       <value>
         <option name="FOREGROUND" value="$coral$"/>
+      </value>
+    </option>
+    <option name="EJS_OPEN">
+      <value>
+        <option name="FOREGROUND" value="$green$" />
+      </value>
+    </option>
+    <option name="EJS_OPEN_EQ">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
+    <option name="EJS_OPEN_EQ_EQ">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
+    <option name="EJS_OPEN_EQ_GENERATOR">
+      <value>
+        <option name="FOREGROUND" value="$malibu$" />
+      </value>
+    </option>
+    <option name="EJS_OPEN_FILTER">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
       </value>
     </option>
     <option name="EL.BOUNDS">
@@ -953,6 +984,31 @@
     <option name="HTML_TAG_NAME">
       <value>
         <option name="FOREGROUND" value="$coral$"/>
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_INPUT_FILE">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_MESSAGE_BODY">
+      <value>
+        <option name="FOREGROUND" value="$fountainBlue$" />
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_PARAMETER_NAME">
+      <value>
+        <option name="FOREGROUND" value="$green$" />
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_PARAMETER_VALUE">
+      <value>
+        <option name="FOREGROUND" value="$fountainBlue$" />
+      </value>
+    </option>
+    <option name="HTTP_REQUEST_VARIABLE_BRACES">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
       </value>
     </option>
     <option name="HYPERLINK_ATTRIBUTES">
@@ -1187,7 +1243,9 @@
       </value>
     </option>
     <option name="LESS_VARIABLE">
-      <value/>
+      <value>
+        <option name="FOREGROUND" value="$coral$" />
+      </value>
     </option>
     <option name="LINE_FULL_COVERAGE">
       <value>
@@ -1910,9 +1968,7 @@
         <option name="FOREGROUND" value="$whiskey$"/>
       </value>
     </option>
-    <option name="SASS_VARIABLE">
-      <value/>
-    </option>
+    <option name="SASS_VARIABLE" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="42557b"/>
@@ -2082,6 +2138,28 @@
       <value>
         <option name="EFFECT_COLOR" value="$error$"/>
         <option name="EFFECT_TYPE" value="2"/>
+      </value>
+    </option>
+    <option name="VELOCITY_DIRECTIVE">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="VELOCITY_KEYWORD">
+      <value>
+        <option name="FOREGROUND" value="$purple$"/>
+        <option name="FONT_TYPE" value="%theme^keywords%"/>
+      </value>
+    </option>
+    <option name="VELOCITY_REFERENCE">
+      <value>
+        <option name="FOREGROUND" value="$malibu$" />
+      </value>
+    </option>
+    <option name="VELOCITY_SCRIPTING_BACKGROUND">
+      <value>
+        <option name="BACKGROUND" value="282c34" />
       </value>
     </option>
     <option name="WARNING_ATTRIBUTES">
@@ -2260,6 +2338,12 @@
     <option name="osmorc.directiveName">
       <value>
         <option name="FOREGROUND" value="$coral$"/>
+      </value>
+    </option>
+    <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+        <option name="BACKGROUND" value="282c34" />
       </value>
     </option>
   </attributes>

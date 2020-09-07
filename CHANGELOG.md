@@ -1,5 +1,20 @@
 # Changelog
 
+#### 5.1.0
+
+- Velocity Template Language support.
+- Changed `Default Templating Language` color, known languages effected:
+    - Angular
+    - JSP
+    - Twig
+    - XSLT
+- Enhanced Shell Script scope colorings.
+- Enhanced HTTP Request scope colorings.
+- Enhanced EJS tag scope colorings
+- Supporting SCSS variable colors now.
+
+Please see [this pull request for more details](https://github.com/one-dark/jetbrains-one-dark-theme/pull/184#issue-475964163)
+
 #### 5.0.1 
 
 - Added settings spotlight border color.
