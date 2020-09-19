@@ -81,6 +81,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/hongsefb"><img src="https://avatars3.githubusercontent.com/u/29223722?v=4" width="100px;" alt=""/><br /><sub><b>hongsefb</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Ahongsefb" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/erikdewit87"><img src="https://avatars0.githubusercontent.com/u/1140942?v=4" width="100px;" alt=""/><br /><sub><b>Erik de Wit</b></sub></a><br /><a href="#ideas-erikdewit87" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Aerikdewit87" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/skrubbel"><img src="https://avatars1.githubusercontent.com/u/868432?v=4" width="100px;" alt=""/><br /><sub><b>skrubbel</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Askrubbel" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/ChrisCarini"><img src="https://avatars1.githubusercontent.com/u/6374067?v=4" width="100px;" alt=""/><br /><sub><b>ChrisCarini</b></sub></a><br /><a href="#maintenance-ChrisCarini" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
