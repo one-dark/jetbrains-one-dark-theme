@@ -1,5 +1,10 @@
 # Changelog
 
+#### 5.1.1
+
+- 2020.3 Build support.
+- More distinguishable VCS current branch highlighting. [See issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/187).
+
 #### 5.1.0
 
 - Velocity Template Language support.

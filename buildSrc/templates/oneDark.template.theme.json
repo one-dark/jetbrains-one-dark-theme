@@ -338,7 +338,7 @@
 
     "VersionControl": {
       "Log.Commit": {
-        "currentBranchBackground": "backgroundColor",
+        "currentBranchBackground": "#282c35",
         "unmatchedForeground": "#5c6370"
       },
 
