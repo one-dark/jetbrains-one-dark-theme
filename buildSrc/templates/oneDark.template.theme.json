@@ -121,12 +121,12 @@
     },
 
     "FileColor": {
-      "Yellow": "#563b2255",
-      "Green": "#334e1f55",
-      "Blue": "#28436d55",
-      "Violet": "#37115655",
-      "Orange": "#562b2255",
-      "Rose": "#561a2b55"
+      "Yellow": "#3d3026",
+      "Green": "#293a24",
+      "Blue": "#24354f",
+      "Violet": "#2d1942",
+      "Orange": "#3d3026",
+      "Rose": "#3d1e2b"
     },
 
     "Label": {

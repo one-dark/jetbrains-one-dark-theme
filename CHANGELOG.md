@@ -1,5 +1,9 @@
 # Changelog
 
+#### Unreleased
+
+- Fixed a bug with the project file colors. [See the issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/192)
+
 #### 5.1.1
 
 - 2020.3 Build support.
