@@ -209,6 +209,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "RichardConfused",
+      "name": "Dust Wind",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/54979163?v=4",
+      "profile": "https://github.com/RichardConfused",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
