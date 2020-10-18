@@ -83,11 +83,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/skrubbel"><img src="https://avatars1.githubusercontent.com/u/868432?v=4" width="100px;" alt=""/><br /><sub><b>skrubbel</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Askrubbel" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/ChrisCarini"><img src="https://avatars1.githubusercontent.com/u/6374067?v=4" width="100px;" alt=""/><br /><sub><b>ChrisCarini</b></sub></a><br /><a href="#maintenance-ChrisCarini" title="Maintenance">🚧</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/chenchenfang"><img src="https://avatars1.githubusercontent.com/u/50065243?v=4" width="100px;" alt=""/><br /><sub><b>chenchenfang</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Achenchenfang" title="Bug reports">🐛</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
