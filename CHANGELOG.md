@@ -2,7 +2,11 @@
 
 #### Unreleased
 
+#### 5.1.2
+
 - Fixed a bug with the project file colors. [See the issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/192)
+- Fixed usability issue with the IntelliJ Ultimate UML Diagram. [See the issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/194)
+- Enhanced 2020.3 Welcome screen styling. [See the pull request for more details](https://github.com/one-dark/jetbrains-one-dark-theme/pull/193)
 
 #### 5.1.1
 

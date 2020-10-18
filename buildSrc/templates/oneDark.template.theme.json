@@ -5,7 +5,8 @@
   "editorScheme": "/themes/one_dark.xml",
   "colors": {
     "accentColor": "#568AF2",
-    "backgroundColor": "#21252b"
+    "backgroundColor": "#21252b",
+    "borderColor": "#333841"
   },
   "ui": {
     "*": {
@@ -179,6 +180,7 @@
 
     "Plugins": {
       "disabledForeground": "#5c6370",
+      "hoverBackground": "#323844",
       "lightSelectionBackground": "#323844",
       "tagBackground": "#414855",
       "tagForeground": "#abb2bf",
@@ -350,8 +352,13 @@
     },
 
     "WelcomeScreen": {
-      "Projects.selectionInactiveBackground": "#2c313a",
-      "separatorColor": "#2c313a"
+      "borderColor": "borderColor",
+      "Projects": {
+        "actions.background": "#323844",
+        "selectionInactiveBackground": "#2c313a"
+      },
+      "separatorColor": "#2c313a",
+      "SidePanel.background": "#282c34"
     }
   },
 
