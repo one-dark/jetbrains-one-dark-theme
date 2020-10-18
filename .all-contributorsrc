@@ -218,6 +218,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "jelinski",
+      "name": "Krzysztof Jeliński",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2669079?v=4",
+      "profile": "http://www.jellysoft.pl",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
