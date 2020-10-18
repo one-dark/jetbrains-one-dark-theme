@@ -85,6 +85,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/chenchenfang"><img src="https://avatars1.githubusercontent.com/u/50065243?v=4" width="100px;" alt=""/><br /><sub><b>chenchenfang</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Achenchenfang" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/RichardConfused"><img src="https://avatars3.githubusercontent.com/u/54979163?v=4" width="100px;" alt=""/><br /><sub><b>Dust Wind</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3ARichardConfused" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
