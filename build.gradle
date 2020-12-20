@@ -31,9 +31,9 @@ intellij {
 
   if("DEV" == System.getenv("ENV")){
     // Convenience tool for development to include other plugins
-//    setPlugins(
-//      'indent-rainbow.indent-rainbow:1.6'
-//    )
+    setPlugins(
+      'indent-rainbow.indent-rainbow:1.6'
+    )
   }
 }
 
