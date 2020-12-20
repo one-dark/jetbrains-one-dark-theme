@@ -26,13 +26,14 @@ configurations {
 
 intellij {
   version 'LATEST-EAP-SNAPSHOT'
+  type 'IU'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 
   if("DEV" == System.getenv("ENV")){
     // Convenience tool for development to include other plugins
-    setPlugins(
-      'indent-rainbow.indent-rainbow:1.6'
-    )
+//    setPlugins(
+//      'indent-rainbow.indent-rainbow:1.6'
+//    )
   }
 }
 
