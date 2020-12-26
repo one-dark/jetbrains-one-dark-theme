@@ -44,7 +44,7 @@ object Notifications {
       "$pluginName updated to v$versionNumber",
       UPDATE_MESSAGE,
       NotificationType.INFORMATION,
-      NotificationListener.URL_OPENING_LISTENER
+      NotificationListener.UrlOpeningListener(false)
     )
       .setIcon(NOTIFICATION_ICON)
       .notify(null)
