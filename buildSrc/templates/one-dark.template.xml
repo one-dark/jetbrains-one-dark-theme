@@ -591,12 +591,10 @@
     <option name="DEFAULT_GLOBAL_VARIABLE">
       <value>
         <option name="FOREGROUND" value="$coral$" />
-        <option name="BACKGROUND" value="282c34" />
       </value>
     </option>
     <option name="DEFAULT_IDENTIFIER">
       <value>
-        <option name="BACKGROUND" value="282c34"/>
         <option name="FOREGROUND" value="$lightWhite$"/>
       </value>
     </option>
@@ -676,7 +674,6 @@
     </option>
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
       <value>
-        <option name="BACKGROUND" value="282c34"/>
         <option name="FOREGROUND" value="$lightWhite$"/>
       </value>
     </option>
@@ -959,7 +956,6 @@
     </option>
     <option name="HAML_TEXT">
       <value>
-        <option name="BACKGROUND" value="282c34"/>
         <option name="FOREGROUND" value="$lightWhite$"/>
       </value>
     </option>
@@ -2016,7 +2012,6 @@
     <option baseAttributes="DEFAULT_TEMPLATE_LANGUAGE_COLOR" name="SLIM_RUBY_CODE"/>
     <option name="SLIM_STATIC_CONTENT">
       <value>
-        <option name="BACKGROUND" value="282c34"/>
         <option name="FOREGROUND" value="$lightWhite$"/>
       </value>
     </option>
@@ -2106,6 +2101,11 @@
     <option name="TS.MODULE_NAME">
       <value>
         <option name="FOREGROUND" value="$chalky$"/>
+      </value>
+    </option>
+    <option name="TS.TYPE_GUARD">
+      <value>
+        <option name="BACKGROUND" value="2A3B33"/>
       </value>
     </option>
     <option name="TS.TYPE_PARAMETER">
@@ -2343,7 +2343,6 @@
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
       <value>
         <option name="FOREGROUND" value="$chalky$" />
-        <option name="BACKGROUND" value="282c34" />
       </value>
     </option>
   </attributes>

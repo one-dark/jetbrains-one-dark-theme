@@ -2,6 +2,11 @@
 
 #### Unreleased
 
+#### 5.1.3
+
+- Fixed the problem with Typescript Type Guard not showing up. [See issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/198)
+- Updated VCS log list hover color.
+
 #### 5.1.2
 
 - Fixed a bug with the project file colors. [See the issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/192)
