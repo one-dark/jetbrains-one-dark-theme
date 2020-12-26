@@ -227,6 +227,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "infix",
+      "name": "Amr",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/40860821?v=4",
+      "profile": "https://github.com/infix",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
