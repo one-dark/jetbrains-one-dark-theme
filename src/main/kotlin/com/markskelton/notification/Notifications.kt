@@ -7,12 +7,14 @@ import com.intellij.notification.NotificationGroup
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
 import com.intellij.ui.IconManager
+import org.intellij.lang.annotations.Language
 
+@Language("HTML")
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-        <li>Fixed bug with Typescript Type Guards.</li>
-        <li>Updated styling of the VCS log hover color.</li>
+        <li>2021.1 EAP Support</li>
+        <li>Updated Windows 10 Title pane foreground</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
