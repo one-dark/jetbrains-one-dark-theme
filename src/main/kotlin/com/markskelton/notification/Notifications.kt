@@ -26,7 +26,6 @@ object Notifications {
     Notifications::class.java
   )
 
-
   private val notificationGroup = NotificationGroup(
     "One Dark Theme",
     NotificationDisplayType.BALLOON,
