@@ -2,6 +2,11 @@
 
 #### Unreleased
 
+#### 5.1.4
+
+- 2021.1 EAP build support!
+- Updated the foreground coloring of the Windows 10 Title bar
+
 #### 5.1.3
 
 - Fixed the problem with Typescript Type Guard not showing up. [See issue for more details](https://github.com/one-dark/jetbrains-one-dark-theme/issues/198)
