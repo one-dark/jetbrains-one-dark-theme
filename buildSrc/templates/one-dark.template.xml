@@ -1017,6 +1017,7 @@
     <option name="IDENTIFIER_UNDER_CARET_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="353940"/>
+        <option name="ERROR_STRIPE_COLOR" value="4d78cc" />
       </value>
     </option>
     <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
@@ -1042,6 +1043,12 @@
     </option>
     <option name="INJECTED_LANGUAGE_FRAGMENT">
       <value/>
+    </option>
+    <option name="INLAY_DEFAULT">
+      <value>
+        <option name="BACKGROUND" value="414855"/>
+        <option name="FOREGROUND" value="$lightWhite$"/>
+      </value>
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
