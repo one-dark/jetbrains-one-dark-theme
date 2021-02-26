@@ -2,6 +2,11 @@
 
 #### Unreleased
 
+#### 5.1.5
+
+- Added identifier under caret error stripe color.
+- Themed Default Inlays
+
 #### 5.1.4
 
 - 2021.1 EAP build support!
