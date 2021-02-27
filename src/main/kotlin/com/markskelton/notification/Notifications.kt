@@ -13,8 +13,9 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-        <li>2021.1 EAP Support</li>
-        <li>Updated Windows 10 Title pane foreground</li>
+        <li>Added identifier under caret error stripe color.</li>
+        <li>Themed Default Inlays</li>
+        <li>Update Ruby's local variable color</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>

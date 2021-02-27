@@ -16,7 +16,6 @@ repositories {
 dependencies {
   implementation 'io.sentry:sentry:4.0.0'
   implementation 'commons-io:commons-io:2.6'
-  implementation'org.codehaus.groovy:groovy-xml:2.5.11'
 }
 
 configurations {
