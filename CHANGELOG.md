@@ -6,6 +6,7 @@
 
 - Added identifier under caret error stripe color.
 - Themed Default Inlays
+- Updated Ruby's local variable foreground color.
 
 #### 5.1.4
 
