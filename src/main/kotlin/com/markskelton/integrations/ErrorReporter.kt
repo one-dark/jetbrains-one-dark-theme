@@ -3,6 +3,7 @@ package com.markskelton.integrations
 import com.intellij.ide.IdeBundle
 import com.intellij.ide.plugins.PluginManagerCore
 import com.intellij.ide.ui.LafManager
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.application.ApplicationNamesInfo
 import com.intellij.openapi.application.ex.ApplicationInfoEx
 import com.intellij.openapi.application.impl.ApplicationInfoImpl
@@ -16,7 +17,10 @@ import com.intellij.util.Consumer
 import com.intellij.util.text.DateFormatUtil
 import com.markskelton.settings.ThemeSettings
 import com.markskelton.tools.runSafelyWithResult
-import io.sentry.*
+import io.sentry.Sentry
+import io.sentry.SentryEvent
+import io.sentry.SentryLevel
+import io.sentry.SentryOptions
 import io.sentry.protocol.Message
 import io.sentry.protocol.User
 import java.awt.Component
@@ -28,16 +32,19 @@ import java.util.stream.Collectors
 
 class ErrorReporter : ErrorReportSubmitter() {
   override fun getReportActionText(): String = "Report Anonymously"
+
   companion object {
 
     init {
-      Sentry.init { options: SentryOptions ->
-        options.dsn =
-          RestClient.performGet(
-            "https://jetbrains.assets.unthrottled.io/one-dark/sentry-dsn.txt"
-          )
-            .map { it.trim() }
-            .orElse("https://cb598170e51a44adbf0079abe2d79624@o403546.ingest.sentry.io/5267019?maxmessagelength=50000")
+      ApplicationManager.getApplication().executeOnPooledThread {
+        Sentry.init { options: SentryOptions ->
+          options.dsn =
+            RestClient.performGet(
+              "https://jetbrains.assets.unthrottled.io/one-dark/sentry-dsn.txt"
+            )
+              .map { it.trim() }
+              .orElse("https://cb598170e51a44adbf0079abe2d79624@o403546.ingest.sentry.io/5267019?maxmessagelength=50000")
+        }
       }
 
       Sentry.setUser(
@@ -55,21 +62,23 @@ class ErrorReporter : ErrorReportSubmitter() {
     consumer: Consumer<in SubmittedReportInfo>
   ): Boolean {
     return runSafelyWithResult({
-      events.forEach {
-        Sentry.captureEvent(
-          addSystemInfo(
-            SentryEvent()
-              .apply {
-                this.level = SentryLevel.ERROR
-                this.serverName = getAppName().second
-                this.setExtra("Additional Info", additionalInfo ?: "None")
+      ApplicationManager.getApplication().executeOnPooledThread {
+        events.forEach {
+          Sentry.captureEvent(
+            addSystemInfo(
+              SentryEvent()
+                .apply {
+                  this.level = SentryLevel.ERROR
+                  this.serverName = getAppName().second
+                  this.setExtra("Additional Info", additionalInfo ?: "None")
+                }
+            ).apply {
+              this.message = Message().apply {
+                this.message = it.throwableText
               }
-          ).apply {
-            this.message = Message().apply {
-              this.message = it.throwableText
             }
-          }
-        )
+          )
+        }
       }
       true
     }) {
