@@ -2,6 +2,8 @@
 
 #### Unreleased
 
+- Fixed UI Freeze issues
+
 #### 5.1.5
 
 - Added identifier under caret error stripe color.
