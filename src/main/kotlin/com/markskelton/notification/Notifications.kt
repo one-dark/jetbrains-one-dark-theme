@@ -42,11 +42,11 @@ object Notifications {
         getPluginOrPlatformByClassName(Notifications::class.java.canonicalName)
       )?.name
     notificationGroup.createNotification(
-      "$pluginName updated to v$versionNumber",
       UPDATE_MESSAGE,
-      NotificationType.INFORMATION,
-      NotificationListener.UrlOpeningListener(false)
+      NotificationType.INFORMATION
     )
+      .setTitle("$pluginName updated to v$versionNumber")
+      .setListener(NotificationListener.UrlOpeningListener(false))
       .setIcon(NOTIFICATION_ICON)
       .notify(null)
   }
