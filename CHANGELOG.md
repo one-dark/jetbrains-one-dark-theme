@@ -2,6 +2,9 @@
 
 #### Unreleased
 
+#### 5.1.6
+
+- 2021.2 EAP build support!
 - Fixed UI Freeze issues
 
 #### 5.1.5

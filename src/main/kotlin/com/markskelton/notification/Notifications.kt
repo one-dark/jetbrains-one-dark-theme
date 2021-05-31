@@ -13,6 +13,7 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
+        <li>2021.2 Build support!</li>
         <li>Fixed UI Freezing issue.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
@@ -41,11 +42,11 @@ object Notifications {
         getPluginOrPlatformByClassName(Notifications::class.java.canonicalName)
       )?.name
     notificationGroup.createNotification(
-      "$pluginName updated to v$versionNumber",
       UPDATE_MESSAGE,
-      NotificationType.INFORMATION,
-      NotificationListener.UrlOpeningListener(false)
+      NotificationType.INFORMATION
     )
+      .setTitle("$pluginName updated to v$versionNumber")
+      .setListener(NotificationListener.UrlOpeningListener(false))
       .setIcon(NOTIFICATION_ICON)
       .notify(null)
   }
