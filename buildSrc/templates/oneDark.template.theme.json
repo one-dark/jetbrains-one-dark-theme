@@ -180,6 +180,7 @@
     },
 
     "Plugins": {
+      "background": "backgroundColor",
       "disabledForeground": "#5c6370",
       "hoverBackground": "#323844",
       "lightSelectionBackground": "#323844",
@@ -251,6 +252,8 @@
       "startBackground": "accentColor",
       "endBackground": "accentColor"
     },
+
+    "SidePanel.background": "#282c34",
 
     "SpeedSearch": {
       "foreground": "#abb2bf",
@@ -365,7 +368,8 @@
         "selectionInactiveBackground": "#2c313a"
       },
       "separatorColor": "#2c313a",
-      "SidePanel.background": "#282c34"
+      "SidePanel.background": "#282c34",
+      "Details.background": "backgroundColor"
     }
   },
 
