@@ -2,6 +2,8 @@
 
 #### Unreleased
 
+- Better 2021.2 build look and feel support.
+
 #### 5.1.6
 
 - 2021.2 EAP build support!

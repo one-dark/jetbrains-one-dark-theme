@@ -253,7 +253,7 @@
       "endBackground": "accentColor"
     },
 
-    "SidePanel.background": "#282c34",
+    "SidePanel.background": "backgroundColor",
 
     "SpeedSearch": {
       "foreground": "#abb2bf",
