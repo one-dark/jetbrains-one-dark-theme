@@ -131,6 +131,14 @@
       "Rose": "#3d1e2b"
     },
 
+    "GotItTooltip" : {
+      "foreground" : "#abb2bf",
+      "background" : "#3d424b",
+      "borderColor" : "#53565f",
+      "linkForeground" : "#6494ed",
+      "shortcutForeground" : "infoForeground"
+    },
+
     "Label": {
       "infoForeground": "infoForeground"
     },
