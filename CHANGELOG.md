@@ -2,6 +2,9 @@
 
 #### Unreleased
 
+#### 5.2.0
+
+- Added themed [CSV Plugin](https://plugins.jetbrains.com/plugin/10037-csv/) configurations.
 - Better 2021.2 build look and feel support.
 
 #### 5.1.6

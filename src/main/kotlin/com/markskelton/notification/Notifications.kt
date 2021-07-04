@@ -14,6 +14,7 @@ val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
         <li>Better 2021.2 Build support</li>
+        <li>Added <a href="https://plugins.jetbrains.com/plugin/10037-csv/">CSV Plugin</a> themed configurations.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>

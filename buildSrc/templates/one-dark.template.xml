@@ -399,6 +399,51 @@
         <option name="EFFECT_TYPE" value="1"/>
       </value>
     </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_1">
+      <value>
+        <option name="FOREGROUND" value="$error$" />
+      </value>
+    </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_2">
+      <value>
+        <option name="FOREGROUND" value="$malibu$" />
+      </value>
+    </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_3">
+      <value>
+        <option name="FOREGROUND" value="$green$" />
+      </value>
+    </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_4">
+      <value>
+        <option name="FOREGROUND" value="$fountainBlue$" />
+      </value>
+    </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_5">
+      <value>
+        <option name="FOREGROUND" value="$purple$" />
+      </value>
+    </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_6">
+      <value>
+        <option name="FOREGROUND" value="$green$" />
+      </value>
+    </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_7">
+      <value>
+        <option name="FOREGROUND" value="$chalky$" />
+      </value>
+    </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_8">
+      <value>
+        <option name="FOREGROUND" value="$coral$" />
+      </value>
+    </option>
+    <option name="CSV_PLUGIN_COLUMN_COLORING_ATTRIBUTE_9">
+      <value>
+        <option name="FOREGROUND" value="$whiskey$" />
+      </value>
+    </option>
     <option name="CTRL_CLICKABLE">
       <value>
         <option name="EFFECT_COLOR" value="$malibu$"/>
