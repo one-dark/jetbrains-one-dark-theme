@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'io.sentry:sentry:4.0.0'
+  implementation 'io.sentry:sentry:5.0.1'
   implementation 'commons-io:commons-io:2.6'
 }
 
