@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-  implementation 'io.sentry:sentry:4.0.0'
+  implementation 'io.sentry:sentry:5.0.1'
   implementation 'commons-io:commons-io:2.6'
 }
 
@@ -24,7 +24,7 @@ configurations {
 
 
 intellij {
-  version 'LATEST-EAP-SNAPSHOT'
+  version '2021.1.3'
   alternativeIdePath  project.hasProperty("idePath") ? project.findProperty("idePath") : ""
 }
 
@@ -44,6 +44,7 @@ markdownToHtml {
 
 patchPluginXml {
     sinceBuild '201.5985.32'
+    untilBuild '212.*'
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"

@@ -131,6 +131,14 @@
       "Rose": "#3d1e2b"
     },
 
+    "GotItTooltip" : {
+      "foreground" : "#abb2bf",
+      "background" : "#3d424b",
+      "borderColor" : "#53565f",
+      "linkForeground" : "#6494ed",
+      "shortcutForeground" : "infoForeground"
+    },
+
     "Label": {
       "infoForeground": "infoForeground"
     },
@@ -180,6 +188,7 @@
     },
 
     "Plugins": {
+      "background": "backgroundColor",
       "disabledForeground": "#5c6370",
       "hoverBackground": "#323844",
       "lightSelectionBackground": "#323844",
@@ -251,6 +260,8 @@
       "startBackground": "accentColor",
       "endBackground": "accentColor"
     },
+
+    "SidePanel.background": "backgroundColor",
 
     "SpeedSearch": {
       "foreground": "#abb2bf",
@@ -365,7 +376,8 @@
         "selectionInactiveBackground": "#2c313a"
       },
       "separatorColor": "#2c313a",
-      "SidePanel.background": "#282c34"
+      "SidePanel.background": "#282c34",
+      "Details.background": "backgroundColor"
     }
   },
 
