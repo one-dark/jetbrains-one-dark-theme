@@ -6,8 +6,6 @@
   </vendor>
 
   <depends>com.intellij.modules.platform</depends>
-  <depends>com.intellij.modules.xml</depends>
-  <depends>com.intellij.modules.lang</depends>
 
   <!--    Leave this in here so the IDE gives you feedback on-->
   <!--    What API's are available-->
