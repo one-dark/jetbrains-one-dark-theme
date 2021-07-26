@@ -21,7 +21,7 @@ jobs:
       env:
         VERSION: 999
         RELEASE_NOTES: '-This is a test and should not be released.\n-Also a test there might be a character minimum'
-    - uses: ChrisCarini/intellij-platform-plugin-verifier-action@v1.0.3
+    - uses: ChrisCarini/intellij-platform-plugin-verifier-action@v1.0.7
       with:
         ide-versions: |
           ideaIC:2020.1.2
