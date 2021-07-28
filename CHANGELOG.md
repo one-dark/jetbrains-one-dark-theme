@@ -2,6 +2,11 @@
 
 #### Unreleased
 
+#### 5.3.0
+
+- Plugin is now compatible with the `Code With Me` platform.
+- Updated plugin's build tools.
+
 #### 5.2.0
 
 - Added themed [CSV Plugin](https://plugins.jetbrains.com/plugin/10037-csv/) configurations.
