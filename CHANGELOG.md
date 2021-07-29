@@ -2,6 +2,10 @@
 
 #### Unreleased
 
+#### 5.3.1
+
+- Restored autocomplete window coloring in 2021.2 builds.
+
 #### 5.3.0
 
 - Plugin is now compatible with the `Code With Me` platform.
