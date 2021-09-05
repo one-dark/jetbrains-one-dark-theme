@@ -7,7 +7,8 @@
     "accentColor": "#568AF2",
     "backgroundColor": "#21252b",
     "borderColor": "#333841",
-    "infoForeground": "#7e8491"
+    "infoForeground": "#7e8491",
+    "foregroundColor": "#abb2bf"
   },
   "ui": {
     "*": {
@@ -353,6 +354,7 @@
     "Tree": {
       "selectionBackground": "#4d78cc",
       "modifiedItemForeground": "accentColor",
+      "selectionInactiveForeground": "foregroundColor",
       "rowHeight": 20
     },
 
