@@ -141,7 +141,14 @@
     },
 
     "Label": {
-      "infoForeground": "infoForeground"
+      "infoForeground": "infoForeground",
+      "successForeground": "#89ca78"
+    },
+
+    "Lesson": {
+      "Tooltip.background" : "#3d424b",
+      "Tooltip.spanBackground" : "accentColor",
+      "Tooltip.foreground" : "#ffffff"
     },
 
     "Link": {

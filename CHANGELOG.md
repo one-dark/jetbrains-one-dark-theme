@@ -4,6 +4,7 @@
 
 #### 5.3.1
 
+- Updates the colors used by the [IDE Features Trainer](https://plugins.jetbrains.com/plugin/8554-ide-features-trainer) plugin, for a more consistent learning experience.
 - Restored autocomplete window coloring in 2021.2 builds.
 
 #### 5.3.0
