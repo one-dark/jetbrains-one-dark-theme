@@ -90,6 +90,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/infix"><img src="https://avatars1.githubusercontent.com/u/40860821?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Amr</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Ainfix" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://heitorcolangelo.dev"><img src="https://avatars.githubusercontent.com/u/6201773?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Heitor Colangelo</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Aheitorcolangelo" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/yuri-karpovich-09737b27"><img src="https://avatars.githubusercontent.com/u/7230069?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yuri Karpovich</b></sub></a><br /><a href="#design-yuri-karpovich" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/liy-cn"><img src="https://avatars.githubusercontent.com/u/2853829?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Michael Lee</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Aliy-cn" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
