@@ -272,6 +272,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "Lignium",
+      "name": "Lignium",
+      "avatar_url": "https://avatars.githubusercontent.com/u/41531939?v=4",
+      "profile": "https://github.com/Lignium",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
