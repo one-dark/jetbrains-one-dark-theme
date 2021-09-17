@@ -45,6 +45,8 @@
       "pressedBorderColor": "#333841"
     },
 
+    "BookmarkIcon.background": "#d9a343",
+
     "Button": {
       "foreground": "#a0a7b4",
       "startBackground": "#3d424b",
