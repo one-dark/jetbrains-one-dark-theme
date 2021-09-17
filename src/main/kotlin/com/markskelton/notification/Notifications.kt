@@ -13,7 +13,9 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-        <li>Added Code With Me Support</li>
+        <li>IDE Features Trainer theming.</li>
+        <li>Better 2021.2 build support.</li>
+        <li>Made bookmark icon visible in favorites tree.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
