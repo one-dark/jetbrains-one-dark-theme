@@ -2,8 +2,7 @@ package com.markskelton.notification
 
 import com.intellij.ide.plugins.PluginManagerCore.getPlugin
 import com.intellij.ide.plugins.PluginManagerCore.getPluginOrPlatformByClassName
-import com.intellij.notification.NotificationDisplayType
-import com.intellij.notification.NotificationGroup
+import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
 import com.intellij.ui.IconManager
@@ -13,9 +12,7 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-        <li>IDE Features Trainer theming.</li>
-        <li>Better 2021.2 build support.</li>
-        <li>Made bookmark icon visible in favorites tree.</li>
+        <li>2021.3 build support.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
@@ -29,13 +26,7 @@ object Notifications {
     Notifications::class.java
   )
 
-  private val notificationGroup = NotificationGroup(
-    "One Dark Theme",
-    NotificationDisplayType.BALLOON,
-    false,
-    "One Dark Theme",
-    NOTIFICATION_ICON
-  )
+  private val notificationGroup = NotificationGroupManager.getInstance().getNotificationGroup("One Dark Theme")
 
   fun displayUpdateNotification(versionNumber: String) {
     val pluginName =
