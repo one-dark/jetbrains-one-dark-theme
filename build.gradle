@@ -56,7 +56,7 @@ tasks.runPluginVerifier {
 }
 
 tasks.patchPluginXml {
-    sinceBuild.set('213')
+    sinceBuild.set('203.7148.57')
     untilBuild.set('213.*')
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"

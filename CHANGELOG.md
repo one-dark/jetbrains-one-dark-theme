@@ -4,7 +4,7 @@
 
 #### 5.4.0
 
-- Plugin only supports 2021.3+ platform builds now.
+- Plugin only supports 2020.3 to 2021.3.X platform builds now.
 
 #### 5.3.1
 

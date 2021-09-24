@@ -9,7 +9,7 @@
 
   <!--    Leave this in here so the IDE gives you feedback on-->
   <!--    What API's are available-->
-  <idea-version since-build="213"/>
+  <idea-version since-build="203.7148.57"/>
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationService serviceImplementation="com.markskelton.settings.ThemeSettings"/>
