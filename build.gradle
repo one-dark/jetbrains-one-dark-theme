@@ -50,13 +50,14 @@ tasks.runIde {
 
 tasks.runPluginVerifier {
   ideVersions.set([
-    "IC-2020.1.2", "IC-2021.1.3", "PY-2021.1.3"
+// will bring this back when able to verify on 2021.3 builds
+//    "IC-2021.3",
   ])
 }
 
 tasks.patchPluginXml {
-    sinceBuild.set('201.5985.32')
-    untilBuild.set('212.*')
+    sinceBuild.set('203.7148.57')
+    untilBuild.set('213.*')
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"

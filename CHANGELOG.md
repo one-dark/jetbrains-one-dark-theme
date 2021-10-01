@@ -2,6 +2,10 @@
 
 #### Unreleased
 
+#### 5.4.0
+
+- Plugin only supports 2020.3 to 2021.3.X platform builds now.
+
 #### 5.3.1
 
 - Updates the colors used by the [IDE Features Trainer](https://plugins.jetbrains.com/plugin/8554-ide-features-trainer) plugin, for a more consistent learning experience.

@@ -9,12 +9,13 @@
 
   <!--    Leave this in here so the IDE gives you feedback on-->
   <!--    What API's are available-->
-  <idea-version since-build="201.5985.32"/>
+  <idea-version since-build="203.7148.57"/>
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationService serviceImplementation="com.markskelton.settings.ThemeSettings"/>
     <errorHandler id="9782e40c-e6d2-488f-8669-71f5cca6695e"
                   implementation="com.markskelton.integrations.ErrorReporter"/>
+    <notificationGroup displayType="BALLOON" id="One Dark Theme" icon="OneDarkIcons.LOGO" isLogByDefault="false" toolWindowId="One Dark Theme"  />
     <postStartupActivity implementation="com.markskelton.OneDarkTheme"/>
     <themeProvider id="f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" path="/themes/one_dark.theme.json"/>
     <themeProvider id="1a92aa6f-c2f1-4994-ae01-6a78e43eeb24" path="/themes/one_dark_italic.theme.json"/>
