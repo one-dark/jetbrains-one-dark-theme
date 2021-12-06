@@ -47,6 +47,30 @@
 
     "BookmarkIcon.background": "#d9a343",
 
+    "BookmarkMnemonicAssigned": {
+      "foreground": "#ffffff",
+      "background": "#4d78cc",
+      "borderColor": "#4d78cc"
+    },
+
+    "BookmarkMnemonicAvailable": {
+      "borderColor": "borderColor",
+      "foreground": "#a0a7b4",
+      "background": "#3d424b"
+    },
+
+    "BookmarkMnemonicCurrent": {
+      "borderColor": "accentColor",
+      "foreground": "#a0a7b4",
+      "background": "#323844"
+    },
+
+    "BookmarkMnemonicIcon": {
+      "foreground": "#a0a7b4",
+      "background": "#3d424b",
+      "borderColor": "accentColor"
+    },
+
     "Button": {
       "foreground": "#a0a7b4",
       "startBackground": "#3d424b",
@@ -87,6 +111,7 @@
 
     "CompletionPopup":  {
       "background": "#3d424b",
+      "selectionBackground": "#2c313a",
       "matchForeground": "accentColor"
     },
 
@@ -161,6 +186,11 @@
       "visitedForeground": "#6494ed"
     },
 
+    "List": {
+      "selectionBackground": "#4d78cc",
+      "selectionForeground": "#ffffff"
+    },
+
     "Notification": {
       "background": "#3d424b",
       "borderColor": "#53565f",
@@ -232,6 +262,7 @@
 
     "Popup": {
       "paintBorder": false,
+      "borderColor": "#21252b",
       "Toolbar.borderColor": "#3d424b",
       "Header.activeBackground": "#414855",
       "Header.inactiveBackground": "#2c313a",
@@ -304,6 +335,8 @@
       "lightSelectionBackground": "#414855",
       "lightSelectionInactiveBackground": "#323844"
     },
+
+    "Tag.background": "#3d424b",
 
     "TextArea": {
       "background": "#282c34",
