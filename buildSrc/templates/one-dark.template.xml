@@ -5,6 +5,12 @@
   <colors>
     <option name="ADDED_LINES_COLOR" value="$green$"/>
     <option name="ANNOTATIONS_COLOR" value="a0a7b4"/>
+    <option name="Bookmark.Mnemonic.iconForeground" value="a0a7b4"/>
+    <option name="Bookmark.Mnemonic.iconBackground" value="3d424b"/>
+    <option name="Bookmark.Mnemonic.iconBorderColor" value="568AF2"/>
+    <option name="BookmarkMnemonicIcon.foreground" value="a0a7b4"/>
+    <option name="BookmarkMnemonicIcon.background" value="3d424b"/>
+    <option name="BookmarkMnemonicIcon.borderColor" value="568AF2"/>
     <option name="CARET_COLOR" value="528bff"/>
     <option name="CARET_ROW_COLOR" value="2c313c"/>
     <option name="CONSOLE_BACKGROUND_KEY" value=""/>
@@ -34,7 +40,7 @@
     <option name="INFORMATION_HINT" value="3d424b"/>
     <option name="LINE_NUMBERS_COLOR" value="495162"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="737984"/>
-    <option name="LOOKUP_COLOR" value="3d424b"/>
+    <option name="LOOKUP_COLOR" value="21252b"/>
     <option name="METHOD_SEPARATORS_COLOR" value="3b4048"/>
     <option name="MODIFIED_LINES_COLOR" value="$whiskey$"/>
     <option name="QUESTION_HINT" value="2e4280"/>

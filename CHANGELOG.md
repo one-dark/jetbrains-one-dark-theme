@@ -2,6 +2,12 @@
 
 #### Unreleased
 
+#### 5.4.1
+
+- Themed [mnemonic line bookmarks](https://www.jetbrains.com/help/idea/bookmarks.html#add-mnemonic-line-bookmark).
+- Updated the lookup background color to be consistent with the [vscode extension](https://github.com/one-dark/vscode-one-dark-theme).
+- Updated the current tree node selection on the "Welcome Page".
+
 #### 5.4.0
 
 - Plugin only supports 2020.3 to 2021.3.X platform builds now.
