@@ -290,6 +290,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "muyu66",
+      "name": "Zhou Yu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20837526?v=4",
+      "profile": "https://www.muyu.party",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
