@@ -95,6 +95,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://kamilki.me/"><img src="https://avatars.githubusercontent.com/u/10383567?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kamil Trysiński</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3AKamilkime" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/Lignium"><img src="https://avatars.githubusercontent.com/u/41531939?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Lignium</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3ALignium" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/dorudumitru-hh"><img src="https://avatars.githubusercontent.com/u/40240395?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Doru Dumitru</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Adorudumitru-hh" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
