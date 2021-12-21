@@ -38,6 +38,10 @@
     <option name="HTML_TAG_TREE_LEVEL5" value="$purple$"/>
     <option name="INDENT_GUIDE" value="3b4048"/>
     <option name="INFORMATION_HINT" value="3d424b"/>
+    <option name="JUPYTER.CELL_UNDER_CARET_COMMAND_MODE_STRIPE_COLOR" value="568AF2" />
+    <option name="JUPYTER.CODE_CELL_BACKGROUND" value="2d3139" />
+    <option name="JUPYTER.GUTTER_INPUT_EXECUTION_COUNT" value="568AF2" />
+    <option name="JUPYTER.SAUSAGE_BUTTON_BORDER_COLOR" value="333841" />
     <option name="LINE_NUMBERS_COLOR" value="495162"/>
     <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="737984"/>
     <option name="LOOKUP_COLOR" value="21252b"/>
@@ -1094,7 +1098,9 @@
       </value>
     </option>
     <option name="INJECTED_LANGUAGE_FRAGMENT">
-      <value/>
+      <value>
+        <option name="BACKGROUND" value="2d3139"/>
+      </value>
     </option>
     <option name="INLAY_DEFAULT">
       <value>
@@ -1204,6 +1210,12 @@
     <option name="JSP_DIRECTIVE_NAME">
       <value>
         <option name="FOREGROUND" value="$purple$"/>
+      </value>
+    </option>
+    <option name="JUPYTER.SAUSAGE_BUTTON_APPEARANCE">
+      <value>
+        <option name="FOREGROUND" value="a0a7b4" />
+        <option name="BACKGROUND" value="3d424b" />
       </value>
     </option>
     <option name="JUPYTER_SELECTED_CELL">
@@ -1840,6 +1852,11 @@
     <option name="RHTML_OMIT_NEW_LINE_ID">
       <value>
         <option name="FOREGROUND" value="$chalky$"/>
+      </value>
+    </option>
+    <option name="RMARKDOWN_CHUNK">
+      <value>
+        <option name="BACKGROUND" value="2d3139" />
       </value>
     </option>
     <option name="RHTML_SCRIPTING_BACKGROUND_ID">
