@@ -12,9 +12,7 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-          <li>Themed <a href='https://www.jetbrains.com/help/idea/bookmarks.html#add-mnemonic-line-bookmark'>mnemonic line bookmarks</a></li>
-          <li>Updated the lookup background color to be consistent with the <a href='https://github.com/one-dark/vscode-one-dark-theme'>vscode extension</a></li>
-          <li>Updated the current tree node selection on the "Welcome Page".</li>
+          <li>Better Jupyter Notebook support.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>

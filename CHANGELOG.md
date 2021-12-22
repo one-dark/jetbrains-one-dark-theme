@@ -2,6 +2,10 @@
 
 #### Unreleased
 
+#### 5.4.2
+
+- Better Jupyter Notebook support.
+
 #### 5.4.1
 
 - Themed [mnemonic line bookmarks](https://www.jetbrains.com/help/idea/bookmarks.html#add-mnemonic-line-bookmark).
