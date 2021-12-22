@@ -97,6 +97,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Lignium"><img src="https://avatars.githubusercontent.com/u/41531939?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Lignium</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3ALignium" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/dorudumitru-hh"><img src="https://avatars.githubusercontent.com/u/40240395?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Doru Dumitru</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Adorudumitru-hh" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://www.muyu.party"><img src="https://avatars.githubusercontent.com/u/20837526?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zhou Yu</b></sub></a><br /><a href="#design-muyu66" title="Design">🎨</a></td>
+    <td align="center"><a href="https://lovesykun.cn"><img src="https://avatars.githubusercontent.com/u/5022927?v=4?s=100" width="100px;" alt=""/><br /><sub><b>LoveSy</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Ayujincheng08" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
