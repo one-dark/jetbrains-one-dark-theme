@@ -2,6 +2,8 @@
 
 #### Unreleased
 
+- Themed PHP predefined symbols to be distinguishable from default symbols.
+
 #### 5.4.2
 
 - Better Jupyter Notebook support.
