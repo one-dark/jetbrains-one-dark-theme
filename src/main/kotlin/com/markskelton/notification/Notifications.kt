@@ -12,7 +12,8 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-          <li>Better Jupyter Notebook support.</li>
+          <li>2022.1 Build Support</li>
+          <li>Themed PHP predefined symbols</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>

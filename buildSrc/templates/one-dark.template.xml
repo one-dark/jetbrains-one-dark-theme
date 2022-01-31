@@ -1645,6 +1645,11 @@
         <option name="FOREGROUND" value="$whiskey$"/>
       </value>
     </option>
+    <option name="PHP_PREDEFINED SYMBOL">
+      <value>
+        <option name="FOREGROUND" value="$malibu$" />
+      </value>
+    </option>
     <option name="PHP_SCRIPTING_BACKGROUND">
       <value/>
     </option>
