@@ -1,7 +1,7 @@
 package com.markskelton.notification
 
-import com.intellij.ide.plugins.PluginManager
 import com.intellij.ide.plugins.PluginManagerCore.getPlugin
+import com.intellij.ide.plugins.PluginManagerCore.getPluginOrPlatformByClassName
 import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
@@ -32,7 +32,7 @@ object Notifications {
   fun displayUpdateNotification(versionNumber: String) {
     val pluginName =
       getPlugin(
-        PluginManager.getPluginByClass(Notifications::class.java)?.pluginId
+        getPluginOrPlatformByClassName(Notifications::class.java.canonicalName)
       )?.name ?: "One Dark Theme"
     notificationGroup.createNotification(
       UPDATE_MESSAGE,
