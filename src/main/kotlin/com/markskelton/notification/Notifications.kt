@@ -1,7 +1,7 @@
 package com.markskelton.notification
 
+import com.intellij.ide.plugins.PluginManager
 import com.intellij.ide.plugins.PluginManagerCore.getPlugin
-import com.intellij.ide.plugins.PluginManagerCore.getPluginOrPlatformByClassName
 import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
@@ -12,6 +12,7 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
+          <li>2022.1 Build Support</li>
           <li>Themed PHP predefined symbols</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
@@ -31,7 +32,7 @@ object Notifications {
   fun displayUpdateNotification(versionNumber: String) {
     val pluginName =
       getPlugin(
-        getPluginOrPlatformByClassName(Notifications::class.java.canonicalName)
+        PluginManager.getPluginByClass(Notifications::class.java)?.pluginId
       )?.name ?: "One Dark Theme"
     notificationGroup.createNotification(
       UPDATE_MESSAGE,

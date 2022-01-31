@@ -2,6 +2,9 @@
 
 #### Unreleased
 
+#### 5.5.0
+
+- 2022.1 Build Support.
 - Themed PHP predefined symbols to be distinguishable from default symbols.
 
 #### 5.4.2
