@@ -2,6 +2,11 @@
 
 #### Unreleased
 
+#### 5.5.1
+
+- Better 2022.1 Build Support
+- Updated Cucumber syntax highlighting a bit.
+
 #### 5.5.0
 
 - 2022.1 Build Support.
