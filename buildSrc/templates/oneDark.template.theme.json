@@ -153,6 +153,9 @@
     "Editor": {
       "background": "#282c34",
       "foreground": "#abb2bf",
+      "SearchField": {
+        "background": "#282c34"
+      },
       "shortcutForeground": "accentColor"
     },
 

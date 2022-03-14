@@ -12,8 +12,8 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-          <li>2022.1 Build Support</li>
-          <li>Themed PHP predefined symbols</li>
+          <li>Better 2022.1 Build Support</li>
+          <li>Updated Cucumber syntax highlighting a bit</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
