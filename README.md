@@ -24,14 +24,6 @@ If that does not fix your problem, please [submit an issue](https://github.com/o
 
 After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select one of the new themes in the theme dropdown. Once you have selected one of the theme options, click the **OK** button to apply the changes so you can start enjoying One Dark theme!
 
-![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/theme-selection.png)
-
-## Configuration
-
-After set up, you can configure the appearance of the syntax highlighting of the theme.
-
-Go to `Preferences | Appearance & Behavior | One Dark Theme` where you have various appearance settings at your disposal.
-
 ![Configuration example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/configuration.png)
 
 ## Further Documentation
