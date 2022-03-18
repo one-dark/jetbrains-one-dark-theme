@@ -308,6 +308,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "ziishaned",
+      "name": "Zeeshan Ahmad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16267321?v=4",
+      "profile": "https://github.com/ziishaned",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
