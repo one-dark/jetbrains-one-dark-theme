@@ -23,7 +23,7 @@ configurations {
 }
 
 intellij {
-  version.set('LATEST-EAP-SNAPSHOT')
+  version.set('2021.3')
   type.set('IC')
   downloadSources.set(true)
   updateSinceUntilBuild.set(true)
