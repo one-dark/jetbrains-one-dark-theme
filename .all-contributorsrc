@@ -317,6 +317,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "ilyapopovs",
+      "name": "Ilya Popovs",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16862411?v=4",
+      "profile": "https://github.com/ilyapopovs",
+      "contributions": [
+        "doc",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
