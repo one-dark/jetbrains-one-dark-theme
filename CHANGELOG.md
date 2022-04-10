@@ -2,6 +2,11 @@
 
 #### Unreleased
 
+#### 5.5.2
+
+- Added `Error Stripe Mark` to identifiers under caret.
+
+
 #### 5.5.1
 
 - Better 2022.1 Build Support
