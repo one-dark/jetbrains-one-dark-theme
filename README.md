@@ -91,6 +91,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.muyu.party"><img src="https://avatars.githubusercontent.com/u/20837526?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zhou Yu</b></sub></a><br /><a href="#design-muyu66" title="Design">🎨</a></td>
     <td align="center"><a href="https://lovesykun.cn"><img src="https://avatars.githubusercontent.com/u/5022927?v=4?s=100" width="100px;" alt=""/><br /><sub><b>LoveSy</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Ayujincheng08" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/ziishaned"><img src="https://avatars.githubusercontent.com/u/16267321?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zeeshan Ahmad</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/issues?q=author%3Aziishaned" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/ilyapopovs"><img src="https://avatars.githubusercontent.com/u/16862411?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ilya Popovs</b></sub></a><br /><a href="https://github.com/one-dark/jetbrains-one-dark-theme/commits?author=ilyapopovs" title="Documentation">📖</a> <a href="#design-ilyapopovs" title="Design">🎨</a></td>
   </tr>
 </table>
 
