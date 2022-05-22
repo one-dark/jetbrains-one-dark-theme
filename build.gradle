@@ -1,6 +1,6 @@
 plugins {
     id 'one-dark-theme-plugin'
-    id 'org.jetbrains.intellij' version '1.2.0'
+    id 'org.jetbrains.intellij' version '1.5.2'
     id 'org.jetbrains.kotlin.jvm' version '1.5.10'
     id 'org.jlleitschuh.gradle.ktlint' version '8.2.0'
     id 'org.kordamp.gradle.markdown' version '2.2.0'
@@ -59,7 +59,7 @@ tasks.runPluginVerifier {
 
 tasks.patchPluginXml {
     sinceBuild.set('203.7148.57')
-    untilBuild.set('221.*')
+    untilBuild.set('222.*')
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"
