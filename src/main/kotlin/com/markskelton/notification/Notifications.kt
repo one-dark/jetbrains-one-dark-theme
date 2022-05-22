@@ -12,7 +12,7 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-          <li>Added <code>Error Stripe Mark</code> to identifiers under caret</li>
+          <li>Added initial 2022.2 Build Support</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
