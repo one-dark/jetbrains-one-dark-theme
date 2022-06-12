@@ -2,6 +2,10 @@
 
 #### Unreleased
 
+#### 5.6.1 
+
+- Made all highlighted commands in the terminal readable.
+
 #### 5.6.0
 
 - Added initial 2022.2 Build Support.
