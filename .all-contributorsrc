@@ -20,6 +20,18 @@
       ]
     },
     {
+      "login": "Unthrottled",
+      "name": "Alex Simons",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/15972415?v=4",
+      "profile": "https://unthrottled.io",
+      "contributions": [
+        "code",
+        "question",
+        "ideas",
+        "maintenance"
+      ]
+    },
+    {
       "login": "dacoto",
       "name": "David Cortés",
       "avatar_url": "https://avatars2.githubusercontent.com/u/16915053?v=4",
@@ -116,16 +128,6 @@
       "profile": "https://blog.csdn.net/qq_21019419",
       "contributions": [
         "design"
-      ]
-    },
-    {
-      "login": "Unthrottled",
-      "name": "Alex Simons",
-      "avatar_url": "https://avatars1.githubusercontent.com/u/15972415?v=4",
-      "profile": "https://unthrottled.io",
-      "contributions": [
-        "code",
-        "question"
       ]
     },
     {
