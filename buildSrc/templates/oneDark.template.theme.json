@@ -126,6 +126,12 @@
       "matchForeground": "accentColor"
     },
 
+    "ComplexPopup": {
+      "Header": {
+        "background": "backgroundColor"
+      }
+    },
+
     "Component": {
       "errorFocusColor": "#802d43",
       "inactiveErrorFocusColor": "#522530",
@@ -205,6 +211,11 @@
       "selectionForeground": "#ffffff"
     },
 
+    "MainToolbar": {
+      "inactiveBackground": "#282c34",
+      "background": "backgroundColor"
+    },
+
     "Notification": {
       "background": "notificationBackground",
       "borderColor": "#53565f",
@@ -279,6 +290,7 @@
     },
 
     "Popup": {
+      "background": "#282c34",
       "paintBorder": false,
       "borderColor": "#21252b",
       "Toolbar.borderColor": "#3d424b",
