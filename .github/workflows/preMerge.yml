@@ -21,10 +21,17 @@ jobs:
       env:
         VERSION: 999
         RELEASE_NOTES: '-This is a test and should not be released.\n-Also a test there might be a character minimum'
-    - uses: ChrisCarini/intellij-platform-plugin-verifier-action@v1.0.7
+      # Cache Plugin Verifier IDEs
+    - name: Setup Plugin Verifier IDEs Cache
+      uses: actions/cache@v3.0.8
       with:
-        ide-versions: |
-          ideaIC:2020.3
-          ideaIU:2020.3
-          ideaIC:LATEST-EAP-SNAPSHOT
-          ideaIU:LATEST-EAP-SNAPSHOT
+        path: ${{ steps.properties.outputs.pluginVerifierHomeDir }}/ides
+        key: ${{ runner.os }}-plugin-verifier-${{ steps.properties.outputs.ideVersions }}
+
+    # Run verifyPlugin Gradle task
+    - name: Verify Plugin
+      run: ./gradlew verifyPlugin
+
+    # Run IntelliJ Plugin Verifier action using GitHub Action
+    - name: Run Plugin Verifier
+      run: ./gradlew runPluginVerifier -Pplugin.verifier.home.dir=${{ steps.properties.outputs.pluginVerifierHomeDir }}

@@ -22,7 +22,7 @@ object OneDarkThemeManager {
     "4b6007f7-b596-4ee2-96f9-968d3d3eb392" to OneDarkThemes.VIVID,
     "4f556d32-83cb-4b8b-9932-c4eccc4ce3af" to OneDarkThemes.VIVID_ITALIC
   )
-  private const val PLUGIN_ID = "com.markskelton.one-dark-theme"
+  const val PLUGIN_ID = "com.markskelton.one-dark-theme"
 
   fun registerStartup(project: Project) {
     if (!this::messageBus.isInitialized) {

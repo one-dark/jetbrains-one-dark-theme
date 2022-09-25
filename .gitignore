@@ -40,3 +40,5 @@ gradle.properties
 
 # Python compiled files
 *.pyc
+
+.DS_Store
