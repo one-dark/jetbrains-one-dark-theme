@@ -2,6 +2,12 @@
 
 #### Unreleased
 
+#### 5.7.0
+
+- 2022.3 Build Support.
+- Better Experimental UI Support.
+- Made all highlighted commands in the terminal readable.
+
 #### 5.6.0
 
 - Added initial 2022.2 Build Support.

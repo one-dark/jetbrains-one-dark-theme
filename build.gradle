@@ -1,13 +1,14 @@
 plugins {
     id 'one-dark-theme-plugin'
-    id 'org.jetbrains.intellij' version '1.5.2'
-    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'org.jetbrains.intellij' version '1.9.0'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
     id 'org.jlleitschuh.gradle.ktlint' version '8.2.0'
     id 'org.kordamp.gradle.markdown' version '2.2.0'
 }
 
 group 'com.markskelton'
-version System.getenv().getOrDefault('VERSION', '').replace('refs/tags/v', '')
+def projectVersion = System.getenv().getOrDefault('VERSION', '').replace('refs/tags/v', '')
+version projectVersion
 
 repositories {
     mavenCentral()
@@ -23,8 +24,8 @@ configurations {
 }
 
 intellij {
-  version.set('2021.3')
-  type.set('IC')
+  version.set('2021.3.1')
+  type.set('IU')
   downloadSources.set(true)
   updateSinceUntilBuild.set(true)
 }
@@ -52,14 +53,15 @@ tasks.runIde {
 
 tasks.runPluginVerifier {
   ideVersions.set([
-// will bring this back when able to verify on 2021.3 builds
-//    "IC-2021.3",
+    "IC-2020.3.1",
+    "IC-223.4884.69",
   ])
 }
 
 tasks.patchPluginXml {
+    version.set(projectVersion)
     sinceBuild.set('203.7148.57')
-    untilBuild.set('222.*')
+    untilBuild.set('223.*')
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"

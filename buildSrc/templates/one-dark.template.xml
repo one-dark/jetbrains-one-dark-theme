@@ -2177,6 +2177,12 @@
         <option name="FOREGROUND" value="$lightWhite$"/>
       </value>
     </option>
+    <option name="TERMINAL_COMMAND_TO_RUN_USING_IDE">
+      <value>
+        <option name="FOREGROUND" value="BBBBBB" />
+        <option name="BACKGROUND" value="40503c" />
+      </value>
+    </option>
     <option name="TEXT_SEARCH_RESULT_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="42557b"/>

@@ -1,18 +1,21 @@
 package com.markskelton.notification
 
 import com.intellij.ide.plugins.PluginManagerCore.getPlugin
-import com.intellij.ide.plugins.PluginManagerCore.getPluginOrPlatformByClassName
 import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
+import com.intellij.openapi.extensions.PluginId
 import com.intellij.ui.IconManager
+import com.markskelton.OneDarkThemeManager.PLUGIN_ID
 import org.intellij.lang.annotations.Language
 
 @Language("HTML")
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-          <li>Added initial 2022.2 Build Support</li>
+          <li>Initial 2022.3 Build Support.</li>
+          <li>Better Experimental UI Support.</li>
+          <li>Fixed highlighted terminal commands.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
@@ -30,9 +33,7 @@ object Notifications {
 
   fun displayUpdateNotification(versionNumber: String) {
     val pluginName =
-      getPlugin(
-        getPluginOrPlatformByClassName(Notifications::class.java.canonicalName)
-      )?.name ?: "One Dark Theme"
+      getPlugin(PluginId.getId(PLUGIN_ID))?.name ?: "One Dark Theme"
     notificationGroup.createNotification(
       UPDATE_MESSAGE,
       NotificationType.INFORMATION
