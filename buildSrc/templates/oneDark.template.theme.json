@@ -275,6 +275,11 @@
         "updateBorderColor": "accentColor"
       },
 
+      "RunWidget": {
+        "foreground": "#eef3ff",
+        "background": "accentColor"
+      },
+
       "SearchField": {
         "background": "#282c34",
         "borderColor": "#1b1d21"
@@ -305,12 +310,12 @@
     "ProgressBar": {
       "trackColor": "#1D1D26",
       "progressColor": "accentColor",
-      "indeterminateStartColor": "accentColor",
-      "indeterminateEndColor": "#313469",
-      "failedColor": "#bd3c5f",
-      "failedEndColor": "#472c33",
-      "passedColor": "#239E62",
-      "passedEndColor": "#2b4242"
+      "indeterminateStartColor": "#313469",
+      "indeterminateEndColor": "accentColor",
+      "failedColor": "#472c33",
+      "failedEndColor": "#bd3c5f",
+      "passedColor": "#2b4242",
+      "passedEndColor": "#239E62"
     },
 
     "SearchEverywhere": {
