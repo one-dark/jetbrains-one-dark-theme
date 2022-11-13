@@ -2,6 +2,11 @@
 
 #### Unreleased
 
+#### 5.7.1
+
+- Better foreground contrast for the experimental UI run widget and also coloring the inactive run widget. [#271](https://github.com/one-dark/jetbrains-one-dark-theme/issues/271)
+- Inverted indeterminate progress bar colors to better support [running Jupyter notebook progression indicator](https://github.com/one-dark/jetbrains-one-dark-theme/issues/268) 
+
 #### 5.7.0
 
 - 2022.3 Build Support.
