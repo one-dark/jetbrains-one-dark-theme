@@ -275,6 +275,11 @@
         "updateBorderColor": "accentColor"
       },
 
+      "RunWidget": {
+        "foreground": "#eef3ff",
+        "background": "accentColor"
+      },
+
       "SearchField": {
         "background": "#282c34",
         "borderColor": "#1b1d21"
