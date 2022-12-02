@@ -275,11 +275,6 @@
         "updateBorderColor": "accentColor"
       },
 
-      "RunWidget": {
-        "foreground": "#eef3ff",
-        "background": "accentColor"
-      },
-
       "SearchField": {
         "background": "#282c34",
         "borderColor": "#1b1d21"
@@ -316,6 +311,12 @@
       "failedEndColor": "#bd3c5f",
       "passedColor": "#2b4242",
       "passedEndColor": "#239E62"
+    },
+
+    "RunWidget": {
+      "foreground": "#eef3ff",
+      "separatorColor": "#eef3ff",
+      "background": "accentColor"
     },
 
     "SearchEverywhere": {

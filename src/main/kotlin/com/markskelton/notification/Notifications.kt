@@ -14,7 +14,6 @@ val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
           <li>More Usable Experimental UI Run Widget</li>
-          <li>More Visible Jupyter Notebook progression bar.</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
