@@ -4,7 +4,7 @@ import toOptional
 
 
 enum class Groups(val value: String) {
-  ATTRIBUTES("attributes"), COMMENTS("comments"), KEYWORDS("keywords")
+  ATTRIBUTES("attributes"), COMMENTS("comments"), KEYWORDS("keywords"), IDENTIFIERS("identifiers")
 }
 
 private val groupMappings = Groups.values()

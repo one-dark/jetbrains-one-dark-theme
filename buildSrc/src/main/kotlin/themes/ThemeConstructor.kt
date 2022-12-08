@@ -73,25 +73,29 @@ open class ThemeConstructor : DefaultTask() {
         false,
         GroupStyling.REGULAR.value,
         GroupStyling.REGULAR.value,
-        GroupStyling.REGULAR.value
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
       )
       ITALIC -> ThemeSettings(
         false,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
         GroupStyling.ITALIC.value,
-        GroupStyling.ITALIC.value,
-        GroupStyling.ITALIC.value
       )
       VIVID -> ThemeSettings(
         true,
         GroupStyling.REGULAR.value,
         GroupStyling.REGULAR.value,
-        GroupStyling.REGULAR.value
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
       )
       VIVID_ITALIC -> ThemeSettings(
         true,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
         GroupStyling.ITALIC.value,
-        GroupStyling.ITALIC.value,
-        GroupStyling.ITALIC.value
       )
       else -> throw IllegalArgumentException("Bro, I don't know what theme is $themeName")
     }
@@ -241,6 +245,7 @@ open class ThemeConstructor : DefaultTask() {
       Groups.ATTRIBUTES -> themeSettings.attributesStyle
       Groups.COMMENTS -> themeSettings.commentStyle
       Groups.KEYWORDS -> themeSettings.keywordStyle
+      Groups.IDENTIFIERS -> themeSettings.identifierStyle
     }.toGroupStyle()
 
   private fun matchesThemeSetting(
