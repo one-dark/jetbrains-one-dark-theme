@@ -162,7 +162,10 @@
       "SearchField": {
         "background": "#282c34"
       },
-      "shortcutForeground": "accentColor"
+      "shortcutForeground": "accentColor",
+      "ToolTip": {
+        "background": "#323844"
+      }
     },
 
     "EditorPane.inactiveBackground": "#282c34",
@@ -213,7 +216,10 @@
 
     "MainToolbar": {
       "inactiveBackground": "#282c34",
-      "background": "backgroundColor"
+      "background": "backgroundColor",
+      "Dropdown": {
+        "hoverBackground": "#3d424b"
+      }
     },
 
     "Notification": {
@@ -275,11 +281,6 @@
         "updateBorderColor": "accentColor"
       },
 
-      "RunWidget": {
-        "foreground": "#eef3ff",
-        "background": "accentColor"
-      },
-
       "SearchField": {
         "background": "#282c34",
         "borderColor": "#1b1d21"
@@ -316,6 +317,12 @@
       "failedEndColor": "#bd3c5f",
       "passedColor": "#2b4242",
       "passedEndColor": "#239E62"
+    },
+
+    "RunWidget": {
+      "foreground": "#eef3ff",
+      "separatorColor": "#eef3ff",
+      "background": "accentColor"
     },
 
     "SearchEverywhere": {
