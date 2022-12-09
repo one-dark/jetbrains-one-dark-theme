@@ -162,7 +162,10 @@
       "SearchField": {
         "background": "#282c34"
       },
-      "shortcutForeground": "accentColor"
+      "shortcutForeground": "accentColor",
+      "ToolTip": {
+        "background": "#323844"
+      }
     },
 
     "EditorPane.inactiveBackground": "#282c34",
@@ -213,7 +216,10 @@
 
     "MainToolbar": {
       "inactiveBackground": "#282c34",
-      "background": "backgroundColor"
+      "background": "backgroundColor",
+      "Dropdown": {
+        "hoverBackground": "#3d424b"
+      }
     },
 
     "Notification": {
