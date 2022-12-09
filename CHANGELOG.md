@@ -5,6 +5,7 @@
 #### 5.7.2
 
 - Actually setting better foreground contrast for the experimental UI run widget and also coloring the inactive run widget. [#271](https://github.com/one-dark/jetbrains-one-dark-theme/issues/271)
+- Small Experimental UI consistency updates.
 
 #### 5.7.1
 
