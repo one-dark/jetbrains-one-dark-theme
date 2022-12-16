@@ -2,6 +2,10 @@
 
 #### Unreleased
 
+#### 5.7.3
+
+- Themed the status bar memory indicator widget.
+
 #### 5.7.2
 
 - Actually setting better foreground contrast for the experimental UI run widget and also coloring the inactive run widget. [#271](https://github.com/one-dark/jetbrains-one-dark-theme/issues/271)

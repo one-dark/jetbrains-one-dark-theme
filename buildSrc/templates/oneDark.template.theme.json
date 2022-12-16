@@ -222,6 +222,11 @@
       }
     },
 
+    "MemoryIndicator": {
+      "allocatedBackground": "#304676",
+      "usedBackground": "#3a5a9c"
+    },
+
     "Notification": {
       "background": "notificationBackground",
       "borderColor": "#53565f",
