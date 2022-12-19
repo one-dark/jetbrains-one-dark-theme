@@ -45,11 +45,13 @@ open class ThemeConstructor : DefaultTask() {
     private val gson = GsonBuilder().setPrettyPrinting().create()
     private const val REGULAR = "One Dark"
     private const val ITALIC = "One Dark Italic"
+    private const val ITALIC_VARS = "One Dark Italic Variables"
     private const val VIVID = "One Dark Vivid"
     private const val VIVID_ITALIC = "One Dark Vivid Italic"
     val THEMES = mapOf(
       "f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" to REGULAR,
       "1a92aa6f-c2f1-4994-ae01-6a78e43eeb24" to ITALIC,
+      "ef11f0df-57cd-4e48-b739-302cb489487b" to ITALIC_VARS,
       "4b6007f7-b596-4ee2-96f9-968d3d3eb392" to VIVID,
       "4f556d32-83cb-4b8b-9932-c4eccc4ce3af" to VIVID_ITALIC
     )
@@ -77,6 +79,13 @@ open class ThemeConstructor : DefaultTask() {
         GroupStyling.REGULAR.value,
       )
       ITALIC -> ThemeSettings(
+        false,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value,
+        GroupStyling.ITALIC.value,
+      )
+      ITALIC_VARS -> ThemeSettings(
         false,
         GroupStyling.REGULAR.value,
         GroupStyling.REGULAR.value,
