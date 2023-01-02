@@ -5,6 +5,7 @@
 #### 5.7.3
 
 - Themed the status bar memory indicator widget.
+- Added a bit more Rust lang syntax highlighting support. 
 
 #### 5.7.2
 

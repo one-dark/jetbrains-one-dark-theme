@@ -2391,6 +2391,7 @@
         <option name="FOREGROUND" value="$whiskey$"/>
       </value>
     </option>
+    <option baseAttributes="DEFAULT_FUNCTION_CALL" name="org.rust.FUNCTION_CALL"/>
     <option name="org.rust.LIFETIME">
       <value>
         <option name="FOREGROUND" value="$fountainBlue$"/>
@@ -2398,6 +2399,11 @@
       </value>
     </option>
     <option name="org.rust.MACRO">
+      <value>
+        <option name="FOREGROUND" value="$malibu$"/>
+      </value>
+    </option>
+    <option name="org.rust.METHOD_CALL">
       <value>
         <option name="FOREGROUND" value="$malibu$"/>
       </value>
@@ -2415,6 +2421,12 @@
     </option>
     <option name="org.rust.Q_OPERATOR">
       <value/>
+    </option>
+    <option name="org.rust.SELF_PARAMETER">
+      <value>
+        <option name="FOREGROUND" value="$purple$"/>
+        <option name="FONT_TYPE" value="%theme^keywords%"/>
+      </value>
     </option>
     <option name="org.rust.TYPE_ALIAS">
       <value>
