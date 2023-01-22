@@ -6,6 +6,7 @@
 
 - Themed the status bar memory indicator widget.
 - Added a bit more Rust lang syntax highlighting support. 
+- Added initial 2023.1 Build Support
 
 #### 5.7.2
 
