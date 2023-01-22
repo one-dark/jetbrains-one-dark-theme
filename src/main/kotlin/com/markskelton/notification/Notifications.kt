@@ -14,6 +14,7 @@ val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
           <li>Themed Status Bar Memory Widget</li>
+          <li>Initial 2023.1 Build Support</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
