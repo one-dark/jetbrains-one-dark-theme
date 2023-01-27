@@ -2,6 +2,10 @@
 
 #### Unreleased
 
+#### 5.7.4
+
+- More usable pressed action button state.
+
 #### 5.7.3
 
 - Themed the status bar memory indicator widget.
