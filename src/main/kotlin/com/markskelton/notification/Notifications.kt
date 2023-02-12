@@ -14,6 +14,7 @@ val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
           <li>More usable action button state for new UI</li>
+          <li>More Consistent Rider New UI Scrollbars</li>
       </ul>
       <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
       <br>
