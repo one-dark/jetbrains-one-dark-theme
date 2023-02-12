@@ -5,6 +5,7 @@
 #### 5.7.4
 
 - More usable pressed action button state.
+- Themed New UI Scrollbars in Rider to be consistent.
 
 #### 5.7.3
 
