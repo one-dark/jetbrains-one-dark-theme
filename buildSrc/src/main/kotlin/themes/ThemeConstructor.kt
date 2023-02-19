@@ -1,6 +1,7 @@
 package themes
 
 import com.google.gson.GsonBuilder
+import com.google.gson.ToNumberPolicy
 import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import groovy.util.Node
@@ -42,7 +43,9 @@ data class OneDarkThemeDefinition(
 
 open class ThemeConstructor : DefaultTask() {
   companion object {
-    private val gson = GsonBuilder().setPrettyPrinting().create()
+    private val gson = GsonBuilder()
+      .setObjectToNumberStrategy(ToNumberPolicy.LONG_OR_DOUBLE)
+      .setPrettyPrinting().create()
     private const val REGULAR = "One Dark"
     private const val ITALIC = "One Dark Italic"
     private const val VIVID = "One Dark Vivid"
