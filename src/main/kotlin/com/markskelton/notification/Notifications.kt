@@ -5,7 +5,7 @@ import com.intellij.notification.NotificationGroupManager
 import com.intellij.notification.NotificationListener
 import com.intellij.notification.NotificationType
 import com.intellij.openapi.extensions.PluginId
-import com.intellij.ui.IconManager
+import com.intellij.openapi.util.IconLoader
 import com.markskelton.OneDarkThemeManager.PLUGIN_ID
 import org.intellij.lang.annotations.Language
 
@@ -13,17 +13,16 @@ import org.intellij.lang.annotations.Language
 val UPDATE_MESSAGE: String = """
       What's New?<br>
       <ul>
-          <li>More usable action button state for new UI</li>
-          <li>More Consistent Rider New UI Scrollbars</li>
+          <li>2023.2 Build Support</li>
       </ul>
-      <br>Please see the <a href="https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md">Changelog</a> for more details.
+      <br>Please see the <a href='https://github.com/one-dark/jetbrains-one-dark-theme/blob/master/CHANGELOG.md'>Changelog</a> for more details.
       <br>
       Thank you for choosing the One Dark Theme!<br>
 """.trimIndent()
 
 object Notifications {
 
-  private val NOTIFICATION_ICON = IconManager.getInstance().getIcon(
+  private val NOTIFICATION_ICON = IconLoader.getIcon(
     "/icons/one-dark-logo.svg",
     Notifications::class.java
   )

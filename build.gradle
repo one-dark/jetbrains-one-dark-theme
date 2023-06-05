@@ -54,14 +54,14 @@ tasks.runIde {
 tasks.runPluginVerifier {
   ideVersions.set([
     "IC-2020.3.1",
-    "IC-223.4884.69",
+    "IC-2022.3",
   ])
 }
 
 tasks.patchPluginXml {
     version.set(projectVersion)
     sinceBuild.set('203.7148.57')
-    untilBuild.set('231.*')
+    untilBuild.set('232.*')
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"
