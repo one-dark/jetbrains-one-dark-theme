@@ -153,7 +153,7 @@
     "DragAndDrop": {
       "areaForeground": "#abb2bf",
       "areaBackground": "#323844",
-      "areaBorderColor": "#333841"
+      "borderColor": "#333841"
     },
 
     "Editor": {
@@ -426,7 +426,6 @@
       "HeaderTab": {
         "hoverBackground": "#323844",
         "hoverInactiveBackground": "#3d424b",
-        "selectedBackground": "#323844",
         "selectedInactiveBackground": "#3d424b"
       }
     },
@@ -441,6 +440,7 @@
       "modifiedItemForeground": "accentColor",
       "selectionInactiveForeground": "foregroundColor",
       "rowHeight": 20
+      "foreground": "foregroundColor",
     },
 
     "ValidationTooltip": {
