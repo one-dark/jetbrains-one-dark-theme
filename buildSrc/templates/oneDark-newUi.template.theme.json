@@ -1,5 +1,5 @@
 {
-  "name": "One Dark",
+  "name": "One Dark New UI",
   "dark": true,
   "author": "Mark Skelton",
   "editorScheme": "/themes/one_dark.xml",
@@ -118,7 +118,7 @@
       }
     },
 
-    "ComboPopup.border": "1,1,1,1,2d3137",
+    "ComboPopup.border": "1,1,1,1,#2d3137",
 
     "CompletionPopup":  {
       "background": "#3d424b",
@@ -162,15 +162,13 @@
       "SearchField": {
         "background": "#282c34"
       },
-      "shortcutForeground": "accentColor",
-      "ToolTip": {
-        "background": "#323844"
-      }
+      "shortcutForeground": "accentColor"
     },
 
     "EditorPane.inactiveBackground": "#282c34",
 
     "EditorTabs": {
+      "underlineArc": "4",
       "underlinedTabBackground": "#3d424b"
     },
 
@@ -196,12 +194,6 @@
       "successForeground": "#89ca78"
     },
 
-    "Lesson": {
-      "Tooltip.background" : "#3d424b",
-      "Tooltip.spanBackground" : "accentColor",
-      "Tooltip.foreground" : "#ffffff"
-    },
-
     "Link": {
       "activeForeground": "#6494ed",
       "hoverForeground": "#6494ed",
@@ -210,15 +202,21 @@
     },
 
     "List": {
+      "rowHeight": 24,
+      "border": "4,0,4,0",
       "selectionBackground": "#4d78cc",
-      "selectionForeground": "#ffffff"
+      "selectionForeground": "#ffffff",
+      "Button": {
+        "separatorInset": 4,
+        "leftRightInset": 8
+      }
     },
 
     "MainToolbar": {
-      "inactiveBackground": "#282c34",
+      "separatorColor": "separatorColor",
       "background": "backgroundColor",
-      "Dropdown": {
-        "hoverBackground": "#3d424b"
+      "Icon": {
+        "insets": "5,5,5,5"
       }
     },
 
@@ -287,8 +285,7 @@
       },
 
       "SearchField": {
-        "background": "#282c34",
-        "borderColor": "#1b1d21"
+        "background": "#282c34"
       },
 
       "SectionHeader.background": "#414855",
@@ -325,9 +322,7 @@
     },
 
     "RunWidget": {
-      "foreground": "#eef3ff",
-      "separatorColor": "#eef3ff",
-      "background": "accentColor"
+      "foreground": "#eef3ff"
     },
 
     "SearchEverywhere": {
@@ -361,9 +356,9 @@
 
     "Settings.Spotlight.borderColor": "accentColor",
 
-    "StatusBar.background": "baseBackground",
-
     "TabbedPane": {
+      "tabHeight": 40,
+      "tabSelectionArc": 4,
       "underlineColor": "accentColor",
       "contentAreaColor": "#323844",
       "hoverColor": "#323844"
@@ -419,6 +414,7 @@
       },
 
       "Header": {
+        "font.size.offset": 0,
         "background": "#414855",
         "inactiveBackground": "#323844"
       },
@@ -432,15 +428,16 @@
 
     "TitlePane" : {
       "infoForeground": "infoForeground",
-      "inactiveInfoForeground": "#5C6370"
+      "inactiveInfoForeground": "#5C6370",
+      "Button.preferredSize": "44,40"
     },
 
     "Tree": {
       "selectionBackground": "#4d78cc",
       "modifiedItemForeground": "accentColor",
-      "selectionInactiveForeground": "foregroundColor",
-      "rowHeight": 20
       "foreground": "foregroundColor",
+      "rowHeight": 24,
+      "border": "4,12,4,12"
     },
 
     "ValidationTooltip": {
@@ -475,6 +472,8 @@
       "Details.background": "backgroundColor"
     }
   },
+
+  "IdeStatusBar.border": "4,4,4,4",
 
   "icons": {
     "ColorPalette": {
