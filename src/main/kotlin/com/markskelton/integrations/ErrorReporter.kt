@@ -98,5 +98,4 @@ class ErrorReporter : ErrorReportSubmitter() {
 
   private fun getGC() = ManagementFactory.getGarbageCollectorMXBeans().stream()
     .map { it.name }.collect(Collectors.joining(","))
-
 }
