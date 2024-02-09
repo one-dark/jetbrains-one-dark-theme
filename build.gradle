@@ -67,9 +67,9 @@ tasks.patchPluginXml {
     def readmePath = "$projectDir/build/html/README.html"
 
     if (file(changelogPath).exists()) {
-        changeNotes.set( provider {
+        changeNotes.set(provider {
           file(changelogPath).text
-        } )
+        })
     }
 
     if (file(readmePath).exists()) {
