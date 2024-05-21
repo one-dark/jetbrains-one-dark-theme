@@ -2,6 +2,8 @@
 
 #### Unreleased
 
+- Added 2024.2 Build Support
+
 #### 5.10.0
 
 - Added 2024.1 Build Support
