@@ -32,6 +32,7 @@ object Notifications {
   fun displayUpdateNotification(versionNumber: String) {
     val pluginName =
       getPlugin(PluginId.getId(PLUGIN_ID))?.name ?: "One Dark Theme"
+
     notificationGroup.createNotification(
       UPDATE_MESSAGE,
       NotificationType.INFORMATION
