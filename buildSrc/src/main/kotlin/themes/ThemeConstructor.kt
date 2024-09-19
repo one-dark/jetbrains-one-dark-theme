@@ -50,7 +50,11 @@ open class ThemeConstructor : DefaultTask() {
     private const val ITALIC = "One Dark Italic"
     private const val VIVID = "One Dark Vivid"
     private const val VIVID_ITALIC = "One Dark Vivid Italic"
+
+    // new UI
+    private const val REGULAR_NEW_UI = "One Dark New UI"
     val THEMES = mapOf(
+      "1fa63ea1-a161-4d01-b488-d4a6b2d4c10e" to REGULAR_NEW_UI,
       "f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" to REGULAR,
       "1a92aa6f-c2f1-4994-ae01-6a78e43eeb24" to ITALIC,
       "4b6007f7-b596-4ee2-96f9-968d3d3eb392" to VIVID,
@@ -65,7 +69,7 @@ open class ThemeConstructor : DefaultTask() {
     THEMES.entries.forEach {
       constructNewTheme(getSettings(it.value), OneDarkThemeDefinition(
         it.key,
-        it.value
+        it.value,
       ))
     }
   }
@@ -73,28 +77,35 @@ open class ThemeConstructor : DefaultTask() {
   private fun getSettings(themeName: String): ThemeSettings {
     return when (themeName) {
       REGULAR -> ThemeSettings(
-        false,
+        false, false,
         GroupStyling.REGULAR.value,
         GroupStyling.REGULAR.value,
         GroupStyling.REGULAR.value
       )
       ITALIC -> ThemeSettings(
-        false,
+        false, false,
         GroupStyling.ITALIC.value,
         GroupStyling.ITALIC.value,
         GroupStyling.ITALIC.value
       )
       VIVID -> ThemeSettings(
-        true,
+        true, false,
         GroupStyling.REGULAR.value,
         GroupStyling.REGULAR.value,
         GroupStyling.REGULAR.value
       )
       VIVID_ITALIC -> ThemeSettings(
-        true,
+        true, false,
         GroupStyling.ITALIC.value,
         GroupStyling.ITALIC.value,
         GroupStyling.ITALIC.value
+      )
+
+      REGULAR_NEW_UI -> ThemeSettings(
+        false, true,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value
       )
       else -> throw IllegalArgumentException("Bro, I don't know what theme is $themeName")
     }
@@ -115,21 +126,25 @@ open class ThemeConstructor : DefaultTask() {
       "${createFileName(themeDefinition.name)}.xml"
     )
     buildNewEditorScheme(themeSettings, newEditorSchemeFile, themeDefinition)
-    buildThemeJson(themeDefinition, Paths.get(
-      assetsDirectory.toAbsolutePath().toString(),
-      "${createFileName(themeDefinition.name)}.theme.json"))
+    buildThemeJson(
+      themeSettings,
+      themeDefinition, Paths.get(
+        assetsDirectory.toAbsolutePath().toString(),
+        "${createFileName(themeDefinition.name)}.theme.json"))
   }
 
   private fun buildThemeJson(
+    themeSettings: ThemeSettings,
     themeDefinition: OneDarkThemeDefinition,
     destinationFile: Path
   ) {
+    val templateFile = if (themeSettings.newUi) "oneDark-newUi.template.theme.json" else "oneDark.template.theme.json"
     val themeJsonTemplate: MutableMap<String, Any> =
       Files.newInputStream(Paths.get(
         project.rootDir.absolutePath,
         "buildSrc",
         "templates",
-        "oneDark.template.theme.json"
+        templateFile
       ))
         .use {
           gson.fromJson<MutableMap<String, Any>>(JsonReader(it.reader()),
