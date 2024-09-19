@@ -69,7 +69,7 @@ tasks.runPluginVerifier {
 tasks.patchPluginXml {
     version.set(projectVersion)
     sinceBuild.set('203.7148.57')
-    untilBuild.set('242.*')
+    untilBuild.set('243.*')
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"
