@@ -1,7 +1,7 @@
 package com.markskelton.settings
 
+import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.components.PersistentStateComponent
-import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.components.State
 import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
@@ -13,7 +13,8 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   companion object {
     val instance: ThemeSettings
-      get() = ServiceManager.getService(ThemeSettings::class.java)
+      get() = ApplicationManager.getApplication().getService(ThemeSettings::class.java)
+
   }
 
   var version: String = "0.0.0"

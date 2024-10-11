@@ -8,13 +8,6 @@
 
 ![Code example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/default.png)
 
-## Sponsors
-
-[![CodeStream logo](https://alt-images.codestream.com/codestream_logo_jbonedarktheme.png)](https://sponsorlink.codestream.com/?utm_source=jbmarket&utm_campaign=jbonedarktheme&utm_medium=banner 'Try CodeStream')
-
-Eliminate context switching and costly distractions. Create and merge PRs and perform code reviews from inside your IDE while using jump-to-definition, your favorite keybindings, and other IDE favorites.<br>
-[Learn more](https://sponsorlink.codestream.com/?utm_source=jbmarket&utm_campaign=jbonedarktheme&utm_medium=banner)
-
 ## Do you need help?
 
 Please check [the docs FAQs](https://one-dark.gitbook.io/jetbrains/help/faqs) to see if we can solve your problem.
@@ -22,7 +15,7 @@ If that does not fix your problem, please [submit an issue](https://github.com/o
 
 ## Setup
 
-After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select one of the new themes in the theme dropdown. Once you have selected one of the theme options, click the **OK** button to apply the changes so you can start enjoying One Dark theme!
+After installing the theme, go to `Preferences | Appearance & Behavior | Appearance` and select one of the new themes in the theme dropdown. Once you have selected one of the theme options, click the **OK** button to apply the changes so you can start enjoying One Dark Theme!
 
 ![Configuration example](https://github.com/one-dark/jetbrains-one-dark-theme/raw/master/docs/screenshots/configuration.png)
 

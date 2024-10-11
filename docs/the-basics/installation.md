@@ -2,7 +2,7 @@
 
 ## Plugin marketplace **\(recommended\)**
 
-1. Go to `Preferences | Plugins | Marketplace` and search for **One Dark theme**
+1. Go to `Preferences | Plugins | Marketplace` and search for **One Dark Theme**
 2. Install the plugin
 3. When prompted, restart your IDE
 4. Go to `Preferences | Appearance & Behavior | Appearance` and select one of the new themes in the **theme** dropdown.

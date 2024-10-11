@@ -1,6 +1,21 @@
 # Changelog
 
-#### Unreleased
+#### 5.12.0
+
+- Added 2024.3 Build Support
+
+#### 5.11.0
+
+- Added 2024.2 Build Support
+
+#### 5.10.0
+
+- Added 2024.1 Build Support
+
+#### 5.9.0
+
+- Added 2023.3 Build Support
+- Removed some internal API usages
 
 #### 5.8.0
 

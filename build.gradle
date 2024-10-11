@@ -1,3 +1,11 @@
+buildscript {
+  configurations.all {
+    resolutionStrategy.dependencySubstitution {
+      substitute module("com.overzealous:remark:1.1.0") using module("com.wavefront:remark:2023-07.07") because "not available on maven central anymore"
+    }
+  }
+}
+
 plugins {
     id 'one-dark-theme-plugin'
     id 'org.jetbrains.intellij' version '1.15.0'
@@ -61,15 +69,15 @@ tasks.runPluginVerifier {
 tasks.patchPluginXml {
     version.set(projectVersion)
     sinceBuild.set('203.7148.57')
-    untilBuild.set('232.*')
+    untilBuild.set('243.*')
 
     def changelogPath = "$projectDir/build/html/CHANGELOG.html"
     def readmePath = "$projectDir/build/html/README.html"
 
     if (file(changelogPath).exists()) {
-        changeNotes.set( provider {
+        changeNotes.set(provider {
           file(changelogPath).text
-        } )
+        })
     }
 
     if (file(readmePath).exists()) {
