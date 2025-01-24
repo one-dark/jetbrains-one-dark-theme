@@ -1,5 +1,9 @@
 # Changelog
 
+#### 5.13.0
+
+- Added 2025.1 Build Support
+
 #### 5.12.0
 
 - Added 2024.3 Build Support
