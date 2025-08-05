@@ -23,7 +23,7 @@ jobs:
         RELEASE_NOTES: '-This is a test and should not be released.\n-Also a test there might be a character minimum'
       # Cache Plugin Verifier IDEs
     - name: Setup Plugin Verifier IDEs Cache
-      uses: actions/cache@v3.0.8
+      uses: actions/cache@v4
       with:
         path: ${{ steps.properties.outputs.pluginVerifierHomeDir }}/ides
         key: ${{ runner.os }}-plugin-verifier-${{ steps.properties.outputs.ideVersions }}
