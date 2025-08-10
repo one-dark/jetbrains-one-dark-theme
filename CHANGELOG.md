@@ -1,8 +1,16 @@
 # Changelog
 
+#### 5.14.1
+
+- Added alpha-channel value on background colors while drag & drop to make it transparent
+
+#### 5.14.0
+
+- Added 2025.2 Build Support
+
 #### 5.13.1
 
-- Added alpha-channel value on background colors while drag & drop to make it transparent like default Intellij themes
+- Github action/cache v4
 
 #### 5.13.0
 
