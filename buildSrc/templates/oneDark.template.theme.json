@@ -152,7 +152,7 @@
 
     "DragAndDrop": {
       "areaForeground": "#abb2bf",
-      "areaBackground": "#323844",
+      "areaBackground": "#abb2bf33",
       "areaBorderColor": "#333841"
     },
 
