@@ -50,11 +50,14 @@ open class ThemeConstructor : DefaultTask() {
     private const val ITALIC = "One Dark Italic"
     private const val VIVID = "One Dark Vivid"
     private const val VIVID_ITALIC = "One Dark Vivid Italic"
+    private const val ISLANDS = "One Dark Islands"
+
     val THEMES = mapOf(
       "f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" to REGULAR,
       "1a92aa6f-c2f1-4994-ae01-6a78e43eeb24" to ITALIC,
       "4b6007f7-b596-4ee2-96f9-968d3d3eb392" to VIVID,
-      "4f556d32-83cb-4b8b-9932-c4eccc4ce3af" to VIVID_ITALIC
+      "4f556d32-83cb-4b8b-9932-c4eccc4ce3af" to VIVID_ITALIC,
+      "71b26d33-3d44-42f4-8166-31b17c762b32" to ISLANDS
     )
   }
 
@@ -73,6 +76,12 @@ open class ThemeConstructor : DefaultTask() {
   private fun getSettings(themeName: String): ThemeSettings {
     return when (themeName) {
       REGULAR -> ThemeSettings(
+        false,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value,
+        GroupStyling.REGULAR.value
+      )
+      ISLANDS -> ThemeSettings(
         false,
         GroupStyling.REGULAR.value,
         GroupStyling.REGULAR.value,
@@ -124,12 +133,18 @@ open class ThemeConstructor : DefaultTask() {
     themeDefinition: OneDarkThemeDefinition,
     destinationFile: Path
   ) {
+    val templateFile = if (themeDefinition.name.contains("Islands")) {
+      "oneDark.islands.template.theme.json"
+    } else {
+      "oneDark.template.theme.json"
+    }
+
     val themeJsonTemplate: MutableMap<String, Any> =
       Files.newInputStream(Paths.get(
         project.rootDir.absolutePath,
         "buildSrc",
         "templates",
-        "oneDark.template.theme.json"
+        templateFile
       ))
         .use {
           gson.fromJson<MutableMap<String, Any>>(JsonReader(it.reader()),
