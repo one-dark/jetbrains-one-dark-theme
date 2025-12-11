@@ -7,8 +7,8 @@ import com.intellij.openapi.components.Storage
 import com.intellij.util.xmlb.XmlSerializerUtil
 
 @State(
-    name = "OneDarkConfig",
-    storages = [Storage("one_dark_config.xml")]
+  name = "OneDarkConfig",
+  storages = [Storage("one_dark_config.xml")]
 )
 class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   companion object {
@@ -20,7 +20,7 @@ class ThemeSettings : PersistentStateComponent<ThemeSettings>, Cloneable {
   var userId: String = ""
 
   override fun getState(): ThemeSettings? =
-      XmlSerializerUtil.createCopy(this)
+    XmlSerializerUtil.createCopy(this)
 
   override fun loadState(state: ThemeSettings) {
     XmlSerializerUtil.copyBean(state, this)

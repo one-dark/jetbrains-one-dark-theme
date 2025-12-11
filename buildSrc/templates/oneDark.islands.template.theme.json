@@ -187,6 +187,16 @@
         "nonEditableBackground": "#333841"
       }
     },
+    "Popup": {
+      "background": "backgroundColor",
+      "Header.activeBackground": "backgroundColor",
+      "separatorColor": "panelColor",
+      "Advertiser.background": "backgroundColor",
+      "Advertiser.borderColor": "backgroundColor",
+      "Advertiser.foreground": "#868a91",
+      "borderColor": "panelColor",
+      "Toolbar.background": "backgroundColor"
+    },
     "CompletionPopup": {
       "background": "#3d424b",
       "selectionBackground": "#2c313a",
@@ -252,6 +262,12 @@
         "hoveredBackground": "#2c313c"
       }
     },
+    "NewClass": {
+      "Panel.background": "backgroundColor",
+      "SearchField.background": "backgroundColor",
+      "separatorColor": "panelColor"
+    },
+    "AlertDialog.background": "panelColor",
     "WelcomeScreen": {
       "borderColor": "borderColor",
       "separatorColor": "#2c313a",
