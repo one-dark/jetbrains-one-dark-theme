@@ -62,6 +62,7 @@
     <option name="VISUAL_INDENT_GUIDE" value="3b4048"/>
     <option name="WHITESPACES" value="4b575f"/>
     <option name="WHITESPACES_MODIFIED_LINES_COLOR" value="$dark$"/>
+    <option name="BLOCK_TERMINAL_PROMPT_SEPARATOR_COLOR" value="21252b"/>
   </colors>
   <attributes>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES">

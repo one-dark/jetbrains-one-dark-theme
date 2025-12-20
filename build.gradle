@@ -1,17 +1,21 @@
 buildscript {
+  repositories {
+    mavenCentral()
+  }
   configurations.all {
     resolutionStrategy.dependencySubstitution {
+      // Fix for missing dependency in Maven Central
       substitute module("com.overzealous:remark:1.1.0") using module("com.wavefront:remark:2023-07.07") because "not available on maven central anymore"
     }
   }
 }
 
 plugins {
-    id 'one-dark-theme-plugin'
-    id 'org.jetbrains.intellij' version '1.9.0'
-    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
-    id 'org.jlleitschuh.gradle.ktlint' version '8.2.0'
-    id 'org.kordamp.gradle.markdown' version '2.2.0'
+  id 'one-dark-theme-plugin'
+  id 'org.jetbrains.intellij' version '1.17.3'
+  id 'org.jetbrains.kotlin.jvm' version '1.9.22'
+  id 'org.jlleitschuh.gradle.ktlint' version '11.5.1'
+  id 'org.kordamp.gradle.markdown' version '2.2.0'
 }
 
 group 'com.markskelton'
@@ -19,7 +23,7 @@ def projectVersion = System.getenv().getOrDefault('VERSION', '').replace('refs/t
 version projectVersion
 
 repositories {
-    mavenCentral()
+  mavenCentral()
 }
 
 dependencies {
@@ -32,27 +36,33 @@ configurations {
 }
 
 intellij {
-  version.set('2021.3.1')
+  version.set('2024.1.4')
   type.set('IC')
   downloadSources.set(true)
   updateSinceUntilBuild.set(true)
 }
 
+java {
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
+}
+
 compileKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+  kotlinOptions.jvmTarget = "17"
 }
 compileTestKotlin {
-    kotlinOptions.jvmTarget = "1.8"
+  kotlinOptions.jvmTarget = "17"
 }
 
 markdownToHtml {
   sourceDir = new File("$projectDir/build/markdown")
   outputDir = new File("$projectDir/build/html")
-
-  tables = false
 }
 
 tasks.runIde {
+  // Give the IDE enough memory
+  jvmArgs = ["-Xmx2g"]
+
   def idePath = project.hasProperty("idePath") ? project.findProperty("idePath") : ""
   if(!"".equalsIgnoreCase(idePath)) {
     ideDir.set(file(idePath))
@@ -61,30 +71,30 @@ tasks.runIde {
 
 tasks.runPluginVerifier {
   ideVersions.set([
-    "IC-2020.3.1",
-    "IC-2022.3",
+    "IC-2024.1",
+    "IC-2023.3"
   ])
 }
 
 tasks.patchPluginXml {
-    version.set(projectVersion)
-    sinceBuild.set('203.7148.57')
-    untilBuild = provider { null }
+  version.set(projectVersion)
+  sinceBuild.set('241')
+  untilBuild = provider { null }
 
-    def changelogPath = "$projectDir/build/html/CHANGELOG.html"
-    def readmePath = "$projectDir/build/html/README.html"
+  def changelogPath = "$projectDir/build/html/CHANGELOG.html"
+  def readmePath = "$projectDir/build/html/README.html"
 
-    if (file(changelogPath).exists()) {
-        changeNotes.set(provider {
-          file(changelogPath).text
-        })
-    }
+  if (file(changelogPath).exists()) {
+    changeNotes.set(provider {
+      file(changelogPath).text
+    })
+  }
 
-    if (file(readmePath).exists()) {
-        pluginDescription.set(provider {
-          file(readmePath).text
-        })
-    }
+  if (file(readmePath).exists()) {
+    pluginDescription.set(provider {
+      file(readmePath).text
+    })
+  }
 }
 
 tasks.markdownToHtml.dependsOn("createReleaseNotes")
@@ -94,5 +104,5 @@ tasks.patchPluginXml.dependsOn("patchReadMeHtml")
 tasks.patchPluginXml.dependsOn("createThemes")
 
 publishPlugin {
-    token.set(System.getenv('PUBLISH_TOKEN'))
+  token.set(System.getenv('PUBLISH_TOKEN'))
 }
