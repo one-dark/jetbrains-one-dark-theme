@@ -1,0 +1,33 @@
+<idea-plugin>
+    <id>com.markskelton.one-dark-theme</id>
+    <version>6.0.1</version>
+
+    <name>One Dark Theme</name>
+    <category>UI</category>
+
+  <vendor email="one-dark@mskelton.dev"
+          url="https://github.com/one-dark/jetbrains-one-dark-theme">Mark Skelton
+  </vendor>
+
+    <idea-version since-build="252.25557"/>
+
+    <description><![CDATA[
+        <p>One Dark theme for JetBrains.</p>
+        <br>
+        <p>After installing the theme, go to Preferences | Appearance & Behavior | Appearance and select the One Dark theme (or Islands variant) from the list.</p>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <ul>
+          <li>Added Islands Theme Support</li>
+          <li>Removed vivid, italic, and vivid italic themes</li>
+        </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider id="f92a0fa7-1a98-47cd-b5cb-78ff67e6f4f3" path="/one_dark.theme.json"/>
+        <themeProvider id="71b26d33-3d44-42f4-8166-31b17c762b32" path="/one_dark_islands.theme.json"/>
+    </extensions>
+</idea-plugin>
