@@ -12,7 +12,6 @@ buildscript {
 
 plugins {
   id 'one-dark-theme-plugin'
-  // Updated versions for Java 17 + Gradle 8 support
   id 'org.jetbrains.intellij' version '1.17.3'
   id 'org.jetbrains.kotlin.jvm' version '1.9.22'
   id 'org.jlleitschuh.gradle.ktlint' version '11.5.1'
@@ -20,7 +19,7 @@ plugins {
 }
 
 group 'com.markskelton'
-def projectVersion = System.getenv().getOrDefault('VERSION', '5.15.0').replace('refs/tags/v', '')
+def projectVersion = System.getenv().getOrDefault('VERSION', '').replace('refs/tags/v', '')
 version projectVersion
 
 repositories {
@@ -37,14 +36,12 @@ configurations {
 }
 
 intellij {
-  // Target IntelliJ 2024.1.4 which supports the New UI (Islands) natively
   version.set('2024.1.4')
   type.set('IC')
   downloadSources.set(true)
   updateSinceUntilBuild.set(true)
 }
 
-// Java 17 Compatibility
 java {
   sourceCompatibility = JavaVersion.VERSION_17
   targetCompatibility = JavaVersion.VERSION_17
@@ -81,7 +78,6 @@ tasks.runPluginVerifier {
 
 tasks.patchPluginXml {
   version.set(projectVersion)
-  // Set compatibility to 2024.1+ (Build 241)
   sinceBuild.set('241')
   untilBuild = provider { null }
 

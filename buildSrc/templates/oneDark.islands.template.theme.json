@@ -125,7 +125,6 @@
       "underlinedTabBackground": "backgroundColor",
       "underlinedTabForeground": "#abb2bf",
       "underlineColor": "accentColor",
-      "inactiveUnderlinedTabBorderColor": "backgroundColor",
       "inactiveUnderlinedTabBorderColor": "borderColor",
       "inactiveUnderlinedTabBackground": "backgroundColor",
       "hoverBackground": "#323844",
