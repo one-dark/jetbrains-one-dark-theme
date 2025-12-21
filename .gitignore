@@ -1,6 +1,4 @@
 out/
-*.jar
-.gradle/
 .idea/
 .intellijPlatform/
 
