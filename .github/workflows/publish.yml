@@ -13,18 +13,6 @@ jobs:
 
       - run: ./gradlew buildPlugin
 
-      - name: Copy zip file
-        run: cp build/distributions/*.zip one-dark-theme.zip
-
-      - uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: one-dark-theme.zip
-          asset_name: one-dark-theme.zip
-          asset_content_type: application/zip
-
       - run: ./gradlew publishPlugin
         env:
           PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
