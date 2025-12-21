@@ -1,7 +1,5 @@
 <idea-plugin>
     <id>com.markskelton.one-dark-theme</id>
-    <version>6.1.0</version>
-
     <name>One Dark Theme</name>
     <category>UI</category>
 
@@ -16,12 +14,6 @@
         <br>
         <p>After installing the theme, go to Preferences | Appearance & Behavior | Appearance and select the One Dark theme (or Islands variant) from the list.</p>
     ]]></description>
-
-    <change-notes><![CDATA[
-        <ul>
-          <li>Re-added One Dark Vivid theme</li>
-        </ul>
-    ]]></change-notes>
 
     <depends>com.intellij.modules.platform</depends>
 
