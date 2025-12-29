@@ -21,8 +21,8 @@
     "*": {
       "background": "backgroundColor",
       "foreground": "#bbbbbb",
-      "borderColor": "backgroundColor",
-      "separatorColor": "borderColor",
+      "borderColor": "#333841",
+      "separatorColor": "#32363c",
       "hoverBackground": "hoverBackground",
       "selectionBackground": "selectionBackground",
       "selectionForeground": "selectionForeground",
@@ -150,8 +150,8 @@
       "borderColor": "borderTransparent"
     },
     "Borders": {
-      "color": "backgroundColor",
-      "ContrastBorderColor": "backgroundColor"
+      "color": "#333841",
+      "ContrastBorderColor": "#333841"
     },
     "ActionButton": {
       "hoverBackground": "#3d424b",
