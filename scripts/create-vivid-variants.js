@@ -12,7 +12,7 @@ const COLOR_MAP = {
 
 async function createVividVariant(inputPath, outputPath) {
   let content = await readFile(
-    new URL(`../resources/${inputPath}`, import.meta.url),
+    new URL(`../src/main/resources/${inputPath}`, import.meta.url),
     "utf8"
   );
 
@@ -26,7 +26,7 @@ async function createVividVariant(inputPath, outputPath) {
   content = content.replaceAll("One Dark", "One Dark Vivid");
 
   await writeFile(
-    new URL(`../resources/${outputPath}`, import.meta.url),
+    new URL(`../src/main/resources/${outputPath}`, import.meta.url),
     content
   );
 }
