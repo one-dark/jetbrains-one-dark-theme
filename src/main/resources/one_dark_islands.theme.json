@@ -121,8 +121,8 @@
     },
     "EditorTabs": {
       "background": "panelColor",
-      "underlinedBorderColor": "backgroundColor",
-      "underlinedTabBackground": "backgroundColor",
+      "underlinedBorderColor": "focusedBorderColor",
+      "underlinedTabBackground": "focusedBorderColor",
       "underlinedTabForeground": "#abb2bf",
       "underlineColor": "accentColor",
       "inactiveUnderlinedTabBorderColor": "borderColor",
