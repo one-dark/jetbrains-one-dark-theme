@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [6.2.1]
+
+- Updates active tab border color to not blend in with background
+
 ## [6.1.0]
 
 - Add back vivid theme
@@ -186,11 +190,11 @@
 ## [4.0.0]
 
 - Customizable Theme Settings
-
   - Removed the: `One Dark Italic`, `One Dark Vivid`, and `One Dark Vivid Italic` variants.
   - You can now customize your theme's font settings using the `One Dark Theme` in the settings menu located at: `Preferences | Appearance & Behavior | One Dark Theme`
   - Font settings can be `Regular`, `Bold`, `Italic`, or `Bold Italic`.
   - You can also choose between the `Vivid` and `Regular` color One Dark color palette.
+
 - HTML Attributes can now be: `Regular`, `Bold`, `Italic`, or `Bold Italic`.
 
 ## [3.3.6]
