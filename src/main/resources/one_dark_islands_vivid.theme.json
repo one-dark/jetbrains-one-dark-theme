@@ -56,7 +56,7 @@
       "separatorColor": "borderColor"
     },
     "MainToolbar": {
-      "background": "panelColor",
+      "background": "backgroundColor",
       "inactiveBackground": "backgroundColor",
       "borderColor": "borderTransparent",
       "Dropdown": {
