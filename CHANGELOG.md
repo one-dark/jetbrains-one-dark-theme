@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+## [6.2.2]
+
+- Fix toolbar color for Islands theme
+
 ## [6.2.1]
 
 - Updates active tab border color to not blend in with background
