@@ -6,9 +6,9 @@
   "editorScheme": "/one_dark_vivid.xml",
   "colors": {
     "accentColor": "#568AF2",
-    "backgroundColor": "#21252b",
+    "backgroundColor": "#1c1f24",
     "panelColor": "#282c34",
-    "borderColor": "#333841",
+    "borderColor": "#444b57",
     "infoForeground": "#7e8491",
     "foregroundColor": "#bbbbbb",
     "notificationBackground": "#3d424b",
@@ -26,7 +26,7 @@
       "hoverBackground": "hoverBackground",
       "selectionBackground": "selectionBackground",
       "selectionForeground": "selectionForeground",
-      "selectionInactiveBackground": "#2c313a",
+      "selectionInactiveBackground": "selectionBackground",
       "inactiveBackground": "backgroundColor",
       "disabledBackground": "backgroundColor",
       "acceleratorForeground": "#E6E6E6",
@@ -56,7 +56,7 @@
       "separatorColor": "borderColor"
     },
     "MainToolbar": {
-      "background": "panelColor",
+      "background": "backgroundColor",
       "inactiveBackground": "backgroundColor",
       "borderColor": "borderTransparent",
       "Dropdown": {
@@ -121,7 +121,7 @@
     },
     "EditorTabs": {
       "background": "panelColor",
-      "underlinedBorderColor": "backgroundColor",
+      "underlinedBorderColor": "borderColor",
       "underlinedTabBackground": "backgroundColor",
       "underlinedTabForeground": "#bbbbbb",
       "underlineColor": "accentColor",
@@ -266,7 +266,7 @@
       "SearchField.background": "backgroundColor",
       "separatorColor": "panelColor"
     },
-    "AlertDialog.background": "panelColor",
+    "AlertDialog.background": "backgroundColor",
     "WelcomeScreen": {
       "borderColor": "borderColor",
       "separatorColor": "#2c313a",
