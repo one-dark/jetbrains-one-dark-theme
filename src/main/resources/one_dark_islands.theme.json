@@ -56,7 +56,7 @@
       "separatorColor": "borderColor"
     },
     "MainToolbar": {
-      "background": "panelColor",
+      "background": "backgroundColor",
       "inactiveBackground": "backgroundColor",
       "borderColor": "borderTransparent",
       "Dropdown": {
@@ -121,8 +121,8 @@
     },
     "EditorTabs": {
       "background": "panelColor",
-      "underlinedBorderColor": "backgroundColor",
-      "underlinedTabBackground": "backgroundColor",
+      "underlinedBorderColor": "focusedBorderColor",
+      "underlinedTabBackground": "focusedBorderColor",
       "underlinedTabForeground": "#abb2bf",
       "underlineColor": "accentColor",
       "inactiveUnderlinedTabBorderColor": "borderColor",
