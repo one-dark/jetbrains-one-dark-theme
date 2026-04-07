@@ -257,7 +257,7 @@
     },
     "VersionControl": {
       "Log.Commit": {
-        "currentBranchBackground": "#282c35",
+        "currentBranchBackground": "panelColor",
         "hoveredBackground": "#2c313c"
       }
     },
@@ -279,7 +279,7 @@
   },
   "icons": {
     "ColorPalette": {
-      "Checkbox.Background.Default.Dark": "#282c34",
+      "Checkbox.Background.Default.Dark": "panelColor",
       "Checkbox.Border.Default.Dark": "#414855",
       "Checkbox.Foreground.Selected.Dark": "#bbbbbb",
       "Checkbox.Focus.Wide.Dark": "#568AF2",
