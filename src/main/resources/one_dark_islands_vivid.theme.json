@@ -257,7 +257,7 @@
     },
     "VersionControl": {
       "Log.Commit": {
-        "currentBranchBackground": "panelColor",
+        "currentBranchBackground": "backgroundColor",
         "hoveredBackground": "#2c313c"
       }
     },
