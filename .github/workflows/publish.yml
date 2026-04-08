@@ -7,16 +7,20 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
-      - uses: actions/setup-java@v5
+      - name: Set up Java
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '26'
           cache: 'gradle'
 
-      - run: ./gradlew buildPlugin
+      - name: Build plugin
+        run: ./gradlew buildPlugin
 
-      - run: ./gradlew publishPlugin
+      - name: Publish plugin
+        run: ./gradlew publishPlugin
         env:
           PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
