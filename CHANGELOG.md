@@ -6,7 +6,7 @@
 
 - Fix deprecated Checkbox color keys in Islands themes
 - Remove unsupported `Checkbox.Focus.Thin.*.Dark` keys in Islands themes
-- Set `inactiveAlpha` and `inactiveAlphaInStatusBar` to `0` on Windows for Islands themes (#393)
+- Set `inactiveAlpha` and `inactiveAlphaInStatusBar` to `0` on Windows for Islands themes ([#393](https://github.com/one-dark/jetbrains-one-dark-theme/issues/393))
 
 ## [6.2.2]
 
