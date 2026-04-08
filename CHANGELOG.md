@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [6.2.3]
+
+- Fix deprecated Checkbox color keys in Islands themes
+- Remove unsupported `Checkbox.Focus.Thin.*.Dark` keys in Islands themes
+- Set `inactiveAlpha` and `inactiveAlphaInStatusBar` to `0` on Windows for Islands themes (#393)
+
 ## [6.2.2]
 
 - Fix toolbar color for Islands theme
