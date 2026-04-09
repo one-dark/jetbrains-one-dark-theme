@@ -4,7 +4,7 @@
     <category>UI</category>
     <vendor email="one-dark@mskelton.dev" url="https://github.com/one-dark/jetbrains-one-dark-theme">Mark Skelton</vendor>
 
-    <idea-version since-build="252.25557"/>
+    <idea-version since-build="253.3"/>
 
     <description><![CDATA[
         <p>One Dark theme for JetBrains.</p>
