@@ -6,9 +6,9 @@
   "editorScheme": "/one_dark_vivid.xml",
   "colors": {
     "accentColor": "#568AF2",
-    "backgroundColor": "#21252b",
+    "backgroundColor": "#1c1f24",
     "panelColor": "#282c34",
-    "borderColor": "#333841",
+    "borderColor": "#444b57",
     "infoForeground": "#7e8491",
     "foregroundColor": "#bbbbbb",
     "notificationBackground": "#3d424b",
@@ -26,7 +26,7 @@
       "hoverBackground": "hoverBackground",
       "selectionBackground": "selectionBackground",
       "selectionForeground": "selectionForeground",
-      "selectionInactiveBackground": "#2c313a",
+      "selectionInactiveBackground": "selectionBackground",
       "inactiveBackground": "backgroundColor",
       "disabledBackground": "backgroundColor",
       "acceleratorForeground": "#E6E6E6",
@@ -121,8 +121,8 @@
     },
     "EditorTabs": {
       "background": "panelColor",
-      "underlinedBorderColor": "focusedBorderColor",
-      "underlinedTabBackground": "focusedBorderColor",
+      "underlinedBorderColor": "borderColor",
+      "underlinedTabBackground": "backgroundColor",
       "underlinedTabForeground": "#bbbbbb",
       "underlineColor": "accentColor",
       "inactiveUnderlinedTabBorderColor": "borderColor",
@@ -257,7 +257,7 @@
     },
     "VersionControl": {
       "Log.Commit": {
-        "currentBranchBackground": "#282c35",
+        "currentBranchBackground": "panelColor",
         "hoveredBackground": "#2c313c"
       }
     },
@@ -266,7 +266,7 @@
       "SearchField.background": "backgroundColor",
       "separatorColor": "panelColor"
     },
-    "AlertDialog.background": "panelColor",
+    "AlertDialog.background": "backgroundColor",
     "WelcomeScreen": {
       "borderColor": "borderColor",
       "separatorColor": "#2c313a",
@@ -279,7 +279,7 @@
   },
   "icons": {
     "ColorPalette": {
-      "Checkbox.Background.Default": "#282c34",
+      "Checkbox.Background.Default": "panelColor",
       "Checkbox.Border.Default": "#414855",
       "Checkbox.Foreground.Selected": "#bbbbbb",
       "Checkbox.Focus.Wide": "#568AF2",
