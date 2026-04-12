@@ -5,6 +5,7 @@
 ## [6.2.4]
 
 - Refined contrast in certain cases to better align with the main background.
+- Minor project fixes.
 
 ## [6.2.3]
 
