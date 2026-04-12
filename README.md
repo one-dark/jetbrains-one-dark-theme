@@ -5,7 +5,7 @@
 
 [One Dark](https://github.com/atom/one-dark-syntax) theme for JetBrains.
 
-![Code example](https://github.com/user-attachments/assets/975f1248-9261-4471-ab07-52ddbbe01524)
+![Code example](.github/images/java_c2POTiFR.png)
 
 ## Setup
 
