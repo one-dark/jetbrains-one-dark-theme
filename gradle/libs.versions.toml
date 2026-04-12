@@ -1,6 +1,6 @@
 [versions]
 changelog = "2.5.0"
-intelliJPlatform = "2.13.1"
+intelliJPlatform = "2.14.0"
 kotlin = "2.3.20"
 
 [plugins]
