@@ -1,0 +1,6 @@
+{
+    "type": "module",
+    "scripts": {
+        "vivid": "node scripts/create-vivid-variants.js"
+    }
+}
