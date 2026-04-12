@@ -62,6 +62,8 @@ intellijPlatform {
             recommended()
         }
     }
+
+    buildSearchableOptions = false
 }
 
 changelog {
