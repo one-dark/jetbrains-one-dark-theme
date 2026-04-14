@@ -79,8 +79,4 @@ tasks {
     publishPlugin {
         dependsOn(patchChangelog)
     }
-
-    register<Exec>("generateVividVariants") {
-        commandLine("node", "scripts/create-vivid-variants.js")
-    }
 }
