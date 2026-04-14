@@ -2,8 +2,6 @@
 
 ## [Unreleased]
 
-## [6.2.4]
-
 - Refined contrast in certain cases to better align with the main background.
 - Clean up `pluginIcon.svg` (remove unused namespace, simplify structure)
 - Minor project fixes.
@@ -451,8 +449,7 @@ Thanks @tulongxCodes for the report of this issue!
 - Publish using Travis CI
 - Add JARs to GitHub releases for manual installation
 
-[Unreleased]: https://github.com/one-dark/jetbrains-one-dark-theme/compare/v6.2.4...HEAD
-[6.2.4]: https://github.com/one-dark/jetbrains-one-dark-theme/compare/v6.2.3...v6.2.4
+[Unreleased]: https://github.com/one-dark/jetbrains-one-dark-theme/compare/v6.2.3...HEAD
 [6.2.3]: https://github.com/one-dark/jetbrains-one-dark-theme/compare/v6.2.2...v6.2.3
 [6.2.2]: https://github.com/one-dark/jetbrains-one-dark-theme/compare/v6.2.1...v6.2.2
 [6.2.1]: https://github.com/one-dark/jetbrains-one-dark-theme/compare/v6.1.0...v6.2.1
