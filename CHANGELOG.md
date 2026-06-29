@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+- Reduce inlay hint brightness to better match Darcula-style grays ([#397](https://github.com/one-dark/jetbrains-one-dark-theme/issues/397))
+
+## [6.2.4]
+
 - Refined contrast in certain cases to better align with the main background.
 - Clean up `pluginIcon.svg` (remove unused namespace, simplify structure)
 - Minor project fixes.
