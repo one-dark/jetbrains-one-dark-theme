@@ -1090,26 +1090,26 @@
     </option>
     <option name="INLAY_DEFAULT">
       <value>
-        <option name="BACKGROUND" value="414855"/>
-        <option name="FOREGROUND" value="#bbbbbb"/>
+        <option name="BACKGROUND" value="303640"/>
+        <option name="FOREGROUND" value="#7e8491"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT">
       <value>
-        <option name="BACKGROUND" value="414855"/>
-        <option name="FOREGROUND" value="#bbbbbb"/>
+        <option name="BACKGROUND" value="303640"/>
+        <option name="FOREGROUND" value="#7e8491"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_CURRENT">
       <value>
-        <option name="BACKGROUND" value="48709b"/>
-        <option name="FOREGROUND" value="#bbbbbb"/>
+        <option name="BACKGROUND" value="3d424b"/>
+        <option name="FOREGROUND" value="#a0a7b4"/>
       </value>
     </option>
     <option name="INLINE_PARAMETER_HINT_HIGHLIGHTED">
       <value>
-        <option name="BACKGROUND" value="#5c6370"/>
-        <option name="FOREGROUND" value="#bbbbbb"/>
+        <option name="BACKGROUND" value="3d424b"/>
+        <option name="FOREGROUND" value="#a0a7b4"/>
       </value>
     </option>
     <option name="IVAR">
